@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>演唱会监控 · 设计稿 v3 · 总览 + 时间线</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FAF6EF; --ink:#1b1611; --card:#fff;
+  --green:#4F9D69; --green-dk:#35724b; --yellow:#FDFF8B; --amber-dk:#a66a00;
+  --pink:#F7AEF8; --mag-dk:#b23ab8; --pop:#f0492f;
+  --line:#e8e0d2; --dim:#7d7263; --faint:#9a8f7d;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:14.5px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px 90px}
+.lb{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+
+/* header */
+header{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;padding:20px 0 16px}
+.wordmark{font-size:18px;font-weight:800;display:flex;align-items:center;gap:9px}
+.wordmark .dot{width:10px;height:10px;border-radius:50%;border:1.5px solid var(--ink);
+  background:conic-gradient(var(--pink),var(--yellow),var(--green),var(--pink))}
+header .meta{margin-left:auto;font-family:var(--mono);font-size:10.5px;color:var(--faint);letter-spacing:.06em;text-align:right}
+
+/* overview bento strip */
+.ov{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:6px}
+.ov .tile{border:1.5px solid var(--ink);border-radius:16px;padding:13px 16px 11px;cursor:pointer;
+  box-shadow:3px 3px 0 var(--ink);transition:transform .15s var(--ease),box-shadow .15s var(--ease);
+  text-decoration:none;color:var(--ink);display:block}
+.ov .tile:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
+.ov .tile .lb{opacity:.65}
+.ov .tile .big{font-family:var(--mono);font-size:30px;font-weight:700;line-height:1.15;font-variant-numeric:tabular-nums}
+.ov .tile .sub{font-size:11.5px;font-weight:600;margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ov .t-sale{background:var(--green);color:#fff}.ov .t-sale .lb{color:rgba(255,255,255,.8)}
+.ov .t-up{background:var(--yellow)}
+.ov .t-ru{background:var(--pink)}
+.ov .t-chg{background:var(--card)}
+@media (max-width:680px){.ov{grid-template-columns:1fr 1fr}}
+
+/* sticky zone: filters + day rail */
+.stick{position:sticky;top:0;z-index:30;background:rgba(250,246,239,.88);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-bottom:1.5px solid var(--ink);margin:0 -22px;padding:0 22px}
+.rail{display:flex;gap:7px;align-items:center;padding:11px 0 9px;overflow-x:auto;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.chip{font-family:var(--mono);font-size:11px;letter-spacing:.05em;white-space:nowrap;flex:none;
+  color:var(--ink);background:var(--card);border:1.5px solid var(--ink);border-radius:999px;
+  padding:4px 12px;cursor:pointer;transition:.15s var(--ease);display:inline-flex;align-items:center;gap:7px}
+.chip:hover{transform:translate(-1px,-1px);box-shadow:2px 2px 0 var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.chip .ad{width:8px;height:8px;border-radius:50%;flex:none;border:1px solid rgba(27,22,17,.35)}
+.chip[aria-pressed="true"] .ad{border-color:rgba(250,246,239,.6)}
+.chip .c{opacity:.55;font-variant-numeric:tabular-nums}
+.rail .sep{width:1.5px;height:16px;background:var(--ink);flex:none;margin:0 3px;opacity:.3}
+
+/* day rail */
+.dayrail{display:flex;gap:5px;overflow-x:auto;padding:2px 0 12px;scrollbar-width:none}
+.dayrail::-webkit-scrollbar{display:none}
+.day{flex:none;width:50px;border:1.5px solid transparent;border-radius:11px;background:none;cursor:pointer;
+  padding:6px 0 6px;text-align:center;font-family:var(--mono);transition:.15s var(--ease)}
+.day:hover{border-color:var(--ink)}
+.day .dw{font-size:9px;letter-spacing:.08em;color:var(--faint)}
+.day .dd{font-size:13.5px;font-weight:700;font-variant-numeric:tabular-nums;margin-top:1px}
+.day .dots{display:flex;gap:3px;justify-content:center;margin-top:4px;height:6px}
+.day .dots i{width:5px;height:5px;border-radius:50%}
+.day .dots i.g{background:var(--green)} .day .dots i.y{background:var(--amber-dk)}
+.day.today{background:var(--ink);color:var(--paper)}
+.day.today .dw{color:rgba(250,246,239,.6)}
+.day.has{box-shadow:inset 0 0 0 1.5px var(--line)}
+
+/* timeline */
+.gig-month{display:flex;align-items:baseline;gap:10px;font-family:var(--mono);font-size:11px;
+  letter-spacing:.2em;color:var(--faint);margin:28px 0 4px;text-transform:uppercase}
+.gig-month::after{content:"";flex:1;height:1.5px;background:var(--line)}
+.gig{display:flex;align-items:center;gap:12px;padding:10px 2px;border-bottom:1.5px solid var(--line)}
+.gig .gd{flex:none;width:56px;font-family:var(--mono);font-variant-numeric:tabular-nums}
+.gig .gd .m{font-size:15px;font-weight:700}
+.gig .gd .w{font-size:9px;color:var(--faint);letter-spacing:.1em}
+.atag{flex:none;font-size:11px;font-weight:700;color:#fff;border-radius:999px;padding:2.5px 10px;
+  max-width:110px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border:1.5px solid var(--ink);
+  text-decoration:none;cursor:pointer}
+.gig .gt{flex:1;min-width:0}
+.gig .gt .t{font-weight:700;font-size:13.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gig .gt .m2{font-size:11.5px;color:var(--dim);margin-top:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gig .gs{flex:none;font-family:var(--mono);font-size:10px;letter-spacing:.08em;font-weight:700;
+  text-transform:uppercase;display:flex;align-items:center;gap:5px}
+.gig .gs.on{color:var(--green-dk)} .gig .gs.up{color:var(--amber-dk)}
+.gig .gs i{width:6px;height:6px;border-radius:50%;background:currentColor}
+.gig .ga{flex:none}
+.gig .ga a{font-family:var(--mono);font-size:10px;font-weight:700;color:var(--ink);text-decoration:none;
+  border:1.5px solid var(--ink);border-radius:999px;padding:3.5px 11px;background:var(--yellow);transition:.15s;display:inline-block}
+.gig .ga a:hover{transform:translate(-1px,-1px);box-shadow:2px 2px 0 var(--ink)}
+.emptyline{padding:26px;text-align:center;color:var(--faint);font-family:var(--mono);font-size:11px;
+  letter-spacing:.1em;border:1.5px dashed #c9bfa9;border-radius:14px;margin-top:20px;background:rgba(255,255,255,.5)}
+
+/* bottom modules */
+.mods{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:40px}
+@media (max-width:680px){.mods{grid-template-columns:1fr}}
+.mod{border:1.5px solid var(--ink);border-radius:16px;background:var(--card);padding:16px 18px;box-shadow:3px 3px 0 var(--ink)}
+.mod h3{margin:0 0 10px;font-size:13px;font-weight:800;display:flex;align-items:baseline;gap:8px}
+.mod h3 .lb{margin-left:auto}
+.mod .rl{padding:9px 0;border-top:1.5px solid var(--line);font-size:12.5px}
+.mod .rl .h{font-weight:600;line-height:1.45}
+.mod .rl .sm{display:flex;gap:8px;align-items:center;margin-top:5px;flex-wrap:wrap}
+.mod .rl .sm .who{font-size:10px;font-weight:700;color:#fff;border-radius:999px;padding:1.5px 8px;border:1px solid var(--ink)}
+.cred{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;font-weight:700;text-transform:uppercase}
+.cred.hi{color:var(--green-dk)} .cred.mid{color:var(--amber-dk)} .cred.lo{color:var(--faint)}
+.mod .cl{padding:8px 0;border-top:1.5px solid var(--line);font-size:12.5px;display:flex;gap:9px}
+.mod .cl .mk{font-family:var(--mono);font-weight:700}
+.mod .cl .mk.n{color:var(--green-dk)} .mod .cl .mk.r{color:var(--mag-dk)}
+@media (max-width:640px){
+  .gig .gd{width:46px}
+  .atag{max-width:74px;font-size:10px;padding:2px 7px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="wordmark"><span class="dot"></span>演唱会监控</div>
+    <div class="meta"><div id="lastrun"></div><div id="research"></div></div>
+  </header>
+
+  <!-- overview -->
+  <div class="ov" id="ov"></div>
+
+  <!-- sticky: filters + days -->
+  <div class="stick">
+    <div class="rail" id="rail"></div>
+    <div class="dayrail" id="dayrail"></div>
+  </div>
+
+  <!-- timeline -->
+  <div id="gigs"></div>
+
+  <!-- bottom modules -->
+  <div class="mods">
+    <div class="mod" id="mod-rumor">
+      <h3>舆情线索<span class="lb">RUMOR · 未证实</span></h3>
+      <div id="rumors"></div>
+    </div>
+    <div class="mod" id="mod-chg">
+      <h3>本轮变化<span class="lb" id="chgsum"></span></h3>
+      <div id="changes"></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const D = %%DATA%%;
+const CHANGES = %%CHANGES%%;
+const WDZH = ["周日","周一","周二","周三","周四","周五","周六"];
+const esc = s => String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const $ = id => document.getElementById(id);
+const firstUrl = e => ((e.sources||[]).find(s=>s.url)||{}).url;
+const pdate = d => { if(!d) return null; const [Y,M,Dd]=d.split("-").map(Number); const dt=new Date(Y,M-1,Dd);
+  return {md:M+"/"+String(Dd).padStart(2,"0"), w:WDZH[dt.getDay()], m: Y+"."+String(M).padStart(2,"0")}; };
+let filter = {region:"all", artist:"all"};
+
+/* per-artist dopamine color ladder (12 well-spread hues) */
+const PALETTE = ["#e23e2e","#f07f13","#c99200","#5f9e00","#2f8f4e","#159a8c",
+                 "#1295b8","#3d6fd8","#7a5be0","#a24fd0","#d1489e","#e0526b"];
+const ACOLOR = {};
+(D.artists||[]).forEach((a,i)=> ACOLOR[a.key] = PALETTE[i % PALETTE.length]);
+const atag = (key,name,extra="") => `<span class="atag ${extra}" data-artist="${esc(key)}" style="background:${ACOLOR[key]||"#7d7263"}">${esc(name)}</span>`;
+
+/* header */
+(function(){
+  const fmt = s => s ? s.replace("T"," ").slice(0,16) : "--";
+  $("lastrun").textContent = "LAST CHECK " + fmt(D.last_run);
+  $("research").textContent = "RESEARCH " + fmt(D.last_research_at) + " · RUN " + (D.last_run_id||"--");
+})();
+
+const cnt = D.counts||{};
+const news = CHANGES.filter(c=>c.type==="new"), rms = CHANGES.filter(c=>c.type==="rumor");
+
+/* overview tiles */
+(function(){
+  const on = D.on_sale||[], up = D.upcoming||[];
+  const nextOn = on[0], nextUp = up.find(e=>e.sale_time) || up.find(e=>e.show_date);
+  const sub = e => e ? `${e.show_date?e.show_date.slice(5).replace("-","/"):"待定"} ${e.artist_name}` : "—";
+  $("ov").innerHTML =
+    `<a class="tile t-sale" href="#gigs"><div class="lb">ON SALE · 正在售卖</div>
+       <div class="big">${cnt.on_sale||0}</div><div class="sub">最近 ${esc(sub(nextOn))}</div></a>
+     <a class="tile t-up" href="#gigs"><div class="lb">UPCOMING · 待开票</div>
+       <div class="big">${cnt.upcoming||0}</div><div class="sub">${nextUp&&nextUp.sale_time?"开票 "+esc(nextUp.sale_time.slice(5,10).replace("-","/"))+" "+esc(nextUp.artist_name):"开票时间均待公布"}</div></a>
+     <a class="tile t-ru" href="#mod-rumor"><div class="lb">RUMOR · 舆情线索</div>
+       <div class="big">${cnt.rumors||0}</div><div class="sub">${esc((D.rumors&&D.rumors[0])?D.rumors[0].artist_name+" 等":"—")}</div></a>
+     <a class="tile t-chg" href="#mod-chg"><div class="lb">DIFF · 本轮变化</div>
+       <div class="big">+${news.length}</div><div class="sub">舆情 ${rms.length} 条 · RUN ${CHANGES[0]?CHANGES[0].run.slice(4):"—"}</div></a>`;
+})();
+
+/* filter rail */
+function allItems(){ return [...(D.on_sale||[]), ...(D.upcoming||[]), ...(D.rumors||[])]; }
+(function(){
+  const cntA = k => allItems().filter(e=>e.artist_key===k).length;
+  let html = `<button class="chip" data-r="all" aria-pressed="true">全部</button>
+    <button class="chip" data-r="cn">国内</button>
+    <button class="chip" data-r="kpop">K-Pop</button><span class="sep"></span>`;
+  html += (D.artists||[]).map(a=>
+    `<button class="chip" data-a="${esc(a.key)}"><span class="ad" style="background:${ACOLOR[a.key]}"></span>${esc(a.name)} <span class="c">${cntA(a.key)}</span></button>`).join("");
+  $("rail").innerHTML = html;
+  $("rail").addEventListener("click", ev=>{
+    const b = ev.target.closest(".chip"); if(!b) return;
+    if(b.dataset.r) filter = {region:b.dataset.r, artist:"all"};
+    else filter = {region:"all", artist: filter.artist===b.dataset.a ? "all" : b.dataset.a};
+    syncPressed(); render();
+  });
+  function syncPressed(){
+    document.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",
+      String((c.dataset.r && c.dataset.r===filter.region && filter.artist==="all") ||
+             (c.dataset.a && c.dataset.a===filter.artist))));
+  }
+})();
+/* artist tag click → filter by that artist */
+document.addEventListener("click", ev=>{
+  const t = ev.target.closest(".atag"); if(!t) return;
+  filter = {region:"all", artist: t.dataset.artist};
+  document.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",
+    String(c.dataset.a===filter.artist)));
+  render();
+  window.scrollTo({top:0,behavior:"smooth"});
+});
+
+function keep(item){
+  if(filter.artist!=="all") return item.artist_key===filter.artist;
+  if(filter.region!=="all"){
+    const a = D.artists.find(x=>x.key===item.artist_key);
+    return a && (filter.region==="kpop" ? a.region==="kpop" : a.region!=="kpop");
+  }
+  return true;
+}
+
+/* timeline */
+function render(){
+  const evts = [...(D.on_sale||[]).map(e=>({...e,_st:"on_sale"})), ...(D.upcoming||[]).map(e=>({...e,_st:"upcoming"}))]
+    .filter(keep);
+  const datedL = evts.filter(e=>e.show_date).sort((a,b)=>a.show_date<b.show_date?-1:1);
+  const undatedL = evts.filter(e=>!e.show_date);
+
+  /* day rail */
+  const byDate = {};
+  datedL.forEach(e=>{ (byDate[e.show_date]=byDate[e.show_date]||[]).push(e); });
+  const today = new Date(); today.setHours(0,0,0,0);
+  let r = "";
+  for(let i=0;i<45;i++){
+    const d = new Date(today.getTime()+i*86400000);
+    const key = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+    const evs = byDate[key]||[];
+    const dots = [...new Set(evs.map(e=>e._st))].map(s=>`<i class="${s==="on_sale"?"g":"y"}"></i>`).join("");
+    r += `<button class="day ${i===0?"today":""} ${evs.length?"has":""}" ${evs.length?`onclick="document.getElementById('g${key}')?.scrollIntoView({behavior:'smooth',block:'center'})"`:""}>
+      <div class="dw">${i===0?"今天":WDZH[d.getDay()]}</div><div class="dd">${d.getMonth()+1}/${d.getDate()}</div>
+      <div class="dots">${dots}</div></button>`;
+  }
+  $("dayrail").innerHTML = r;
+
+  /* timeline rows */
+  let h = "", lastM = "";
+  for(const e of datedL){
+    const p = pdate(e.show_date);
+    if(p.m!==lastM){ h += `<div class="gig-month">${p.m}</div>`; lastM = p.m; }
+    const on = e._st==="on_sale"; const url = firstUrl(e);
+    h += `<div class="gig" id="g${e.show_date}">
+      <div class="gd"><div class="m">${p.md}</div><div class="w">${p.w}</div></div>
+      ${atag(e.artist_key, e.artist_name)}
+      <div class="gt"><div class="t">${esc(e.title)}</div>
+        <div class="m2">${esc([e.city,e.venue,e.show_time,e.price].filter(Boolean).join(" · "))}</div></div>
+      <div class="gs ${on?"on":"up"}"><i></i>${on?"在售":(e.sale_time?"SALE "+e.sale_time.slice(5).replace("-","/"):"待开票")}</div>
+      ${on&&url?`<div class="ga"><a href="${esc(url)}" target="_blank" rel="noopener">购票 ↗</a></div>`:""}
+    </div>`;
+  }
+  if(undatedL.length){
+    h += `<div class="gig-month">日期待定</div>` + undatedL.map(e=>
+      `<div class="gig"><div class="gd"><div class="m" style="color:var(--faint)">—</div><div class="w">待定</div></div>
+        ${atag(e.artist_key, e.artist_name)}
+        <div class="gt"><div class="t">${esc(e.title)}</div><div class="m2">城市与开票时间待公布</div></div>
+        <div class="gs up"><i></i>待官宣</div></div>`).join("");
+  }
+  $("gigs").innerHTML = h || `<div class="emptyline">当前筛选下没有场次 · 点击「全部」重置</div>`;
+
+  /* rumors */
+  const ru = (D.rumors||[]).filter(keep);
+  $("rumors").innerHTML = ru.map(x=>{
+    const cred = {high:['hi','可信度高'],medium:['mid','可信度中'],low:['lo','待证实']}[x.credibility]||['lo','待证实'];
+    return `<div class="rl"><div class="h">${esc(x.headline)}</div>
+      <div class="sm"><span class="who" style="background:${ACOLOR[x.artist_key]||"#7d7263"}">${esc(x.artist_name)}</span>
+      <span class="cred ${cred[0]}">● ${cred[1]}</span>
+      ${x.posted_at?`<span class="lb">${esc(x.posted_at)}</span>`:""}</div></div>`;
+  }).join("") || `<div class="rl" style="color:var(--faint)">当前筛选下没有舆情</div>`;
+
+  /* changes */
+  $("chgsum").textContent = `NEW ${news.length} · RUMOR ${rms.length}`;
+  $("changes").innerHTML = CHANGES.map(c=>
+    `<div class="cl"><span class="mk ${c.type==="new"?"n":"r"}">${c.type==="new"?"+":"?"}</span>
+     <span>${esc(c.artist)} · ${esc(c.title)}</span></div>`).join("") || `<div class="cl">本轮无变化</div>`;
+}
+render();
+</script>
+</body>
+</html>

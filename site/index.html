@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>演唱会监控</title>
+<script>
+/* 主题初始化：默认亮色，读取本地记忆；放在样式表前避免闪烁 */
+try{document.documentElement.dataset.theme = localStorage.getItem("cm-theme") || "light";}
+catch(_){document.documentElement.dataset.theme = "light";}
+</script>
+<!-- 不引任何外部资源：外链字体是渲染阻塞资源，fonts.googleapis.com 在国内不可达时
+     会让整页白屏等到超时。本机装了 JetBrains Mono 就用，没有则回退到系统等宽字体
+     （macOS/iOS 上是 SF Mono / Menlo，观感基本一致）。 -->
+<style>
+:root{
+  --paper:#FAF6EF; --ink:#1b1611; --card:#fff; --hard:#1b1611;
+  --green:#4F9D69; --green-dk:#35724b; --yellow:#FDFF8B; --amber-dk:#9c6200;
+  --pink:#F7AEF8; --mag-dk:#b23ab8; --pop:#f0492f;
+  --line:#e8e0d2; --dim:#7d7263; --faint:#9a8f7d;
+  --stickbg:rgba(250,246,239,.88); --emptybg:rgba(255,255,255,.5); --dashline:#c9bfa9;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+[data-theme="dark"]{
+  --paper:#15130f; --ink:#f0eae0; --card:#1f1c17; --hard:#000;
+  --green-dk:#6fc98c; --amber-dk:#e8bc55; --mag-dk:#e6a3e7; --pop:#ff6a52;
+  --line:#332e26; --dim:#a79c8b; --faint:#877d6f;
+  --stickbg:rgba(21,19,15,.9); --emptybg:rgba(255,255,255,.03); --dashline:#332e26;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:14.5px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px 90px}
+.lb{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+
+/* header */
+header{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;padding:20px 0 16px}
+.wordmark{font-size:18px;font-weight:800;display:flex;align-items:center;gap:9px}
+.wordmark .dot{width:10px;height:10px;border-radius:50%;border:1.5px solid var(--ink);
+  background:conic-gradient(var(--pink),var(--yellow),var(--green),var(--pink))}
+header .meta{font-family:var(--mono);font-size:10.5px;color:var(--faint);letter-spacing:.06em;text-align:right}
+/* header 是 align-items:baseline，按钮没有文字基线会被按底边对齐到首行基线上，
+   而 meta 是两行、其视觉中心更低 —— 单靠 align-self:center 只能相对整个 header
+   居中，跟不了 meta。把两者放进同一个居中容器，才能不论 meta 有几行都对齐。 */
+.hdr-right{margin-left:auto;display:flex;align-items:center;gap:10px}
+.hdr-actions{display:flex;align-items:center;gap:2px}
+.iconbtn{flex:none;width:28px;height:28px;border:none;border-radius:0;
+  background:none;color:var(--dim);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;
+  padding:0;transition:color .15s var(--ease)}
+.iconbtn:hover{color:var(--ink)}
+.iconbtn:focus-visible{outline:1.5px solid var(--ink);outline-offset:1px}
+.iconbtn:disabled{cursor:wait;color:var(--faint)}
+/* 只设尺寸，不要在这里写 display —— 否则会盖掉下面按主题切换图标的规则，
+   导致太阳和月亮同时显示、被挤在一起。 */
+.iconbtn svg{width:16px;height:16px}
+.themebtn .ic-sun{display:none}
+.themebtn .ic-moon{display:block}
+.refreshbtn.is-loading svg{animation:refresh-spin .85s linear infinite}
+@keyframes refresh-spin{to{transform:rotate(360deg)}}
+
+/* data error / notes banner */
+.banner{border:1.5px solid var(--ink);border-radius:14px;padding:12px 16px;margin-bottom:14px;
+  font-size:13px;background:var(--yellow);box-shadow:3px 3px 0 var(--hard);color:#1b1611}
+.banner.err{background:var(--pink)}
+.banner b{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;display:block;margin-bottom:4px}
+
+/* overview bento strip */
+.ov{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:6px}
+.ov .tile{border:1.5px solid var(--ink);border-radius:16px;padding:13px 16px 11px;cursor:pointer;
+  box-shadow:3px 3px 0 var(--hard);transition:transform .15s var(--ease),box-shadow .15s var(--ease);
+  text-decoration:none;color:#1b1611;display:block}
+.ov .tile:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--hard)}
+.ov .tile .lb{opacity:.65}
+.ov .tile .big{font-family:var(--mono);font-size:30px;font-weight:700;line-height:1.15;font-variant-numeric:tabular-nums}
+.ov .tile .sub{font-size:11.5px;font-weight:600;margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ov .t-sale{background:var(--green);color:#fff}.ov .t-sale .lb{color:rgba(255,255,255,.8)}
+.ov .t-up{background:var(--yellow)}
+.ov .t-ru{background:var(--pink)}
+.ov .t-chg{background:var(--card);color:var(--ink)}
+@media (max-width:680px){.ov{grid-template-columns:1fr 1fr}}
+
+/* sticky zone: filters + day rail */
+.stick{position:sticky;top:0;z-index:30;background:var(--stickbg);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-bottom:1.5px solid var(--ink);margin:0 -22px;padding:0 22px}
+.rail{display:flex;gap:7px;align-items:center;padding:11px 0 9px;overflow-x:auto;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.chip{font-family:var(--mono);font-size:11px;letter-spacing:.05em;white-space:nowrap;flex:none;
+  color:var(--ink);background:var(--card);border:1.5px solid var(--ink);border-radius:999px;
+  padding:4px 12px;cursor:pointer;transition:.15s var(--ease);display:inline-flex;align-items:center;gap:7px}
+.chip:hover{transform:translate(-1px,-1px);box-shadow:2px 2px 0 var(--hard)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.chip .ad{width:8px;height:8px;border-radius:50%;flex:none;border:1px solid rgba(27,22,17,.35)}
+.chip[aria-pressed="true"] .ad{border-color:rgba(250,246,239,.6)}
+.chip .c{opacity:.55;font-variant-numeric:tabular-nums}
+.rail .sep{width:1.5px;height:16px;background:var(--ink);flex:none;margin:0 3px;opacity:.3}
+
+/* day rail */
+.dayrail{display:flex;gap:5px;overflow-x:auto;padding:2px 0 12px;scrollbar-width:none}
+.dayrail::-webkit-scrollbar{display:none}
+/* button 默认不继承文字色，用的是浏览器 buttontext（黑）。浅色下碰巧看不出来，
+   深色下就是黑字黑底（实测对比度 1.13）。必须显式声明。 */
+.day{flex:none;width:50px;border:1.5px solid transparent;border-radius:11px;background:none;cursor:pointer;
+  padding:6px 0;text-align:center;font-family:var(--mono);color:var(--ink);transition:.15s var(--ease)}
+.day:hover{border-color:var(--ink)}
+.day .dw{font-size:9px;letter-spacing:.08em;color:var(--faint)}
+.day .dd{font-size:13.5px;font-weight:700;font-variant-numeric:tabular-nums;margin-top:1px}
+.day .dots{display:flex;gap:3px;justify-content:center;margin-top:4px;height:6px}
+.day .dots i{width:5px;height:5px;border-radius:50%}
+.day .dots i.g{background:var(--green)} .day .dots i.y{background:var(--amber-dk)}
+.day.today{background:var(--ink);color:var(--paper)}
+.day.today .dw{color:rgba(250,246,239,.6)}
+.day.has{box-shadow:inset 0 0 0 1.5px var(--line)}
+
+/* timeline */
+.gig-month{display:flex;align-items:baseline;gap:10px;font-family:var(--mono);font-size:11px;
+  letter-spacing:.2em;color:var(--faint);margin:28px 0 4px;text-transform:uppercase}
+.gig-month::after{content:"";flex:1;height:1.5px;background:var(--line)}
+.gig{display:flex;align-items:center;gap:12px;padding:10px 2px;border-bottom:1.5px solid var(--line)}
+.gig .gd{flex:none;width:56px;font-family:var(--mono);font-variant-numeric:tabular-nums}
+.gig .gd .m{font-size:15px;font-weight:700}
+.gig .gd .w{font-size:9px;color:var(--faint);letter-spacing:.1em}
+.atag{flex:none;font-size:11px;font-weight:700;color:#fff;border-radius:999px;padding:2.5px 10px;
+  max-width:110px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border:1.5px solid var(--ink);cursor:pointer}
+.atag:hover{transform:translate(-1px,-1px);box-shadow:2px 2px 0 var(--hard)}
+.gig .gt{flex:1;min-width:0}
+.gig .gt .t{font-weight:700;font-size:13.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gig .gt .t .nw{font-family:var(--mono);font-size:9px;font-weight:700;color:var(--mag-dk);letter-spacing:.14em;margin-left:7px;vertical-align:2px}
+.gig .gt .m2{font-size:11.5px;color:var(--dim);margin-top:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gig .gs{flex:none;font-family:var(--mono);font-size:10px;letter-spacing:.08em;font-weight:700;
+  text-transform:uppercase;display:flex;align-items:center;gap:5px}
+.gig .gs.on{color:var(--green-dk)} .gig .gs.up{color:var(--amber-dk)} .gig .gs.so{color:var(--dim)}
+.gig .gs i{width:6px;height:6px;border-radius:50%;background:currentColor}
+.gig .ga{flex:none}
+.gig .ga a{font-family:var(--mono);font-size:10px;font-weight:700;color:#1b1611;text-decoration:none;
+  border:1.5px solid #1b1611;border-radius:999px;padding:3.5px 11px;background:var(--yellow);transition:.15s;display:inline-block}
+.gig .ga a:hover{transform:translate(-1px,-1px);box-shadow:2px 2px 0 var(--hard)}
+.emptyline{padding:26px;text-align:center;color:var(--faint);font-family:var(--mono);font-size:11px;
+  letter-spacing:.1em;border:1.5px dashed var(--dashline);border-radius:14px;margin-top:20px;background:var(--emptybg)}
+
+/* bottom modules */
+.mods{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:40px}
+@media (max-width:680px){.mods{grid-template-columns:1fr}}
+.mod{border:1.5px solid var(--ink);border-radius:16px;background:var(--card);padding:16px 18px;box-shadow:3px 3px 0 var(--hard)}
+.mod h3{margin:0 0 10px;font-size:13px;font-weight:800;display:flex;align-items:baseline;gap:8px}
+.mod h3 .lb{margin-left:auto}
+.mod .rl{padding:9px 0;border-top:1.5px solid var(--line);font-size:12.5px}
+.mod .rl .h{font-weight:600;line-height:1.45}
+.mod .rl .h a{color:inherit}
+.mod .rl .sm{display:flex;gap:8px;align-items:center;margin-top:5px;flex-wrap:wrap}
+.mod .rl .sm .who{font-size:10px;font-weight:700;color:#fff;border-radius:999px;padding:1.5px 8px;border:1px solid var(--ink)}
+.mod .rl .sm .src{font-family:var(--mono);font-size:10px;color:var(--mag-dk);text-decoration:none;font-weight:700}
+.cred{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;font-weight:700;text-transform:uppercase}
+.cred.hi{color:var(--green-dk)} .cred.mid{color:var(--amber-dk)} .cred.lo{color:var(--faint)}
+.mod .cl{padding:8px 0;border-top:1.5px solid var(--line);font-size:12.5px;display:flex;gap:9px;align-items:baseline}
+.mod .cl .mk{font-family:var(--mono);font-weight:700;flex:none}
+.mod .cl .mk.n{color:var(--green-dk)} .mod .cl .mk.r{color:var(--mag-dk)} .mod .cl .mk.u{color:var(--amber-dk)}
+.mod .cl .inf{margin-left:auto;flex:none;font-family:var(--mono);font-size:10px;color:var(--faint)}
+
+/* ended */
+details{margin-top:26px}
+summary{cursor:pointer;list-style:none;font-size:13px;font-weight:700;color:var(--dim);display:flex;align-items:baseline;gap:10px}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"▸";transition:.2s;display:inline-block}
+details[open] summary::before{transform:rotate(90deg)}
+summary .lb{margin-left:auto}
+.pastrow{display:flex;gap:10px;padding:7px 0;border-bottom:1px solid var(--line);font-size:12.5px;color:var(--dim)}
+.pastrow .pd{font-family:var(--mono);flex:none;width:76px;font-variant-numeric:tabular-nums}
+.pastrow .pt{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+footer{margin-top:44px;font-family:var(--mono);font-size:10.5px;color:var(--faint);letter-spacing:.08em;text-align:center}
+
+@media (max-width:640px){
+  .gig .gd{width:46px}
+  .atag{max-width:74px;font-size:10px;padding:2px 7px}
+  /* 手机上标题是最长的字段，单行截断会让同一巡演的各分站完全无法区分
+     （9 条全是「BABYMONSTER...」），放开到三行；带「购票」按钮的在售行
+     让按钮折到下一行右对齐，不再挤压标题宽度 */
+  .gig{flex-wrap:wrap}
+  .gig .gt .t{white-space:normal;display:-webkit-box;-webkit-line-clamp:3;
+    -webkit-box-orient:vertical;line-height:1.32}
+  .gig .ga{flex-basis:100%;display:flex;justify-content:flex-end;margin-top:-2px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none !important}
+  .refreshbtn.is-loading svg{animation:none}
+}
+
+/* ── 深色模式（由 [data-theme] 切换，默认亮色，见 head 内联脚本）──────────────
+   只换变量，不动结构与布局；荧光色块上的文字在基础样式里已固定为深墨色，
+   这里只处理少数依赖环境色的细节。 */
+[data-theme="dark"] .chip .ad{border-color:rgba(240,234,224,.35)}
+[data-theme="dark"] .chip[aria-pressed="true"] .ad{border-color:rgba(21,19,15,.5)}
+[data-theme="dark"] .themebtn .ic-sun{display:block}
+[data-theme="dark"] .themebtn .ic-moon{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="wordmark"><span class="dot"></span>演唱会监控</div>
+    <div class="hdr-right">
+    <div class="meta" aria-live="polite"><div id="lastrun"></div><div id="research"></div></div>
+    <div class="hdr-actions">
+    <button class="iconbtn refreshbtn" id="refreshbtn" type="button" aria-label="手动刷新秀动数据" title="手动刷新秀动数据">
+      <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M13.2 5.8A5.5 5.5 0 1 0 13 10.7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M10.6 5.8h2.8V3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <button class="iconbtn themebtn" id="themebtn" type="button" aria-label="切换亮色 / 暗色" title="切换亮色 / 暗色">
+      <svg class="ic-moon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M13.2 9.8A5.4 5.4 0 0 1 6.2 2.8a5.4 5.4 0 1 0 7 7Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+      </svg>
+      <svg class="ic-sun" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="1.4"/>
+        <path d="M8 1.4v1.6M8 13v1.6M1.4 8H3M13 8h1.6M3.3 3.3l1.1 1.1M11.6 11.6l1.1 1.1M12.7 3.3l-1.1 1.1M4.4 11.6l-1.1 1.1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+    </button>
+    </div>
+    </div>
+  </header>
+
+  <div id="bannerbox"></div>
+
+  <!-- overview -->
+  <div class="ov" id="ov"></div>
+
+  <!-- sticky: filters + days -->
+  <div class="stick">
+    <div class="rail" id="rail"></div>
+    <div class="dayrail" id="dayrail"></div>
+  </div>
+
+  <!-- timeline -->
+  <div id="gigs"></div>
+
+  <!-- bottom modules -->
+  <div class="mods">
+    <div class="mod" id="mod-rumor">
+      <h3>舆情线索<span class="lb">RUMOR · 未证实</span></h3>
+      <div id="rumors"></div>
+    </div>
+    <div class="mod" id="mod-chg">
+      <h3>本轮变化<span class="lb" id="chgsum"></span></h3>
+      <div id="changes"></div>
+    </div>
+  </div>
+
+  <details id="pastbox">
+    <summary>已结束的场次<span class="lb" id="pastcnt"></span></summary>
+    <div id="past" style="margin-top:8px"></div>
+  </details>
+
+  <footer id="gen"></footer>
+</div>
+
+<script src="data.js"></script>
+<script>
+/* 网页手动刷新返回的是实时快照；在当前标签页保留 30 分钟。
+   它只有比部署自带的 data.js 更新时才覆盖，避免旧快照压住新部署。 */
+try{
+  const live = JSON.parse(sessionStorage.getItem("cm-live-data")||"null");
+  const base = window.__CM_DATA__;
+  if(live && live.expires_at>Date.now() && live.data &&
+     (!base || String(live.data.generated_at||"")>String(base.generated_at||""))){
+    window.__CM_DATA__ = live.data;
+  }else if(live){
+    sessionStorage.removeItem("cm-live-data");
+  }
+}catch(_){ try{sessionStorage.removeItem("cm-live-data");}catch(__){} }
+</script>
+<script>
+(function(){
+"use strict";
+const WDZH = ["周日","周一","周二","周三","周四","周五","周六"];
+const esc = s => String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const $ = id => document.getElementById(id);
+
+/* data.js 加载失败：明确报错而不是静默显示空页面 */
+if(!window.__CM_DATA__){
+  document.querySelector(".wrap").innerHTML =
+    `<div class="banner err" style="margin-top:30px"><b>DATA ERROR</b>
+     数据文件 data.js 缺失或损坏。请重新运行 <code>python3 monitor.py build</code> 生成。</div>`;
+  return;
+}
+const D = window.__CM_DATA__;
+const CHANGES = D.changes || [];
+
+/* 主题切换 */
+$("themebtn").addEventListener("click", ()=>{
+  const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+  document.documentElement.dataset.theme = next;
+  try{ localStorage.setItem("cm-theme", next); }catch(_){}
+});
+
+/* 手动刷新：Vercel 函数现场抓取秀动，并与已部署的调研快照合并。
+   成功后整页重绘，这样现有的一次性渲染逻辑无需分叉两套状态。 */
+const refreshBtn = $("refreshbtn");
+refreshBtn.addEventListener("click", async ()=>{
+  if(refreshBtn.disabled) return;
+  const oldLastRun = $("lastrun").textContent;
+  const controller = new AbortController();
+  const timer = setTimeout(()=>controller.abort(), 65000);
+  refreshBtn.disabled = true;
+  refreshBtn.classList.add("is-loading");
+  refreshBtn.setAttribute("aria-busy", "true");
+  refreshBtn.setAttribute("aria-label", "正在刷新秀动数据");
+  $("lastrun").textContent = "REFRESHING SHOWSTART…";
+  try{
+    const res = await fetch("/api/refresh", {headers:{Accept:"application/json"}, signal:controller.signal});
+    const payload = await res.json().catch(()=>({}));
+    if(!res.ok) throw new Error(payload.error || "刷新服务暂时不可用");
+    const fresh = payload.data || payload;
+    if(!fresh || !fresh.generated_at) throw new Error("刷新结果格式不正确");
+    sessionStorage.setItem("cm-live-data", JSON.stringify({
+      expires_at: Date.now()+30*60*1000,
+      data: fresh
+    }));
+    location.reload();
+  }catch(err){
+    const msg = err && err.name==="AbortError" ? "刷新超时，请稍后再试" : (err.message||"刷新失败");
+    $("lastrun").textContent = oldLastRun;
+    $("bannerbox").innerHTML = `<div class="banner err"><b>REFRESH FAILED</b>${esc(msg)}</div>`;
+    refreshBtn.disabled = false;
+    refreshBtn.classList.remove("is-loading");
+    refreshBtn.removeAttribute("aria-busy");
+    refreshBtn.setAttribute("aria-label", "手动刷新秀动数据");
+  }finally{
+    clearTimeout(timer);
+  }
+});
+const firstUrl = e => ((e.sources||[]).find(s=>s.url)||{}).url;
+const pdate = d => { if(!d) return null; const [Y,M,Dd]=d.split("-").map(Number); const dt=new Date(Y,M-1,Dd);
+  if(isNaN(dt)) return null;
+  return {md:M+"/"+String(Dd).padStart(2,"0"), w:WDZH[dt.getDay()], m: Y+"."+String(M).padStart(2,"0")}; };
+
+/* filter state（持久化，容错） */
+let filter = {region:"all", artist:"all"};
+try{
+  const saved = JSON.parse(localStorage.getItem("cm-filter")||"null");
+  if(saved && typeof saved==="object") filter = {region:saved.region||"all", artist:saved.artist||"all"};
+}catch(_){}
+function saveFilter(){ try{ localStorage.setItem("cm-filter", JSON.stringify(filter)); }catch(_){} }
+
+/* per-artist dopamine color ladder */
+const PALETTE = ["#e23e2e","#f07f13","#c99200","#5f9e00","#2f8f4e","#159a8c",
+                 "#1295b8","#3d6fd8","#7a5be0","#a24fd0","#d1489e","#e0526b"];
+const ACOLOR = {};
+(D.artists||[]).forEach((a,i)=> ACOLOR[a.key] = PALETTE[i % PALETTE.length]);
+const atag = (key,name) => `<span class="atag" role="button" tabindex="0" data-artist="${esc(key)}" style="background:${ACOLOR[key]||"#7d7263"}" title="只看 ${esc(name)}">${esc(name)}</span>`;
+
+/* header */
+(function(){
+  const fmt = s => s ? s.replace("T"," ").slice(0,16) : "--";
+  $("lastrun").textContent = "LAST CHECK " + fmt(D.last_run);
+  $("research").textContent = "RESEARCH " + fmt(D.last_research_at) + " · RUN " + (D.last_run_id||"--");
+  $("gen").textContent = "数据生成于 " + fmt(D.generated_at);
+})();
+
+/* notes / degrade banner */
+if((D.notes||[]).length){
+  $("bannerbox").innerHTML = `<div class="banner"><b>本轮降级提示</b>${D.notes.map(x=>`<div>· ${esc(x)}</div>`).join("")}</div>`;
+}
+
+const cnt = D.counts||{};
+const news = CHANGES.filter(c=>c.type==="new"), rms = CHANGES.filter(c=>c.type==="rumor"),
+      upds = CHANGES.filter(c=>c.type!=="new" && c.type!=="rumor");
+
+/* overview tiles */
+(function(){
+  const on = D.on_sale||[], up = D.upcoming||[];
+  const nextOn = on[0], nextUp = up.find(e=>e.sale_time) || up.find(e=>e.show_date);
+  const sub = e => e ? `${e.show_date?e.show_date.slice(5).replace("-","/"):"待定"} ${e.artist_name}` : "—";
+  $("ov").innerHTML =
+    `<a class="tile t-sale" href="#gigs"><div class="lb">ON SALE · 正在售卖</div>
+       <div class="big">${cnt.on_sale||0}</div><div class="sub">最近 ${esc(sub(nextOn))}</div></a>
+     <a class="tile t-up" href="#gigs"><div class="lb">UPCOMING · 待开票</div>
+       <div class="big">${cnt.upcoming||0}</div><div class="sub">${nextUp&&nextUp.sale_time?"开票 "+esc(nextUp.sale_time.slice(5,10).replace("-","/"))+" "+esc(nextUp.artist_name):"开票时间均待公布"}</div></a>
+     <a class="tile t-ru" href="#mod-rumor"><div class="lb">RUMOR · 舆情线索</div>
+       <div class="big">${cnt.rumors||0}</div><div class="sub">${esc((D.rumors&&D.rumors[0])?D.rumors[0].artist_name+" 等":"—")}</div></a>
+     <a class="tile t-chg" href="#mod-chg"><div class="lb">CHANGES · 本轮变化</div>
+       <div class="big">+${news.length}</div><div class="sub">舆情 ${rms.length} 条 · 更新 ${upds.length} 条</div></a>`;
+})();
+
+/* filter rail */
+function allItems(){ return [...(D.on_sale||[]), ...(D.upcoming||[]), ...(D.rumors||[])]; }
+function syncPressed(){
+  document.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",
+    String((c.dataset.r && c.dataset.r===filter.region && filter.artist==="all") ||
+           (c.dataset.a && c.dataset.a===filter.artist))));
+}
+(function(){
+  const cntA = k => allItems().filter(e=>e.artist_key===k).length;
+  let html = `<button class="chip" data-r="all">全部</button>
+    <button class="chip" data-r="cn">国内</button>
+    <button class="chip" data-r="kpop">K-Pop</button><span class="sep"></span>`;
+  html += (D.artists||[]).map(a=>
+    `<button class="chip" data-a="${esc(a.key)}"><span class="ad" style="background:${ACOLOR[a.key]}"></span>${esc(a.name)} <span class="c">${cntA(a.key)}</span></button>`).join("");
+  $("rail").innerHTML = html;
+  $("rail").addEventListener("click", ev=>{
+    const b = ev.target.closest(".chip"); if(!b) return;
+    if(b.dataset.r) filter = {region:b.dataset.r, artist:"all"};
+    else filter = {region:"all", artist: filter.artist===b.dataset.a ? "all" : b.dataset.a};
+    saveFilter(); syncPressed(); render();
+  });
+  syncPressed();
+})();
+/* artist tag click → filter by that artist */
+document.addEventListener("click", ev=>{
+  const t = ev.target.closest(".atag"); if(!t) return;
+  filter = {region:"all", artist: t.dataset.artist};
+  saveFilter(); syncPressed(); render();
+  window.scrollTo({top:0,behavior:"smooth"});
+});
+/* 艺人标签是 span，补上键盘操作（Enter / 空格），与 chip 的可达性保持一致 */
+document.addEventListener("keydown", ev=>{
+  if(ev.key!=="Enter" && ev.key!==" ") return;
+  const t = ev.target.closest && ev.target.closest(".atag"); if(!t) return;
+  ev.preventDefault(); t.click();
+});
+
+function keep(item){
+  if(filter.artist!=="all") return item.artist_key===filter.artist;
+  if(filter.region!=="all"){
+    const a = (D.artists||[]).find(x=>x.key===item.artist_key);
+    return a && (filter.region==="kpop" ? a.region==="kpop" : a.region!=="kpop");
+  }
+  return true;
+}
+
+/* main render */
+function render(){
+  const evts = [...(D.on_sale||[]).map(e=>({...e,_st:"on_sale"})), ...(D.upcoming||[]).map(e=>({...e,_st:"upcoming"}))]
+    .filter(keep);
+  const datedL = evts.filter(e=>e.show_date).sort((a,b)=>a.show_date<b.show_date?-1:1);
+  const undatedL = evts.filter(e=>!e.show_date);
+
+  /* day rail */
+  const byDate = {};
+  datedL.forEach(e=>{ (byDate[e.show_date]=byDate[e.show_date]||[]).push(e); });
+  const today = new Date(); today.setHours(0,0,0,0);
+  let r = "";
+  for(let i=0;i<45;i++){
+    const d = new Date(today.getTime()+i*86400000);
+    const key = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+    const evs = byDate[key]||[];
+    const dots = [...new Set(evs.map(e=>e._st))].map(s=>`<i class="${s==="on_sale"?"g":"y"}"></i>`).join("");
+    r += `<button class="day ${i===0?"today":""} ${evs.length?"has":""}" ${evs.length?`onclick="document.getElementById('g${key}')?.scrollIntoView({behavior:'smooth',block:'center'})"`:""}>
+      <div class="dw">${i===0?"今天":WDZH[d.getDay()]}</div><div class="dd">${d.getMonth()+1}/${d.getDate()}</div>
+      <div class="dots">${dots}</div></button>`;
+  }
+  $("dayrail").innerHTML = r;
+
+  /* timeline rows */
+  let h = "", lastM = "";
+  const seenDates = new Set();
+  for(const e of datedL){
+    const p = pdate(e.show_date); if(!p) continue;
+    if(p.m!==lastM){ h += `<div class="gig-month">${p.m}</div>`; lastM = p.m; }
+    const on = e._st==="on_sale"; const url = firstUrl(e);
+    /* 售罄仍在时间线上（可能加场/二次放票），但状态显示为售罄且不给购票按钮 */
+    const so = e.sale_status==="sold_out" || e.sale_status==="售罄";
+    /* 同一天可能有多场，锚点只挂在当天第一条上，否则会出现重复 id，
+       日期条点击也只会跳到第一条 */
+    const anchor = seenDates.has(e.show_date) ? "" : ` id="g${e.show_date}"`;
+    seenDates.add(e.show_date);
+    /* note / 票档 / 阵容在紧凑单行里放不下，挂进原生 tooltip，信息不至于丢失 */
+    const tip = [e.title, e.tour_name, [e.city, e.venue].filter(Boolean).join(" "),
+                 e.note, (e.ticket_tiers||[]).join("  ·  "),
+                 e.performers ? "阵容：" + e.performers : ""].filter(Boolean).join("\n");
+    h += `<div class="gig"${anchor} title="${esc(tip)}">
+      <div class="gd"><div class="m">${p.md}</div><div class="w">${p.w}</div></div>
+      ${atag(e.artist_key, e.artist_name)}
+      <div class="gt"><div class="t">${esc(e.title)}${e.is_new?'<span class="nw">NEW</span>':""}</div>
+        <div class="m2">${esc([e.city,e.venue,e.show_time,e.price,e.note].filter(Boolean).join(" · "))}</div></div>
+      <div class="gs ${so?"so":(on?"on":"up")}"><i></i>${so?"售罄":(on?"在售":(e.sale_time?"SALE "+e.sale_time.slice(5).replace("-","/"):"待开票"))}</div>
+      ${on&&!so&&url?`<div class="ga"><a href="${esc(url)}" target="_blank" rel="noopener">购票 ↗</a></div>`:""}
+    </div>`;
+  }
+  if(undatedL.length){
+    h += `<div class="gig-month">日期待定</div>` + undatedL.map(e=>
+      `<div class="gig"><div class="gd"><div class="m" style="color:var(--faint)">—</div><div class="w">待定</div></div>
+        ${atag(e.artist_key, e.artist_name)}
+        <div class="gt"><div class="t">${esc(e.title)}${e.is_new?'<span class="nw">NEW</span>':""}</div><div class="m2">城市与开票时间待公布</div></div>
+        <div class="gs up"><i></i>待官宣</div></div>`).join("");
+  }
+  $("gigs").innerHTML = h || `<div class="emptyline">当前筛选下没有场次 · 点击「全部」重置</div>`;
+
+  /* rumors */
+  const ru = (D.rumors||[]).filter(keep);
+  $("rumors").innerHTML = ru.map(x=>{
+    const cred = {high:['hi','可信度高'],medium:['mid','可信度中'],low:['lo','待证实']}[x.credibility]||['lo','待证实'];
+    return `<div class="rl"><div class="h">${esc(x.headline)}</div>
+      ${x.detail?`<div style="color:var(--dim);font-size:12px;margin-top:3px">${esc(x.detail)}</div>`:""}
+      <div class="sm"><span class="who" style="background:${ACOLOR[x.artist_key]||"#7d7263"}">${esc(x.artist_name)}</span>
+      <span class="cred ${cred[0]}">● ${cred[1]}</span>
+      ${x.posted_at?`<span class="lb">${esc(x.posted_at)}</span>`:""}
+      ${x.url?`<a class="src" href="${esc(x.url)}" target="_blank" rel="noopener">原文 ↗</a>`:""}</div></div>`;
+  }).join("") || `<div class="rl" style="color:var(--faint)">当前筛选下没有舆情</div>`;
+
+  /* 本轮变化：只反映最近一次巡查的结果，无变化时显式显示为 0 */
+  $("chgsum").textContent = CHANGES.length ? `NEW ${news.length} · RUMOR ${rms.length} · UPD ${upds.length}` : "";
+  const mkMap = {new:["+","n"], rumor:["?","r"], status:["↻","u"], sale_time:["票","u"]};
+  $("changes").innerHTML = CHANGES.map(c=>{
+    const [mk,cls] = mkMap[c.type]||["·","u"];
+    return `<div class="cl"><span class="mk ${cls}">${mk}</span>
+      <span>${esc(c.artist)} · ${esc(c.title)}</span>
+      ${c.info?`<span class="inf">${esc(c.info.slice(0,14))}</span>`:""}</div>`;
+  }).join("") || `<div class="cl" style="color:var(--faint)">最近一次巡查没有新变化</div>`;
+
+  /* ended */
+  const pa = (D.ended||[]).filter(keep);
+  $("pastcnt").textContent = pa.length ? pa.length+" 场" : "";
+  $("past").innerHTML = pa.map(e=>
+    `<div class="pastrow"><span class="pd">${esc(e.show_date||"—")}</span>
+     <span class="pt">${esc(e.artist_name)} · ${esc(e.title)}</span>
+     <span>${esc(e.city||"")}</span></div>`).join("") || `<div class="pastrow">（无）</div>`;
+  $("pastbox").hidden = !(D.ended||[]).length;
+}
+render();
+})();
+</script>
+</body>
+</html>

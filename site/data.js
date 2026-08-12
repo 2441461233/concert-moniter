@@ -1,0 +1,2110 @@
+window.__CM_DATA__ = {
+ "generated_at": "2026-08-12T19:56:24",
+ "last_run": "2026-08-12T19:56:24",
+ "last_run_id": "20260812-195539",
+ "last_research_at": "2026-08-10T11:20:26",
+ "artists": [
+  {
+   "key": "shayiting",
+   "name": "沙一汀",
+   "region": "cn"
+  },
+  {
+   "key": "menni",
+   "name": "门尼",
+   "region": "cn"
+  },
+  {
+   "key": "jiamu",
+   "name": "加木",
+   "region": "cn"
+  },
+  {
+   "key": "njz",
+   "name": "NJZ",
+   "region": "kpop"
+  },
+  {
+   "key": "kiiikiii",
+   "name": "KiiiKiii",
+   "region": "kpop"
+  },
+  {
+   "key": "ive",
+   "name": "IVE",
+   "region": "kpop"
+  },
+  {
+   "key": "aespa",
+   "name": "aespa",
+   "region": "kpop"
+  },
+  {
+   "key": "lesserafim",
+   "name": "LE SSERAFIM",
+   "region": "kpop"
+  },
+  {
+   "key": "babymonster",
+   "name": "BABYMONSTER",
+   "region": "kpop"
+  },
+  {
+   "key": "illit",
+   "name": "ILLIT",
+   "region": "kpop"
+  },
+  {
+   "key": "hearts2hearts",
+   "name": "Hearts2Hearts",
+   "region": "kpop"
+  },
+  {
+   "key": "katseye",
+   "name": "KATSEYE",
+   "region": "kpop"
+  }
+ ],
+ "on_sale": [
+  {
+   "source": "showstart",
+   "artist_key": "jiamu",
+   "artist_name": "加木",
+   "title": "上海欢乐谷EV音乐乐园——加木",
+   "tour_name": "",
+   "performers": "加木",
+   "city": "上海",
+   "venue": "上海欢乐谷",
+   "country": "",
+   "show_date": "2026-08-15",
+   "show_time": "20:00",
+   "show_time_raw": "08月15日 20:00-08月15日 21:00",
+   "price": "¥260",
+   "ticket_tiers": [
+    "¥260 上海欢乐谷全日票"
+   ],
+   "sale_status": "on_sale",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/305855",
+     "source_id": "305855"
+    }
+   ],
+   "first_seen": "2026-08-10T11:23:44",
+   "first_seen_run": "20260810-112305",
+   "last_seen": "2026-08-12T19:56:24",
+   "id": "f9504954a23e329d",
+   "status": "on_sale",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "shayiting",
+   "artist_name": "沙一汀",
+   "title": "上海欢乐谷EV音乐乐园——沙一汀",
+   "tour_name": "",
+   "performers": "沙一汀EL",
+   "city": "上海",
+   "venue": "上海欢乐谷",
+   "country": "",
+   "show_date": "2026-08-16",
+   "show_time": "20:00",
+   "show_time_raw": "08月16日 20:00-08月16日 20:30",
+   "price": "¥260",
+   "ticket_tiers": [
+    "¥260 上海欢乐谷全日票"
+   ],
+   "sale_status": "on_sale",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/306497",
+     "source_id": "306497"
+    }
+   ],
+   "first_seen": "2026-08-10T11:23:44",
+   "first_seen_run": "20260810-112305",
+   "last_seen": "2026-08-12T19:56:24",
+   "id": "a3f7a3a5653098fa",
+   "status": "on_sale",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "jiamu",
+   "artist_name": "加木",
+   "title": "2026布瑞吉77%巡演-上海站",
+   "tour_name": "",
+   "performers": "Bridge（布瑞吉）/加木",
+   "city": "上海",
+   "venue": "上海 PHASE蜚声LIVEHOUSE",
+   "country": "",
+   "show_date": "2026-08-16",
+   "show_time": "20:00",
+   "show_time_raw": "08月16日 20:00-08月16日 22:00",
+   "price": "¥248起",
+   "ticket_tiers": [
+    "¥248 普通票",
+    "¥368 VIP票"
+   ],
+   "sale_status": "on_sale",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/300367",
+     "source_id": "300367"
+    }
+   ],
+   "first_seen": "2026-08-10T11:23:44",
+   "first_seen_run": "20260810-112305",
+   "last_seen": "2026-08-12T19:56:24",
+   "id": "f2b2b11b4a7a1d15",
+   "status": "on_sale",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "jiamu",
+   "artist_name": "加木",
+   "title": "三火Flame【蓝眼泪】个人巡演南京站七夕专场",
+   "tour_name": "",
+   "performers": "LilAsian/三火flame/加木",
+   "city": "南京",
+   "venue": "稻香·彩虹剧院",
+   "country": "",
+   "show_date": "2026-08-19",
+   "show_time": "20:00",
+   "show_time_raw": "08月19日 20:00-08月19日 22:00",
+   "price": "¥168起",
+   "ticket_tiers": [
+    "¥168 预售票",
+    "¥188 全价票",
+    "¥308 VIP票"
+   ],
+   "sale_status": "on_sale",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/305683",
+     "source_id": "305683"
+    }
+   ],
+   "first_seen": "2026-08-10T11:23:44",
+   "first_seen_run": "20260810-112305",
+   "last_seen": "2026-08-12T19:56:24",
+   "id": "9b4b484fcc3da4a7",
+   "status": "on_sale",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "menni",
+   "artist_name": "门尼",
+   "title": "门尼「印·IN」2026巡回演唱会 · 广州站",
+   "tour_name": "门尼「印·IN」2026巡回演唱会",
+   "performers": "",
+   "city": "广州",
+   "venue": "广州亚运城综合体育馆体操馆",
+   "country": "China",
+   "show_date": "2026-08-22",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "sold_out",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "8/22-8/23 双场，预售已全部售罄。缺货登记可留意大麦/票星球/壹票达。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://www.sina.cn/news/detail/5314017573997140.html",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-10T11:18:24",
+   "first_seen_run": "20260810-111824",
+   "last_seen": "2026-08-10T11:20:26",
+   "id": "2b9b389b7af5bffb",
+   "status": "on_sale",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "illit",
+   "artist_name": "ILLIT",
+   "title": "ILLIT〈PRESS START♥︎〉亚洲巡演 · 香港站",
+   "tour_name": "ILLIT LIVE 'PRESS START♥︎' ASIA TOUR",
+   "performers": "",
+   "city": "香港",
+   "venue": "亚洲国际博览馆 10 号展馆",
+   "country": "Hong Kong",
+   "show_date": "2026-08-22",
+   "show_time": "19:00",
+   "show_time_raw": "",
+   "price": "HKD 899-1799",
+   "ticket_tiers": [
+    "HKD 1799（含彩排观摩+香港限定明信片组）",
+    "HKD 1399",
+    "HKD 1099",
+    "HKD 899"
+   ],
+   "sale_status": "on_sale",
+   "sale_time": "2026-06-11 14:00",
+   "confidence": "confirmed",
+   "note": "出道两年首次来港，也是本次亚巡最终站。公售 6/11 14:00 起，Cityline 与大麦均有售——大麦可买是内地观众的关键信息。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://www.am730.com.hk/article/1032518",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-10T11:18:24",
+   "first_seen_run": "20260810-111824",
+   "last_seen": "2026-08-10T11:20:26",
+   "id": "c849f462e7f290f1",
+   "status": "on_sale",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "menni",
+   "artist_name": "门尼",
+   "title": "门尼「印·IN」2026巡回演唱会 · 广州站（第二场）",
+   "tour_name": "门尼「印·IN」2026巡回演唱会",
+   "performers": "",
+   "city": "广州",
+   "venue": "广州亚运城综合体育馆体操馆",
+   "country": "China",
+   "show_date": "2026-08-23",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "sold_out",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "加场，同样预售售罄。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://www.sina.cn/news/detail/5314029012386670.html",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-10T11:18:24",
+   "first_seen_run": "20260810-111824",
+   "last_seen": "2026-08-10T11:20:26",
+   "id": "42211e4e9c92957d",
+   "status": "on_sale",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "illit",
+   "artist_name": "ILLIT",
+   "title": "ILLIT〈PRESS START♥︎〉亚洲巡演 · 香港站（加场）",
+   "tour_name": "ILLIT LIVE 'PRESS START♥︎' ASIA TOUR",
+   "performers": "",
+   "city": "香港",
+   "venue": "亚洲国际博览馆 10 号展馆",
+   "country": "Hong Kong",
+   "show_date": "2026-08-23",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "HKD 899-1799",
+   "ticket_tiers": [],
+   "sale_status": "on_sale",
+   "sale_time": "2026-06-11 14:00",
+   "confidence": "confirmed",
+   "note": "因反应热烈加开的第二场。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://timable.com/hk/zh/event/6971d34ec7e30d3b810c15e4/ILLIT-PRESS-START-%E4%BA%9E%E6%B4%B2%E5%B7%A1%E8%BF%B4%E6%BC%94%E5%94%B1%E6%9C%83-2026-%E9%A6%99%E6%B8%AF%E7%AB%99",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-10T11:18:24",
+   "first_seen_run": "20260810-111824",
+   "last_seen": "2026-08-10T11:20:26",
+   "id": "7da5114556a76624",
+   "status": "on_sale",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "menni",
+   "artist_name": "门尼",
+   "title": "2026JUMPPARK腾讯视频音乐大赏",
+   "tour_name": "",
+   "performers": "满江/那英/余佳运/小鬼（王琳凯 ）/黄子弘凡/亚森/孔雪儿/单依纯/早安/傲日其愣/蔡淇/杨润泽/BZ1/张子墨/门尼/ADD男团/Enli恩利/任豪/赵骏/宋子乐/费宇涛/林沐然/邓凯（邓尚）/徐阳扬/旦增曲培（Tenzin Choepel）",
+   "city": "贵阳",
+   "venue": "贵阳市观山湖公园民族大联欢广场",
+   "country": "",
+   "show_date": "2026-08-29",
+   "show_time": "13:55",
+   "show_time_raw": "08月29日 13:55-08月29日 21:45",
+   "price": "¥388起",
+   "ticket_tiers": [
+    "¥388 8.29预售单日票",
+    "¥468 8.29全价单日票",
+    "¥498 8.29预售VIP单日票",
+    "¥698 8.29预售双人单日票",
+    "¥698 8.29全价VIP单人票",
+    "¥698 预售两日通票",
+    "¥858 8.29全价双人单日票",
+    "¥858 全价两日通票"
+   ],
+   "sale_status": "on_sale",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/305163",
+     "source_id": "305163"
+    }
+   ],
+   "first_seen": "2026-08-10T11:23:44",
+   "first_seen_run": "20260810-112305",
+   "last_seen": "2026-08-12T19:56:24",
+   "id": "53d75760062dcf97",
+   "status": "on_sale",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "katseye",
+   "artist_name": "KATSEYE",
+   "title": "KATSEYE〈WILDWORLD〉世界巡演 · 都柏林开幕站",
+   "tour_name": "THE WILDWORLD TOUR",
+   "performers": "",
+   "city": "都柏林",
+   "venue": "3Arena",
+   "country": "Ireland",
+   "show_date": "2026-09-01",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "on_sale",
+   "sale_time": "2026-05-21",
+   "confidence": "confirmed",
+   "note": "全巡 31 场，欧洲段 9/1 都柏林开跑。门票 5/21 已公开发售，多站售罄。目前未公布亚洲场。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://consequence.net/2026/05/katseye-2026-wildworld-tour-how-to-get-tickets/",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "id": "51eb18c5f6d8adab",
+   "status": "on_sale",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "ive",
+   "artist_name": "IVE",
+   "title": "IVE〈SHOW WHAT I AM〉世巡 · 香港站",
+   "tour_name": "IVE WORLD TOUR 〈SHOW WHAT I AM〉",
+   "performers": "",
+   "city": "香港",
+   "venue": "亚洲国际博览馆 AsiaWorld-Arena",
+   "country": "Hong Kong",
+   "show_date": "2026-09-04",
+   "show_time": "20:00",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "on_sale",
+   "sale_time": "2026-04-02 15:00",
+   "confidence": "confirmed",
+   "note": "香港站由 1 场扩至 3 场（9/4、9/5、9/6）。Live Nation 售票，4/2 15:00 已开卖，余票需查 Cityline。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://shows.cityline.com/en/2026/iveshowwhatiamhk.html",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-10T11:18:24",
+   "first_seen_run": "20260810-111824",
+   "last_seen": "2026-08-10T11:20:26",
+   "id": "d6f582c7126c53f0",
+   "status": "on_sale",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "jiamu",
+   "artist_name": "加木",
+   "title": "口味王·杭州湾银河左岸音乐节",
+   "tour_name": "",
+   "performers": "二手玫瑰乐队/痛仰/岛屿心情/盘尼西林/麻园诗人/Supper Moment/陈绮贞/C-BLOCK/棱镜/TizzyT/梁博/Capper（张砚拙）/李大奔/回春丹乐队/安溥ANPU/CashTrippy /Top Barry/加木/Hogee",
+   "city": "杭州",
+   "venue": "口味王杭州湾银河左岸音乐节（入口处）",
+   "country": "",
+   "show_date": "2026-09-05",
+   "show_time": "13:00",
+   "show_time_raw": "09月05日 13:00-09月05日 21:00",
+   "price": "¥299起",
+   "ticket_tiers": [
+    "¥299 9.5早鸟单日票",
+    "¥399 9.5预售单日票",
+    "¥498 9.5预售单日票"
+   ],
+   "sale_status": "on_sale",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/306791",
+     "source_id": "306791"
+    }
+   ],
+   "first_seen": "2026-08-10T11:23:44",
+   "first_seen_run": "20260810-112305",
+   "last_seen": "2026-08-12T19:56:24",
+   "id": "7ac3102273d984f7",
+   "status": "on_sale",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "ive",
+   "artist_name": "IVE",
+   "title": "IVE〈SHOW WHAT I AM〉世巡 · 香港站（第二场）",
+   "tour_name": "IVE WORLD TOUR 〈SHOW WHAT I AM〉",
+   "performers": "",
+   "city": "香港",
+   "venue": "亚洲国际博览馆 AsiaWorld-Arena",
+   "country": "Hong Kong",
+   "show_date": "2026-09-05",
+   "show_time": "18:00",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "on_sale",
+   "sale_time": "2026-04-02 15:00",
+   "confidence": "confirmed",
+   "note": "加场。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://shows.cityline.com/en/2026/iveshowwhatiamhk.html",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-10T11:18:24",
+   "first_seen_run": "20260810-111824",
+   "last_seen": "2026-08-10T11:20:26",
+   "id": "72e9e4851eb0de68",
+   "status": "on_sale",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "ive",
+   "artist_name": "IVE",
+   "title": "IVE〈SHOW WHAT I AM〉世巡 · 香港站（第三场）",
+   "tour_name": "IVE WORLD TOUR 〈SHOW WHAT I AM〉",
+   "performers": "",
+   "city": "香港",
+   "venue": "亚洲国际博览馆 AsiaWorld-Arena",
+   "country": "Hong Kong",
+   "show_date": "2026-09-06",
+   "show_time": "18:00",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "on_sale",
+   "sale_time": "2026-04-02 15:00",
+   "confidence": "confirmed",
+   "note": "加场。台北站同样由 1 场扩至 3 场，拓元 4/3 11:00 开卖。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://shows.cityline.com/en/2026/iveshowwhatiamhk.html",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-10T11:18:24",
+   "first_seen_run": "20260810-111824",
+   "last_seen": "2026-08-10T11:20:26",
+   "id": "25d5346ff6c087f3",
+   "status": "on_sale",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "babymonster",
+   "artist_name": "BABYMONSTER",
+   "title": "BABYMONSTER〈CHOOM〉世界巡演 · 澳门站",
+   "tour_name": "2026-27 BABYMONSTER WORLD TOUR [춤 CHOOM]",
+   "performers": "",
+   "city": "澳门",
+   "venue": "澳门威尼斯人金光综艺馆",
+   "country": "Macau",
+   "show_date": "2026-09-11",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "MOP/HKD 799-2299",
+   "ticket_tiers": [
+    "2299 VIP",
+    "1699",
+    "1399",
+    "999",
+    "799"
+   ],
+   "sale_status": "on_sale",
+   "sale_time": "2026-06-18 12:00",
+   "confidence": "confirmed",
+   "note": "9/11 为加场。公售 6/18 12:00 已开始，大麦网是 9/11 加场的公售渠道之一。取票 8/20 起。离内地最近的一站。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://en.wikipedia.org/wiki/Choom_World_Tour",
+     "source_id": ""
+    },
+    {
+     "source": "research",
+     "url": "https://cn.cotaiticketing.com/shows/babymonster2026.html",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-10T11:20:26",
+   "id": "9e23e91b6efadfdb",
+   "status": "on_sale",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "babymonster",
+   "artist_name": "BABYMONSTER",
+   "title": "BABYMONSTER〈CHOOM〉世界巡演 · 澳门站（原定场）",
+   "tour_name": "2026-27 BABYMONSTER WORLD TOUR [춤 CHOOM]",
+   "performers": "",
+   "city": "澳门",
+   "venue": "澳门威尼斯人金光综艺馆",
+   "country": "Macau",
+   "show_date": "2026-09-12",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "MOP/HKD 799-2299",
+   "ticket_tiers": [
+    "2299 VIP",
+    "1699",
+    "1399",
+    "999",
+    "799"
+   ],
+   "sale_status": "on_sale",
+   "sale_time": "2026-06-18 12:00",
+   "confidence": "confirmed",
+   "note": "原定场次，9/11 为后加。金光票务/Live Nation HK 售票。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://cn.cotaiticketing.com/shows/babymonster2026.html",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-10T11:18:24",
+   "first_seen_run": "20260810-111824",
+   "last_seen": "2026-08-10T11:20:26",
+   "id": "51d90f79e8843354",
+   "status": "on_sale",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "shayiting",
+   "artist_name": "沙一汀",
+   "title": "2026禧都音乐节HolidayParty济南站",
+   "tour_name": "",
+   "performers": "TizzyT/GALI/万妮达/姜云升/Rapeter吴嘉轩/翁杰_Winjay/沙一汀EL/艾志恒Asen/kkluv/加木",
+   "city": "济南",
+   "venue": "济南国际园博园",
+   "country": "",
+   "show_date": "2026-09-19",
+   "show_time": "12:30",
+   "show_time_raw": "09月19日 12:30-09月19日 21:40",
+   "price": "价格待定",
+   "ticket_tiers": [],
+   "sale_status": "on_sale",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/306643",
+     "source_id": "306643"
+    }
+   ],
+   "first_seen": "2026-08-10T11:23:44",
+   "first_seen_run": "20260810-112305",
+   "last_seen": "2026-08-12T19:56:24",
+   "id": "50a82b896e69a5b8",
+   "status": "on_sale",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "jiamu",
+   "artist_name": "加木",
+   "title": "2026禧都音乐节HolidayParty济南站",
+   "tour_name": "",
+   "performers": "TizzyT/GALI/万妮达/姜云升/Rapeter吴嘉轩/翁杰_Winjay/沙一汀EL/艾志恒Asen/kkluv/加木",
+   "city": "济南",
+   "venue": "济南国际园博园",
+   "country": "",
+   "show_date": "2026-09-19",
+   "show_time": "12:30",
+   "show_time_raw": "09月19日 12:30-09月19日 21:40",
+   "price": "价格待定",
+   "ticket_tiers": [],
+   "sale_status": "on_sale",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/306643",
+     "source_id": "306643"
+    }
+   ],
+   "first_seen": "2026-08-10T11:23:44",
+   "first_seen_run": "20260810-112305",
+   "last_seen": "2026-08-12T19:56:24",
+   "id": "4b189d39b90c02fa",
+   "status": "on_sale",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "katseye",
+   "artist_name": "KATSEYE",
+   "title": "KATSEYE〈WILDWORLD〉世界巡演 · 北美段开幕（迈阿密）",
+   "tour_name": "THE WILDWORLD TOUR",
+   "performers": "",
+   "city": "迈阿密",
+   "venue": "Kaseya Center",
+   "country": "USA",
+   "show_date": "2026-10-13",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "on_sale",
+   "sale_time": "2026-05-21",
+   "confidence": "confirmed",
+   "note": "北美段 10/13 迈阿密起，经亚特兰大/华盛顿/波士顿/芝加哥/洛杉矶等至 11/27 墨西哥城收官。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://www.rollingstone.com/music/music-news/katseye-2026-world-tour-wild-ep-1235561830/",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "id": "59f5581d7eb35450",
+   "status": "on_sale",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "katseye",
+   "artist_name": "KATSEYE",
+   "title": "KATSEYE〈WILDWORLD〉世界巡演 · 墨西哥城收官站",
+   "tour_name": "THE WILDWORLD TOUR",
+   "performers": "",
+   "city": "墨西哥城",
+   "venue": "Palacio de los Deportes",
+   "country": "Mexico",
+   "show_date": "2026-11-27",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "on_sale",
+   "sale_time": "2026-05-21",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://en.wikipedia.org/wiki/The_Wildworld_Tour",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "id": "8e69662461f89521",
+   "status": "on_sale",
+   "is_new": false
+  }
+ ],
+ "upcoming": [
+  {
+   "source": "research",
+   "artist_key": "lesserafim",
+   "artist_name": "LE SSERAFIM",
+   "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 台北站",
+   "tour_name": "2026 LE SSERAFIM TOUR 'PUREFLOW'",
+   "performers": "",
+   "city": "台北",
+   "venue": "國立體育大學綜合體育館 NTSU ARENA（林口體育館）",
+   "country": "Taiwan",
+   "show_date": "2026-11-14",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "upcoming",
+   "sale_time": "2026-09-06 12:00",
+   "confidence": "confirmed",
+   "note": "11/14-11/15 连唱两天。Weverse 会员预购登记 7/22-7/29 已截止；优先预购 9/4-9/5；正式开卖 9/6 12:00，拓元售票系统实名制。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://www.businesstoday.com.tw/article/category/183030/post/202604290016/",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-10T11:18:24",
+   "first_seen_run": "20260810-111824",
+   "last_seen": "2026-08-10T11:20:26",
+   "id": "a710dc7340ac9b1c",
+   "status": "upcoming",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "lesserafim",
+   "artist_name": "LE SSERAFIM",
+   "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 台北站（第二场）",
+   "tour_name": "2026 LE SSERAFIM TOUR 'PUREFLOW'",
+   "performers": "",
+   "city": "台北",
+   "venue": "國立體育大學綜合體育館 NTSU ARENA（林口體育館）",
+   "country": "Taiwan",
+   "show_date": "2026-11-15",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "upcoming",
+   "sale_time": "2026-09-06 12:00",
+   "confidence": "confirmed",
+   "note": "同批开卖，9/6 12:00 拓元。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://girlstyle.com/tw/article/542452/2026-le-sserafim%E5%8F%B0%E5%8C%97%E6%BC%94%E5%94%B1%E6%9C%83%E9%96%80%E7%A5%A8%E3%80%81%E6%90%B6%E7%A5%A8%E6%99%82%E9%96%93%E3%80%81%E6%AD%8C%E5%96%AE%E3%80%81pureflow%E5%B7%A1%E6%BC%94%E8%8F%AF",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-10T11:18:24",
+   "first_seen_run": "20260810-111824",
+   "last_seen": "2026-08-10T11:20:26",
+   "id": "249d8a301fa18eef",
+   "status": "upcoming",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "babymonster",
+   "artist_name": "BABYMONSTER",
+   "title": "BABYMONSTER〈CHOOM〉世界巡演 · 马尼拉站",
+   "tour_name": "CHOOM WORLD TOUR",
+   "performers": "",
+   "city": "马尼拉",
+   "venue": "SM Mall of Asia Arena",
+   "country": "Philippines",
+   "show_date": "2026-09-05",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://en.wikipedia.org/wiki/Choom_World_Tour",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "id": "ee3d00a0b11607c4",
+   "status": "upcoming",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "babymonster",
+   "artist_name": "BABYMONSTER",
+   "title": "BABYMONSTER〈CHOOM〉世界巡演 · 大阪站",
+   "tour_name": "CHOOM WORLD TOUR",
+   "performers": "",
+   "city": "大阪",
+   "venue": "京瓷巨蛋",
+   "country": "Japan",
+   "show_date": "2026-09-22",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "9/22-9/23 两场。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://en.wikipedia.org/wiki/Choom_World_Tour",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "id": "3eba6c3990b01a09",
+   "status": "upcoming",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "babymonster",
+   "artist_name": "BABYMONSTER",
+   "title": "BABYMONSTER〈CHOOM〉世界巡演 · 雅加达站",
+   "tour_name": "CHOOM WORLD TOUR",
+   "performers": "",
+   "city": "雅加达",
+   "venue": "Indonesia Arena",
+   "country": "Indonesia",
+   "show_date": "2026-10-17",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://en.wikipedia.org/wiki/Choom_World_Tour",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "id": "70e4afe8d2d057bd",
+   "status": "upcoming",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "babymonster",
+   "artist_name": "BABYMONSTER",
+   "title": "BABYMONSTER〈CHOOM〉世界巡演 · 曼谷站",
+   "tour_name": "CHOOM WORLD TOUR",
+   "performers": "",
+   "city": "曼谷",
+   "venue": "Impact Arena",
+   "country": "Thailand",
+   "show_date": "2026-11-07",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "11/7-11/8 两场。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://en.wikipedia.org/wiki/Choom_World_Tour",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "id": "2ef764cab06d7849",
+   "status": "upcoming",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "babymonster",
+   "artist_name": "BABYMONSTER",
+   "title": "BABYMONSTER〈CHOOM〉世界巡演 · 吉隆坡站",
+   "tour_name": "CHOOM WORLD TOUR",
+   "performers": "",
+   "city": "吉隆坡",
+   "venue": "Unifi Arena",
+   "country": "Malaysia",
+   "show_date": "2026-11-14",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "11/14-11/15 两场。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://en.wikipedia.org/wiki/Choom_World_Tour",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "id": "ddfabf9c5a97a640",
+   "status": "upcoming",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "babymonster",
+   "artist_name": "BABYMONSTER",
+   "title": "BABYMONSTER〈CHOOM〉世界巡演 · 台北站",
+   "tour_name": "2026-27 BABYMONSTER WORLD TOUR [춤 CHOOM]",
+   "performers": "",
+   "city": "台北",
+   "venue": "台北小巨蛋",
+   "country": "Taiwan",
+   "show_date": "2026-11-21",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "upcoming",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "11/21-11/22 连唱两天。主办与售票系统尚未公布，开票时间待官宣——这是目前最该盯的一条待开票。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://en.wikipedia.org/wiki/Choom_World_Tour",
+     "source_id": ""
+    },
+    {
+     "source": "research",
+     "url": "https://tw.trip.com/blog/babymonster-taipei-concert-zhtw/",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-10T11:20:26",
+   "id": "1c559c2e7566fa3e",
+   "status": "upcoming",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "babymonster",
+   "artist_name": "BABYMONSTER",
+   "title": "BABYMONSTER〈CHOOM〉世界巡演 · 新加坡站",
+   "tour_name": "CHOOM WORLD TOUR",
+   "performers": "",
+   "city": "新加坡",
+   "venue": "新加坡室内体育馆",
+   "country": "Singapore",
+   "show_date": "2026-11-28",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "11/28-11/29 两场。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://en.wikipedia.org/wiki/Choom_World_Tour",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "id": "baaa3c56e5da53fc",
+   "status": "upcoming",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "babymonster",
+   "artist_name": "BABYMONSTER",
+   "title": "BABYMONSTER〈CHOOM〉世界巡演 · 香港站",
+   "tour_name": "CHOOM WORLD TOUR",
+   "performers": "",
+   "city": "香港",
+   "venue": "亚洲国际博览馆 AsiaWorld-Arena",
+   "country": "Hong Kong",
+   "show_date": "2027-01-09",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "目前公布的最后一站。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://en.wikipedia.org/wiki/Choom_World_Tour",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "id": "0540199f40717702",
+   "status": "upcoming",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "lesserafim",
+   "artist_name": "LE SSERAFIM",
+   "title": "LE SSERAFIM〈PUREFLOW〉第二次世巡 · 亚洲场待公布",
+   "tour_name": "2026 LE SSERAFIM TOUR 'PUREFLOW'",
+   "performers": "",
+   "city": "",
+   "venue": "",
+   "country": "",
+   "show_date": "",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "upcoming",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "巡演 7/11 仁川开跑。台北站（11/14-15）已公布见另一条；中国内地及港澳其余城市仍未公布。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://www.forbes.com/sites/laurasirikul/2026/04/28/le-sserafim-announces-second-world-tour-pureflow-starting-this-summer/",
+     "source_id": ""
+    },
+    {
+     "source": "research",
+     "url": "https://weverse.io/lesserafim/notice/35345",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-10T11:20:26",
+   "id": "2c57040c8e79dfb3",
+   "status": "upcoming",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "menni",
+   "artist_name": "门尼",
+   "title": "门尼 2026 巡回演唱会 · 城市与开票待公布",
+   "tour_name": "门尼「印·IN」2026巡回演唱会",
+   "performers": "",
+   "city": "",
+   "venue": "",
+   "country": "",
+   "show_date": "",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "upcoming",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "已开跑：上海 7/18+7/19（预售 6/5、6/23 11:58）、广州 8/22+8/23（售罄）。北方场（北京/沈阳等）粉丝持续催promo但仍无官宣。历史规律：预售约提前 6-7 周、11:58 开抢，秒空。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://www.sina.cn/news/detail/5300604437005233.html",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-10T11:20:26",
+   "id": "a0c7f9015f29bfc0",
+   "status": "upcoming",
+   "is_new": false
+  }
+ ],
+ "ended": [
+  {
+   "source": "research",
+   "artist_key": "aespa",
+   "artist_name": "aespa",
+   "title": "aespa〈SYNK : COMPLæXITY〉世巡 · 台北站",
+   "tour_name": "aespa LIVE TOUR - SYNK : COMPLæXITY",
+   "performers": "",
+   "city": "台北",
+   "venue": "台北大巨蛋",
+   "country": "Taiwan",
+   "show_date": "2026-08-11",
+   "show_time": "19:30",
+   "show_time_raw": "",
+   "price": "NT$2,880-7,880",
+   "ticket_tiers": [
+    "NT$7,880 VIP（含彩排+限定周边）",
+    "NT$2,880 起 一般席"
+   ],
+   "sale_status": "on_sale",
+   "sale_time": "2026-05-17",
+   "confidence": "confirmed",
+   "note": "就在明天。拓元售票系统，另收 NT$200/张系统费。Weverse 优先购 5/16、公售 5/17；8/6 曾释出限量补票。首尔场 8/7-8/8 高尺天空巨蛋已结束。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://hk.trip.com/blog/aespa-concert/",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-10T11:18:24",
+   "first_seen_run": "20260810-111824",
+   "last_seen": "2026-08-10T11:20:26",
+   "id": "ded2d9fbe0c2dd05",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "shayiting",
+   "artist_name": "沙一汀",
+   "title": "8.9沙一汀EL · 明星日 | 武汉欢乐谷潮流红人派对",
+   "tour_name": "",
+   "performers": "沙一汀EL",
+   "city": "武汉",
+   "venue": "武汉欢乐谷",
+   "country": "",
+   "show_date": "2026-08-09",
+   "show_time": "09:30",
+   "show_time_raw": "08月09日 09:30-08月09日 22:00",
+   "price": "¥150起",
+   "ticket_tiers": [
+    "¥150 夜场票",
+    "¥180 学生全日票",
+    "¥200 全价票"
+   ],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/306086",
+     "source_id": "306086"
+    }
+   ],
+   "first_seen": "2026-08-10T11:23:44",
+   "first_seen_run": "20260810-112305",
+   "last_seen": "2026-08-12T19:56:24",
+   "id": "9b6db4a051b3acef",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "jiamu",
+   "artist_name": "加木",
+   "title": "王齐铭【綦江崽儿】2026巡演 — 厦门站",
+   "tour_name": "",
+   "performers": "王齐铭/加木",
+   "city": "厦门",
+   "venue": "Ovogo旺来现场(厦门华美空间店)",
+   "country": "",
+   "show_date": "2026-08-08",
+   "show_time": "20:00",
+   "show_time_raw": "08月08日 20:00-08月08日 22:00",
+   "price": "¥258起",
+   "ticket_tiers": [
+    "¥258 普通票",
+    "¥368 VIP票"
+   ],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/300673",
+     "source_id": "300673"
+    }
+   ],
+   "first_seen": "2026-08-10T11:23:44",
+   "first_seen_run": "20260810-112305",
+   "last_seen": "2026-08-12T19:56:24",
+   "id": "e18f2a24546d48a8",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "shayiting",
+   "artist_name": "沙一汀",
+   "title": "音乐缘宇宙成都欢乐谷2026夏浪狂欢节",
+   "tour_name": "",
+   "performers": "沙一汀EL/小阿七/童禹坤",
+   "city": "成都",
+   "venue": "成都欢乐谷",
+   "country": "",
+   "show_date": "2026-08-01",
+   "show_time": "19:00",
+   "show_time_raw": "08月22日 19:00-08月22日 22:00",
+   "price": "¥150起",
+   "ticket_tiers": [
+    "¥150 下午场票",
+    "¥168 下午场票",
+    "¥190 学生票",
+    "¥230 全天票"
+   ],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/305957",
+     "source_id": "305957"
+    }
+   ],
+   "first_seen": "2026-08-10T11:23:44",
+   "first_seen_run": "20260810-112305",
+   "last_seen": "2026-08-12T19:56:24",
+   "id": "81f631ed1a03ddca",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "jiamu",
+   "artist_name": "加木",
+   "title": "翁杰Winjay2026「城乡」巡演 -杭州站",
+   "tour_name": "",
+   "performers": "ICE 杨长青/翁杰_Winjay/加木",
+   "city": "杭州",
+   "venue": "CH8-LIVEHOUSE（杭州小河店）",
+   "country": "",
+   "show_date": "2026-07-31",
+   "show_time": "20:00",
+   "show_time_raw": "07月31日 20:00-07月31日 22:00",
+   "price": "¥188起",
+   "ticket_tiers": [
+    "¥188 普通票",
+    "¥288 VIP票"
+   ],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/302253",
+     "source_id": "302253"
+    }
+   ],
+   "first_seen": "2026-08-10T11:23:44",
+   "first_seen_run": "20260810-112305",
+   "last_seen": "2026-08-12T19:56:24",
+   "id": "96e65962801b9194",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "shayiting",
+   "artist_name": "沙一汀",
+   "title": "2026北京欢乐谷大眼睛音乐季",
+   "tour_name": "",
+   "performers": "Rapeter吴嘉轩/极品贵公子/沙一汀EL",
+   "city": "北京",
+   "venue": "北京欢乐谷",
+   "country": "",
+   "show_date": "2026-07-18",
+   "show_time": "21:00",
+   "show_time_raw": "08月22日 21:00-08月22日 22:00",
+   "price": "¥339",
+   "ticket_tiers": [
+    "¥339 8.22全价票"
+   ],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/303752",
+     "source_id": "303752"
+    }
+   ],
+   "first_seen": "2026-08-10T11:23:44",
+   "first_seen_run": "20260810-112305",
+   "last_seen": "2026-08-12T19:56:24",
+   "id": "7698ce603b252353",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "shayiting",
+   "artist_name": "沙一汀",
+   "title": "【深圳】深圳•沙一汀EL 2026夏浪音乐节（深圳欢乐谷）",
+   "tour_name": "",
+   "performers": "沙一汀EL",
+   "city": "深圳",
+   "venue": "深圳欢乐谷阳光海岸音乐节舞台",
+   "country": "",
+   "show_date": "2026-07-12",
+   "show_time": "20:00",
+   "show_time_raw": "07月12日 20:00-07月12日 21:00",
+   "price": "¥188起",
+   "ticket_tiers": [
+    "¥188 明星日夜场票",
+    "¥218 明星日青少年/学生票",
+    "¥260 明星日成人票"
+   ],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/302418",
+     "source_id": "302418"
+    }
+   ],
+   "first_seen": "2026-08-10T11:23:44",
+   "first_seen_run": "20260810-112305",
+   "last_seen": "2026-08-12T19:56:24",
+   "id": "0ce217ff2b6b83ba",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "jiamu",
+   "artist_name": "加木",
+   "title": "2026 YOUNGJACK 满舒克巡演·上海站",
+   "tour_name": "",
+   "performers": "满舒克（YoungJack）/加木",
+   "city": "上海",
+   "venue": "瓦肆 VAS ear（普陀店）",
+   "country": "",
+   "show_date": "2026-07-10",
+   "show_time": "20:00",
+   "show_time_raw": "07月10日 20:00-07月10日 22:00",
+   "price": "¥298起",
+   "ticket_tiers": [
+    "¥298 现场票",
+    "¥398 VIP票"
+   ],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/300559",
+     "source_id": "300559"
+    }
+   ],
+   "first_seen": "2026-08-10T11:23:44",
+   "first_seen_run": "20260810-112305",
+   "last_seen": "2026-08-12T19:56:24",
+   "id": "c5b69c1914eb50e9",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "shayiting",
+   "artist_name": "沙一汀",
+   "title": "【售罄】刘思鉴「发生在闷热夏天」2026巡演上海站",
+   "tour_name": "",
+   "performers": "ODD陈思键/刘思鉴/沙一汀EL",
+   "city": "上海",
+   "venue": "回响之地 Music Park",
+   "country": "",
+   "show_date": "2026-07-04",
+   "show_time": "20:00",
+   "show_time_raw": "07月04日 20:00-07月04日 22:00",
+   "price": "¥288起",
+   "ticket_tiers": [
+    "¥288 全价票",
+    "¥388 VIP票"
+   ],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/300271",
+     "source_id": "300271"
+    }
+   ],
+   "first_seen": "2026-08-10T11:23:44",
+   "first_seen_run": "20260810-112305",
+   "last_seen": "2026-08-12T19:56:24",
+   "id": "ff1c50001cc62945",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "jiamu",
+   "artist_name": "加木",
+   "title": "口味王鄂州银河左岸音乐节",
+   "tour_name": "",
+   "performers": "盘尼西林/麻园诗人/花粥/许钧/TizzyT/VAVA/GALI/Capper（张砚拙）/李大奔/姜云升/回春丹乐队/Rapeter吴嘉轩/陈婧霏/颜人中/舒灏Orenda/CashTrippy /JinJiBeWater.隼/连麻Swimming/TINY7/SASIOVERLXRD/kkluv/RICHNOMADIC/雾也至/Top Barry/银河快递（GalaxyExpress）/加木/戴萌/门尼/恍神儿",
+   "city": "鄂州",
+   "venue": "鄂州市鄂城区园博园东门对面鄂州大道东侧地块（户外草坪空地，露天音乐节场地）",
+   "country": "",
+   "show_date": "2026-07-04",
+   "show_time": "12:00",
+   "show_time_raw": "07月04日 12:00-07月04日 21:00",
+   "price": "¥199起",
+   "ticket_tiers": [
+    "¥199 7.4早鸟单日票",
+    "¥299 7.4预售单日票",
+    "¥398 7.4预售单日票",
+    "¥399 7.4正价单日票",
+    "¥498 7.4正价单日票"
+   ],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/301296",
+     "source_id": "301296"
+    }
+   ],
+   "first_seen": "2026-08-10T11:23:44",
+   "first_seen_run": "20260810-112305",
+   "last_seen": "2026-08-12T19:56:24",
+   "id": "bad18830270d07ca",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "shayiting",
+   "artist_name": "沙一汀",
+   "title": "乐堡啤酒·重庆银河左岸音乐节",
+   "tour_name": "",
+   "performers": "岛屿心情/麻园诗人/陶喆/许巍/梅卡德尔乐队/满舒克（YoungJack）/TizzyT/李大奔/姜云升/沉舟乐队/CashTrippy /沙一汀EL/犬儒/DOUDOU（杜冰儿、杜飞儿）/加木/揽佬SKAI ISYOURGOD",
+   "city": "重庆",
+   "venue": "重庆国际博览中心北区室外展场",
+   "country": "",
+   "show_date": "2026-06-27",
+   "show_time": "13:00",
+   "show_time_raw": "06月27日 13:00-06月27日 21:00",
+   "price": "¥99起",
+   "ticket_tiers": [
+    "¥199 6.27早鸟单日票",
+    "¥299 6.27预售单日票",
+    "¥398 6.27预售单日票",
+    "¥399 6.27正价单日票",
+    "¥498 6.27正价单日票"
+   ],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/299259",
+     "source_id": "299259"
+    }
+   ],
+   "first_seen": "2026-08-10T11:23:44",
+   "first_seen_run": "20260810-112305",
+   "last_seen": "2026-08-12T19:56:24",
+   "id": "cf0b920196b0e05a",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "jiamu",
+   "artist_name": "加木",
+   "title": "乐堡啤酒·重庆银河左岸音乐节",
+   "tour_name": "",
+   "performers": "岛屿心情/麻园诗人/陶喆/许巍/梅卡德尔乐队/满舒克（YoungJack）/TizzyT/李大奔/姜云升/沉舟乐队/CashTrippy /沙一汀EL/犬儒/DOUDOU（杜冰儿、杜飞儿）/加木/揽佬SKAI ISYOURGOD",
+   "city": "重庆",
+   "venue": "重庆国际博览中心北区室外展场",
+   "country": "",
+   "show_date": "2026-06-27",
+   "show_time": "13:00",
+   "show_time_raw": "06月27日 13:00-06月27日 21:00",
+   "price": "¥99起",
+   "ticket_tiers": [
+    "¥199 6.27早鸟单日票",
+    "¥299 6.27预售单日票",
+    "¥398 6.27预售单日票",
+    "¥399 6.27正价单日票",
+    "¥498 6.27正价单日票"
+   ],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/299259",
+     "source_id": "299259"
+    }
+   ],
+   "first_seen": "2026-08-10T11:23:44",
+   "first_seen_run": "20260810-112305",
+   "last_seen": "2026-08-12T19:56:24",
+   "id": "f8805861e141b68d",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "jiamu",
+   "artist_name": "加木",
+   "title": "加木&Vinz-T徐赢特别专场-出来玩ER武汉站",
+   "tour_name": "",
+   "performers": "加木/Vinz-T",
+   "city": "武汉",
+   "venue": "MAO Livehouse武汉",
+   "country": "",
+   "show_date": "2026-06-20",
+   "show_time": "20:00",
+   "show_time_raw": "06月20日 20:00-06月20日 22:00",
+   "price": "¥268起",
+   "ticket_tiers": [
+    "¥268 预售票",
+    "¥328 全价票",
+    "¥398 速通票",
+    "¥408 二楼票",
+    "¥468 VIP票"
+   ],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/295917",
+     "source_id": "295917"
+    }
+   ],
+   "first_seen": "2026-08-10T11:23:44",
+   "first_seen_run": "20260810-112305",
+   "last_seen": "2026-08-12T19:56:24",
+   "id": "0b109ca05d943b84",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "jiamu",
+   "artist_name": "加木",
+   "title": "加木&Vinz-T徐赢特别专场-出来玩ER南京站",
+   "tour_name": "",
+   "performers": "加木/Vinz-T",
+   "city": "南京",
+   "venue": "稻香演艺中心（西城路店）",
+   "country": "",
+   "show_date": "2026-06-06",
+   "show_time": "20:00",
+   "show_time_raw": "06月06日 20:00-06月06日 22:00",
+   "price": "¥268起",
+   "ticket_tiers": [
+    "¥268 预售票",
+    "¥328 全价票",
+    "¥398 速通票",
+    "¥468 VIP票"
+   ],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/295916",
+     "source_id": "295916"
+    }
+   ],
+   "first_seen": "2026-08-10T11:23:44",
+   "first_seen_run": "20260810-112305",
+   "last_seen": "2026-08-12T19:56:24",
+   "id": "2004438dcac23fa0",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "kiiikiii",
+   "artist_name": "KiiiKiii",
+   "title": "2026 KiiiKiii FAN CONCERT〈KiiiKiii FesTiiival〉首尔",
+   "tour_name": "2026 KiiiKiii FAN CONCERT",
+   "performers": "",
+   "city": "首尔",
+   "venue": "Blue Square 우리WON뱅킹홀",
+   "country": "Korea",
+   "show_date": "2026-05-16",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "ended",
+   "sale_time": "2026-04-17 19:00 KST",
+   "confidence": "confirmed",
+   "note": "首次单独 fancon，5/16-5/17 两场，已结束。粉丝会预售 4/15-4/16，公售 4/17。作为历史基准：该团开票节奏约提前一个月。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://kpop.fandom.com/wiki/2026_KiiiKiii_Fan_Concert_'KiiiKiii_FesTiiival'",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "id": "2abf0d126aff9197",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "shayiting",
+   "artist_name": "沙一汀",
+   "title": "2026葫芦果音乐节·合肥站",
+   "tour_name": "",
+   "performers": "二手玫瑰乐队/刺猬Hedgehog/痛仰/旅行团/盘尼西林/陶喆/满舒克（YoungJack）/TizzyT/房东的猫/GALI/葛仲珊Miss Ko/梁博/李大奔/姜云升/霓虹花园/安溥ANPU/Rapeter吴嘉轩/沙一汀EL/艾志恒Asen/Top Barry/揽佬SKAI ISYOURGOD/范晓萱",
+   "city": "合肥",
+   "venue": "合肥骆岗公园梦想大草坪",
+   "country": "",
+   "show_date": "2026-05-03",
+   "show_time": "13:00",
+   "show_time_raw": "05月03日 13:00-05月03日 22:00",
+   "price": "¥368起",
+   "ticket_tiers": [
+    "¥799 普通全价双日通票"
+   ],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/291139",
+     "source_id": "291139"
+    }
+   ],
+   "first_seen": "2026-08-10T11:23:44",
+   "first_seen_run": "20260810-112305",
+   "last_seen": "2026-08-12T19:56:24",
+   "id": "fb16bc964c7e4616",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "shayiting",
+   "artist_name": "沙一汀",
+   "title": "【成都】口味王·太空奇缘音乐嘉年华",
+   "tour_name": "",
+   "performers": "C-BLOCK/谢帝/Ty./马思唯/GAI周延/Psy.P/法老Pharaoh/Bridge（布瑞吉）/龙崎/李尔新/JarStick/王以太/MENGZI/小精灵/王齐铭/杨和苏KeyNG/Rapeter吴嘉轩/李毅杰PISSY/邓典果/隆历奇/knowknow/JinJiBeWater.隼/连麻Swimming/那奇沃夫/沙一汀EL/鹤仙问鹿仙/SASIOVERLXRD/SleepyCat/kkluv/RICHNOMADIC/MELO墨龙/杨秋儒/加木/喉结蜥蜴/雷迪/prod by 玉",
+   "city": "成都",
+   "venue": "成都露天音乐公园",
+   "country": "",
+   "show_date": "2026-05-02",
+   "show_time": "13:00",
+   "show_time_raw": "05月02日 13:00-05月02日 22:00",
+   "price": "¥288起",
+   "ticket_tiers": [],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/294062",
+     "source_id": "294062"
+    }
+   ],
+   "first_seen": "2026-08-10T11:23:44",
+   "first_seen_run": "20260810-112305",
+   "last_seen": "2026-08-12T19:56:24",
+   "id": "9f7468a22a943415",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "shayiting",
+   "artist_name": "沙一汀",
+   "title": "汽水音乐节",
+   "tour_name": "",
+   "performers": "康子奇/周震南/于贞/李慧珍/OneSD王一珩/蒋敦豪/沙一汀EL/刘雨昕/王澳楠EVE/曾舜晞/黄朔/余宇涵/段艺璇/何浩楠/ADD男团/颜安/李艺彤/邓泽鸣",
+   "city": "北京",
+   "venue": "昌平千帆·拉斐特城堡",
+   "country": "",
+   "show_date": "2026-04-25",
+   "show_time": "15:00",
+   "show_time_raw": "04月25日 15:00-04月25日 21:00",
+   "price": "¥198",
+   "ticket_tiers": [],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/292808",
+     "source_id": "292808"
+    }
+   ],
+   "first_seen": "2026-08-10T11:23:44",
+   "first_seen_run": "20260810-112305",
+   "last_seen": "2026-08-12T19:56:24",
+   "id": "7376a3a0826c1318",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "shayiting",
+   "artist_name": "沙一汀",
+   "title": "沙一汀EL「听汀」广州演唱会",
+   "tour_name": "",
+   "performers": "沙一汀EL",
+   "city": "广州",
+   "venue": "广州体育馆1号馆",
+   "country": "",
+   "show_date": "2025-12-31",
+   "show_time": "21:00",
+   "show_time_raw": "12月31日 21:00-12月31日 23:59",
+   "price": "¥366起",
+   "ticket_tiers": [],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/284739",
+     "source_id": "284739"
+    }
+   ],
+   "first_seen": "2026-08-10T11:23:44",
+   "first_seen_run": "20260810-112305",
+   "last_seen": "2026-08-12T19:56:24",
+   "id": "da226157b21d6f09",
+   "status": "ended",
+   "is_new": false
+  }
+ ],
+ "rumors": [
+  {
+   "id": "99e5e5fbd2697b8a",
+   "artist_key": "menni",
+   "artist_name": "门尼",
+   "headline": "门尼广州双场预售全数售罄，缺货登记是唯一余票渠道",
+   "detail": "8/22、8/23 广州亚运城两场预售即告售罄，已有大量「许愿内场门票」「抢不到票」的求票贴。上海站当时也是同样情况。若北方场官宣，务必在预售开始前就做好准备——这个巡演目前是纯秒空级别。",
+   "source_name": "新浪新闻（多条求票贴交叉）",
+   "url": "https://www.sina.cn/news/detail/5310093379768777.html",
+   "credibility": "high",
+   "posted_at": "2026-08-10",
+   "first_seen": "2026-08-10T11:18:24",
+   "first_seen_run": "20260810-111824",
+   "last_seen": "2026-08-10T11:20:26",
+   "is_new": false
+  },
+  {
+   "id": "1f68d94d1be3cba3",
+   "artist_key": "njz",
+   "artist_name": "NJZ",
+   "headline": "NewJeans 官宣「2026 Summer of NewJeans」，以四人体制回归，10 月前发新作",
+   "detail": "ADOR 于 7/22 零点释出系列预告，确认以 Minji、Hanni、Haerin、Hyein 四人回归（Danielle 已于年初退出）。多家韩媒预期 10 月前发新作，但 HYBE/ADOR 尚未确认具体时间、形式。分析机构把该团的大规模世巡预期放在 2028 年前后——也就是说短期内不要期待巡演。",
+   "source_name": "Soompi / allkpop / Koreaboo 交叉",
+   "url": "https://www.soompi.com/article/1856451wpp/watch-newjeans-announces-return-as-4-member-group-with-2026-summer-of-newjeans-films",
+   "credibility": "high",
+   "posted_at": "2026-07-22",
+   "first_seen": "2026-08-10T11:18:24",
+   "first_seen_run": "20260810-111824",
+   "last_seen": "2026-08-10T11:20:26",
+   "is_new": false
+  },
+  {
+   "id": "6a9928514ba2a7d8",
+   "artist_key": "njz",
+   "artist_name": "NJZ",
+   "headline": "NJZ / NewJeans 仍无任何巡演场次，票务站零记录",
+   "detail": "Ticketmaster、Songkick、Vivid Seats 至今无该团任何 2026-2027 场次。回归在即但巡演无影，现阶段任何声称有 NJZ 门票的渠道都要当心。",
+   "source_name": "Ticketmaster / Songkick 交叉核对",
+   "url": "https://www.songkick.com/artists/10255012-newjeans",
+   "credibility": "high",
+   "posted_at": "2026-08-10",
+   "first_seen": "2026-08-10T11:18:24",
+   "first_seen_run": "20260810-111824",
+   "last_seen": "2026-08-10T11:20:26",
+   "is_new": false
+  },
+  {
+   "id": "bcddb7487c17ec2b",
+   "artist_key": "katseye",
+   "artist_name": "KATSEYE",
+   "headline": "⚠️ 有非官方网站列出 KATSEYE 东京巨蛋/首尔场次，但官方渠道无任何亚洲场",
+   "detail": "搜索中出现 thewildworldtour.us 等站点声称有 6/10-6/11 东京巨蛋、首尔奥林匹克主竞技场场次，但 Variety、Live Nation、Wikipedia 等权威来源公布的 WILDWORLD 巡演只有 9-11 月的欧洲与北美段，无任何亚洲场。这类站点大概率是黄牛导流或钓鱼站，不要在上面付款。要买请只认 Live Nation / Ticketmaster 官方页。",
+   "source_name": "Variety / Live Nation 官方 vs 不明来源站点比对",
+   "url": "https://www.livenation.com/artist/K8vZ917q517/katseye-events",
+   "credibility": "high",
+   "posted_at": "2026-08-10",
+   "first_seen": "2026-08-10T11:18:24",
+   "first_seen_run": "20260810-111824",
+   "last_seen": "2026-08-10T11:20:26",
+   "is_new": false
+  },
+  {
+   "id": "9792636dcc36d8e8",
+   "artist_key": "babymonster",
+   "artist_name": "BABYMONSTER",
+   "headline": "台北站（11/21-22）主办与售票系统仍未公布，开票时间待官宣",
+   "detail": "小巨蛋两场日期已定，但至今没有公布售票平台和开卖时间，也没有票价。这是 CHOOM 亚洲段里唯一还没开票的近场，值得每天盯。澳门两场已于 6/18 公售。",
+   "source_name": "Trip.com / KKTIX 台湾票务信息汇总",
+   "url": "https://tw.trip.com/blog/babymonster-taipei-concert-zhtw/",
+   "credibility": "medium",
+   "posted_at": "2026-08-10",
+   "first_seen": "2026-08-10T11:18:24",
+   "first_seen_run": "20260810-111824",
+   "last_seen": "2026-08-10T11:20:26",
+   "is_new": false
+  },
+  {
+   "id": "c784ae2369cdae8b",
+   "artist_key": "ive",
+   "artist_name": "IVE",
+   "headline": "IVE 亚洲段加场后仍紧俏：新加坡与澳门两场均已售罄",
+   "detail": "SHOW WHAT I AM 亚洲段近期追加了吉隆坡、马尼拉、新加坡、澳门场次，其中新加坡与澳门两场已售罄。香港、台北则各由 1 场扩至 3 场。内地目前无场次，港澳台是最现实的选择。",
+   "source_name": "Live Nation Newsroom / Contactmusic",
+   "url": "https://newsroom.livenation.com/news/k-pop-superstars-ive-reveal-north-america-and-asia-dates-on-world-tour/",
+   "credibility": "medium",
+   "posted_at": "2026-08-10",
+   "first_seen": "2026-08-10T11:18:24",
+   "first_seen_run": "20260810-111824",
+   "last_seen": "2026-08-10T11:20:26",
+   "is_new": false
+  },
+  {
+   "id": "11391b4bdea3809a",
+   "artist_key": "lesserafim",
+   "artist_name": "LE SSERAFIM",
+   "headline": "PUREFLOW 台北站已定档，但中国内地场次仍未进入官宣名单",
+   "detail": "台北 11/14-15 已定档并给出 9/6 12:00 正式开卖时间。官宣的 23 城 32 场中，内地城市至今未出现。若要蹲内地场，继续盯 Weverse 公告与大麦。",
+   "source_name": "今周刊 / Weverse 公告",
+   "url": "https://www.businesstoday.com.tw/article/category/183030/post/202604290016/",
+   "credibility": "medium",
+   "posted_at": "2026-08-10",
+   "first_seen": "2026-08-10T11:18:24",
+   "first_seen_run": "20260810-111824",
+   "last_seen": "2026-08-10T11:20:26",
+   "is_new": false
+  },
+  {
+   "id": "09632f2c2acbaac5",
+   "artist_key": "jiamu",
+   "artist_name": "加木",
+   "headline": "加木《家书》口碑发酵，但个人巡演仍无任何官宣",
+   "detail": "《家书（明日我若走以后）》在网易云等平台获说唱圈正面口碑，被视为创作成熟度提升的代表作。演出方面仍以音乐节和他人巡演嘉宾为主（8-9 月连着上海、南京、杭州湾、济南多场拼盘），个人专场零消息。作品热度上升通常是开巡的前兆，继续观察。",
+   "source_name": "新浪 / 秀动场次数据",
+   "url": "http://k.sina.com.cn/article_7879776328_1d5abd84806801yxqc.html",
+   "credibility": "low",
+   "posted_at": "2026-08-10",
+   "first_seen": "2026-08-10T11:18:24",
+   "first_seen_run": "20260810-111824",
+   "last_seen": "2026-08-10T11:20:26",
+   "is_new": false
+  },
+  {
+   "id": "d5b0d910ce4d3940",
+   "artist_key": "shayiting",
+   "artist_name": "沙一汀",
+   "headline": "沙一汀下半年仍无个人巡演官宣，只有音乐节拼盘",
+   "detail": "本轮检索未发现 2026 下半年个人巡演或大麦开票信息。秀动上目前只有欢乐谷明星日、济南禧都音乐节（9/19，新增）等拼盘场。参考：2025 上半年「VERSE」十一城开票即秒空、10 月上海梅奔个唱。若开新巡演大概率仍是秒空级别，建议提前在大麦点「想看」并开开售提醒。",
+   "source_name": "摩天轮 / 有票网 / 东方演出网 交叉",
+   "url": "https://m.moretickets.com/topic/shayiting/",
+   "credibility": "medium",
+   "posted_at": "2026-08-10",
+   "first_seen": "2026-08-10T11:18:24",
+   "first_seen_run": "20260810-111824",
+   "last_seen": "2026-08-10T11:20:26",
+   "is_new": false
+  },
+  {
+   "id": "be4dab4ddbae5d93",
+   "artist_key": "menni",
+   "artist_name": "门尼",
+   "headline": "门尼 2026 巡演已官宣启动，但北方场迟迟未公布，粉丝持续催促",
+   "detail": "「印·IN」巡演上海（7/18-19）、广州（8/22-23）均已开完或售罄，但北京、沈阳等北方城市至今零官宣。微博/抖音上「催北方场」讨论量持续走高。按上海、广州的节奏推算，若北方场要在年内落地，预售大概率会提前 6-7 周放出。",
+   "source_name": "新浪新闻 / 抖音话题",
+   "url": "https://www.sina.cn/news/detail/5309992602700905.html",
+   "credibility": "medium",
+   "posted_at": "2026-08-10",
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-10T11:20:26",
+   "is_new": false
+  },
+  {
+   "id": "448bf859600f27a7",
+   "artist_key": "menni",
+   "artist_name": "门尼",
+   "headline": "认证音乐博主：门尼巡演「这就要来了」",
+   "detail": "微博认证音乐博主发布巡演启动消息，措辞为正式官宣口径而非猜测，但未附票务信息。开票大概率走大麦，建议提前关注大麦「想看」。",
+   "source_name": "新浪 / 微博音乐博主",
+   "url": "https://www.sina.cn/news/detail/5300604437005233.html",
+   "credibility": "high",
+   "posted_at": "2026-07",
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "is_new": false
+  },
+  {
+   "id": "063cd675f94d4dfc",
+   "artist_key": "njz",
+   "artist_name": "NJZ",
+   "headline": "NJZ / NewJeans 2026 年仍无巡演官宣，海外票务站集体标注「高度预期」",
+   "detail": "Ticketmaster、Songkick、Vivid Seats 目前均无 NJZ 任何 2026-2027 场次。多家票务站把该团列为「最受期待但尚未开跑」的团体之一。也就是说：现在任何声称有 NJZ 门票的渠道都要当心。",
+   "source_name": "Ticketmaster / Songkick 交叉核对",
+   "url": "https://www.songkick.com/artists/10255012-newjeans",
+   "credibility": "high",
+   "posted_at": "2026-08",
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "is_new": false
+  },
+  {
+   "id": "cf0fac72df8aeead",
+   "artist_key": "lesserafim",
+   "artist_name": "LE SSERAFIM",
+   "headline": "PUREFLOW 世巡含「亚洲」段，但中国内地场次未在官宣名单内",
+   "detail": "官宣稿写明覆盖韩国/日本/北美/欧洲/亚洲共 23 城 32 场，亚洲具体城市尚未逐一公布。若要蹲内地或港澳台场，需盯 Weverse 公告与大麦。",
+   "source_name": "Forbes / Weverse 公告",
+   "url": "https://weverse.io/lesserafim/notice/35345",
+   "credibility": "medium",
+   "posted_at": "2026-04-28",
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "is_new": false
+  },
+  {
+   "id": "35e9f1b6b824e92a",
+   "artist_key": "babymonster",
+   "artist_name": "BABYMONSTER",
+   "headline": "CHOOM 世巡北美/南美/欧洲段将「择期公布」，亚洲段已排满至 2027 年 1 月",
+   "detail": "官方称全巡至少 29 场 18 城，目前公布的多为亚太场次；北美、南美、欧洲场次待后续公布。对内地观众来说澳门站（9/11-12）和香港站（2027/1/9）是最现实的选择。",
+   "source_name": "Wikipedia / YG 官方公告汇总",
+   "url": "https://en.wikipedia.org/wiki/Choom_World_Tour",
+   "credibility": "high",
+   "posted_at": "2026-08",
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "is_new": false
+  },
+  {
+   "id": "965c66f0f01a40d7",
+   "artist_key": "jiamu",
+   "artist_name": "加木",
+   "headline": "加木近期高频以嘉宾身份出现在他人巡演，个人专场尚无消息",
+   "detail": "秀动数据显示加木 8-9 月连轴出现在布瑞吉巡演上海站、三火Flame 南京站、杭州湾银河左岸音乐节等拼盘场。个人巡演暂无官宣，但演出密度上升通常是发新作/开巡的前兆。",
+   "source_name": "秀动场次数据推断",
+   "url": "https://www.showstart.com/artist/14676563",
+   "credibility": "low",
+   "posted_at": "2026-08-07",
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "is_new": false
+  }
+ ],
+ "changes": [],
+ "notes": [],
+ "counts": {
+  "on_sale": 20,
+  "upcoming": 12,
+  "rumors": 15,
+  "ended": 19,
+  "rumors_aged_out": 0
+ }
+};

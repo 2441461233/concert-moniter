@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>演唱会监控 · 设计选项画廊</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FAF6EF; --ink:#1b1611; --card:#fff;
+  --green:#4F9D69; --green-dk:#35724b; --yellow:#FDFF8B; --amber-dk:#a66a00;
+  --pink:#F7AEF8; --mag-dk:#b23ab8; --pop:#f0492f; --line:#e8e0d2; --dim:#7d7263; --faint:#9a8f7d;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --serif:"Songti SC","STSong","Noto Serif SC",serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:14.5px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+.lb{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+
+/* ── gallery switcher ── */
+.galbar{position:sticky;top:0;z-index:50;background:var(--ink);color:var(--paper);
+  display:flex;align-items:center;gap:4px;padding:10px 18px;flex-wrap:wrap}
+.galbar .gt{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;margin-right:12px;opacity:.7}
+.galbar button{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--paper);
+  background:none;border:1px solid rgba(250,246,239,.35);border-radius:999px;padding:6px 14px;cursor:pointer;transition:.15s}
+.galbar button:hover{border-color:var(--paper)}
+.galbar button[aria-pressed="true"]{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.concept{max-width:880px;margin:0 auto;padding:14px 22px 0;font-size:12.5px;color:var(--dim)}
+.concept b{color:var(--ink)}
+.opt{display:none}
+body[data-opt="1"] #o1, body[data-opt="2"] #o2, body[data-opt="3"] #o3{display:block}
+
+/* ═══════════ OPTION 1 · 日历 GIG GUIDE ═══════════ */
+#o1 .wrap{max-width:880px;margin:0 auto;padding:0 22px 90px}
+#o1 header{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;padding:22px 0 14px;border-bottom:1.5px solid var(--ink)}
+#o1 .wordmark{font-size:17px;font-weight:800}
+#o1 .stats{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:.08em}
+#o1 .stats b{color:var(--ink);font-variant-numeric:tabular-nums}
+.dayrail{display:flex;gap:6px;overflow-x:auto;padding:16px 0 14px;border-bottom:1.5px solid var(--ink);scrollbar-width:none;margin:0 -22px;padding-left:22px}
+.dayrail::-webkit-scrollbar{display:none}
+.day{flex:none;width:56px;border:1.5px solid transparent;border-radius:12px;background:none;cursor:pointer;
+  padding:8px 0 7px;text-align:center;font-family:var(--mono);transition:.15s var(--ease)}
+.day:hover{border-color:var(--ink)}
+.day .dw{font-size:9.5px;letter-spacing:.1em;color:var(--faint)}
+.day .dd{font-size:15px;font-weight:700;font-variant-numeric:tabular-nums;margin-top:2px}
+.day .dots{display:flex;gap:3px;justify-content:center;margin-top:5px;height:6px}
+.day .dots i{width:5px;height:5px;border-radius:50%}
+.day .dots i.g{background:var(--green)} .day .dots i.y{background:var(--amber-dk)}
+.day.today{background:var(--ink);color:var(--paper)}
+.day.today .dw{color:rgba(250,246,239,.6)}
+.day.sel{border-color:var(--ink);background:var(--yellow)}
+.day.has{box-shadow:inset 0 0 0 1.5px var(--line)}
+.gig-month{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--faint);margin:26px 0 4px;text-transform:uppercase}
+.gig{display:flex;align-items:baseline;gap:14px;padding:11px 2px;border-bottom:1.5px solid var(--line)}
+.gig .gd{flex:none;width:64px;font-family:var(--mono);font-variant-numeric:tabular-nums}
+.gig .gd .m{font-size:15px;font-weight:700}
+.gig .gd .w{font-size:9.5px;color:var(--faint);letter-spacing:.1em}
+.gig .gt2{flex:1;min-width:0}
+.gig .gt2 .t{font-weight:700;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gig .gt2 .m2{font-size:12px;color:var(--dim);margin-top:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gig .gs{flex:none;font-family:var(--mono);font-size:10px;letter-spacing:.12em;font-weight:700;text-transform:uppercase;display:flex;align-items:center;gap:6px}
+.gig .gs.on{color:var(--green-dk)} .gig .gs.up{color:var(--amber-dk)}
+.gig .gs i{width:6px;height:6px;border-radius:50%;background:currentColor}
+.gig .ga{flex:none}
+.gig .ga a{font-family:var(--mono);font-size:10.5px;font-weight:700;color:var(--ink);text-decoration:none;
+  border:1.5px solid var(--ink);border-radius:999px;padding:4px 11px;background:var(--yellow);transition:.15s}
+.gig .ga a:hover{transform:translate(-1px,-1px);box-shadow:2px 2px 0 var(--ink)}
+#o1 details{margin-top:34px;border-top:1.5px solid var(--ink);padding-top:16px}
+#o1 summary{cursor:pointer;font-weight:700;font-size:14px;list-style:none;display:flex;gap:10px;align-items:baseline}
+#o1 summary::-webkit-details-marker{display:none}
+#o1 summary .lb{margin-left:auto}
+#o1 .chg{padding:10px 0;border-bottom:1px solid var(--line);font-size:13px;display:flex;gap:10px}
+#o1 .chg .mk{font-family:var(--mono);color:var(--mag-dk);font-weight:700}
+
+/* ═══════════ OPTION 2 · BENTO 仪表盘 ═══════════ */
+#o2 .wrap{max-width:920px;margin:0 auto;padding:0 22px 90px}
+#o2 header{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;padding:22px 0 18px}
+#o2 .wordmark{font-size:20px;font-weight:800}
+#o2 .stats{font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:.06em}
+#o2 .stats b{color:var(--ink)}
+.bento{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.tile{border:1.5px solid var(--ink);border-radius:20px;padding:18px 20px;background:var(--card);
+  box-shadow:4px 4px 0 rgba(27,22,17,.9);display:flex;flex-direction:column;min-height:0}
+.tile h3{margin:0 0 12px;display:flex;align-items:baseline;gap:8px}
+.tile h3 .lb{color:rgba(27,22,17,.55)}
+.tile h3 .n{margin-left:auto;font-family:var(--mono);font-size:20px;font-weight:700;font-variant-numeric:tabular-nums}
+.tile.sale{grid-column:span 2;grid-row:span 2;background:var(--green)}
+.tile.sale *{color:#fff}
+.tile.sale .lb{color:rgba(255,255,255,.75)}
+.tile.up{grid-column:span 2;grid-row:span 2;background:var(--yellow)}
+.tile.rumor{grid-column:span 2;background:var(--pink)}
+.tile.chg{grid-column:span 2}
+.tile.artist{grid-column:span 4;background:var(--card)}
+.tile .rows{display:flex;flex-direction:column;gap:0;overflow:hidden}
+.trow{display:flex;align-items:baseline;gap:10px;padding:8px 0;border-top:1.5px solid rgba(27,22,17,.18);font-size:13px}
+.tile.sale .trow{border-top-color:rgba(255,255,255,.3)}
+.trow .d{font-family:var(--mono);font-size:11px;font-weight:700;flex:none;width:44px;font-variant-numeric:tabular-nums}
+.trow .t{flex:1;min-width:0;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.trow .c{flex:none;font-size:11.5px;opacity:.75}
+.trow a{flex:none;font-family:var(--mono);font-size:10px;font-weight:700;color:var(--ink);background:#fff;
+  border:1.5px solid var(--ink);border-radius:999px;padding:3px 10px;text-decoration:none}
+.trow a:hover{transform:translate(-1px,-1px);box-shadow:2px 2px 0 var(--ink)}
+.tile .foot{margin-top:auto;padding-top:10px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;opacity:.6;text-transform:uppercase}
+.achips{display:flex;gap:8px;flex-wrap:wrap}
+.achip{font-family:var(--mono);font-size:11px;border:1.5px solid var(--ink);border-radius:999px;padding:5px 12px;background:var(--paper)}
+.achip b{font-variant-numeric:tabular-nums}
+.achip.zero{opacity:.45;border-style:dashed}
+.chgline{font-size:12.5px;padding:6px 0;border-top:1px solid var(--line);display:flex;gap:8px}
+.chgline .mk{font-family:var(--mono);font-weight:700;color:var(--mag-dk)}
+@media (max-width:720px){.bento{grid-template-columns:1fr 1fr}.tile.sale,.tile.up,.tile.rumor,.tile.chg,.tile.artist{grid-column:span 2}}
+
+/* ═══════════ OPTION 3 · 杂志清单 ═══════════ */
+#o3 .wrap{max-width:640px;margin:0 auto;padding:0 22px 100px}
+#o3 header{padding:40px 0 26px;border-bottom:2px solid var(--ink);text-align:left}
+#o3 .kicker{font-family:var(--mono);font-size:10.5px;letter-spacing:.3em;color:var(--mag-dk);text-transform:uppercase}
+#o3 h1{font-family:var(--serif);font-size:34px;font-weight:900;margin:10px 0 12px;letter-spacing:.02em}
+#o3 .stand{font-size:14.5px;color:var(--dim);line-height:1.8}
+#o3 .stand b{color:var(--ink)}
+#o3 .chapter{margin-top:54px}
+#o3 .chead{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:6px}
+#o3 .cnum{font-family:var(--mono);font-size:30px;font-weight:700;color:var(--mag-dk);line-height:1}
+#o3 .chead h2{font-family:var(--serif);font-size:20px;font-weight:900;margin:0}
+#o3 .chead .lb{margin-left:auto}
+#o3 .it{padding:16px 0 15px;border-bottom:1px solid var(--line)}
+#o3 .it .tt{font-family:var(--serif);font-size:17px;font-weight:700;line-height:1.4}
+#o3 .it .mm{font-size:12.5px;color:var(--dim);margin-top:5px}
+#o3 .it .mm span+span::before{content:"·";margin:0 7px;opacity:.5}
+#o3 .it .sr{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;margin-top:7px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+#o3 .sr .on{color:var(--green-dk);font-weight:700}
+#o3 .sr .up{color:var(--amber-dk);font-weight:700}
+#o3 .sr a{color:var(--mag-dk);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--pink)}
+#o3 .grp{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--faint);margin:18px 0 2px;text-transform:uppercase}
+#o3 .note{margin-top:54px;background:#fff;border:1.5px solid var(--ink);border-radius:4px;padding:18px 20px;box-shadow:5px 5px 0 var(--pink)}
+#o3 .note h4{margin:0 0 8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;color:var(--mag-dk);text-transform:uppercase}
+#o3 .note .l{font-size:13px;padding:6px 0;border-top:1px solid var(--line);display:flex;gap:9px}
+#o3 .note .l .mk{font-family:var(--mono);font-weight:700;color:var(--mag-dk)}
+</style>
+</head>
+<body data-opt="1">
+
+<div class="galbar">
+  <span class="gt">设计选项 →</span>
+  <button data-o="1" aria-pressed="true">① 日历 Gig Guide</button>
+  <button data-o="2" aria-pressed="false">② Bento 仪表盘</button>
+  <button data-o="3" aria-pressed="false">③ 杂志清单</button>
+</div>
+<div class="concept" id="concept"></div>
+
+<!-- ═══ OPTION 1 ═══ -->
+<div class="opt" id="o1"><div class="wrap">
+  <header>
+    <div class="wordmark">演唱会监控</div>
+    <div class="stats" id="s1"></div>
+  </header>
+  <div class="dayrail" id="dayrail"></div>
+  <div id="gigs"></div>
+  <details>
+    <summary>本轮变化 <span class="lb" id="c1sum"></span></summary>
+    <div id="c1" style="margin-top:10px"></div>
+  </details>
+</div></div>
+
+<!-- ═══ OPTION 2 ═══ -->
+<div class="opt" id="o2"><div class="wrap">
+  <header>
+    <div class="wordmark">演唱会监控</div>
+    <div class="stats" id="s2"></div>
+  </header>
+  <div class="bento">
+    <div class="tile sale">
+      <h3><span class="lb">ON SALE</span>正在售卖<span class="n" id="n2sale"></span></h3>
+      <div class="rows" id="b2sale"></div>
+      <div class="foot">点「购票」直达来源页</div>
+    </div>
+    <div class="tile up">
+      <h3><span class="lb">UPCOMING</span>待开票<span class="n" id="n2up"></span></h3>
+      <div class="rows" id="b2up"></div>
+      <div class="foot" id="b2upfoot"></div>
+    </div>
+    <div class="tile rumor">
+      <h3><span class="lb">RUMOR</span>舆情线索<span class="n" id="n2ru"></span></h3>
+      <div class="rows" id="b2ru"></div>
+    </div>
+    <div class="tile chg">
+      <h3><span class="lb">DIFF</span>本轮变化</h3>
+      <div class="rows" id="b2chg"></div>
+      <div class="foot" id="b2chgfoot"></div>
+    </div>
+    <div class="tile artist">
+      <h3><span class="lb">WATCHLIST</span>关注艺人</h3>
+      <div class="achips" id="b2artists"></div>
+    </div>
+  </div>
+</div></div>
+
+<!-- ═══ OPTION 3 ═══ -->
+<div class="opt" id="o3"><div class="wrap">
+  <header>
+    <div class="kicker" id="k3"></div>
+    <h1>演唱会监控</h1>
+    <div class="stand" id="stand3"></div>
+  </header>
+  <div class="chapter">
+    <div class="chead"><span class="cnum">01</span><h2>正在售卖</h2><span class="lb" id="c3sale"></span></div>
+    <div id="e3sale"></div>
+  </div>
+  <div class="chapter">
+    <div class="chead"><span class="cnum">02</span><h2>已官宣 · 待开票</h2><span class="lb" id="c3up"></span></div>
+    <div id="e3up"></div>
+  </div>
+  <div class="note">
+    <h4>编辑注记 · 本轮变化</h4>
+    <div id="e3chg"></div>
+  </div>
+</div></div>
+
+<script>
+const D = %%DATA%%;
+const CHANGES = %%CHANGES%%;
+const WDZH = ["周日","周一","周二","周三","周四","周五","周六"];
+const esc = s => String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const $ = id => document.getElementById(id);
+const cnt = D.counts||{};
+const firstUrl = e => ((e.sources||[]).find(s=>s.url)||{}).url;
+const pdate = d => { if(!d) return null; const [Y,M,Dd]=d.split("-").map(Number); const dt=new Date(Y,M-1,Dd);
+  return {md:M+"/"+String(Dd).padStart(2,"0"), w:WDZH[dt.getDay()], m: Y+"."+String(M).padStart(2,"0")}; };
+
+/* gallery switch */
+const NOTES = {
+  1:"<b>① 日历 Gig Guide</b> — 以「日期」为绝对主轴：顶部是可滑动的 45 天日历条（绿点=在售，黄点=待开票），下面是按月份分组的合并时刻表。本轮变化收成折叠区。适合「我想知道哪天有事」。",
+  2:"<b>② Bento 仪表盘</b> — 模块拼贴：在售绿砖、待开票黄砖、舆情粉砖、变化白砖、艺人条。一眼扫全局面貌，每块砖可直接行动。适合「每天 3 秒扫一眼」。",
+  3:"<b>③ 杂志清单</b> — 编辑排版：开场一段摘要文字，之后 01 / 02 章节式长清单，衬线大标题，零卡片零倒计时。本轮变化降级为「编辑注记」。适合「慢慢读、读完就买票」。"
+};
+document.querySelectorAll(".galbar button").forEach(b=>{
+  b.addEventListener("click",()=>{
+    document.body.dataset.opt = b.dataset.o;
+    document.querySelectorAll(".galbar button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));
+    $("concept").innerHTML = NOTES[b.dataset.o];
+    location.hash = "o"+b.dataset.o;
+  });
+});
+const h0 = (location.hash||"").replace("#o","");
+if(NOTES[h0]) document.querySelector(`.galbar button[data-o="${h0}"]`).click();
+else $("concept").innerHTML = NOTES[1];
+
+/* shared stats */
+const statTxt = `在售 <b>${cnt.on_sale||0}</b> · 待开票 <b>${cnt.upcoming||0}</b> · 舆情 <b>${cnt.rumors||0}</b> · 艺人 <b>${(D.artists||[]).length}</b>`;
+$("s1").innerHTML = statTxt; $("s2").innerHTML = statTxt;
+
+const dated = [...(D.on_sale||[]).map(e=>({...e,_st:"on_sale"})), ...(D.upcoming||[]).map(e=>({...e,_st:"upcoming"}))]
+  .filter(e=>e.show_date).sort((a,b)=>a.show_date<b.show_date?-1:1);
+const undated = [...(D.upcoming||[])].filter(e=>!e.show_date);
+
+/* ═══ OPTION 1: day rail + month groups ═══ */
+(function(){
+  const byDate = {};
+  dated.forEach(e=>{ (byDate[e.show_date] = byDate[e.show_date]||[]).push(e); });
+  const rail = $("dayrail"); const today = new Date(); today.setHours(0,0,0,0);
+  let html = "";
+  for(let i=0;i<45;i++){
+    const d = new Date(today.getTime()+i*86400000);
+    const key = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+    const evs = byDate[key]||[];
+    const dots = [...new Set(evs.map(e=>e._st))].map(s=>`<i class="${s==="on_sale"?"g":"y"}"></i>`).join("");
+    html += `<button class="day ${i===0?"today":""} ${evs.length?"has":""}" data-date="${key}" ${evs.length?`onclick="document.getElementById('g${key}')?.scrollIntoView({behavior:'smooth',block:'center'})"`:""}>
+      <div class="dw">${i===0?"今天":WDZH[d.getDay()]}</div><div class="dd">${d.getMonth()+1}/${d.getDate()}</div>
+      <div class="dots">${dots}</div></button>`;
+  }
+  rail.innerHTML = html;
+
+  let ghtml = "", lastM = "";
+  for(const e of dated){
+    const p = pdate(e.show_date);
+    if(p.m!==lastM){ ghtml += `<div class="gig-month">${p.m}</div>`; lastM = p.m; }
+    const on = e._st==="on_sale"; const url = firstUrl(e);
+    ghtml += `<div class="gig" id="g${e.show_date}">
+      <div class="gd"><div class="m">${p.md}</div><div class="w">${p.w}</div></div>
+      <div class="gt2"><div class="t">${esc(e.artist_name)} · ${esc(e.title)}</div>
+        <div class="m2">${esc([e.city,e.venue,e.show_time,e.price].filter(Boolean).join(" · "))}</div></div>
+      <div class="gs ${on?"on":"up"}"><i></i>${on?"在售":(e.sale_time?"SALE "+e.sale_time.slice(5).replace("-","/"):"待开票")}</div>
+      ${on&&url?`<div class="ga"><a href="${esc(url)}" target="_blank" rel="noopener">购票 ↗</a></div>`:""}
+    </div>`;
+  }
+  if(undated.length){
+    ghtml += `<div class="gig-month">日期待定</div>` + undated.map(e=>
+      `<div class="gig"><div class="gd"><div class="m" style="color:var(--faint)">—</div><div class="w">待定</div></div>
+        <div class="gt2"><div class="t">${esc(e.artist_name)} · ${esc(e.title)}</div><div class="m2">城市与开票时间待公布</div></div>
+        <div class="gs up"><i></i>待官宣</div></div>`).join("");
+  }
+  $("gigs").innerHTML = ghtml;
+
+  $("c1sum").textContent = `NEW ${CHANGES.filter(c=>c.type==="new").length} · RUMOR ${CHANGES.filter(c=>c.type==="rumor").length}`;
+  $("c1").innerHTML = CHANGES.map(c=>`<div class="chg"><span class="mk">${c.type==="new"?"+":"?"}</span>
+    <span>${esc(c.artist)} · ${esc(c.title)}</span></div>`).join("") || `<div class="chg">本轮无变化</div>`;
+})();
+
+/* ═══ OPTION 2: bento ═══ */
+(function(){
+  const on = D.on_sale||[], up = (D.upcoming||[]).filter(e=>e.show_date), ru = D.rumors||[];
+  $("n2sale").textContent = on.length; $("n2up").textContent = (D.upcoming||[]).length; $("n2ru").textContent = ru.length;
+  $("b2sale").innerHTML = on.slice(0,6).map(e=>{
+    const p = pdate(e.show_date), url = firstUrl(e);
+    return `<div class="trow"><span class="d">${p?p.md:"—"}</span>
+      <span class="t">${esc(e.artist_name)} · ${esc(e.title)}</span><span class="c">${esc(e.city||"")}</span>
+      ${url?`<a href="${esc(url)}" target="_blank" rel="noopener">购票 ↗</a>`:""}</div>`;
+  }).join("") + (on.length>6?`<div class="trow"><span class="t" style="opacity:.7">+ ${on.length-6} 场更多…</span></div>`:"");
+  $("b2up").innerHTML = up.slice(0,6).map(e=>{
+    const p = pdate(e.show_date);
+    return `<div class="trow"><span class="d">${p?p.md:"—"}</span>
+      <span class="t">${esc(e.artist_name)} · ${esc(e.title)}</span>
+      <span class="c">${e.sale_time?esc("SALE "+e.sale_time.slice(5).replace("-","/")):"开票待定"}</span></div>`;
+  }).join("") + (up.length>6?`<div class="trow"><span class="t" style="opacity:.7">+ ${up.length-6} 场更多…</span></div>`:"");
+  $("b2upfoot").textContent = undated.length ? `另有 ${undated.length} 场日期待定` : "";
+  $("b2ru").innerHTML = ru.slice(0,3).map(r=>
+    `<div class="trow"><span class="t">${esc(r.headline)}</span><span class="c">${esc(r.artist_name)}</span></div>`).join("")
+    + (ru.length>3?`<div class="trow"><span class="t" style="opacity:.7">+ ${ru.length-3} 条更多…</span></div>`:"");
+  $("b2chg").innerHTML = CHANGES.slice(0,4).map(c=>
+    `<div class="chgline"><span class="mk">${c.type==="new"?"+":"?"}</span><span>${esc(c.artist)} · ${esc(c.title)}</span></div>`).join("");
+  $("b2chgfoot").textContent = CHANGES.length>4 ? `+ ${CHANGES.length-4} MORE · RUN ${CHANGES[0]?CHANGES[0].run:""}` : "";
+  const allItems = [...(D.on_sale||[]),...(D.upcoming||[]),...(D.rumors||[])];
+  $("b2artists").innerHTML = (D.artists||[]).map(a=>{
+    const n = allItems.filter(e=>e.artist_key===a.key).length;
+    return `<span class="achip ${n?"":"zero"}">${esc(a.name)} <b>${n}</b></span>`;
+  }).join("");
+})();
+
+/* ═══ OPTION 3: editorial ═══ */
+(function(){
+  $("k3").textContent = "CONCERT WATCH · " + (D.last_run||"").replace("T"," ").slice(0,16);
+  const on = D.on_sale||[], up = D.upcoming||[];
+  const next = dated[0];
+  $("stand3").innerHTML = `当前共有 <b>${on.length} 场正在售卖</b>、<b>${up.length} 场已官宣待开票</b>。
+    ${next?`最近的一场是 <b>${esc(next.artist_name)}</b>「${esc(next.title)}」，${pdate(next.show_date).md}（${pdate(next.show_date).w}）${esc(next.city||"")}。`:""}
+    开票信息如有变动，会记录在文末的编辑注记中。`;
+  const item = e => {
+    const p = pdate(e.show_date); const ons = e._st==="on_sale" || e.status==="on_sale"; const url = firstUrl(e);
+    return `<div class="it">
+      <div class="tt">${esc(e.artist_name)} · ${esc(e.title)}</div>
+      <div class="mm">${[p?p.md+" "+p.w:"日期待定", e.city, e.venue, e.show_time, e.price].filter(Boolean).map(s=>`<span>${esc(s)}</span>`).join("")}</div>
+      <div class="sr"><span class="${ons?"on":"up"}">${ons?"● 在售中":"○ "+(e.sale_time?"开票 "+e.sale_time.slice(0,10):"开票时间待公布")}</span>
+        ${url?`<a href="${esc(url)}" target="_blank" rel="noopener">购票 / 来源 →</a>`:""}</div>
+    </div>`;
+  };
+  $("c3sale").textContent = on.length+" 场"; $("c3up").textContent = up.length+" 场";
+  $("e3sale").innerHTML = on.map(item).join("") || `<div class="it"><div class="mm">当前没有在售场次</div></div>`;
+  /* group tours */
+  const upD = up.filter(e=>e.show_date), groups = new Map();
+  for(const e of upD){
+    const i=(e.title||"").indexOf(" · "); const k = i>0 ? e.title.slice(0,i) : "\0"+e.title;
+    if(!groups.has(k)) groups.set(k,[]); groups.get(k).push(e);
+  }
+  let h = "";
+  for(const [k,items] of groups){
+    if(!k.startsWith("\0") && items.length>=3){
+      h += `<div class="grp">▸ ${esc(k)} · ${items.length} 站</div>` + items.map(e=>{
+        const stn = (e.title||"").slice(k.length+3);
+        return item({...e, title: stn||e.title});
+      }).join("");
+    } else h += items.map(item).join("");
+  }
+  h += up.filter(e=>!e.show_date).map(item).join("");
+  $("e3up").innerHTML = h;
+  $("e3chg").innerHTML = CHANGES.map(c=>`<div class="l"><span class="mk">${c.type==="new"?"+":"?"}</span>
+    <span>${esc(c.artist)} · ${esc(c.title)}</span></div>`).join("") || `<div class="l">本轮无变化</div>`;
+})();
+</script>
+</body>
+</html>

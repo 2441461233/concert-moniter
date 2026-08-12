@@ -1,0 +1,201 @@
+{
+  "_comment": "关注艺人清单。随时手动增删。key 必须唯一且稳定（用于去重与前端筛选）。aliases 用于严格匹配，越全越准。showstart_artist_id 可留空，采集器会自动发现并回写。",
+  "artists": [
+    {
+      "key": "shayiting",
+      "name": "沙一汀",
+      "region": "cn",
+      "aliases": [
+        "沙一汀",
+        "沙一汀EL",
+        "SHAYITING",
+        "沙一汀 EL"
+      ],
+      "showstart_artist_id": "4501841",
+      "search_terms": [
+        "沙一汀 演唱会",
+        "沙一汀 巡演 开票",
+        "沙一汀 音乐节"
+      ],
+      "enabled": true
+    },
+    {
+      "key": "menni",
+      "name": "门尼",
+      "region": "cn",
+      "aliases": [
+        "门尼",
+        "MENNI",
+        "Menni"
+      ],
+      "showstart_artist_id": "",
+      "search_terms": [
+        "门尼 演唱会",
+        "门尼 巡演 开票",
+        "门尼 rapper 演出"
+      ],
+      "enabled": true
+    },
+    {
+      "key": "jiamu",
+      "name": "加木",
+      "region": "cn",
+      "aliases": [
+        "加木",
+        "JIAMU"
+      ],
+      "showstart_artist_id": "14676563",
+      "search_terms": [
+        "加木 演唱会",
+        "加木 巡演 开票",
+        "加木 说唱 演出"
+      ],
+      "enabled": true
+    },
+    {
+      "key": "njz",
+      "name": "NJZ",
+      "region": "kpop",
+      "aliases": [
+        "NJZ",
+        "NewJeans",
+        "뉴진스",
+        "新耳机"
+      ],
+      "showstart_artist_id": "",
+      "search_terms": [
+        "NJZ concert tour 2026",
+        "NewJeans 演唱会 开票",
+        "NJZ 팬콘 티켓"
+      ],
+      "enabled": true
+    },
+    {
+      "key": "kiiikiii",
+      "name": "KiiiKiii",
+      "region": "kpop",
+      "aliases": [
+        "KiiiKiii",
+        "키키",
+        "키이키이"
+      ],
+      "showstart_artist_id": "",
+      "search_terms": [
+        "KiiiKiii concert 2026",
+        "KiiiKiii fancon tour",
+        "KiiiKiii 演唱会"
+      ],
+      "enabled": true
+    },
+    {
+      "key": "ive",
+      "name": "IVE",
+      "region": "kpop",
+      "aliases": [
+        "IVE",
+        "아이브",
+        "IVE 아이브"
+      ],
+      "showstart_artist_id": "",
+      "search_terms": [
+        "IVE world tour 2026 tickets",
+        "IVE 演唱会 开票"
+      ],
+      "enabled": true
+    },
+    {
+      "key": "aespa",
+      "name": "aespa",
+      "region": "kpop",
+      "aliases": [
+        "aespa",
+        "에스파",
+        "AESPA"
+      ],
+      "showstart_artist_id": "",
+      "search_terms": [
+        "aespa world tour 2026 tickets",
+        "aespa 演唱会 开票"
+      ],
+      "enabled": true
+    },
+    {
+      "key": "lesserafim",
+      "name": "LE SSERAFIM",
+      "region": "kpop",
+      "aliases": [
+        "LE SSERAFIM",
+        "LESSERAFIM",
+        "르세라핌"
+      ],
+      "showstart_artist_id": "",
+      "search_terms": [
+        "LE SSERAFIM tour 2026 tickets",
+        "LE SSERAFIM 演唱会 开票"
+      ],
+      "enabled": true
+    },
+    {
+      "key": "babymonster",
+      "name": "BABYMONSTER",
+      "region": "kpop",
+      "aliases": [
+        "BABYMONSTER",
+        "베이비몬스터",
+        "BABYMONSTERS"
+      ],
+      "showstart_artist_id": "",
+      "search_terms": [
+        "BABYMONSTER world tour 2026 tickets",
+        "BABYMONSTER 演唱会"
+      ],
+      "enabled": true
+    },
+    {
+      "key": "illit",
+      "name": "ILLIT",
+      "region": "kpop",
+      "aliases": [
+        "ILLIT",
+        "아일릿"
+      ],
+      "showstart_artist_id": "",
+      "search_terms": [
+        "ILLIT concert 2026 tickets",
+        "ILLIT fancon"
+      ],
+      "enabled": true
+    },
+    {
+      "key": "hearts2hearts",
+      "name": "Hearts2Hearts",
+      "region": "kpop",
+      "aliases": [
+        "Hearts2Hearts",
+        "하츠투하츠",
+        "H2H"
+      ],
+      "showstart_artist_id": "",
+      "search_terms": [
+        "Hearts2Hearts concert 2026",
+        "Hearts2Hearts fancon tickets"
+      ],
+      "enabled": true
+    },
+    {
+      "key": "katseye",
+      "name": "KATSEYE",
+      "region": "kpop",
+      "aliases": [
+        "KATSEYE",
+        "캣츠아이"
+      ],
+      "showstart_artist_id": "",
+      "search_terms": [
+        "KATSEYE tour 2026 tickets",
+        "KATSEYE 演唱会"
+      ],
+      "enabled": true
+    }
+  ]
+}

@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>演唱会监控 · 设计稿 v2 · 多巴胺</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* dopamine poster palette — tri-color brand system */
+  --paper:#FAF6EF; --ink:#1b1611; --card:#ffffff;
+  --green:#4F9D69; --green-dk:#35724b;
+  --yellow:#FDFF8B; --amber-dk:#a66a00;
+  --pink:#F7AEF8;  --mag-dk:#b23ab8;
+  --pop:#f0492f;   /* 紧迫橙红，同饱和度梯队 */
+  --line:#e8e0d2;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*{box-sizing:border-box}
+html{background:var(--paper)}
+body{
+  margin:0;color:var(--ink);background:var(--paper);
+  font:14.5px/1.6 var(--sans);
+  -webkit-font-smoothing:antialiased;
+}
+/* paper grain */
+.grain{position:fixed;inset:0;z-index:40;pointer-events:none;opacity:.035;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+.wrap{max-width:880px;margin:0 auto;padding:0 22px 90px;position:relative;z-index:1}
+
+.lb{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#9a8f7d}
+
+/* ── header ── */
+header{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:22px 0 16px;border-bottom:1.5px solid var(--ink)}
+.wordmark{font-size:17px;font-weight:800;letter-spacing:.01em;display:flex;align-items:center;gap:10px}
+.wordmark .dot{width:11px;height:11px;border-radius:50%;
+  background:conic-gradient(var(--pink),var(--yellow),var(--green),var(--pink));
+  border:1.5px solid var(--ink)}
+.live-badge{display:inline-flex;align-items:center;gap:7px;
+  font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--ink);
+  background:var(--yellow);border:1.5px solid var(--ink);border-radius:999px;padding:4px 10px}
+.led{width:6px;height:6px;border-radius:50%;background:currentColor;flex:none}
+.led.pulse{animation:pulse 1.5s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.3}}
+.head-meta{margin-left:auto;text-align:right}
+.head-meta .t{font-family:var(--mono);font-size:11px;color:#7d7263;font-variant-numeric:tabular-nums}
+.statline{display:flex;flex-wrap:wrap;border-bottom:1.5px solid var(--ink);
+  font-family:var(--mono);font-size:11px;letter-spacing:.12em}
+.statline .st{padding:10px 20px 10px 0;margin-right:14px;color:#7d7263;text-transform:uppercase}
+.statline .st b{color:var(--ink);font-weight:700;font-variant-numeric:tabular-nums}
+.statline .st.c-live b{color:var(--green-dk)} .statline .st.c-warn b{color:var(--amber-dk)}
+.statline .st.c-mint b{color:var(--mag-dk)}
+
+/* ── hero: tricolor gradient poster card ── */
+.hero{
+  margin-top:26px;position:relative;overflow:hidden;
+  border:1.5px solid var(--ink);border-radius:24px;
+  background:linear-gradient(115deg,var(--pink) 0%,var(--yellow) 52%,#b8f0c4 88%,var(--green) 135%);
+  box-shadow:6px 6px 0 var(--ink);
+  padding:34px 34px 30px;
+}
+.hero .confetti{position:absolute;inset:0;pointer-events:none}
+.hero .lb{display:flex;align-items:center;gap:8px;color:var(--ink);font-weight:700}
+.hero[data-state="armed"] .lb .led{background:var(--pop);color:var(--pop)}
+.tminus{font-family:var(--mono);font-weight:700;font-variant-numeric:tabular-nums;
+  letter-spacing:-.03em;line-height:1;margin:16px 0 4px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;color:var(--ink)}
+.tminus .days{font-size:clamp(76px,14vw,128px)}
+.tminus .unit{font-size:clamp(22px,3.4vw,32px);font-weight:500}
+.tminus .clock{font-size:clamp(22px,4vw,34px);font-weight:500;opacity:.75}
+.hero .who{font-size:17px;font-weight:800;margin-top:12px}
+.hero .where{color:rgba(27,22,17,.72);font-size:13.5px;margin-top:4px;font-weight:500}
+.hero .where span+span::before{content:"·";margin:0 8px;opacity:.5}
+.hero .actions{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
+
+/* buttons — chunky pills, hard shadow */
+.btn{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
+  color:#fff;background:var(--ink);border:1.5px solid var(--ink);border-radius:999px;
+  padding:9px 18px;text-decoration:none;display:inline-flex;align-items:center;gap:7px;
+  box-shadow:3px 3px 0 rgba(27,22,17,.28);
+  transition:transform .15s var(--ease),box-shadow .15s var(--ease),background .15s var(--ease);
+}
+.btn:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 rgba(27,22,17,.28)}
+.btn.ghost{color:var(--ink);background:rgba(255,255,255,.6);box-shadow:none;cursor:default}
+.btn:focus-visible,a:focus-visible,button:focus-visible{outline:2.5px solid var(--mag-dk);outline-offset:2px;border-radius:999px}
+
+/* ── change board ── */
+.board{padding:30px 0 8px;border-bottom:1.5px solid var(--ink)}
+.board .bhead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.board .bhead h2{margin:0;font-size:16px;font-weight:800}
+.board .bhead .run{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:#9a8f7d}
+.board .grid{display:grid;grid-template-columns:1fr 1fr;gap:0 34px;margin-top:14px;padding-bottom:22px}
+.board h3{margin:0 0 8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#7d7263;font-weight:500}
+.dline{display:flex;gap:10px;padding:8px 0;border-top:1.5px solid var(--line);font-size:13px;align-items:baseline}
+.dline .mk{font-family:var(--mono);font-weight:700;flex:none;width:16px;height:16px;border-radius:50%;
+  display:inline-flex;align-items:center;justify-content:center;font-size:10px;border:1.5px solid var(--ink)}
+.dline .mk.new{background:var(--yellow);color:var(--ink)}
+.dline .mk.up{background:var(--pink);color:var(--ink)}
+.dline .dt{color:#9a8f7d;font-family:var(--mono);font-size:11px;margin-left:auto;flex:none;font-variant-numeric:tabular-nums}
+.dline .tt{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dmore{font-family:var(--mono);font-size:11px;color:#9a8f7d;padding:8px 0;border-top:1.5px solid var(--line);letter-spacing:.08em}
+
+/* ── filter rail ── */
+.rail{position:sticky;top:0;z-index:20;display:flex;gap:8px;align-items:center;
+  padding:12px 22px;overflow-x:auto;scrollbar-width:none;
+  background:rgba(250,246,239,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-bottom:1.5px solid var(--ink);margin:0 -22px}
+.rail::-webkit-scrollbar{display:none}
+.chip{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;
+  color:var(--ink);background:var(--card);border:1.5px solid var(--ink);border-radius:999px;
+  padding:5px 13px;cursor:pointer;transition:.15s var(--ease);flex:none}
+.chip:hover{transform:translate(-1px,-1px);box-shadow:2px 2px 0 var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.chip .c{opacity:.55;margin-left:6px;font-variant-numeric:tabular-nums}
+.rail .sep{width:1.5px;height:16px;background:var(--ink);flex:none;margin:0 4px;opacity:.3}
+
+/* ── sections ── */
+section{padding-top:34px}
+.shead{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.shead h2{margin:0;font-size:16px;font-weight:800;display:flex;align-items:center;gap:9px}
+.shead .dotg{width:10px;height:10px;border-radius:50%;border:1.5px solid var(--ink);flex:none}
+.shead .dotg.g{background:var(--green)} .shead .dotg.y{background:var(--yellow)} .shead .dotg.p{background:var(--pink)}
+.shead .cnt{font-family:var(--mono);font-size:11px;color:#9a8f7d;font-variant-numeric:tabular-nums}
+.shead .lb{margin-left:auto}
+
+/* ticket stub — sticker card, hard shadow per status */
+.tk{display:flex;align-items:stretch;background:var(--card);
+  border:1.5px solid var(--ink);border-radius:14px;margin-bottom:12px;position:relative;
+  box-shadow:4px 4px 0 var(--sh,#d9d2c4);
+  transition:transform .15s var(--ease),box-shadow .15s var(--ease)}
+.tk:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--sh,#d9d2c4)}
+.tk[data-status="on_sale"]{--sh:var(--green)}
+.tk[data-status="upcoming"]{--sh:var(--yellow)}
+.tk[data-status="armed"]{--sh:var(--pop)}
+.tk-date{flex:none;width:92px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:16px 0;position:relative}
+.tk-date::after{content:"";position:absolute;right:-1px;top:12px;bottom:12px;width:0;border-right:1.5px dashed #c9bfa9}
+.tk-date .d{font-family:var(--mono);font-size:27px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.03em;line-height:1.1}
+.tk-date .w{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:#9a8f7d;margin-top:5px;text-transform:uppercase}
+.tk-notch{position:absolute;right:-7px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:1.5px solid var(--ink);z-index:2}
+.tk-notch.top{top:-7px}.tk-notch.bot{bottom:-7px}
+.tk-body{flex:1;min-width:0;padding:13px 16px}
+.tk-title{font-weight:700;font-size:14.5px;letter-spacing:-.01em}
+.tk-meta{color:#7d7263;font-size:12.5px;margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tk-status{display:flex;align-items:center;gap:7px;margin-top:8px;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+.tk[data-status="on_sale"] .tk-status{color:var(--green-dk)}
+.tk[data-status="upcoming"] .tk-status{color:var(--amber-dk)}
+.tk[data-status="armed"] .tk-status{color:var(--pop)}
+.tk-cta{flex:none;display:flex;align-items:center;padding:0 16px}
+.tk-cta .wait{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;color:#9a8f7d;text-transform:uppercase}
+
+/* tour timetable */
+.tour{margin-bottom:24px}
+.tour-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;padding:10px 2px 9px;border-bottom:1.5px solid var(--ink)}
+.tour-head .tn{font-weight:800;font-size:14.5px}
+.tour-head .ti{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;color:#9a8f7d;text-transform:uppercase}
+.tstop{display:flex;align-items:baseline;gap:14px;padding:9px 2px;border-bottom:1.5px solid var(--line);font-size:13px}
+.tstop:last-child{border-bottom:none}
+.tstop .sd{font-family:var(--mono);font-size:11.5px;color:#7d7263;flex:none;width:86px;font-variant-numeric:tabular-nums;font-weight:500}
+.tstop .sn{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tstop .st2{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;flex:none;display:flex;align-items:center;gap:6px;font-weight:700}
+.tstop .st2.warn{color:var(--amber-dk)} .tstop .st2.live{color:var(--green-dk)}
+
+.pend{border:1.5px dashed #c9bfa9;border-radius:14px;padding:4px 16px;margin-top:6px;background:rgba(255,255,255,.5)}
+.pend .tstop{border-color:var(--line)}
+.pend .tstop .sd{color:#9a8f7d}
+
+.empty{border:1.5px dashed #c9bfa9;border-radius:14px;padding:24px;text-align:center;
+  color:#9a8f7d;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;background:rgba(255,255,255,.5)}
+
+@media (max-width:640px){
+  .hero{padding:26px 20px 24px;border-radius:18px}
+  .tk-date{width:70px}
+  .tk-date .d{font-size:20px}
+  .board .grid{grid-template-columns:1fr}
+  .tk-cta{padding:0 12px}
+  .btn{padding:8px 13px}
+}
+@media (prefers-reduced-motion:reduce){
+  .led.pulse{animation:none}
+  *{transition:none !important}
+}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="wrap">
+
+  <header>
+    <div class="wordmark"><span class="dot"></span>演唱会监控</div>
+    <span class="live-badge"><span class="led pulse"></span>MONITORING</span>
+    <div class="head-meta">
+      <div class="t" id="lastrun"></div>
+      <div class="t" id="research" style="color:#9a8f7d"></div>
+    </div>
+  </header>
+
+  <div class="statline" id="statline"></div>
+
+  <!-- P0: next deadline -->
+  <section class="hero" id="hero" data-state="show" style="padding-top:30px">
+    <svg class="confetti" width="100%" height="100%" viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <g fill="none" stroke="#1b1611" stroke-width="1.5" opacity=".28">
+        <circle cx="700" cy="52" r="14"/>
+        <path d="M640 210 q10 -14 20 0 q10 14 20 0" stroke-linecap="round"/>
+        <path d="M750 160 l6 12 12 2 -9 9 2 12 -11 -6 -11 6 2 -12 -9 -9 12 -2 z" fill="#1b1611" stroke="none" opacity=".5"/>
+        <circle cx="540" cy="30" r="5" fill="#1b1611" stroke="none"/>
+        <rect x="90" y="240" width="12" height="12" rx="3" transform="rotate(18 96 246)"/>
+      </g>
+      <circle cx="590" cy="250" r="7" fill="#f0492f" opacity=".55"/>
+      <circle cx="760" cy="110" r="5" fill="#ffffff" opacity=".8"/>
+    </svg>
+    <p class="lb"><span class="led pulse"></span><span id="herolabel">NEXT SHOW · 距开演</span></p>
+    <div class="tminus">
+      <span class="days" id="tdays">--</span><span class="unit" id="tunit">天</span>
+      <span class="clock" id="tclock">--:--:--</span>
+    </div>
+    <div class="who" id="herotitle"></div>
+    <div class="where" id="herometa"></div>
+    <div class="actions" id="heroactions"></div>
+  </section>
+
+  <!-- diff board -->
+  <section class="board" style="padding-top:30px">
+    <div class="bhead">
+      <h2>本轮变化</h2>
+      <span class="run" id="runid"></span>
+      <span class="lb" id="boardsum" style="margin-left:auto"></span>
+    </div>
+    <div class="grid" id="board"></div>
+  </section>
+
+  <!-- filters -->
+  <div class="rail" id="rail"></div>
+
+  <!-- on sale -->
+  <section>
+    <div class="shead">
+      <h2><span class="dotg g"></span>正在售卖</h2>
+      <span class="cnt" id="cnt-sale"></span>
+      <span class="lb">ON SALE</span>
+    </div>
+    <div id="onsale"></div>
+  </section>
+
+  <!-- upcoming -->
+  <section>
+    <div class="shead">
+      <h2><span class="dotg y"></span>已官宣 · 待开票</h2>
+      <span class="cnt" id="cnt-up"></span>
+      <span class="lb">UPCOMING</span>
+    </div>
+    <div id="upcoming"></div>
+  </section>
+
+</div>
+
+<script>
+const D = %%DATA%%;
+const CHANGES = %%CHANGES%%;
+
+const WDZH = ["周日","周一","周二","周三","周四","周五","周六"];
+const esc = s => String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const $ = id => document.getElementById(id);
+let filter = {region:"all", artist:"all"};
+
+/* ── header ── */
+(function(){
+  const fmt = s => s ? s.replace("T"," ").slice(0,16) : "--";
+  $("lastrun").textContent = "LAST CHECK " + fmt(D.last_run);
+  $("research").textContent = "RESEARCH " + fmt(D.last_research_at) + " · RUN " + (D.last_run_id||"--");
+  const c = D.counts||{};
+  $("statline").innerHTML =
+    `<span class="st c-live"><b>${c.on_sale||0}</b> 在售</span>
+     <span class="st c-warn"><b>${c.upcoming||0}</b> 待开票</span>
+     <span class="st c-mint"><b>${c.rumors||0}</b> 舆情</span>
+     <span class="st"><b>${(D.artists||[]).length}</b> 关注艺人</span>`;
+})();
+
+/* ── hero ── */
+const now0 = Date.now();
+function futDT(d,t){ if(!d) return null; const dt = new Date(d.slice(0,10)+"T"+(t||"00:00")+":00"); return dt.getTime()>now0 ? dt : null; }
+let hero = null;
+const all = [...(D.on_sale||[]), ...(D.upcoming||[])];
+for(const e of all){
+  const sd = futDT(e.sale_time, (e.sale_time||"").slice(11,16));
+  if(sd && (!hero || sd < hero.dt)) hero = {e, dt:sd, state:"armed"};
+}
+if(!hero) for(const e of all){
+  const xd = futDT(e.show_date, e.show_time);
+  if(xd && (!hero || xd < hero.dt)) hero = {e, dt:xd, state:"show"};
+}
+if(hero){
+  const box = $("hero");
+  box.dataset.state = hero.state;
+  $("herolabel").textContent = hero.state==="armed" ? "SALE ALERT · 距开票" : "NEXT SHOW · 距开演";
+  $("herotitle").textContent = (hero.e.artist_name?hero.e.artist_name+" · ":"") + hero.e.title;
+  $("herometa").innerHTML = [hero.e.city, hero.e.venue, hero.e.platform]
+    .filter(Boolean).map(s=>`<span>${esc(s)}</span>`).join("");
+  const url = (hero.e.sources||[]).find(s=>s.url);
+  $("heroactions").innerHTML = url
+    ? `<a class="btn" href="${esc(url.url)}" target="_blank" rel="noopener">购票页面 ↗</a>`
+    : `<span class="btn ghost">开票信息待公布</span>`;
+  function tick(){
+    let s = Math.max(0, Math.floor((hero.dt - Date.now())/1000));
+    const d = Math.floor(s/86400); s -= d*86400;
+    const h = String(Math.floor(s/3600)).padStart(2,"0");
+    const m = String(Math.floor(s%3600/60)).padStart(2,"0");
+    const ss = String(s%60).padStart(2,"0");
+    $("tdays").textContent = d;
+    $("tclock").textContent = `${h}:${m}:${ss}`;
+  }
+  tick(); setInterval(tick, 1000);
+}else{
+  $("tdays").textContent = "—"; $("tclock").textContent = "";
+  $("herotitle").textContent = "暂无临近的演出或开票";
+}
+
+/* ── change board ── */
+(function(){
+  if(!CHANGES.length){ $("board").innerHTML = `<div class="empty">NO CHANGES · 本轮无变化</div>`; return; }
+  $("runid").textContent = "RUN " + CHANGES[0].run;
+  const news = CHANGES.filter(c=>c.type==="new"), ups = CHANGES.filter(c=>c.type==="update"), rms = CHANGES.filter(c=>c.type==="rumor");
+  $("boardsum").textContent = `NEW ${news.length} · UPDATE ${ups.length} · RUMOR ${rms.length}`;
+  const row = (c,mk,cls) => `<div class="dline"><span class="mk ${cls}">${mk}</span>
+    <span class="tt">${esc(c.artist)} · ${esc(c.title)}</span>
+    <span class="dt">${esc((c.info||"").slice(0,10))}</span></div>`;
+  const col = (title, items, mk, cls, cap) => `<div><h3>${title}</h3>
+    ${items.slice(0,cap).map(c=>row(c,mk,cls)).join("")}
+    ${items.length>cap?`<div class="dmore">+ ${items.length-cap} MORE</div>`:""}
+    ${!items.length?`<div class="dmore">— 无</div>`:""}</div>`;
+  $("board").innerHTML = col("新增场次 · NEW", news, "+", "new", 6) + col("舆情线索 · RUMOR", rms, "?", "up", 6);
+})();
+
+/* ── filters ── */
+function allItems(){ return [...(D.on_sale||[]), ...(D.upcoming||[]), ...(D.rumors||[])]; }
+(function(){
+  const cnt = k => allItems().filter(e=>e.artist_key===k).length;
+  let html = `<button class="chip" data-r="all" aria-pressed="true">全部</button>
+    <button class="chip" data-r="cn">国内</button>
+    <button class="chip" data-r="kpop">K-Pop</button><span class="sep"></span>`;
+  html += D.artists.map(a=>`<button class="chip" data-a="${esc(a.key)}">${esc(a.name)}<span class="c">${cnt(a.key)}</span></button>`).join("");
+  $("rail").innerHTML = html;
+  $("rail").addEventListener("click", ev=>{
+    const b = ev.target.closest(".chip"); if(!b) return;
+    if(b.dataset.r) filter = {region:b.dataset.r, artist:"all"};
+    else filter = {region:"all", artist: filter.artist===b.dataset.a ? "all" : b.dataset.a};
+    document.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",
+      String((c.dataset.r && c.dataset.r===filter.region && filter.artist==="all") ||
+             (c.dataset.a && c.dataset.a===filter.artist))));
+    render();
+  });
+})();
+
+function keep(item){
+  if(filter.artist!=="all") return item.artist_key===filter.artist;
+  if(filter.region!=="all"){
+    const a = D.artists.find(x=>x.key===item.artist_key);
+    return a && (filter.region==="kpop" ? a.region==="kpop" : a.region!=="kpop");
+  }
+  return true;
+}
+
+/* ── tickets ── */
+function dparts(d){
+  if(!d) return null;
+  const [Y,M,Dd] = d.split("-").map(Number);
+  const dt = new Date(Y,M-1,Dd);
+  return {md:`${M}/${String(Dd).padStart(2,"0")}`, wzh:WDZH[dt.getDay()]};
+}
+function statusInfo(e){
+  if(e.status==="on_sale") return {cls:"on_sale", txt:"ON SALE · 在售", pulse:true};
+  return {cls:"upcoming", txt: e.sale_time ? "SALE " + e.sale_time.slice(5).replace("-","/") : "开票时间待公布", pulse:false};
+}
+function ticket(e){
+  const p = dparts(e.show_date);
+  const st = statusInfo(e);
+  const url = (e.sources||[]).find(s=>s.url);
+  const meta = [e.artist_name, e.city, e.venue, e.show_time, e.price].filter(Boolean).join(" · ");
+  const cta = e.status==="on_sale"
+    ? (url ? `<a class="btn" href="${esc(url.url)}" target="_blank" rel="noopener">购票 ↗</a>` : "")
+    : `<span class="wait">${e.sale_time ? "SALE "+esc(e.sale_time.slice(0,10)) : "待定"}</span>`;
+  return `<div class="tk" data-status="${st.cls}">
+    <div class="tk-date"><span class="tk-notch top"></span><span class="tk-notch bot"></span>
+      ${p?`<div class="d">${p.md}</div><div class="w">${p.wzh}</div>`:`<div class="d" style="font-size:15px;color:#9a8f7d">待定</div>`}
+    </div>
+    <div class="tk-body">
+      <div class="tk-title">${esc(e.title)}</div>
+      <div class="tk-meta">${esc(meta)}</div>
+      <div class="tk-status"><span class="led ${st.pulse?"pulse":""}"></span>${esc(st.txt)}</div>
+    </div>
+    <div class="tk-cta">${cta}</div>
+  </div>`;
+}
+
+function tourKey(t){ const i = t.indexOf(" · "); return i>0 ? t.slice(0,i) : null; }
+function renderUpcoming(list){
+  const dated = list.filter(e=>e.show_date), undated = list.filter(e=>!e.show_date);
+  const groups = new Map();
+  for(const e of dated){
+    const k = tourKey(e.title||"");
+    if(!k){ groups.set("\0"+(e.title||Math.random()), [e]); continue; }
+    if(!groups.has(k)) groups.set(k, []);
+    groups.get(k).push(e);
+  }
+  let html = "";
+  for(const [k, items] of groups){
+    if(!k.startsWith("\0") && items.length>=3){
+      const dates = items.map(e=>e.show_date).sort();
+      html += `<div class="tour">
+        <div class="tour-head"><span class="tn">${esc(k)}</span>
+          <span class="ti">${items.length} STOPS · ${dates[0].replace(/-/g,".")} — ${dates[dates.length-1].replace(/-/g,".")}</span></div>
+        ${items.map(e=>{
+          const st = statusInfo(e);
+          const stn = (e.title||"").slice(k.length+3);
+          return `<div class="tstop"><span class="sd">${e.show_date.slice(5).replace("-","/")}</span>
+            <span class="sn">${esc(stn||e.title)}</span>
+            <span class="st2 ${st.cls==="on_sale"?"live":"warn"}"><span class="led ${st.pulse?"pulse":""}" style="width:5px;height:5px"></span>${esc(st.txt)}</span></div>`;
+        }).join("")}
+      </div>`;
+    }else{
+      html += items.map(ticket).join("");
+    }
+  }
+  if(undated.length){
+    html += `<div class="pend">${undated.map(e=>
+      `<div class="tstop"><span class="sd">日期待定</span>
+        <span class="sn">${esc(e.artist_name)} · ${esc(e.title)}</span>
+        <span class="st2 warn"><span class="led" style="width:5px;height:5px"></span>待官宣</span></div>`).join("")}</div>`;
+  }
+  return html;
+}
+
+function render(){
+  const on = (D.on_sale||[]).filter(keep), up = (D.upcoming||[]).filter(keep);
+  $("cnt-sale").textContent = on.length + " 场";
+  $("cnt-up").textContent = up.length + " 场";
+  $("onsale").innerHTML = on.length ? on.map(ticket).join("") : `<div class="empty">NO DATA · 当前没有在售场次</div>`;
+  $("upcoming").innerHTML = up.length ? renderUpcoming(up) : `<div class="empty">NO DATA · 暂无待开票场次</div>`;
+}
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,1966 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>演唱会监控 · 设计选项画廊</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FAF6EF; --ink:#1b1611; --card:#fff;
+  --green:#4F9D69; --green-dk:#35724b; --yellow:#FDFF8B; --amber-dk:#a66a00;
+  --pink:#F7AEF8; --mag-dk:#b23ab8; --pop:#f0492f; --line:#e8e0d2; --dim:#7d7263; --faint:#9a8f7d;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --serif:"Songti SC","STSong","Noto Serif SC",serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:14.5px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+.lb{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+
+/* ── gallery switcher ── */
+.galbar{position:sticky;top:0;z-index:50;background:var(--ink);color:var(--paper);
+  display:flex;align-items:center;gap:4px;padding:10px 18px;flex-wrap:wrap}
+.galbar .gt{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;margin-right:12px;opacity:.7}
+.galbar button{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--paper);
+  background:none;border:1px solid rgba(250,246,239,.35);border-radius:999px;padding:6px 14px;cursor:pointer;transition:.15s}
+.galbar button:hover{border-color:var(--paper)}
+.galbar button[aria-pressed="true"]{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.concept{max-width:880px;margin:0 auto;padding:14px 22px 0;font-size:12.5px;color:var(--dim)}
+.concept b{color:var(--ink)}
+.opt{display:none}
+body[data-opt="1"] #o1, body[data-opt="2"] #o2, body[data-opt="3"] #o3{display:block}
+
+/* ═══════════ OPTION 1 · 日历 GIG GUIDE ═══════════ */
+#o1 .wrap{max-width:880px;margin:0 auto;padding:0 22px 90px}
+#o1 header{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;padding:22px 0 14px;border-bottom:1.5px solid var(--ink)}
+#o1 .wordmark{font-size:17px;font-weight:800}
+#o1 .stats{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:.08em}
+#o1 .stats b{color:var(--ink);font-variant-numeric:tabular-nums}
+.dayrail{display:flex;gap:6px;overflow-x:auto;padding:16px 0 14px;border-bottom:1.5px solid var(--ink);scrollbar-width:none;margin:0 -22px;padding-left:22px}
+.dayrail::-webkit-scrollbar{display:none}
+.day{flex:none;width:56px;border:1.5px solid transparent;border-radius:12px;background:none;cursor:pointer;
+  padding:8px 0 7px;text-align:center;font-family:var(--mono);transition:.15s var(--ease)}
+.day:hover{border-color:var(--ink)}
+.day .dw{font-size:9.5px;letter-spacing:.1em;color:var(--faint)}
+.day .dd{font-size:15px;font-weight:700;font-variant-numeric:tabular-nums;margin-top:2px}
+.day .dots{display:flex;gap:3px;justify-content:center;margin-top:5px;height:6px}
+.day .dots i{width:5px;height:5px;border-radius:50%}
+.day .dots i.g{background:var(--green)} .day .dots i.y{background:var(--amber-dk)}
+.day.today{background:var(--ink);color:var(--paper)}
+.day.today .dw{color:rgba(250,246,239,.6)}
+.day.sel{border-color:var(--ink);background:var(--yellow)}
+.day.has{box-shadow:inset 0 0 0 1.5px var(--line)}
+.gig-month{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--faint);margin:26px 0 4px;text-transform:uppercase}
+.gig{display:flex;align-items:baseline;gap:14px;padding:11px 2px;border-bottom:1.5px solid var(--line)}
+.gig .gd{flex:none;width:64px;font-family:var(--mono);font-variant-numeric:tabular-nums}
+.gig .gd .m{font-size:15px;font-weight:700}
+.gig .gd .w{font-size:9.5px;color:var(--faint);letter-spacing:.1em}
+.gig .gt2{flex:1;min-width:0}
+.gig .gt2 .t{font-weight:700;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gig .gt2 .m2{font-size:12px;color:var(--dim);margin-top:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gig .gs{flex:none;font-family:var(--mono);font-size:10px;letter-spacing:.12em;font-weight:700;text-transform:uppercase;display:flex;align-items:center;gap:6px}
+.gig .gs.on{color:var(--green-dk)} .gig .gs.up{color:var(--amber-dk)}
+.gig .gs i{width:6px;height:6px;border-radius:50%;background:currentColor}
+.gig .ga{flex:none}
+.gig .ga a{font-family:var(--mono);font-size:10.5px;font-weight:700;color:var(--ink);text-decoration:none;
+  border:1.5px solid var(--ink);border-radius:999px;padding:4px 11px;background:var(--yellow);transition:.15s}
+.gig .ga a:hover{transform:translate(-1px,-1px);box-shadow:2px 2px 0 var(--ink)}
+#o1 details{margin-top:34px;border-top:1.5px solid var(--ink);padding-top:16px}
+#o1 summary{cursor:pointer;font-weight:700;font-size:14px;list-style:none;display:flex;gap:10px;align-items:baseline}
+#o1 summary::-webkit-details-marker{display:none}
+#o1 summary .lb{margin-left:auto}
+#o1 .chg{padding:10px 0;border-bottom:1px solid var(--line);font-size:13px;display:flex;gap:10px}
+#o1 .chg .mk{font-family:var(--mono);color:var(--mag-dk);font-weight:700}
+
+/* ═══════════ OPTION 2 · BENTO 仪表盘 ═══════════ */
+#o2 .wrap{max-width:920px;margin:0 auto;padding:0 22px 90px}
+#o2 header{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;padding:22px 0 18px}
+#o2 .wordmark{font-size:20px;font-weight:800}
+#o2 .stats{font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:.06em}
+#o2 .stats b{color:var(--ink)}
+.bento{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.tile{border:1.5px solid var(--ink);border-radius:20px;padding:18px 20px;background:var(--card);
+  box-shadow:4px 4px 0 rgba(27,22,17,.9);display:flex;flex-direction:column;min-height:0}
+.tile h3{margin:0 0 12px;display:flex;align-items:baseline;gap:8px}
+.tile h3 .lb{color:rgba(27,22,17,.55)}
+.tile h3 .n{margin-left:auto;font-family:var(--mono);font-size:20px;font-weight:700;font-variant-numeric:tabular-nums}
+.tile.sale{grid-column:span 2;grid-row:span 2;background:var(--green)}
+.tile.sale *{color:#fff}
+.tile.sale .lb{color:rgba(255,255,255,.75)}
+.tile.up{grid-column:span 2;grid-row:span 2;background:var(--yellow)}
+.tile.rumor{grid-column:span 2;background:var(--pink)}
+.tile.chg{grid-column:span 2}
+.tile.artist{grid-column:span 4;background:var(--card)}
+.tile .rows{display:flex;flex-direction:column;gap:0;overflow:hidden}
+.trow{display:flex;align-items:baseline;gap:10px;padding:8px 0;border-top:1.5px solid rgba(27,22,17,.18);font-size:13px}
+.tile.sale .trow{border-top-color:rgba(255,255,255,.3)}
+.trow .d{font-family:var(--mono);font-size:11px;font-weight:700;flex:none;width:44px;font-variant-numeric:tabular-nums}
+.trow .t{flex:1;min-width:0;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.trow .c{flex:none;font-size:11.5px;opacity:.75}
+.trow a{flex:none;font-family:var(--mono);font-size:10px;font-weight:700;color:var(--ink);background:#fff;
+  border:1.5px solid var(--ink);border-radius:999px;padding:3px 10px;text-decoration:none}
+.trow a:hover{transform:translate(-1px,-1px);box-shadow:2px 2px 0 var(--ink)}
+.tile .foot{margin-top:auto;padding-top:10px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;opacity:.6;text-transform:uppercase}
+.achips{display:flex;gap:8px;flex-wrap:wrap}
+.achip{font-family:var(--mono);font-size:11px;border:1.5px solid var(--ink);border-radius:999px;padding:5px 12px;background:var(--paper)}
+.achip b{font-variant-numeric:tabular-nums}
+.achip.zero{opacity:.45;border-style:dashed}
+.chgline{font-size:12.5px;padding:6px 0;border-top:1px solid var(--line);display:flex;gap:8px}
+.chgline .mk{font-family:var(--mono);font-weight:700;color:var(--mag-dk)}
+@media (max-width:720px){.bento{grid-template-columns:1fr 1fr}.tile.sale,.tile.up,.tile.rumor,.tile.chg,.tile.artist{grid-column:span 2}}
+
+/* ═══════════ OPTION 3 · 杂志清单 ═══════════ */
+#o3 .wrap{max-width:640px;margin:0 auto;padding:0 22px 100px}
+#o3 header{padding:40px 0 26px;border-bottom:2px solid var(--ink);text-align:left}
+#o3 .kicker{font-family:var(--mono);font-size:10.5px;letter-spacing:.3em;color:var(--mag-dk);text-transform:uppercase}
+#o3 h1{font-family:var(--serif);font-size:34px;font-weight:900;margin:10px 0 12px;letter-spacing:.02em}
+#o3 .stand{font-size:14.5px;color:var(--dim);line-height:1.8}
+#o3 .stand b{color:var(--ink)}
+#o3 .chapter{margin-top:54px}
+#o3 .chead{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:6px}
+#o3 .cnum{font-family:var(--mono);font-size:30px;font-weight:700;color:var(--mag-dk);line-height:1}
+#o3 .chead h2{font-family:var(--serif);font-size:20px;font-weight:900;margin:0}
+#o3 .chead .lb{margin-left:auto}
+#o3 .it{padding:16px 0 15px;border-bottom:1px solid var(--line)}
+#o3 .it .tt{font-family:var(--serif);font-size:17px;font-weight:700;line-height:1.4}
+#o3 .it .mm{font-size:12.5px;color:var(--dim);margin-top:5px}
+#o3 .it .mm span+span::before{content:"·";margin:0 7px;opacity:.5}
+#o3 .it .sr{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;margin-top:7px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+#o3 .sr .on{color:var(--green-dk);font-weight:700}
+#o3 .sr .up{color:var(--amber-dk);font-weight:700}
+#o3 .sr a{color:var(--mag-dk);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--pink)}
+#o3 .grp{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--faint);margin:18px 0 2px;text-transform:uppercase}
+#o3 .note{margin-top:54px;background:#fff;border:1.5px solid var(--ink);border-radius:4px;padding:18px 20px;box-shadow:5px 5px 0 var(--pink)}
+#o3 .note h4{margin:0 0 8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;color:var(--mag-dk);text-transform:uppercase}
+#o3 .note .l{font-size:13px;padding:6px 0;border-top:1px solid var(--line);display:flex;gap:9px}
+#o3 .note .l .mk{font-family:var(--mono);font-weight:700;color:var(--mag-dk)}
+</style>
+</head>
+<body data-opt="1">
+
+<div class="galbar">
+  <span class="gt">设计选项 →</span>
+  <button data-o="1" aria-pressed="true">① 日历 Gig Guide</button>
+  <button data-o="2" aria-pressed="false">② Bento 仪表盘</button>
+  <button data-o="3" aria-pressed="false">③ 杂志清单</button>
+</div>
+<div class="concept" id="concept"></div>
+
+<!-- ═══ OPTION 1 ═══ -->
+<div class="opt" id="o1"><div class="wrap">
+  <header>
+    <div class="wordmark">演唱会监控</div>
+    <div class="stats" id="s1"></div>
+  </header>
+  <div class="dayrail" id="dayrail"></div>
+  <div id="gigs"></div>
+  <details>
+    <summary>本轮变化 <span class="lb" id="c1sum"></span></summary>
+    <div id="c1" style="margin-top:10px"></div>
+  </details>
+</div></div>
+
+<!-- ═══ OPTION 2 ═══ -->
+<div class="opt" id="o2"><div class="wrap">
+  <header>
+    <div class="wordmark">演唱会监控</div>
+    <div class="stats" id="s2"></div>
+  </header>
+  <div class="bento">
+    <div class="tile sale">
+      <h3><span class="lb">ON SALE</span>正在售卖<span class="n" id="n2sale"></span></h3>
+      <div class="rows" id="b2sale"></div>
+      <div class="foot">点「购票」直达来源页</div>
+    </div>
+    <div class="tile up">
+      <h3><span class="lb">UPCOMING</span>待开票<span class="n" id="n2up"></span></h3>
+      <div class="rows" id="b2up"></div>
+      <div class="foot" id="b2upfoot"></div>
+    </div>
+    <div class="tile rumor">
+      <h3><span class="lb">RUMOR</span>舆情线索<span class="n" id="n2ru"></span></h3>
+      <div class="rows" id="b2ru"></div>
+    </div>
+    <div class="tile chg">
+      <h3><span class="lb">DIFF</span>本轮变化</h3>
+      <div class="rows" id="b2chg"></div>
+      <div class="foot" id="b2chgfoot"></div>
+    </div>
+    <div class="tile artist">
+      <h3><span class="lb">WATCHLIST</span>关注艺人</h3>
+      <div class="achips" id="b2artists"></div>
+    </div>
+  </div>
+</div></div>
+
+<!-- ═══ OPTION 3 ═══ -->
+<div class="opt" id="o3"><div class="wrap">
+  <header>
+    <div class="kicker" id="k3"></div>
+    <h1>演唱会监控</h1>
+    <div class="stand" id="stand3"></div>
+  </header>
+  <div class="chapter">
+    <div class="chead"><span class="cnum">01</span><h2>正在售卖</h2><span class="lb" id="c3sale"></span></div>
+    <div id="e3sale"></div>
+  </div>
+  <div class="chapter">
+    <div class="chead"><span class="cnum">02</span><h2>已官宣 · 待开票</h2><span class="lb" id="c3up"></span></div>
+    <div id="e3up"></div>
+  </div>
+  <div class="note">
+    <h4>编辑注记 · 本轮变化</h4>
+    <div id="e3chg"></div>
+  </div>
+</div></div>
+
+<script>
+const D = {
+ "generated_at": "2026-08-07T14:38:50",
+ "last_run": "2026-08-07T14:38:50",
+ "last_run_id": "20260807-143808",
+ "last_research_at": "2026-08-07T11:52:52",
+ "artists": [
+  {
+   "key": "shayiting",
+   "name": "沙一汀",
+   "region": "cn"
+  },
+  {
+   "key": "menni",
+   "name": "门尼",
+   "region": "cn"
+  },
+  {
+   "key": "jiamu",
+   "name": "加木",
+   "region": "cn"
+  },
+  {
+   "key": "njz",
+   "name": "NJZ",
+   "region": "kpop"
+  },
+  {
+   "key": "kiiikiii",
+   "name": "KiiiKiii",
+   "region": "kpop"
+  },
+  {
+   "key": "ive",
+   "name": "IVE",
+   "region": "kpop"
+  },
+  {
+   "key": "aespa",
+   "name": "aespa",
+   "region": "kpop"
+  },
+  {
+   "key": "lesserafim",
+   "name": "LE SSERAFIM",
+   "region": "kpop"
+  },
+  {
+   "key": "babymonster",
+   "name": "BABYMONSTER",
+   "region": "kpop"
+  },
+  {
+   "key": "illit",
+   "name": "ILLIT",
+   "region": "kpop"
+  },
+  {
+   "key": "hearts2hearts",
+   "name": "Hearts2Hearts",
+   "region": "kpop"
+  },
+  {
+   "key": "katseye",
+   "name": "KATSEYE",
+   "region": "kpop"
+  }
+ ],
+ "on_sale": [
+  {
+   "source": "showstart",
+   "artist_key": "shayiting",
+   "artist_name": "沙一汀",
+   "title": "8.9沙一汀EL · 明星日 | 武汉欢乐谷潮流红人派对",
+   "tour_name": "",
+   "performers": "沙一汀EL",
+   "city": "武汉",
+   "venue": "武汉欢乐谷",
+   "country": "",
+   "show_date": "2026-08-09",
+   "show_time": "09:30",
+   "show_time_raw": "08月09日 09:30-08月09日 22:00",
+   "price": "¥150起",
+   "ticket_tiers": [
+    "¥150 夜场票",
+    "¥180 学生全日票",
+    "¥200 全价票"
+   ],
+   "sale_status": "on_sale",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/306086",
+     "source_id": "306086"
+    }
+   ],
+   "first_seen": "2026-08-07T11:50:14",
+   "first_seen_run": "20260807-114954",
+   "last_seen": "2026-08-07T14:38:50",
+   "id": "9b6db4a051b3acef",
+   "status": "on_sale",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "jiamu",
+   "artist_name": "加木",
+   "title": "上海欢乐谷EV音乐乐园——加木",
+   "tour_name": "",
+   "performers": "加木",
+   "city": "上海",
+   "venue": "上海欢乐谷",
+   "country": "",
+   "show_date": "2026-08-15",
+   "show_time": "20:00",
+   "show_time_raw": "08月15日 20:00-08月15日 21:00",
+   "price": "¥260",
+   "ticket_tiers": [
+    "¥260 上海欢乐谷全日票"
+   ],
+   "sale_status": "on_sale",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/305855",
+     "source_id": "305855"
+    }
+   ],
+   "first_seen": "2026-08-07T11:50:14",
+   "first_seen_run": "20260807-114954",
+   "last_seen": "2026-08-07T14:38:50",
+   "id": "f9504954a23e329d",
+   "status": "on_sale",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "shayiting",
+   "artist_name": "沙一汀",
+   "title": "上海欢乐谷EV音乐乐园——沙一汀",
+   "tour_name": "",
+   "performers": "沙一汀EL",
+   "city": "上海",
+   "venue": "上海欢乐谷",
+   "country": "",
+   "show_date": "2026-08-16",
+   "show_time": "20:00",
+   "show_time_raw": "08月16日 20:00-08月16日 20:30",
+   "price": "¥260",
+   "ticket_tiers": [
+    "¥260 上海欢乐谷全日票"
+   ],
+   "sale_status": "on_sale",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/306497",
+     "source_id": "306497"
+    }
+   ],
+   "first_seen": "2026-08-07T11:50:14",
+   "first_seen_run": "20260807-114954",
+   "last_seen": "2026-08-07T14:38:50",
+   "id": "a3f7a3a5653098fa",
+   "status": "on_sale",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "jiamu",
+   "artist_name": "加木",
+   "title": "2026布瑞吉77%巡演-上海站",
+   "tour_name": "",
+   "performers": "Bridge（布瑞吉）/加木",
+   "city": "上海",
+   "venue": "上海 PHASE蜚声LIVEHOUSE",
+   "country": "",
+   "show_date": "2026-08-16",
+   "show_time": "20:00",
+   "show_time_raw": "08月16日 20:00-08月16日 22:00",
+   "price": "¥248起",
+   "ticket_tiers": [
+    "¥248 普通票",
+    "¥368 VIP票"
+   ],
+   "sale_status": "on_sale",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/300367",
+     "source_id": "300367"
+    }
+   ],
+   "first_seen": "2026-08-07T11:50:14",
+   "first_seen_run": "20260807-114954",
+   "last_seen": "2026-08-07T14:38:50",
+   "id": "f2b2b11b4a7a1d15",
+   "status": "on_sale",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "jiamu",
+   "artist_name": "加木",
+   "title": "三火Flame【蓝眼泪】个人巡演南京站七夕专场",
+   "tour_name": "",
+   "performers": "LilAsian/三火flame/加木",
+   "city": "南京",
+   "venue": "稻香·彩虹剧院",
+   "country": "",
+   "show_date": "2026-08-19",
+   "show_time": "20:00",
+   "show_time_raw": "08月19日 20:00-08月19日 22:00",
+   "price": "¥168起",
+   "ticket_tiers": [
+    "¥168 预售票",
+    "¥188 全价票",
+    "¥308 VIP票"
+   ],
+   "sale_status": "on_sale",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/305683",
+     "source_id": "305683"
+    }
+   ],
+   "first_seen": "2026-08-07T11:50:14",
+   "first_seen_run": "20260807-114954",
+   "last_seen": "2026-08-07T14:38:50",
+   "id": "9b4b484fcc3da4a7",
+   "status": "on_sale",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "menni",
+   "artist_name": "门尼",
+   "title": "2026JUMPPARK腾讯视频音乐大赏",
+   "tour_name": "",
+   "performers": "满江/那英/余佳运/小鬼（王琳凯 ）/黄子弘凡/亚森/孔雪儿/单依纯/早安/傲日其愣/蔡淇/杨润泽/BZ1/张子墨/门尼/ADD男团/Enli恩利/任豪/赵骏/宋子乐/费宇涛/林沐然/邓凯（邓尚）/徐阳扬/旦增曲培（Tenzin Choepel）",
+   "city": "贵阳",
+   "venue": "贵阳市观山湖公园民族大联欢广场",
+   "country": "",
+   "show_date": "2026-08-29",
+   "show_time": "13:55",
+   "show_time_raw": "08月29日 13:55-08月29日 21:45",
+   "price": "¥388起",
+   "ticket_tiers": [
+    "¥388 8.29预售单日票",
+    "¥468 8.29全价单日票",
+    "¥498 8.29预售VIP单日票",
+    "¥698 8.29预售双人单日票",
+    "¥698 8.29全价VIP单人票",
+    "¥698 预售两日通票",
+    "¥858 8.29全价双人单日票",
+    "¥858 全价两日通票"
+   ],
+   "sale_status": "on_sale",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/305163",
+     "source_id": "305163"
+    }
+   ],
+   "first_seen": "2026-08-07T11:50:14",
+   "first_seen_run": "20260807-114954",
+   "last_seen": "2026-08-07T14:38:50",
+   "id": "53d75760062dcf97",
+   "status": "on_sale",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "katseye",
+   "artist_name": "KATSEYE",
+   "title": "KATSEYE〈WILDWORLD〉世界巡演 · 都柏林开幕站",
+   "tour_name": "THE WILDWORLD TOUR",
+   "performers": "",
+   "city": "都柏林",
+   "venue": "3Arena",
+   "country": "Ireland",
+   "show_date": "2026-09-01",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "on_sale",
+   "sale_time": "2026-05-21",
+   "confidence": "confirmed",
+   "note": "全巡 31 场，欧洲段 9/1 都柏林开跑。门票 5/21 已公开发售，多站售罄。目前未公布亚洲场。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://consequence.net/2026/05/katseye-2026-wildworld-tour-how-to-get-tickets/",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "id": "51eb18c5f6d8adab",
+   "status": "on_sale",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "jiamu",
+   "artist_name": "加木",
+   "title": "口味王·杭州湾银河左岸音乐节",
+   "tour_name": "",
+   "performers": "二手玫瑰乐队/痛仰/岛屿心情/盘尼西林/麻园诗人/Supper Moment/陈绮贞/C-BLOCK/棱镜/TizzyT/梁博/Capper（张砚拙）/李大奔/回春丹乐队/安溥ANPU/CashTrippy /Top Barry/加木/Hogee",
+   "city": "嘉兴",
+   "venue": "杭州湾银河左岸音乐节",
+   "country": "",
+   "show_date": "2026-09-05",
+   "show_time": "13:00",
+   "show_time_raw": "09月05日 13:00-09月05日 21:00",
+   "price": "¥299起",
+   "ticket_tiers": [
+    "¥299 9.5早鸟单日票",
+    "¥399 9.5预售单日票",
+    "¥498 9.5预售单日票"
+   ],
+   "sale_status": "on_sale",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/306791",
+     "source_id": "306791"
+    }
+   ],
+   "first_seen": "2026-08-07T11:50:14",
+   "first_seen_run": "20260807-114954",
+   "last_seen": "2026-08-07T14:38:50",
+   "id": "f4d8c0961daa627f",
+   "status": "on_sale",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "katseye",
+   "artist_name": "KATSEYE",
+   "title": "KATSEYE〈WILDWORLD〉世界巡演 · 北美段开幕（迈阿密）",
+   "tour_name": "THE WILDWORLD TOUR",
+   "performers": "",
+   "city": "迈阿密",
+   "venue": "Kaseya Center",
+   "country": "USA",
+   "show_date": "2026-10-13",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "on_sale",
+   "sale_time": "2026-05-21",
+   "confidence": "confirmed",
+   "note": "北美段 10/13 迈阿密起，经亚特兰大/华盛顿/波士顿/芝加哥/洛杉矶等至 11/27 墨西哥城收官。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://www.rollingstone.com/music/music-news/katseye-2026-world-tour-wild-ep-1235561830/",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "id": "59f5581d7eb35450",
+   "status": "on_sale",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "katseye",
+   "artist_name": "KATSEYE",
+   "title": "KATSEYE〈WILDWORLD〉世界巡演 · 墨西哥城收官站",
+   "tour_name": "THE WILDWORLD TOUR",
+   "performers": "",
+   "city": "墨西哥城",
+   "venue": "Palacio de los Deportes",
+   "country": "Mexico",
+   "show_date": "2026-11-27",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "on_sale",
+   "sale_time": "2026-05-21",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://en.wikipedia.org/wiki/The_Wildworld_Tour",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "id": "8e69662461f89521",
+   "status": "on_sale",
+   "is_new": false
+  }
+ ],
+ "upcoming": [
+  {
+   "source": "research",
+   "artist_key": "babymonster",
+   "artist_name": "BABYMONSTER",
+   "title": "BABYMONSTER〈CHOOM〉世界巡演 · 马尼拉站",
+   "tour_name": "CHOOM WORLD TOUR",
+   "performers": "",
+   "city": "马尼拉",
+   "venue": "SM Mall of Asia Arena",
+   "country": "Philippines",
+   "show_date": "2026-09-05",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://en.wikipedia.org/wiki/Choom_World_Tour",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "id": "ee3d00a0b11607c4",
+   "status": "upcoming",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "babymonster",
+   "artist_name": "BABYMONSTER",
+   "title": "BABYMONSTER〈CHOOM〉世界巡演 · 澳门站",
+   "tour_name": "CHOOM WORLD TOUR",
+   "performers": "",
+   "city": "澳门",
+   "venue": "澳门威尼斯人金光综艺馆",
+   "country": "Macau",
+   "show_date": "2026-09-11",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "9/11-9/12 两场。离内地最近的一站，护照/通行证即可去。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://en.wikipedia.org/wiki/Choom_World_Tour",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "id": "9e23e91b6efadfdb",
+   "status": "upcoming",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "babymonster",
+   "artist_name": "BABYMONSTER",
+   "title": "BABYMONSTER〈CHOOM〉世界巡演 · 大阪站",
+   "tour_name": "CHOOM WORLD TOUR",
+   "performers": "",
+   "city": "大阪",
+   "venue": "京瓷巨蛋",
+   "country": "Japan",
+   "show_date": "2026-09-22",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "9/22-9/23 两场。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://en.wikipedia.org/wiki/Choom_World_Tour",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "id": "3eba6c3990b01a09",
+   "status": "upcoming",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "babymonster",
+   "artist_name": "BABYMONSTER",
+   "title": "BABYMONSTER〈CHOOM〉世界巡演 · 雅加达站",
+   "tour_name": "CHOOM WORLD TOUR",
+   "performers": "",
+   "city": "雅加达",
+   "venue": "Indonesia Arena",
+   "country": "Indonesia",
+   "show_date": "2026-10-17",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://en.wikipedia.org/wiki/Choom_World_Tour",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "id": "70e4afe8d2d057bd",
+   "status": "upcoming",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "babymonster",
+   "artist_name": "BABYMONSTER",
+   "title": "BABYMONSTER〈CHOOM〉世界巡演 · 曼谷站",
+   "tour_name": "CHOOM WORLD TOUR",
+   "performers": "",
+   "city": "曼谷",
+   "venue": "Impact Arena",
+   "country": "Thailand",
+   "show_date": "2026-11-07",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "11/7-11/8 两场。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://en.wikipedia.org/wiki/Choom_World_Tour",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "id": "2ef764cab06d7849",
+   "status": "upcoming",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "babymonster",
+   "artist_name": "BABYMONSTER",
+   "title": "BABYMONSTER〈CHOOM〉世界巡演 · 吉隆坡站",
+   "tour_name": "CHOOM WORLD TOUR",
+   "performers": "",
+   "city": "吉隆坡",
+   "venue": "Unifi Arena",
+   "country": "Malaysia",
+   "show_date": "2026-11-14",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "11/14-11/15 两场。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://en.wikipedia.org/wiki/Choom_World_Tour",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "id": "ddfabf9c5a97a640",
+   "status": "upcoming",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "babymonster",
+   "artist_name": "BABYMONSTER",
+   "title": "BABYMONSTER〈CHOOM〉世界巡演 · 台北站",
+   "tour_name": "CHOOM WORLD TOUR",
+   "performers": "",
+   "city": "台北",
+   "venue": "台北小巨蛋",
+   "country": "Taiwan",
+   "show_date": "2026-11-21",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "11/21-11/22 两场。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://en.wikipedia.org/wiki/Choom_World_Tour",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "id": "1c559c2e7566fa3e",
+   "status": "upcoming",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "babymonster",
+   "artist_name": "BABYMONSTER",
+   "title": "BABYMONSTER〈CHOOM〉世界巡演 · 新加坡站",
+   "tour_name": "CHOOM WORLD TOUR",
+   "performers": "",
+   "city": "新加坡",
+   "venue": "新加坡室内体育馆",
+   "country": "Singapore",
+   "show_date": "2026-11-28",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "11/28-11/29 两场。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://en.wikipedia.org/wiki/Choom_World_Tour",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "id": "baaa3c56e5da53fc",
+   "status": "upcoming",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "babymonster",
+   "artist_name": "BABYMONSTER",
+   "title": "BABYMONSTER〈CHOOM〉世界巡演 · 香港站",
+   "tour_name": "CHOOM WORLD TOUR",
+   "performers": "",
+   "city": "香港",
+   "venue": "亚洲国际博览馆 AsiaWorld-Arena",
+   "country": "Hong Kong",
+   "show_date": "2027-01-09",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "目前公布的最后一站。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://en.wikipedia.org/wiki/Choom_World_Tour",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "id": "0540199f40717702",
+   "status": "upcoming",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "lesserafim",
+   "artist_name": "LE SSERAFIM",
+   "title": "LE SSERAFIM〈PUREFLOW〉第二次世巡 · 亚洲场待公布",
+   "tour_name": "2026 LE SSERAFIM TOUR 'PUREFLOW'",
+   "performers": "",
+   "city": "",
+   "venue": "",
+   "country": "",
+   "show_date": "",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "upcoming",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "官宣：23 城 32 场，7 月起，覆盖韩国/日本/北美/欧洲/亚洲。中国内地及亚洲具体场次与开票时间尚未公布，需持续盯。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://www.forbes.com/sites/laurasirikul/2026/04/28/le-sserafim-announces-second-world-tour-pureflow-starting-this-summer/",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "id": "2c57040c8e79dfb3",
+   "status": "upcoming",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "menni",
+   "artist_name": "门尼",
+   "title": "门尼 2026 巡回演唱会 · 城市与开票待公布",
+   "tour_name": "门尼MONEY 2026巡回演唱会",
+   "performers": "",
+   "city": "",
+   "venue": "",
+   "country": "",
+   "show_date": "",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "upcoming",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "随新专辑《门尼III：贵族》官宣启动巡演，但站点、日期、开票时间均未公布。这是当前最值得盯的一条。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://www.sina.cn/news/detail/5300604437005233.html",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "id": "a0c7f9015f29bfc0",
+   "status": "upcoming",
+   "is_new": false
+  }
+ ],
+ "ended": [
+  {
+   "source": "showstart",
+   "artist_key": "shayiting",
+   "artist_name": "沙一汀",
+   "title": "音乐缘宇宙成都欢乐谷2026夏浪狂欢节",
+   "tour_name": "",
+   "performers": "沙一汀EL/小阿七/童禹坤",
+   "city": "成都",
+   "venue": "成都欢乐谷",
+   "country": "",
+   "show_date": "2026-08-01",
+   "show_time": "19:00",
+   "show_time_raw": "08月08日 19:00-08月08日 22:00",
+   "price": "¥150起",
+   "ticket_tiers": [
+    "¥150 下午票",
+    "¥168 下午票",
+    "¥190 学生票",
+    "¥230 全天票"
+   ],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/305957",
+     "source_id": "305957"
+    }
+   ],
+   "first_seen": "2026-08-07T11:50:14",
+   "first_seen_run": "20260807-114954",
+   "last_seen": "2026-08-07T14:38:50",
+   "id": "81f631ed1a03ddca",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "jiamu",
+   "artist_name": "加木",
+   "title": "翁杰Winjay2026「城乡」巡演 -杭州站",
+   "tour_name": "",
+   "performers": "ICE 杨长青/翁杰_Winjay/加木",
+   "city": "杭州",
+   "venue": "CH8-LIVEHOUSE（杭州小河店）",
+   "country": "",
+   "show_date": "2026-07-31",
+   "show_time": "20:00",
+   "show_time_raw": "07月31日 20:00-07月31日 22:00",
+   "price": "¥188起",
+   "ticket_tiers": [
+    "¥188 普通票",
+    "¥288 VIP票"
+   ],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/302253",
+     "source_id": "302253"
+    }
+   ],
+   "first_seen": "2026-08-07T11:50:14",
+   "first_seen_run": "20260807-114954",
+   "last_seen": "2026-08-07T14:38:50",
+   "id": "96e65962801b9194",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "shayiting",
+   "artist_name": "沙一汀",
+   "title": "2026北京欢乐谷大眼睛音乐季",
+   "tour_name": "",
+   "performers": "Rapeter吴嘉轩/极品贵公子/沙一汀EL",
+   "city": "北京",
+   "venue": "北京欢乐谷",
+   "country": "",
+   "show_date": "2026-07-18",
+   "show_time": "21:00",
+   "show_time_raw": "08月22日 21:00-08月22日 22:00",
+   "price": "¥339",
+   "ticket_tiers": [
+    "¥339 8.22全价票"
+   ],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/303752",
+     "source_id": "303752"
+    }
+   ],
+   "first_seen": "2026-08-07T11:50:14",
+   "first_seen_run": "20260807-114954",
+   "last_seen": "2026-08-07T14:38:50",
+   "id": "7698ce603b252353",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "shayiting",
+   "artist_name": "沙一汀",
+   "title": "【深圳】深圳•沙一汀EL 2026夏浪音乐节（深圳欢乐谷）",
+   "tour_name": "",
+   "performers": "沙一汀EL",
+   "city": "深圳",
+   "venue": "深圳欢乐谷阳光海岸音乐节舞台",
+   "country": "",
+   "show_date": "2026-07-12",
+   "show_time": "20:00",
+   "show_time_raw": "07月12日 20:00-07月12日 21:00",
+   "price": "¥188起",
+   "ticket_tiers": [
+    "¥188 明星日夜场票",
+    "¥218 明星日青少年/学生票",
+    "¥260 明星日成人票"
+   ],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/302418",
+     "source_id": "302418"
+    }
+   ],
+   "first_seen": "2026-08-07T11:50:14",
+   "first_seen_run": "20260807-114954",
+   "last_seen": "2026-08-07T14:38:50",
+   "id": "0ce217ff2b6b83ba",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "jiamu",
+   "artist_name": "加木",
+   "title": "2026 YOUNGJACK 满舒克巡演·上海站",
+   "tour_name": "",
+   "performers": "满舒克（YoungJack）/加木",
+   "city": "上海",
+   "venue": "瓦肆 VAS ear（普陀店）",
+   "country": "",
+   "show_date": "2026-07-10",
+   "show_time": "20:00",
+   "show_time_raw": "07月10日 20:00-07月10日 22:00",
+   "price": "¥298起",
+   "ticket_tiers": [
+    "¥298 现场票",
+    "¥398 VIP票"
+   ],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/300559",
+     "source_id": "300559"
+    }
+   ],
+   "first_seen": "2026-08-07T11:50:14",
+   "first_seen_run": "20260807-114954",
+   "last_seen": "2026-08-07T14:38:50",
+   "id": "c5b69c1914eb50e9",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "shayiting",
+   "artist_name": "沙一汀",
+   "title": "【售罄】刘思鉴「发生在闷热夏天」2026巡演上海站",
+   "tour_name": "",
+   "performers": "ODD陈思键/刘思鉴/沙一汀EL",
+   "city": "上海",
+   "venue": "回响之地 Music Park",
+   "country": "",
+   "show_date": "2026-07-04",
+   "show_time": "20:00",
+   "show_time_raw": "07月04日 20:00-07月04日 22:00",
+   "price": "¥288起",
+   "ticket_tiers": [
+    "¥288 全价票",
+    "¥388 VIP票"
+   ],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/300271",
+     "source_id": "300271"
+    }
+   ],
+   "first_seen": "2026-08-07T11:50:14",
+   "first_seen_run": "20260807-114954",
+   "last_seen": "2026-08-07T14:38:50",
+   "id": "ff1c50001cc62945",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "jiamu",
+   "artist_name": "加木",
+   "title": "口味王鄂州银河左岸音乐节",
+   "tour_name": "",
+   "performers": "盘尼西林/麻园诗人/花粥/许钧/TizzyT/VAVA/GALI/Capper（张砚拙）/李大奔/姜云升/回春丹乐队/Rapeter吴嘉轩/陈婧霏/颜人中/舒灏Orenda/CashTrippy /JinJiBeWater.隼/连麻Swimming/TINY7/SASIOVERLXRD/kkluv/RICHNOMADIC/雾也至/Top Barry/银河快递（GalaxyExpress）/加木/戴萌/门尼/恍神儿",
+   "city": "鄂州",
+   "venue": "鄂州市鄂城区园博园东门对面鄂州大道东侧地块（户外草坪空地，露天音乐节场地）",
+   "country": "",
+   "show_date": "2026-07-04",
+   "show_time": "12:00",
+   "show_time_raw": "07月04日 12:00-07月04日 21:00",
+   "price": "¥199起",
+   "ticket_tiers": [
+    "¥199 7.4早鸟单日票",
+    "¥299 7.4预售单日票",
+    "¥398 7.4预售单日票",
+    "¥399 7.4正价单日票",
+    "¥498 7.4正价单日票"
+   ],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/301296",
+     "source_id": "301296"
+    }
+   ],
+   "first_seen": "2026-08-07T11:50:14",
+   "first_seen_run": "20260807-114954",
+   "last_seen": "2026-08-07T14:38:50",
+   "id": "bad18830270d07ca",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "shayiting",
+   "artist_name": "沙一汀",
+   "title": "乐堡啤酒·重庆银河左岸音乐节",
+   "tour_name": "",
+   "performers": "岛屿心情/麻园诗人/陶喆/许巍/梅卡德尔乐队/满舒克（YoungJack）/TizzyT/李大奔/姜云升/沉舟乐队/CashTrippy /沙一汀EL/犬儒/DOUDOU（杜冰儿、杜飞儿）/加木/揽佬SKAI ISYOURGOD",
+   "city": "重庆",
+   "venue": "重庆国际博览中心北区室外展场",
+   "country": "",
+   "show_date": "2026-06-27",
+   "show_time": "13:00",
+   "show_time_raw": "06月27日 13:00-06月27日 21:00",
+   "price": "¥99起",
+   "ticket_tiers": [
+    "¥199 6.27早鸟单日票",
+    "¥299 6.27预售单日票",
+    "¥398 6.27预售单日票",
+    "¥399 6.27正价单日票",
+    "¥498 6.27正价单日票"
+   ],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/299259",
+     "source_id": "299259"
+    }
+   ],
+   "first_seen": "2026-08-07T11:50:14",
+   "first_seen_run": "20260807-114954",
+   "last_seen": "2026-08-07T14:38:50",
+   "id": "cf0b920196b0e05a",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "jiamu",
+   "artist_name": "加木",
+   "title": "乐堡啤酒·重庆银河左岸音乐节",
+   "tour_name": "",
+   "performers": "岛屿心情/麻园诗人/陶喆/许巍/梅卡德尔乐队/满舒克（YoungJack）/TizzyT/李大奔/姜云升/沉舟乐队/CashTrippy /沙一汀EL/犬儒/DOUDOU（杜冰儿、杜飞儿）/加木/揽佬SKAI ISYOURGOD",
+   "city": "重庆",
+   "venue": "重庆国际博览中心北区室外展场",
+   "country": "",
+   "show_date": "2026-06-27",
+   "show_time": "13:00",
+   "show_time_raw": "06月27日 13:00-06月27日 21:00",
+   "price": "¥99起",
+   "ticket_tiers": [
+    "¥199 6.27早鸟单日票",
+    "¥299 6.27预售单日票",
+    "¥398 6.27预售单日票",
+    "¥399 6.27正价单日票",
+    "¥498 6.27正价单日票"
+   ],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/299259",
+     "source_id": "299259"
+    }
+   ],
+   "first_seen": "2026-08-07T11:50:14",
+   "first_seen_run": "20260807-114954",
+   "last_seen": "2026-08-07T14:38:50",
+   "id": "f8805861e141b68d",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "jiamu",
+   "artist_name": "加木",
+   "title": "加木&Vinz-T徐赢特别专场-出来玩ER武汉站",
+   "tour_name": "",
+   "performers": "加木/Vinz-T",
+   "city": "武汉",
+   "venue": "MAO Livehouse武汉",
+   "country": "",
+   "show_date": "2026-06-20",
+   "show_time": "20:00",
+   "show_time_raw": "06月20日 20:00-06月20日 22:00",
+   "price": "¥268起",
+   "ticket_tiers": [
+    "¥268 预售票",
+    "¥328 全价票",
+    "¥398 速通票",
+    "¥408 二楼票",
+    "¥468 VIP票"
+   ],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/295917",
+     "source_id": "295917"
+    }
+   ],
+   "first_seen": "2026-08-07T11:50:14",
+   "first_seen_run": "20260807-114954",
+   "last_seen": "2026-08-07T14:38:50",
+   "id": "0b109ca05d943b84",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "jiamu",
+   "artist_name": "加木",
+   "title": "加木&Vinz-T徐赢特别专场-出来玩ER南京站",
+   "tour_name": "",
+   "performers": "加木/Vinz-T",
+   "city": "南京",
+   "venue": "稻香演艺中心（西城路店）",
+   "country": "",
+   "show_date": "2026-06-06",
+   "show_time": "20:00",
+   "show_time_raw": "06月06日 20:00-06月06日 22:00",
+   "price": "¥268起",
+   "ticket_tiers": [
+    "¥268 预售票",
+    "¥328 全价票",
+    "¥398 速通票",
+    "¥468 VIP票"
+   ],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/295916",
+     "source_id": "295916"
+    }
+   ],
+   "first_seen": "2026-08-07T11:50:14",
+   "first_seen_run": "20260807-114954",
+   "last_seen": "2026-08-07T14:38:50",
+   "id": "2004438dcac23fa0",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "jiamu",
+   "artist_name": "加木",
+   "title": "OuttaWave2026「南下 南下」巡演-北京站",
+   "tour_name": "",
+   "performers": "Yosko/加木/OuttaWave",
+   "city": "北京",
+   "venue": "疆进酒·OMNI SPACE（北京）",
+   "country": "",
+   "show_date": "2026-05-23",
+   "show_time": "20:00",
+   "show_time_raw": "05月23日 20:00-05月23日 22:00",
+   "price": "¥158起",
+   "ticket_tiers": [
+    "¥158 预售票",
+    "¥198 普通票",
+    "¥258 VIP票"
+   ],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/295225",
+     "source_id": "295225"
+    }
+   ],
+   "first_seen": "2026-08-07T11:50:14",
+   "first_seen_run": "20260807-114954",
+   "last_seen": "2026-08-07T14:38:50",
+   "id": "f386933175f1bcaa",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "jiamu",
+   "artist_name": "加木",
+   "title": "V.O.B“阿彬羊排饭”2026巡演 Feat.黑麦BlackMic&大宝西 济南站",
+   "tour_name": "",
+   "performers": "V.O.B/黑麦（Black Mic）/TOYOKI/VOB&DoubleC/加木",
+   "city": "济南",
+   "venue": "济南 CaperLand雀跃之地",
+   "country": "",
+   "show_date": "2026-05-22",
+   "show_time": "20:00",
+   "show_time_raw": "05月22日 20:00-05月22日 22:00",
+   "price": "¥128起",
+   "ticket_tiers": [
+    "¥128 预售票",
+    "¥168 全价票",
+    "¥258 VIP票"
+   ],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/292174",
+     "source_id": "292174"
+    }
+   ],
+   "first_seen": "2026-08-07T11:50:14",
+   "first_seen_run": "20260807-114954",
+   "last_seen": "2026-08-07T14:38:50",
+   "id": "fd067bbe917fbea7",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "kiiikiii",
+   "artist_name": "KiiiKiii",
+   "title": "2026 KiiiKiii FAN CONCERT〈KiiiKiii FesTiiival〉首尔",
+   "tour_name": "2026 KiiiKiii FAN CONCERT",
+   "performers": "",
+   "city": "首尔",
+   "venue": "Blue Square 우리WON뱅킹홀",
+   "country": "Korea",
+   "show_date": "2026-05-16",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "ended",
+   "sale_time": "2026-04-17 19:00 KST",
+   "confidence": "confirmed",
+   "note": "首次单独 fancon，5/16-5/17 两场，已结束。粉丝会预售 4/15-4/16，公售 4/17。作为历史基准：该团开票节奏约提前一个月。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://kpop.fandom.com/wiki/2026_KiiiKiii_Fan_Concert_'KiiiKiii_FesTiiival'",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "id": "2abf0d126aff9197",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "shayiting",
+   "artist_name": "沙一汀",
+   "title": "2026葫芦果音乐节·合肥站",
+   "tour_name": "",
+   "performers": "二手玫瑰乐队/刺猬Hedgehog/痛仰/旅行团/盘尼西林/陶喆/满舒克（YoungJack）/TizzyT/房东的猫/GALI/葛仲珊Miss Ko/梁博/李大奔/姜云升/霓虹花园/安溥ANPU/Rapeter吴嘉轩/沙一汀EL/艾志恒Asen/Top Barry/揽佬SKAI ISYOURGOD/范晓萱",
+   "city": "合肥",
+   "venue": "合肥骆岗公园梦想大草坪",
+   "country": "",
+   "show_date": "2026-05-03",
+   "show_time": "13:00",
+   "show_time_raw": "05月03日 13:00-05月03日 22:00",
+   "price": "¥368起",
+   "ticket_tiers": [
+    "¥799 普通全价双日通票"
+   ],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/291139",
+     "source_id": "291139"
+    }
+   ],
+   "first_seen": "2026-08-07T11:50:14",
+   "first_seen_run": "20260807-114954",
+   "last_seen": "2026-08-07T14:38:50",
+   "id": "fb16bc964c7e4616",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "shayiting",
+   "artist_name": "沙一汀",
+   "title": "【成都】口味王·太空奇缘音乐嘉年华",
+   "tour_name": "",
+   "performers": "C-BLOCK/谢帝/Ty./马思唯/GAI周延/Psy.P/法老Pharaoh/Bridge（布瑞吉）/龙崎/李尔新/JarStick/王以太/MENGZI/小精灵/王齐铭/杨和苏KeyNG/Rapeter吴嘉轩/李毅杰PISSY/邓典果/隆历奇/knowknow/JinJiBeWater.隼/连麻Swimming/那奇沃夫/沙一汀EL/鹤仙问鹿仙/SASIOVERLXRD/SleepyCat/kkluv/RICHNOMADIC/MELO墨龙/杨秋儒/加木/喉结蜥蜴/雷迪/prod by 玉",
+   "city": "成都",
+   "venue": "成都露天音乐公园",
+   "country": "",
+   "show_date": "2026-05-02",
+   "show_time": "13:00",
+   "show_time_raw": "05月02日 13:00-05月02日 22:00",
+   "price": "¥288起",
+   "ticket_tiers": [],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/294062",
+     "source_id": "294062"
+    }
+   ],
+   "first_seen": "2026-08-07T11:50:14",
+   "first_seen_run": "20260807-114954",
+   "last_seen": "2026-08-07T14:38:50",
+   "id": "9f7468a22a943415",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "shayiting",
+   "artist_name": "沙一汀",
+   "title": "汽水音乐节",
+   "tour_name": "",
+   "performers": "康子奇/周震南/于贞/李慧珍/OneSD王一珩/蒋敦豪/沙一汀EL/刘雨昕/王澳楠EVE/曾舜晞/黄朔/余宇涵/段艺璇/何浩楠/ADD男团/颜安/李艺彤/邓泽鸣",
+   "city": "北京",
+   "venue": "昌平千帆·拉斐特城堡",
+   "country": "",
+   "show_date": "2026-04-25",
+   "show_time": "15:00",
+   "show_time_raw": "04月25日 15:00-04月25日 21:00",
+   "price": "¥198",
+   "ticket_tiers": [],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/292808",
+     "source_id": "292808"
+    }
+   ],
+   "first_seen": "2026-08-07T11:50:14",
+   "first_seen_run": "20260807-114954",
+   "last_seen": "2026-08-07T14:38:50",
+   "id": "7376a3a0826c1318",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "shayiting",
+   "artist_name": "沙一汀",
+   "title": "沙一汀EL「听汀」广州演唱会",
+   "tour_name": "",
+   "performers": "沙一汀EL",
+   "city": "广州",
+   "venue": "广州体育馆1号馆",
+   "country": "",
+   "show_date": "2025-12-31",
+   "show_time": "21:00",
+   "show_time_raw": "12月31日 21:00-12月31日 23:59",
+   "price": "¥366起",
+   "ticket_tiers": [],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/284739",
+     "source_id": "284739"
+    }
+   ],
+   "first_seen": "2026-08-07T11:50:14",
+   "first_seen_run": "20260807-114954",
+   "last_seen": "2026-08-07T14:38:50",
+   "id": "da226157b21d6f09",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "shayiting",
+   "artist_name": "沙一汀",
+   "title": "沙一汀EL「听汀」北京演唱会",
+   "tour_name": "",
+   "performers": "沙一汀EL",
+   "city": "北京",
+   "venue": "北京国家体育馆",
+   "country": "",
+   "show_date": "2025-11-29",
+   "show_time": "19:00",
+   "show_time_raw": "11月29日 19:00-11月29日 21:00",
+   "price": "¥366起",
+   "ticket_tiers": [],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/282352",
+     "source_id": "282352"
+    }
+   ],
+   "first_seen": "2026-08-07T11:50:14",
+   "first_seen_run": "20260807-114954",
+   "last_seen": "2026-08-07T14:38:50",
+   "id": "8a3567352b82025c",
+   "status": "ended",
+   "is_new": false
+  }
+ ],
+ "rumors": [
+  {
+   "id": "965c66f0f01a40d7",
+   "artist_key": "jiamu",
+   "artist_name": "加木",
+   "headline": "加木近期高频以嘉宾身份出现在他人巡演，个人专场尚无消息",
+   "detail": "秀动数据显示加木 8-9 月连轴出现在布瑞吉巡演上海站、三火Flame 南京站、杭州湾银河左岸音乐节等拼盘场。个人巡演暂无官宣，但演出密度上升通常是发新作/开巡的前兆。",
+   "source_name": "秀动场次数据推断",
+   "url": "https://www.showstart.com/artist/14676563",
+   "credibility": "low",
+   "posted_at": "2026-08-07",
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "is_new": false
+  },
+  {
+   "id": "063cd675f94d4dfc",
+   "artist_key": "njz",
+   "artist_name": "NJZ",
+   "headline": "NJZ / NewJeans 2026 年仍无巡演官宣，海外票务站集体标注「高度预期」",
+   "detail": "Ticketmaster、Songkick、Vivid Seats 目前均无 NJZ 任何 2026-2027 场次。多家票务站把该团列为「最受期待但尚未开跑」的团体之一。也就是说：现在任何声称有 NJZ 门票的渠道都要当心。",
+   "source_name": "Ticketmaster / Songkick 交叉核对",
+   "url": "https://www.songkick.com/artists/10255012-newjeans",
+   "credibility": "high",
+   "posted_at": "2026-08",
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "is_new": false
+  },
+  {
+   "id": "35e9f1b6b824e92a",
+   "artist_key": "babymonster",
+   "artist_name": "BABYMONSTER",
+   "headline": "CHOOM 世巡北美/南美/欧洲段将「择期公布」，亚洲段已排满至 2027 年 1 月",
+   "detail": "官方称全巡至少 29 场 18 城，目前公布的多为亚太场次；北美、南美、欧洲场次待后续公布。对内地观众来说澳门站（9/11-12）和香港站（2027/1/9）是最现实的选择。",
+   "source_name": "Wikipedia / YG 官方公告汇总",
+   "url": "https://en.wikipedia.org/wiki/Choom_World_Tour",
+   "credibility": "high",
+   "posted_at": "2026-08",
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "is_new": false
+  },
+  {
+   "id": "be4dab4ddbae5d93",
+   "artist_key": "menni",
+   "artist_name": "门尼",
+   "headline": "门尼 2026 巡演已官宣启动，但北方场迟迟未公布，粉丝持续催促",
+   "detail": "新专《门尼III：贵族》发行后官宣「门尼MONEY 2026巡回演唱会」，目前只放出巡演概念，未公布任何城市与日期。微博/抖音上已有大量「催促北方场官宣」「巡演地点预测」的讨论。",
+   "source_name": "新浪新闻 / 抖音话题",
+   "url": "https://www.sina.cn/news/detail/5309992602700905.html",
+   "credibility": "medium",
+   "posted_at": "2026-07",
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "is_new": false
+  },
+  {
+   "id": "448bf859600f27a7",
+   "artist_key": "menni",
+   "artist_name": "门尼",
+   "headline": "认证音乐博主：门尼巡演「这就要来了」",
+   "detail": "微博认证音乐博主发布巡演启动消息，措辞为正式官宣口径而非猜测，但未附票务信息。开票大概率走大麦，建议提前关注大麦「想看」。",
+   "source_name": "新浪 / 微博音乐博主",
+   "url": "https://www.sina.cn/news/detail/5300604437005233.html",
+   "credibility": "high",
+   "posted_at": "2026-07",
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "is_new": false
+  },
+  {
+   "id": "cf0fac72df8aeead",
+   "artist_key": "lesserafim",
+   "artist_name": "LE SSERAFIM",
+   "headline": "PUREFLOW 世巡含「亚洲」段，但中国内地场次未在官宣名单内",
+   "detail": "官宣稿写明覆盖韩国/日本/北美/欧洲/亚洲共 23 城 32 场，亚洲具体城市尚未逐一公布。若要蹲内地或港澳台场，需盯 Weverse 公告与大麦。",
+   "source_name": "Forbes / Weverse 公告",
+   "url": "https://weverse.io/lesserafim/notice/35345",
+   "credibility": "medium",
+   "posted_at": "2026-04-28",
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "is_new": false
+  },
+  {
+   "id": "4b724d15262d3a43",
+   "artist_key": "shayiting",
+   "artist_name": "沙一汀",
+   "headline": "「听汀」三城演唱会大麦想看破 30 万、场场秒售罄——下一轮巡演需提前蹲点",
+   "detail": "沙一汀EL 此前上海/北京/广州「听汀」演唱会大麦想看人数超 30 万，门票场场秒空。目前秀动上只有音乐节和欢乐谷明星日等拼盘场，个人巡演暂无新官宣。若开新巡演，建议提前在大麦点「想看」并开开售提醒。",
+   "source_name": "网易新闻",
+   "url": "https://c.m.163.com/news/a/KJNHO5M80517FHQO.html",
+   "credibility": "medium",
+   "posted_at": "2026",
+   "first_seen": "2026-08-07T11:53:06",
+   "first_seen_run": "20260807-115252",
+   "last_seen": "2026-08-07T11:53:06",
+   "is_new": false
+  }
+ ],
+ "notes": [],
+ "counts": {
+  "on_sale": 10,
+  "upcoming": 11,
+  "rumors": 7,
+  "ended": 19
+ }
+};
+const CHANGES = [{"run": "20260807-115252", "type": "new", "artist": "BABYMONSTER", "title": "BABYMONSTER〈CHOOM〉世界巡演 · 澳门站", "info": "2026-09-11 澳门 "}, {"run": "20260807-115252", "type": "new", "artist": "BABYMONSTER", "title": "BABYMONSTER〈CHOOM〉世界巡演 · 台北站", "info": "2026-11-21 台北 "}, {"run": "20260807-115252", "type": "new", "artist": "BABYMONSTER", "title": "BABYMONSTER〈CHOOM〉世界巡演 · 香港站", "info": "2027-01-09 香港 "}, {"run": "20260807-115252", "type": "new", "artist": "BABYMONSTER", "title": "BABYMONSTER〈CHOOM〉世界巡演 · 大阪站", "info": "2026-09-22 大阪 "}, {"run": "20260807-115252", "type": "new", "artist": "BABYMONSTER", "title": "BABYMONSTER〈CHOOM〉世界巡演 · 新加坡站", "info": "2026-11-28 新加坡 "}, {"run": "20260807-115252", "type": "new", "artist": "BABYMONSTER", "title": "BABYMONSTER〈CHOOM〉世界巡演 · 曼谷站", "info": "2026-11-07 曼谷 "}, {"run": "20260807-115252", "type": "new", "artist": "BABYMONSTER", "title": "BABYMONSTER〈CHOOM〉世界巡演 · 马尼拉站", "info": "2026-09-05 马尼拉 "}, {"run": "20260807-115252", "type": "new", "artist": "BABYMONSTER", "title": "BABYMONSTER〈CHOOM〉世界巡演 · 吉隆坡站", "info": "2026-11-14 吉隆坡 "}, {"run": "20260807-115252", "type": "new", "artist": "BABYMONSTER", "title": "BABYMONSTER〈CHOOM〉世界巡演 · 雅加达站", "info": "2026-10-17 雅加达 "}, {"run": "20260807-115252", "type": "new", "artist": "KATSEYE", "title": "KATSEYE〈WILDWORLD〉世界巡演 · 都柏林开幕站", "info": "2026-09-01 都柏林 on_sale"}, {"run": "20260807-115252", "type": "new", "artist": "KATSEYE", "title": "KATSEYE〈WILDWORLD〉世界巡演 · 北美段开幕（迈阿密）", "info": "2026-10-13 迈阿密 on_sale"}, {"run": "20260807-115252", "type": "new", "artist": "KATSEYE", "title": "KATSEYE〈WILDWORLD〉世界巡演 · 墨西哥城收官站", "info": "2026-11-27 墨西哥城 on_sale"}, {"run": "20260807-115252", "type": "new", "artist": "LE SSERAFIM", "title": "LE SSERAFIM〈PUREFLOW〉第二次世巡 · 亚洲场待公布", "info": "  upcoming"}, {"run": "20260807-115252", "type": "new", "artist": "门尼", "title": "门尼 2026 巡回演唱会 · 城市与开票待公布", "info": "  upcoming"}, {"run": "20260807-115252", "type": "rumor", "artist": "门尼", "title": "门尼 2026 巡演已官宣启动，但北方场迟迟未公布，粉丝持续催促", "info": "新浪新闻 / 抖音话题"}, {"run": "20260807-115252", "type": "rumor", "artist": "门尼", "title": "认证音乐博主：门尼巡演「这就要来了」", "info": "新浪 / 微博音乐博主"}, {"run": "20260807-115252", "type": "rumor", "artist": "NJZ", "title": "NJZ / NewJeans 2026 年仍无巡演官宣，海外票务站集体标注「高度预期」", "info": "Ticketmaster / Songkick 交叉核对"}, {"run": "20260807-115252", "type": "rumor", "artist": "LE SSERAFIM", "title": "PUREFLOW 世巡含「亚洲」段，但中国内地场次未在官宣名单内", "info": "Forbes / Weverse 公告"}, {"run": "20260807-115252", "type": "rumor", "artist": "沙一汀", "title": "「听汀」三城演唱会大麦想看破 30 万、场场秒售罄——下一轮巡演需提前蹲点", "info": "网易新闻"}, {"run": "20260807-115252", "type": "rumor", "artist": "BABYMONSTER", "title": "CHOOM 世巡北美/南美/欧洲段将「择期公布」，亚洲段已排满至 2027 年 1 月", "info": "Wikipedia / YG 官方公告汇总"}, {"run": "20260807-115252", "type": "rumor", "artist": "加木", "title": "加木近期高频以嘉宾身份出现在他人巡演，个人专场尚无消息", "info": "秀动场次数据推断"}];
+const WDZH = ["周日","周一","周二","周三","周四","周五","周六"];
+const esc = s => String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const $ = id => document.getElementById(id);
+const cnt = D.counts||{};
+const firstUrl = e => ((e.sources||[]).find(s=>s.url)||{}).url;
+const pdate = d => { if(!d) return null; const [Y,M,Dd]=d.split("-").map(Number); const dt=new Date(Y,M-1,Dd);
+  return {md:M+"/"+String(Dd).padStart(2,"0"), w:WDZH[dt.getDay()], m: Y+"."+String(M).padStart(2,"0")}; };
+
+/* gallery switch */
+const NOTES = {
+  1:"<b>① 日历 Gig Guide</b> — 以「日期」为绝对主轴：顶部是可滑动的 45 天日历条（绿点=在售，黄点=待开票），下面是按月份分组的合并时刻表。本轮变化收成折叠区。适合「我想知道哪天有事」。",
+  2:"<b>② Bento 仪表盘</b> — 模块拼贴：在售绿砖、待开票黄砖、舆情粉砖、变化白砖、艺人条。一眼扫全局面貌，每块砖可直接行动。适合「每天 3 秒扫一眼」。",
+  3:"<b>③ 杂志清单</b> — 编辑排版：开场一段摘要文字，之后 01 / 02 章节式长清单，衬线大标题，零卡片零倒计时。本轮变化降级为「编辑注记」。适合「慢慢读、读完就买票」。"
+};
+document.querySelectorAll(".galbar button").forEach(b=>{
+  b.addEventListener("click",()=>{
+    document.body.dataset.opt = b.dataset.o;
+    document.querySelectorAll(".galbar button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));
+    $("concept").innerHTML = NOTES[b.dataset.o];
+    location.hash = "o"+b.dataset.o;
+  });
+});
+const h0 = (location.hash||"").replace("#o","");
+if(NOTES[h0]) document.querySelector(`.galbar button[data-o="${h0}"]`).click();
+else $("concept").innerHTML = NOTES[1];
+
+/* shared stats */
+const statTxt = `在售 <b>${cnt.on_sale||0}</b> · 待开票 <b>${cnt.upcoming||0}</b> · 舆情 <b>${cnt.rumors||0}</b> · 艺人 <b>${(D.artists||[]).length}</b>`;
+$("s1").innerHTML = statTxt; $("s2").innerHTML = statTxt;
+
+const dated = [...(D.on_sale||[]).map(e=>({...e,_st:"on_sale"})), ...(D.upcoming||[]).map(e=>({...e,_st:"upcoming"}))]
+  .filter(e=>e.show_date).sort((a,b)=>a.show_date<b.show_date?-1:1);
+const undated = [...(D.upcoming||[])].filter(e=>!e.show_date);
+
+/* ═══ OPTION 1: day rail + month groups ═══ */
+(function(){
+  const byDate = {};
+  dated.forEach(e=>{ (byDate[e.show_date] = byDate[e.show_date]||[]).push(e); });
+  const rail = $("dayrail"); const today = new Date(); today.setHours(0,0,0,0);
+  let html = "";
+  for(let i=0;i<45;i++){
+    const d = new Date(today.getTime()+i*86400000);
+    const key = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+    const evs = byDate[key]||[];
+    const dots = [...new Set(evs.map(e=>e._st))].map(s=>`<i class="${s==="on_sale"?"g":"y"}"></i>`).join("");
+    html += `<button class="day ${i===0?"today":""} ${evs.length?"has":""}" data-date="${key}" ${evs.length?`onclick="document.getElementById('g${key}')?.scrollIntoView({behavior:'smooth',block:'center'})"`:""}>
+      <div class="dw">${i===0?"今天":WDZH[d.getDay()]}</div><div class="dd">${d.getMonth()+1}/${d.getDate()}</div>
+      <div class="dots">${dots}</div></button>`;
+  }
+  rail.innerHTML = html;
+
+  let ghtml = "", lastM = "";
+  for(const e of dated){
+    const p = pdate(e.show_date);
+    if(p.m!==lastM){ ghtml += `<div class="gig-month">${p.m}</div>`; lastM = p.m; }
+    const on = e._st==="on_sale"; const url = firstUrl(e);
+    ghtml += `<div class="gig" id="g${e.show_date}">
+      <div class="gd"><div class="m">${p.md}</div><div class="w">${p.w}</div></div>
+      <div class="gt2"><div class="t">${esc(e.artist_name)} · ${esc(e.title)}</div>
+        <div class="m2">${esc([e.city,e.venue,e.show_time,e.price].filter(Boolean).join(" · "))}</div></div>
+      <div class="gs ${on?"on":"up"}"><i></i>${on?"在售":(e.sale_time?"SALE "+e.sale_time.slice(5).replace("-","/"):"待开票")}</div>
+      ${on&&url?`<div class="ga"><a href="${esc(url)}" target="_blank" rel="noopener">购票 ↗</a></div>`:""}
+    </div>`;
+  }
+  if(undated.length){
+    ghtml += `<div class="gig-month">日期待定</div>` + undated.map(e=>
+      `<div class="gig"><div class="gd"><div class="m" style="color:var(--faint)">—</div><div class="w">待定</div></div>
+        <div class="gt2"><div class="t">${esc(e.artist_name)} · ${esc(e.title)}</div><div class="m2">城市与开票时间待公布</div></div>
+        <div class="gs up"><i></i>待官宣</div></div>`).join("");
+  }
+  $("gigs").innerHTML = ghtml;
+
+  $("c1sum").textContent = `NEW ${CHANGES.filter(c=>c.type==="new").length} · RUMOR ${CHANGES.filter(c=>c.type==="rumor").length}`;
+  $("c1").innerHTML = CHANGES.map(c=>`<div class="chg"><span class="mk">${c.type==="new"?"+":"?"}</span>
+    <span>${esc(c.artist)} · ${esc(c.title)}</span></div>`).join("") || `<div class="chg">本轮无变化</div>`;
+})();
+
+/* ═══ OPTION 2: bento ═══ */
+(function(){
+  const on = D.on_sale||[], up = (D.upcoming||[]).filter(e=>e.show_date), ru = D.rumors||[];
+  $("n2sale").textContent = on.length; $("n2up").textContent = (D.upcoming||[]).length; $("n2ru").textContent = ru.length;
+  $("b2sale").innerHTML = on.slice(0,6).map(e=>{
+    const p = pdate(e.show_date), url = firstUrl(e);
+    return `<div class="trow"><span class="d">${p?p.md:"—"}</span>
+      <span class="t">${esc(e.artist_name)} · ${esc(e.title)}</span><span class="c">${esc(e.city||"")}</span>
+      ${url?`<a href="${esc(url)}" target="_blank" rel="noopener">购票 ↗</a>`:""}</div>`;
+  }).join("") + (on.length>6?`<div class="trow"><span class="t" style="opacity:.7">+ ${on.length-6} 场更多…</span></div>`:"");
+  $("b2up").innerHTML = up.slice(0,6).map(e=>{
+    const p = pdate(e.show_date);
+    return `<div class="trow"><span class="d">${p?p.md:"—"}</span>
+      <span class="t">${esc(e.artist_name)} · ${esc(e.title)}</span>
+      <span class="c">${e.sale_time?esc("SALE "+e.sale_time.slice(5).replace("-","/")):"开票待定"}</span></div>`;
+  }).join("") + (up.length>6?`<div class="trow"><span class="t" style="opacity:.7">+ ${up.length-6} 场更多…</span></div>`:"");
+  $("b2upfoot").textContent = undated.length ? `另有 ${undated.length} 场日期待定` : "";
+  $("b2ru").innerHTML = ru.slice(0,3).map(r=>
+    `<div class="trow"><span class="t">${esc(r.headline)}</span><span class="c">${esc(r.artist_name)}</span></div>`).join("")
+    + (ru.length>3?`<div class="trow"><span class="t" style="opacity:.7">+ ${ru.length-3} 条更多…</span></div>`:"");
+  $("b2chg").innerHTML = CHANGES.slice(0,4).map(c=>
+    `<div class="chgline"><span class="mk">${c.type==="new"?"+":"?"}</span><span>${esc(c.artist)} · ${esc(c.title)}</span></div>`).join("");
+  $("b2chgfoot").textContent = CHANGES.length>4 ? `+ ${CHANGES.length-4} MORE · RUN ${CHANGES[0]?CHANGES[0].run:""}` : "";
+  const allItems = [...(D.on_sale||[]),...(D.upcoming||[]),...(D.rumors||[])];
+  $("b2artists").innerHTML = (D.artists||[]).map(a=>{
+    const n = allItems.filter(e=>e.artist_key===a.key).length;
+    return `<span class="achip ${n?"":"zero"}">${esc(a.name)} <b>${n}</b></span>`;
+  }).join("");
+})();
+
+/* ═══ OPTION 3: editorial ═══ */
+(function(){
+  $("k3").textContent = "CONCERT WATCH · " + (D.last_run||"").replace("T"," ").slice(0,16);
+  const on = D.on_sale||[], up = D.upcoming||[];
+  const next = dated[0];
+  $("stand3").innerHTML = `当前共有 <b>${on.length} 场正在售卖</b>、<b>${up.length} 场已官宣待开票</b>。
+    ${next?`最近的一场是 <b>${esc(next.artist_name)}</b>「${esc(next.title)}」，${pdate(next.show_date).md}（${pdate(next.show_date).w}）${esc(next.city||"")}。`:""}
+    开票信息如有变动，会记录在文末的编辑注记中。`;
+  const item = e => {
+    const p = pdate(e.show_date); const ons = e._st==="on_sale" || e.status==="on_sale"; const url = firstUrl(e);
+    return `<div class="it">
+      <div class="tt">${esc(e.artist_name)} · ${esc(e.title)}</div>
+      <div class="mm">${[p?p.md+" "+p.w:"日期待定", e.city, e.venue, e.show_time, e.price].filter(Boolean).map(s=>`<span>${esc(s)}</span>`).join("")}</div>
+      <div class="sr"><span class="${ons?"on":"up"}">${ons?"● 在售中":"○ "+(e.sale_time?"开票 "+e.sale_time.slice(0,10):"开票时间待公布")}</span>
+        ${url?`<a href="${esc(url)}" target="_blank" rel="noopener">购票 / 来源 →</a>`:""}</div>
+    </div>`;
+  };
+  $("c3sale").textContent = on.length+" 场"; $("c3up").textContent = up.length+" 场";
+  $("e3sale").innerHTML = on.map(item).join("") || `<div class="it"><div class="mm">当前没有在售场次</div></div>`;
+  /* group tours */
+  const upD = up.filter(e=>e.show_date), groups = new Map();
+  for(const e of upD){
+    const i=(e.title||"").indexOf(" · "); const k = i>0 ? e.title.slice(0,i) : "\0"+e.title;
+    if(!groups.has(k)) groups.set(k,[]); groups.get(k).push(e);
+  }
+  let h = "";
+  for(const [k,items] of groups){
+    if(!k.startsWith("\0") && items.length>=3){
+      h += `<div class="grp">▸ ${esc(k)} · ${items.length} 站</div>` + items.map(e=>{
+        const stn = (e.title||"").slice(k.length+3);
+        return item({...e, title: stn||e.title});
+      }).join("");
+    } else h += items.map(item).join("");
+  }
+  h += up.filter(e=>!e.show_date).map(item).join("");
+  $("e3up").innerHTML = h;
+  $("e3chg").innerHTML = CHANGES.map(c=>`<div class="l"><span class="mk">${c.type==="new"?"+":"?"}</span>
+    <span>${esc(c.artist)} · ${esc(c.title)}</span></div>`).join("") || `<div class="l">本轮无变化</div>`;
+})();
+</script>
+</body>
+</html>
