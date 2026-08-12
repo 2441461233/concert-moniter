@@ -122,6 +122,12 @@ def cmd_check(args):
         source_status["showstart"]["fail" if notes else "ok"] += 1
         print("  · %-14s 秀动 %d 场" % (a["name"], len(events)))
 
+    # 完整刷新要求原子性：任一应采的秀动艺人降级时，在这里
+    # 就中止，不发现/写回艺人 ID，不移动 inbox，也不合并任何数据。
+    # 日常单项 check 保持原有的降级沿用行为。
+    if getattr(args, "strict_sources", False) and source_status["showstart"]["fail"]:
+        raise RuntimeError("秀动采集未完整，本轮未写入任何数据")
+
     if config_dirty:
         save_config(cfg)
 
@@ -303,6 +309,11 @@ def build_site():
         "last_run": meta.get("last_run"),
         "last_run_id": last_run,
         "last_research_at": meta.get("last_research_at"),
+        # 只有「全部 enabled 艺人 + 全信息源」流程完成后才更新；
+        # 单独采集秀动或普通 ingest 都不会改动这个时间。
+        "full_refresh_at": meta.get("full_refresh_at"),
+        "full_refresh_id": meta.get("full_refresh_id"),
+        "full_refresh_status": meta.get("full_refresh_status"),
         "artists": [{"key": a["key"], "name": a["name"], "region": a.get("region", "cn")}
                     for a in cfg["artists"] if a.get("enabled", True)],
         "on_sale": on_sale,
@@ -416,6 +427,10 @@ def main():
     pc.add_argument("--force", action="store_true", help="忽略秀动 HTTP 缓存")
     pc.add_argument("--sleep", type=float, default=0.4,
                     help="秀动请求间隔秒数（默认 0.4）")
+    pc.add_argument("--concurrent-workers", type=int, default=1,
+                    help="秀动艺人并发数（默认 1）")
+    pc.add_argument("--strict-sources", action="store_true",
+                    help="任一应采秀动源降级时在合并前中止")
     pc.add_argument("--no-inbox", action="store_true",
                     help="不处理 research/inbox（适合只读部署环境）")
     pc.set_defaults(func=cmd_check)

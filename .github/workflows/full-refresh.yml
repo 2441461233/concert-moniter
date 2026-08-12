@@ -1,0 +1,71 @@
+name: Manual full refresh
+run-name: Full refresh · ${{ inputs.request_id }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      request_id:
+        description: Refresh request identifier (24 lowercase hex characters)
+        required: true
+        type: string
+
+concurrency:
+  group: concert-monitor-full-refresh
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    name: Research, merge and publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      FULL_REFRESH_ID: ${{ inputs.request_id }}
+      KIMI_RESEARCH_MODEL: ${{ vars.KIMI_RESEARCH_MODEL || 'kimi-k3' }}
+      PYTHONUNBUFFERED: "1"
+
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version-file: .python-version
+
+      - name: Validate refresh request
+        shell: bash
+        run: |
+          if [[ ! "$FULL_REFRESH_ID" =~ ^[a-f0-9]{24}$ ]]; then
+            echo "request_id must be exactly 24 lowercase hexadecimal characters" >&2
+            exit 2
+          fi
+
+      - name: Run offline tests
+        run: python3 -m unittest discover -s tests -v
+
+      - name: Run complete refresh
+        env:
+          MOONSHOT_API_KEY: ${{ secrets.MOONSHOT_API_KEY }}
+        run: python3 scripts/full_refresh.py
+
+      - name: Commit refreshed snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add config data research/archive site/data.js site/data.json
+          if git diff --cached --quiet; then
+            echo "No snapshot files changed."
+            exit 0
+          fi
+          # 不能带 [skip ci]：这次 push 正是用来触发 Vercel 发布新快照。
+          git commit -m "data: complete manual refresh"
+          # 快照必须对应 checkout 时的同一份配置和代码。若 main 在
+          # 调研期间前进，push 应 non-fast-forward 失败并由管理员重跑，
+          # 不能把基于旧艺人清单生成的数据 rebase 后伪装成新 main 的完整快照。
+          git push origin HEAD:main

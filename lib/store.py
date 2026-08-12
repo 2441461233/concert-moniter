@@ -23,7 +23,7 @@ CHANGELOG_PATH = os.path.join(DATA_DIR, "changes.log")
 # 加场、二次放票的可能，而且你得知道这场自己没抢到。只有日期已过或明确标记
 # 演出结束的，才算 ended。
 ON_SALE_STATES = {"on_sale", "预售中", "selling", "sold_out", "售罄"}
-ENDED_STATES = {"ended", "已结束"}
+ENDED_STATES = {"ended", "已结束", "cancelled", "canceled", "已取消"}
 SOLD_OUT_STATES = {"sold_out", "售罄"}
 APP_TIMEZONE = timezone(timedelta(hours=8), name="Asia/Shanghai")
 
@@ -84,7 +84,7 @@ def derive_status(ev):
         return "ended"
     if raw in ON_SALE_STATES:
         return "on_sale"
-    if raw in ("upcoming", "announced", "paused", "待开票", "即将开售"):
+    if raw in ("upcoming", "announced", "paused", "postponed", "已延期", "待开票", "即将开售"):
         return "upcoming"
     sale_time = ev.get("sale_time", "")
     if sale_time:
@@ -192,6 +192,7 @@ def merge_events(incoming, run_id):
             merged["first_seen"] = before.get("first_seen", stamp)
             merged["first_seen_run"] = before.get("first_seen_run", run_id)
             merged["last_seen"] = stamp
+            merged["last_seen_run"] = run_id
             merged["id"] = fp
             store[fp] = merged
 
@@ -212,6 +213,7 @@ def merge_events(incoming, run_id):
             ev["first_seen"] = stamp
             ev["first_seen_run"] = run_id
             ev["last_seen"] = stamp
+            ev["last_seen_run"] = run_id
             ev["id"] = fp
             store[fp] = ev
             # 首次运行会回填大量历史场次，那不是"新消息"，不该进变更日志
@@ -264,6 +266,7 @@ def merge_rumors(incoming, run_id):
                 "title": headline, "detail": rec["source_name"],
             })
         rec["last_seen"] = stamp
+        rec["last_seen_run"] = run_id
         store[fp] = rec
     _save(RUMORS_PATH, store)
     return changes
@@ -275,6 +278,57 @@ def load_events():
 
 def load_rumors():
     return _load(RUMORS_PATH, {})
+
+
+def reconcile_full_refresh(run_id, refresh_id, artist_keys, completed_at=None):
+    """标记本轮全源重新获取是否再次看到每条活跃记录。
+
+    搜索偶尔漏检时不盲删历史场次，但也不再把未命中的旧记录暗中
+    当成“本轮已验证”。前端可以用 ``verification_status=unverified``
+    诚实告知用户；连续未见轮数保留给后续的归档策略。
+    """
+    completed_at = completed_at or now_iso()
+    enabled = set(artist_keys)
+    events = _load(EVENTS_PATH, {})
+    rumors = _load(RUMORS_PATH, {})
+    summary = {"events_verified": 0, "events_unverified": 0,
+               "rumors_verified": 0, "rumors_unverified": 0}
+
+    for rec in events.values():
+        if rec.get("artist_key") not in enabled or derive_status(rec) == "ended":
+            continue
+        seen = rec.get("last_seen_run") == run_id
+        rec["last_checked_full_refresh_id"] = refresh_id
+        if seen:
+            rec["verification_status"] = "verified"
+            rec["missed_full_refreshes"] = 0
+            rec["last_verified_full_refresh_id"] = refresh_id
+            rec["last_verified_at"] = completed_at
+            summary["events_verified"] += 1
+        else:
+            rec["verification_status"] = "unverified"
+            rec["missed_full_refreshes"] = int(rec.get("missed_full_refreshes") or 0) + 1
+            summary["events_unverified"] += 1
+
+    for rec in rumors.values():
+        if rec.get("artist_key") not in enabled:
+            continue
+        seen = rec.get("last_seen_run") == run_id
+        rec["last_checked_full_refresh_id"] = refresh_id
+        if seen:
+            rec["verification_status"] = "verified"
+            rec["missed_full_refreshes"] = 0
+            rec["last_verified_full_refresh_id"] = refresh_id
+            rec["last_verified_at"] = completed_at
+            summary["rumors_verified"] += 1
+        else:
+            rec["verification_status"] = "unverified"
+            rec["missed_full_refreshes"] = int(rec.get("missed_full_refreshes") or 0) + 1
+            summary["rumors_unverified"] += 1
+
+    _save(EVENTS_PATH, events)
+    _save(RUMORS_PATH, rumors)
+    return summary
 
 
 def load_meta():

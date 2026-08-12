@@ -17,8 +17,7 @@
   ],
   "functions": {
     "api/refresh.py": {
-      "maxDuration": 300,
-      "includeFiles": "{data/**,config/**,monitor.py,lib/**}"
+      "maxDuration": 30
     }
   },
   "headers": [
