@@ -11,6 +11,7 @@
 依赖：只有 Python 3 标准库。
 """
 import argparse
+import concurrent.futures
 import json
 import os
 import sys
@@ -60,17 +61,51 @@ def cmd_check(args):
     source_status = {"showstart": {"ok": 0, "fail": 0}}
     config_dirty = False
 
+    collect_artists = []
     for a in artists:
         if a.get("region") == "kpop" and not a.get("showstart_artist_id"):
             # 秀动基本没有 KPop 团体，跳过省时间；仍由调研环节覆盖
             print("  · %-14s 跳过秀动（海外艺人，走调研补全）" % a["name"])
             continue
+        collect_artists.append(a)
+
+    def collect_one(artist):
+        return showstart.collect(
+            artist,
+            cache_ttl=0 if getattr(args, "force", False) else 1800,
+            sleep=getattr(args, "sleep", 0.4),
+        )
+
+    workers = max(1, min(
+        int(getattr(args, "concurrent_workers", 1) or 1),
+        len(collect_artists) or 1,
+    ))
+    if workers == 1:
+        collected = []
+        for a in collect_artists:
+            try:
+                collected.append((a, collect_one(a), None))
+            except Exception as exc:
+                collected.append((a, None, exc))
+    else:
+        collected = []
+        with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as executor:
+            futures = [(a, executor.submit(collect_one, a)) for a in collect_artists]
+            for a, future in futures:
+                try:
+                    collected.append((a, future.result(), None))
+                except Exception as exc:
+                    collected.append((a, None, exc))
+
+    for a, result, collect_error in collected:
+        if collect_error is not None:
+            all_notes.append("%s 秀动采集异常: %s: %s" % (
+                a["name"], type(collect_error).__name__, collect_error))
+            source_status["showstart"]["fail"] += 1
+            print("  · %-14s 异常：%s" % (a["name"], collect_error))
+            continue
         try:
-            events, notes, discovered = showstart.collect(
-                a,
-                cache_ttl=0 if getattr(args, "force", False) else 1800,
-                sleep=getattr(args, "sleep", 0.4),
-            )
+            events, notes, discovered = result
         except Exception as e:  # 单个艺人失败不应该拖垮整轮
             all_notes.append("%s 秀动采集异常: %s: %s" % (a["name"], type(e).__name__, e))
             source_status["showstart"]["fail"] += 1

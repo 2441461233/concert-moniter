@@ -303,7 +303,7 @@ refreshBtn.addEventListener("click", async ()=>{
   if(refreshBtn.disabled) return;
   const oldLastRun = $("lastrun").textContent;
   const controller = new AbortController();
-  const timer = setTimeout(()=>controller.abort(), 65000);
+  const timer = setTimeout(()=>controller.abort(), 55000);
   refreshBtn.disabled = true;
   refreshBtn.classList.add("is-loading");
   refreshBtn.setAttribute("aria-busy", "true");
@@ -321,7 +321,12 @@ refreshBtn.addEventListener("click", async ()=>{
     }));
     location.reload();
   }catch(err){
-    const msg = err && err.name==="AbortError" ? "刷新超时，请稍后再试" : (err.message||"刷新失败");
+    const raw = err && err.name==="AbortError"
+      ? "刷新用时过长"
+      : (err.message||"刷新失败");
+    const msg = raw.includes("当前页面数据未受影响")
+      ? raw
+      : raw + "，当前页面数据未受影响，请稍后重试";
     $("lastrun").textContent = oldLastRun;
     $("bannerbox").innerHTML = `<div class="banner err"><b>REFRESH FAILED</b>${esc(msg)}</div>`;
     refreshBtn.disabled = false;

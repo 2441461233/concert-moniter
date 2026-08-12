@@ -1,5 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "fluid": true,
   "rewrites": [
     {
       "source": "/",
@@ -16,7 +17,7 @@
   ],
   "functions": {
     "api/refresh.py": {
-      "maxDuration": 60,
+      "maxDuration": 300,
       "includeFiles": "{data/**,config/**,monitor.py,lib/**}"
     }
   },

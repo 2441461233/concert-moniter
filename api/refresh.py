@@ -23,6 +23,10 @@ from lib import http, store  # noqa: E402
 
 
 CACHE_TTL_SECONDS = 45
+# 控制按钮等待时间：预留冷启动、合并与序列化时间，不把预算全交给上游。
+REFRESH_BUDGET_SECONDS = 42
+REQUEST_TIMEOUT_SECONDS = 5
+CONCURRENT_ARTISTS = 3
 _REFRESH_LOCK = threading.Lock()
 _CACHE_PAYLOAD = None
 _CACHE_AT = 0.0
@@ -84,11 +88,28 @@ def _run_isolated_refresh():
         temp_root = Path(tmp)
         _copy_seed_data(temp_root)
         original = _redirect_paths(temp_root)
+        original_http_get = http.get
+        deadline = time.monotonic() + REFRESH_BUDGET_SECONDS
+
+        def budgeted_http_get(*args, **kwargs):
+            remaining = deadline - time.monotonic()
+            if remaining <= 0.1:
+                return None, "本轮在线刷新时间预算已用尽"
+            requested_timeout = kwargs.get("timeout", REQUEST_TIMEOUT_SECONDS)
+            kwargs["timeout"] = max(
+                0.1,
+                min(float(requested_timeout), REQUEST_TIMEOUT_SECONDS, remaining),
+            )
+            return original_http_get(*args, **kwargs)
+
+        # showstart 引用的是同一个 http 模块；API 锁保证替换期间没有第二轮刷新。
+        http.get = budgeted_http_get
         try:
             monitor.cmd_check(argparse.Namespace(
                 force=True,
                 sleep=0.05,
                 no_inbox=True,
+                concurrent_workers=CONCURRENT_ARTISTS,
             ))
             output_path = temp_root / "site" / "data.json"
             with output_path.open(encoding="utf-8") as f:
@@ -97,6 +118,7 @@ def _run_isolated_refresh():
                 raise RuntimeError("刷新结果格式无效")
             return data
         finally:
+            http.get = original_http_get
             _restore_paths(original)
 
 
@@ -114,9 +136,22 @@ def refresh_snapshot():
         if cached is not None:
             return cached, True
         data = _run_isolated_refresh()
-        _CACHE_PAYLOAD = copy.deepcopy(data)
-        _CACHE_AT = time.monotonic()
+        # 降级结果不缓存，让用户可以立即重试；完整结果才用于削峰。
+        if not snapshot_is_partial(data):
+            _CACHE_PAYLOAD = copy.deepcopy(data)
+            _CACHE_AT = time.monotonic()
         return copy.deepcopy(data), False
+
+
+def _showstart_counts(data):
+    status = (data.get("source_status") or {}).get("showstart") or {}
+    return int(status.get("ok") or 0), int(status.get("fail") or 0)
+
+
+def snapshot_is_partial(data):
+    """有任一秀动采集器降级时，不把结果当成可缓存的完整快照。"""
+    _, failed = _showstart_counts(data)
+    return failed > 0 or bool(data.get("notes"))
 
 
 def request_is_allowed(headers):
@@ -169,7 +204,21 @@ class handler(BaseHTTPRequestHandler):
                 "detail": "%s: %s" % (type(exc).__name__, exc),
             })
             return
-        self._send_json(200, {"ok": True, "cached": cached, "data": data}, cache=True)
+        complete, failed = _showstart_counts(data)
+        partial = snapshot_is_partial(data)
+        if failed and not complete:
+            self._send_json(502, {
+                "ok": False,
+                "partial": True,
+                "error": "秀动暂时未返回有效结果，当前页面数据未受影响",
+            })
+            return
+        self._send_json(200, {
+            "ok": True,
+            "cached": cached,
+            "partial": partial,
+            "data": data,
+        }, cache=not partial)
 
     def do_GET(self):
         self._refresh()

@@ -82,6 +82,16 @@ class RefreshSnapshotTests(unittest.TestCase):
             with self.subTest(module=module.__name__, attr=attr):
                 self.assertEqual(old_value, getattr(module, attr))
 
+    def test_partial_snapshot_is_not_cacheable(self):
+        self.assertFalse(refresh.snapshot_is_partial({
+            "source_status": {"showstart": {"ok": 3, "fail": 0}},
+            "notes": [],
+        }))
+        self.assertTrue(refresh.snapshot_is_partial({
+            "source_status": {"showstart": {"ok": 2, "fail": 1}},
+            "notes": ["一个详情页超时"],
+        }))
+
 
 if __name__ == "__main__":
     unittest.main()
