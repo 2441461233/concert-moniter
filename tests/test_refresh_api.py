@@ -60,16 +60,16 @@ class RefreshSnapshotTests(unittest.TestCase):
             "collect",
             return_value=([], [], None),
         ) as collect_mock, mock.patch(
+            "api.refresh.monitor.store.now_iso",
+            return_value="2099-01-02T03:04:05",
+        ), mock.patch(
             "urllib.request.urlopen",
             side_effect=AssertionError("refresh test attempted a network request"),
         ):
             data, cached = refresh.refresh_snapshot()
 
         self.assertFalse(cached)
-        self.assertRegex(
-            data["last_run"],
-            r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}$",
-        )
+        self.assertEqual("2099-01-02T03:04:05", data["last_run"])
         self.assertNotEqual(previous_last_run, data["last_run"])
 
         source_status = data["source_status"]["showstart"]
