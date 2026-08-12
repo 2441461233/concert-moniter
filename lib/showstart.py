@@ -7,9 +7,7 @@
 """
 import re
 import time
-from datetime import datetime
-
-from . import http
+from . import http, store
 
 BASE = "https://www.showstart.com"
 SEARCH_URL = BASE + "/event/list"
@@ -161,7 +159,7 @@ def collect(artist, fetch_details=True, cache_ttl=1800, sleep=0.4):
                 raw.setdefault(it["event_id"], it)
         time.sleep(sleep)
 
-    today = datetime.now().strftime("%Y-%m-%d")
+    today = store.today()
     events, discovered_id = [], None
     for eid, it in raw.items():
         detail = {}

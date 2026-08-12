@@ -10,7 +10,7 @@ import hashlib
 import json
 import os
 import re
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(ROOT, "data")
@@ -25,14 +25,20 @@ CHANGELOG_PATH = os.path.join(DATA_DIR, "changes.log")
 ON_SALE_STATES = {"on_sale", "预售中", "selling", "sold_out", "售罄"}
 ENDED_STATES = {"ended", "已结束"}
 SOLD_OUT_STATES = {"sold_out", "售罄"}
+APP_TIMEZONE = timezone(timedelta(hours=8), name="Asia/Shanghai")
+
+
+def local_now():
+    """返回平台统一使用的上海时间，避免本机与 Vercel 时区不同。"""
+    return datetime.now(APP_TIMEZONE)
 
 
 def now_iso():
-    return datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
+    return local_now().strftime("%Y-%m-%dT%H:%M:%S")
 
 
 def today():
-    return datetime.now().strftime("%Y-%m-%d")
+    return local_now().strftime("%Y-%m-%d")
 
 
 def _load(path, default):

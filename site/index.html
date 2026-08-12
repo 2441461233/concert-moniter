@@ -260,12 +260,12 @@ footer{margin-top:44px;font-family:var(--mono);font-size:10.5px;color:var(--fain
 <script src="data.js"></script>
 <script>
 /* 网页手动刷新返回的是实时快照；在当前标签页保留 30 分钟。
-   它只有比部署自带的 data.js 更新时才覆盖，避免旧快照压住新部署。 */
+   只要部署基线的 run ID 没变就采用它；新部署上线后自动让位。 */
 try{
   const live = JSON.parse(sessionStorage.getItem("cm-live-data")||"null");
   const base = window.__CM_DATA__;
   if(live && live.expires_at>Date.now() && live.data &&
-     (!base || String(live.data.generated_at||"")>String(base.generated_at||""))){
+     base && String(live.base_run_id||"")===String(base.last_run_id||"")){
     window.__CM_DATA__ = live.data;
   }else if(live){
     sessionStorage.removeItem("cm-live-data");
@@ -317,6 +317,7 @@ refreshBtn.addEventListener("click", async ()=>{
     if(!fresh || !fresh.generated_at) throw new Error("刷新结果格式不正确");
     sessionStorage.setItem("cm-live-data", JSON.stringify({
       expires_at: Date.now()+30*60*1000,
+      base_run_id: D.last_run_id||"",
       data: fresh
     }));
     location.reload();

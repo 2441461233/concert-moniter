@@ -1,5 +1,6 @@
 import json
 import unittest
+from datetime import timedelta
 from pathlib import Path
 from unittest import mock
 
@@ -91,6 +92,9 @@ class RefreshSnapshotTests(unittest.TestCase):
             "source_status": {"showstart": {"ok": 2, "fail": 1}},
             "notes": ["一个详情页超时"],
         }))
+
+    def test_platform_clock_uses_shanghai_time(self):
+        self.assertEqual(timedelta(hours=8), refresh.store.local_now().utcoffset())
 
 
 if __name__ == "__main__":

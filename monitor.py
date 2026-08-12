@@ -16,7 +16,7 @@ import json
 import os
 import sys
 import tempfile
-from datetime import datetime, timedelta
+from datetime import timedelta
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
@@ -54,7 +54,7 @@ def enabled_artists(cfg):
 def cmd_check(args):
     cfg = load_config()
     artists = enabled_artists(cfg)
-    run_id = datetime.now().strftime("%Y%m%d-%H%M%S")
+    run_id = store.local_now().strftime("%Y%m%d-%H%M%S")
     print("[%s] 开始检查，%d 位艺人" % (run_id, len(artists)))
 
     all_events, all_notes = [], []
@@ -200,7 +200,7 @@ def _ingest_inbox(run_id):
 
 
 def cmd_ingest(args):
-    run_id = datetime.now().strftime("%Y%m%d-%H%M%S")
+    run_id = store.local_now().strftime("%Y%m%d-%H%M%S")
     ne, nr, changes = _ingest_one(args.file, run_id)
     print("并入演出 %d 条 / 舆情 %d 条，产生 %d 条变更" % (ne, nr, len(changes)))
     for c in changes[:30]:
@@ -288,7 +288,7 @@ def build_site():
     upcoming.sort(key=_sort_key_sale)
     ended.sort(key=_sort_key_show, reverse=True)
 
-    rumor_cutoff = (datetime.now() - timedelta(days=RUMOR_TTL_DAYS)).strftime("%Y-%m-%d")
+    rumor_cutoff = (store.local_now() - timedelta(days=RUMOR_TTL_DAYS)).strftime("%Y-%m-%d")
     fresh_rumors = [r for r in rumors.values() if rumor_freshness(r) >= rumor_cutoff]
     aged_out = len(rumors) - len(fresh_rumors)
     rumor_list = sorted(
@@ -389,7 +389,7 @@ def cmd_status(args):
 # ---------------------------------------------------------------- prune
 
 def cmd_prune(args):
-    cutoff = (datetime.now() - timedelta(days=args.days)).strftime("%Y-%m-%d")
+    cutoff = (store.local_now() - timedelta(days=args.days)).strftime("%Y-%m-%d")
     events = store.load_events()
     drop = [k for k, e in events.items()
             if e.get("show_date") and e["show_date"] < cutoff]
