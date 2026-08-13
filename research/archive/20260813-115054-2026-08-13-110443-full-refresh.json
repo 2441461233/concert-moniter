@@ -1,0 +1,1806 @@
+{
+  "_meta": {
+    "researched_at": "2026-08-13",
+    "started_at": "2026-08-13T11:04:43",
+    "completed_at": "2026-08-13T11:50:54",
+    "by": "kimi-k3-formula-web-search",
+    "model": "kimi-k3",
+    "formula": "moonshot/web-search:latest",
+    "artists_total": 12,
+    "artists_succeeded": 12,
+    "events_found": 59,
+    "rumors_found": 11,
+    "sources_consulted": 25,
+    "coverage": {
+      "shayiting": {
+        "ticketing_checked": true,
+        "official_checked": true,
+        "china_region_checked": true,
+        "rumors_checked": true,
+        "summary": "已阅读四组工具结果。ticketing 组请求失败/未返回任何结果（错误），因此本轮没有任何来自正式票务平台的页面可用；official 组返回东方演出网聚合页与百度百科（后者仅为艺人履历，无未来演出/开票公告，未见艺人官方微博、事务所、主办方或场馆公告页面）；china_region 组与 rumors 组均只返回同一东方演出网聚合页。依据该页面：深圳欢乐谷 2026 夏浪音乐节三场（7/12、7/19、8/8）相对今日 2026-08-13 均已结束，按规则不报历史场次；北京 2025-11-29、上海 2025-10-03 等亦为历史场次。页面中唯一可能指向未来的条目为「广州演唱会 12月31日 广州体育馆1号馆」，但年份未标注、无票价无开票信息且仅为聚合页来源，不足以标 confirmed，已放入 rumors（low）。项目现有记录中的两条候选线索（2026-08-16 上海欢乐谷 EV 音乐乐园、2026-09-19 济南禧都音乐节，均为秀动链接）在本轮四组结果中均未出现对应 URL，按『没有依据 URL 就不输出』规则本轮无法重新确认、未写入 events；建议后续用秀动/大麦页面单独复核。本轮未发现沙一汀 2026 下半年个人巡演官宣或正式开票信息。"
+      },
+      "menni": {
+        "ticketing_checked": true,
+        "official_checked": true,
+        "china_region_checked": true,
+        "rumors_checked": true,
+        "summary": "已阅读四组结果。ticketing：南京站 9/12 19:00、南京奥体中心国缘V9体育馆、8/11 11:58 预售、平台大麦/票星球/南京奥体中心票务，另有参考票价 280-916；同组还列出门尼参与的 2026JUMPPARK 腾讯视频音乐大赏 8/29-8/30、388-858。official：本组未返回门尼/MENNI 相关官方公告，结果为无关演出内容。china_region：确认广州 8/22&8/23 双场预售售罄；未见港澳台新增站、加场、延期或取消。rumors：仅南京预售售罄线索，已并入 confirmed；未保留无依据的未来传闻。已结束或历史场次未输出。"
+      },
+      "jiamu": {
+        "ticketing_checked": true,
+        "official_checked": true,
+        "china_region_checked": true,
+        "rumors_checked": true,
+        "summary": "已阅读四组结果。ticketing/china_region/rumors 中仅出现东方演出网加木汇总页与新浪媒体页；其中可辨场次多为 2025 或 2026-08-13 之前已结束内容，未见可在本轮核实的未来正式票务/官方场次、新增站、加场、补票、延期或取消。official 组未返回与艺人加木（JIAMU）相关的有效官方公告。项目现有 showstart 候选记录及其 URL 未出现在本轮四组工具结果中，故本轮不作为事实保留。"
+      },
+      "njz": {
+        "ticketing_checked": true,
+        "official_checked": true,
+        "china_region_checked": true,
+        "rumors_checked": true,
+        "summary": "已同时处理四组结果；ticketing 组检索失败且无可用于确认的正式票务数据，因此无 confirmed event。official 组仅见 Weverse/官网/YouTube 的「2026 Summer of NewJeans」回归相关物料与公告入口，未见未来演唱会、粉丝演唱会、巡演、先行/公售或票价信息。china_region 组出现的香港 ComplexCon 为 2025-03 已结束历史演出，按要求排除；新浪条目未见可核实的未来新增站/加场/补票/延期/取消。rumors 组仅有 Ticketmaster 艺人页片段，内容为历史 setlist 与 2024 留言，不能证明 2026-2027 有场次；故只保留一条“仍无验证未来场次/开票”的动态提示。未猜测日期、时间、价格或场馆。"
+      },
+      "kiiikiii": {
+        "ticketing_checked": true,
+        "official_checked": true,
+        "china_region_checked": true,
+        "rumors_checked": true,
+        "summary": "已读取四组结果；ticketing 组本次搜索失败/无结果。可核实的 2026 KiiiKiii FAN CONCERT〈KiiiKiii FesTiiival〉为首尔 2026-05-16/17，相对今天 2026-08-13 已结束，按规则不列入当前有效 events。当前无官方或正式票务可查的未来 KiiiKiii 专场/巡演场次；仅保留一条来自 Instagram、尚无官方/票务佐证的高雄 AAA 阵容线索为 rumor。官网 WhyKiiiKiii Tour 片段无可核验日期/城市/场馆，不生成事件。"
+      },
+      "ive": {
+        "ticketing_checked": true,
+        "official_checked": true,
+        "china_region_checked": true,
+        "rumors_checked": true,
+        "summary": "已同时阅读四组结果：第1组 ticketing 搜索失败/无返回，因此没有可采用的正式票务页；第2组 official 的 Ticketmaster 片段显示北美段 2026-07-21 至 2026-08-09 已结束并写明 No Upcoming Concerts，不能产出未来场次；第3组 china_region 的维基片段只证明 SHOW WHAT I AM 巡演存在及亚洲/北美规模，未给可核实的未来精确日期/开票；第4组 rumors 中澳门 2026-05-23、东京 2026-06-24 均已早于 2026-08-13 属历史场次不列入，仅保留台北小巨蛋 2026-09 完售且日期片段不一致、未来仍可能补票/加场的线索。当前无可标 confirmed 的未来 event。"
+      },
+      "aespa": {
+        "ticketing_checked": true,
+        "official_checked": true,
+        "china_region_checked": true,
+        "rumors_checked": true,
+        "summary": "As of 2026-08-13 Asia/Shanghai, already-ended Seoul 2026-08-07/08, Taipei 2026-08-11 and Lollapalooza dates were excluded. The official-dedicated query returned an error/no results, but the official tour site and venue/ticketing pages appeared in the other result groups and support the confirmed future routing from 2026-09-04 São Paulo through 2027-02-02 Paris. No future Mainland China/Hong Kong/Macau/Taiwan additions, postponements or cancellations were found in the four result sets; Taipei was the only Greater China stop shown and has already ended. Rumors results contained no retainable future on-sale/date lead beyond an Instagram claim about already-ended Seoul sell-out, so rumors is empty."
+      },
+      "lesserafim": {
+        "ticketing_checked": true,
+        "official_checked": true,
+        "china_region_checked": true,
+        "rumors_checked": true,
+        "summary": "已阅读四组结果。可确认的当前未来场次主要来自 Ticketmaster 艺人页：2026-09-16 至 10-08 北美 9 场、10-16 至 10-23 欧洲 4 场；结果未给票价/逐站开票时间。official 组中 Weverse 37296 为仁川一般售票 6/12、36095 为 UK/Europe 会员预购申请 5/22-5/29，均属已结束的开票/申请节点，不作为未来场次输出；官方 Instagram 与日本官网仅支持巡演存在，未给本轮新增未来亚洲逐场。china_region/rumors 均指向澳门 11/7-11/8，但来源为 Threads/未识别 Instagram 账号，未达 confirmed；中国内地与台北站在本轮四组结果中没有可重新核验的官方/正式票务 URL，因此未输出。日本站攻略信息非正式票务且截取缺逐场日期，仅作低可信线索。"
+      },
+      "babymonster": {
+        "ticketing_checked": true,
+        "official_checked": true,
+        "china_region_checked": true,
+        "rumors_checked": true,
+        "summary": "已同时阅读四组结果；official 组工具返回 ERROR/no results，因此没有可用的艺人/事务所/Weverse/主办方官方页面可直接引用。ticketing 与 china_region 均命中 Trip.com 汇总与 Live Nation；可确认的未来正式票务信息集中在澳门 9/11-9/12、马尼拉 9/5、曼谷 11/7-11/8、吉隆坡 11/14、新加坡 11/28-11/29。Trip.com 另列香港/台北/大阪/横滨条目但摘录无日期与票务细节，未确认为可售 event。NOL 首尔 6/26-6/28 相对今天 2026-08-13 已结束，未纳入；yg-life 为 2025 旧巡演新闻，未纳入。"
+      },
+      "illit": {
+        "ticketing_checked": true,
+        "official_checked": true,
+        "china_region_checked": true,
+        "rumors_checked": true,
+        "summary": "已同时读取四组结果。ticketing 组确认香港 2026-08-22 至 08-23 两场、场馆、19:00 开演、四档票价及 8 月 22 日公售起点；首尔 2026 年 3 月场次已结束故不列入。official 组本轮仅返回已结束的首尔/日本演出通知及 2026 Weverse Con 相关内容，未发现仍可购票的新官方场次。china_region 组确认香港为本次亚洲巡演站点之一，并有主办方“加場完售公告”；未发现中国内地、澳门或台湾的其他未来场次。rumors 组搜索请求失败且无可用结果；第三方 Japan Concert Tickets 页面列出的 2026-12-23 Funabashi 场次因缺少官方 corroboration，仅作为低可信度 rumor 保留。"
+      },
+      "hearts2hearts": {
+        "ticketing_checked": true,
+        "official_checked": true,
+        "china_region_checked": true,
+        "rumors_checked": true,
+        "summary": "已阅读四组结果。ticketing 结果中的 Ticketmaster 页面显示没有 upcoming concerts；Weverse 及 X 所涉首尔 FANMEETING 为2026-02-21至2026-02-22的历史场次，按要求不再列入。official 结果未提供新的未来专场、巡演或开票信息。china_region 专用检索返回“Search request failed or returned no results”，未获得可用的新增站、加场、补票、延期或取消结果。rumors 结果中可用于当前记录的有效信息是台北 MUSIC EXPO LIVE 2026 出演及2026-07-28开票；Viagogo 片段混列 BOK Center 其他艺人的演出，无法确认 Hearts2Hearts 场次；其余结果为历史售票、会员商品或无具体未来演出信息，因此未另列 rumors。"
+      },
+      "katseye": {
+        "ticketing_checked": true,
+        "official_checked": true,
+        "china_region_checked": true,
+        "rumors_checked": true,
+        "summary": "四组结果均已阅读并交叉核对。ticketing 组：Ticketmaster 列出 WILDWORLD TOUR 完整北美段（18 场美国，含 10/25 UBS、11/22 洛杉矶加场，均 20:00 开场）及 9/1 都柏林 18:30 国际场；Live Nation HK 另列 8/29 Irvine Great Park 与 9/4 伦敦第二场。official 组：官网 katseye.world/live 确认全部场次、Weverse EYEKONS 会员预售 5/20 11:00-14:00（当地）、公售 5/21 15:00（当地）、VIP 套票同日起售；预售/公售均已结束，目前处于公开发售状态，本轮未见新开票时间。china_region 组：Hypebeast 中文与 Apple Music 仅复述英欧+北美 31 场行程，中国内地及港澳台无任何新增站、加场、补票、延期或取消公告，亦无亚洲段；KPop 分类下完整世巡目前仅限欧洲与北美/墨西哥。rumors 组：未发现可信的未来演出/开票新线索；Viagogo 中文页转售信息中混杂与本次巡演官方场馆不符的旧场地（The Armory、MGM Music Hall、Hammerstein Ballroom 等），已作为二级市场风险提示保留；德国一分钱巴黎站文章仅标注票价待公布，无新增事实。与既有记录相比的更新：新增 8/29 Irvine 场、9/4 伦敦加场、10/25 纽约加场、11/22 洛杉矶加场，并补全欧洲各站与加拿大两站（蒙特利尔 10/30、汉密尔顿 11/1）。"
+      }
+    },
+    "queries": {
+      "shayiting": [
+        {
+          "category": "ticketing",
+          "query": "沙一汀 / 沙一汀EL / SHAYITING / 沙一汀 EL 沙一汀 演唱会 沙一汀 巡演 开票 沙一汀 音乐节 2026 2027 未来 演唱会 开票时间 票价 场馆 大麦 秀动 票星球 猫眼 摩天轮 Cityline 拓元 Interpark NOL Ticketmaster Live Nation 正式票务",
+          "fiber_id": "fiber-fbymarfaqfwi156rsyji"
+        },
+        {
+          "category": "official",
+          "query": "沙一汀 / 沙一汀EL / SHAYITING / 沙一汀 EL 2026 2027 未来 concert tour official 官方 公告 官网 事务所 Weverse 微博 X 主办方 场馆 fanclub presale 公售",
+          "fiber_id": "fiber-fbymaxoaqfwi156rsyyi"
+        },
+        {
+          "category": "china_region",
+          "query": "沙一汀 / 沙一汀EL / SHAYITING / 沙一汀 EL 2026 2027 未来 中国内地 香港 澳门 台湾 巡回演唱会 新增站 加场 补票 延期 取消",
+          "fiber_id": "fiber-fbymb4xaqfwi156rszy1"
+        },
+        {
+          "category": "rumors",
+          "query": "沙一汀 / 沙一汀EL / SHAYITING / 沙一汀 EL 2026 2027 未来 演唱会 开票 近期 传闻 爆料 场馆档期 票务页面 行程 加场 rumor",
+          "fiber_id": "fiber-fbymba7aqfwi156rt1j1"
+        }
+      ],
+      "menni": [
+        {
+          "category": "ticketing",
+          "query": "门尼 / MENNI / Menni 门尼 演唱会 门尼 巡演 开票 门尼 rapper 演出 2026 2027 未来 演唱会 开票时间 票价 场馆 大麦 秀动 票星球 猫眼 摩天轮 Cityline 拓元 Interpark NOL Ticketmaster Live Nation 正式票务",
+          "fiber_id": "fiber-fbymbzxaqfwi156rt4ji"
+        },
+        {
+          "category": "official",
+          "query": "门尼 / MENNI / Menni 2026 2027 未来 concert tour official 官方 公告 官网 事务所 Weverse 微博 X 主办方 场馆 fanclub presale 公售",
+          "fiber_id": "fiber-fbymc77aqfwi156rt57i"
+        },
+        {
+          "category": "china_region",
+          "query": "门尼 / MENNI / Menni 2026 2027 未来 中国内地 香港 澳门 台湾 巡回演唱会 新增站 加场 补票 延期 取消",
+          "fiber_id": "fiber-fbymccfaqfwi156rt5fi"
+        },
+        {
+          "category": "rumors",
+          "query": "门尼 / MENNI / Menni 2026 2027 未来 演唱会 开票 近期 传闻 爆料 场馆档期 票务页面 行程 加场 rumor",
+          "fiber_id": "fiber-fbymchoaqfwi156rt5si"
+        }
+      ],
+      "jiamu": [
+        {
+          "category": "ticketing",
+          "query": "加木 / JIAMU 加木 演唱会 加木 巡演 开票 加木 说唱 演出 2026 2027 未来 演唱会 开票时间 票价 场馆 大麦 秀动 票星球 猫眼 摩天轮 Cityline 拓元 Interpark NOL Ticketmaster Live Nation 正式票务",
+          "fiber_id": "fiber-fbymdefaqfwi156rt8u1"
+        },
+        {
+          "category": "official",
+          "query": "加木 / JIAMU 2026 2027 未来 concert tour official 官方 公告 官网 事务所 Weverse 微博 X 主办方 场馆 fanclub presale 公售",
+          "fiber_id": "fiber-fbymdjoaqfwi156rt9o1"
+        },
+        {
+          "category": "china_region",
+          "query": "加木 / JIAMU 2026 2027 未来 中国内地 香港 澳门 台湾 巡回演唱会 新增站 加场 补票 延期 取消",
+          "fiber_id": "fiber-fbymdw7aqfwi156rtbg1"
+        },
+        {
+          "category": "rumors",
+          "query": "加木 / JIAMU 2026 2027 未来 演唱会 开票 近期 传闻 爆料 场馆档期 票务页面 行程 加场 rumor",
+          "fiber_id": "fiber-fbyme3faqfwi156rtc9i"
+        }
+      ],
+      "njz": [
+        {
+          "category": "ticketing",
+          "query": "NJZ / NewJeans / 뉴진스 / 新耳机 NJZ concert tour 2026 NewJeans 演唱会 开票 NJZ 팬콘 티켓 2026 2027 未来 演唱会 开票时间 票价 场馆 大麦 秀动 票星球 猫眼 摩天轮 Cityline 拓元 Interpark NOL Ticketmaster Live Nation 正式票务",
+          "fiber_id": "fiber-fbymeh7aqfwi156rtd31"
+        },
+        {
+          "category": "official",
+          "query": "NJZ / NewJeans / 뉴진스 / 新耳机 2026 2027 未来 concert tour official 官方 公告 官网 事务所 Weverse 微博 X 主办方 场馆 fanclub presale 公售",
+          "fiber_id": "fiber-fbymenfaqfwi156rtdfi"
+        },
+        {
+          "category": "china_region",
+          "query": "NJZ / NewJeans / 뉴진스 / 新耳机 2026 2027 未来 中国内地 香港 澳门 台湾 亚洲 世界巡演 韩文 英文 新增站 加场 补票 延期 取消",
+          "fiber_id": "fiber-fbymesfaqfwi156rtdwi"
+        },
+        {
+          "category": "rumors",
+          "query": "NJZ / NewJeans / 뉴진스 / 新耳机 2026 2027 未来 演唱会 开票 近期 传闻 爆料 场馆档期 票务页面 行程 加场 rumor",
+          "fiber_id": "fiber-fbymeyoaqfwi156rteni"
+        }
+      ],
+      "kiiikiii": [
+        {
+          "category": "ticketing",
+          "query": "KiiiKiii / 키키 / 키이키이 KiiiKiii concert 2026 KiiiKiii fancon tour KiiiKiii 演唱会 2026 2027 未来 演唱会 开票时间 票价 场馆 大麦 秀动 票星球 猫眼 摩天轮 Cityline 拓元 Interpark NOL Ticketmaster Live Nation 正式票务",
+          "fiber_id": "fiber-fbymfqoaqfwi156rth71"
+        },
+        {
+          "category": "official",
+          "query": "KiiiKiii / 키키 / 키이키이 2026 2027 未来 concert tour official 官方 公告 官网 事务所 Weverse 微博 X 主办方 场馆 fanclub presale 公售",
+          "fiber_id": "fiber-fbymfwxaqfwi156rthmi"
+        },
+        {
+          "category": "china_region",
+          "query": "KiiiKiii / 키키 / 키이키이 2026 2027 未来 中国内地 香港 澳门 台湾 亚洲 世界巡演 韩文 英文 新增站 加场 补票 延期 取消",
+          "fiber_id": "fiber-fbymg47aqfwi156rthw1"
+        },
+        {
+          "category": "rumors",
+          "query": "KiiiKiii / 키키 / 키이키이 2026 2027 未来 演唱会 开票 近期 传闻 爆料 场馆档期 票务页面 行程 加场 rumor",
+          "fiber_id": "fiber-fbymg9faqfwi156rtj31"
+        }
+      ],
+      "ive": [
+        {
+          "category": "ticketing",
+          "query": "IVE / 아이브 / IVE 아이브 IVE world tour 2026 tickets IVE 演唱会 开票 2026 2027 未来 演唱会 开票时间 票价 场馆 大麦 秀动 票星球 猫眼 摩天轮 Cityline 拓元 Interpark NOL Ticketmaster Live Nation 正式票务",
+          "fiber_id": "fiber-fbymgwxaqfwi156rtq1i"
+        },
+        {
+          "category": "official",
+          "query": "IVE / 아이브 / IVE 아이브 2026 2027 未来 concert tour official 官方 公告 官网 事务所 Weverse 微博 X 主办方 场馆 fanclub presale 公售",
+          "fiber_id": "fiber-fbymh47aqfwi156rtri1"
+        },
+        {
+          "category": "china_region",
+          "query": "IVE / 아이브 / IVE 아이브 2026 2027 未来 中国内地 香港 澳门 台湾 亚洲 世界巡演 韩文 英文 新增站 加场 补票 延期 取消",
+          "fiber_id": "fiber-fbymh9faqfwi156rtte1"
+        },
+        {
+          "category": "rumors",
+          "query": "IVE / 아이브 / IVE 아이브 2026 2027 未来 演唱会 开票 近期 传闻 爆料 场馆档期 票务页面 行程 加场 rumor",
+          "fiber_id": "fiber-fbymheoaqfwi156rtugi"
+        }
+      ],
+      "aespa": [
+        {
+          "category": "ticketing",
+          "query": "aespa / 에스파 / AESPA aespa world tour 2026 tickets aespa 演唱会 开票 2026 2027 未来 演唱会 开票时间 票价 场馆 大麦 秀动 票星球 猫眼 摩天轮 Cityline 拓元 Interpark NOL Ticketmaster Live Nation 正式票务",
+          "fiber_id": "fiber-fbymj8xaqfwi156ru1g1"
+        },
+        {
+          "category": "official",
+          "query": "aespa / 에스파 / AESPA 2026 2027 未来 concert tour official 官方 公告 官网 事务所 Weverse 微博 X 主办方 场馆 fanclub presale 公售",
+          "fiber_id": "fiber-fbymje7aqfwi156ru441"
+        },
+        {
+          "category": "china_region",
+          "query": "aespa / 에스파 / AESPA 2026 2027 未来 中国内地 香港 澳门 台湾 亚洲 世界巡演 韩文 英文 新增站 加场 补票 延期 取消",
+          "fiber_id": "fiber-fbymjjfaqfwi156ru51i"
+        },
+        {
+          "category": "rumors",
+          "query": "aespa / 에스파 / AESPA 2026 2027 未来 演唱会 开票 近期 传闻 爆料 场馆档期 票务页面 行程 加场 rumor",
+          "fiber_id": "fiber-fbymjpoaqfwi156ru6d1"
+        }
+      ],
+      "lesserafim": [
+        {
+          "category": "ticketing",
+          "query": "LE SSERAFIM / LESSERAFIM / 르세라핌 LE SSERAFIM tour 2026 tickets LE SSERAFIM 演唱会 开票 2026 2027 未来 演唱会 开票时间 票价 场馆 大麦 秀动 票星球 猫眼 摩天轮 Cityline 拓元 Interpark NOL Ticketmaster Live Nation 正式票务",
+          "fiber_id": "fiber-fbymnn7aqfwi156rw511"
+        },
+        {
+          "category": "official",
+          "query": "LE SSERAFIM / LESSERAFIM / 르세라핌 2026 2027 未来 concert tour official 官方 公告 官网 事务所 Weverse 微博 X 主办方 场馆 fanclub presale 公售",
+          "fiber_id": "fiber-fbymnsfaqfwi156rw8ui"
+        },
+        {
+          "category": "china_region",
+          "query": "LE SSERAFIM / LESSERAFIM / 르세라핌 2026 2027 未来 中国内地 香港 澳门 台湾 亚洲 世界巡演 韩文 英文 新增站 加场 补票 延期 取消",
+          "fiber_id": "fiber-fbymnyoaqfwi156rwasi"
+        },
+        {
+          "category": "rumors",
+          "query": "LE SSERAFIM / LESSERAFIM / 르세라핌 2026 2027 未来 演唱会 开票 近期 传闻 爆料 场馆档期 票务页面 行程 加场 rumor",
+          "fiber_id": "fiber-fbymo5xaqfwi156rwcx1"
+        }
+      ],
+      "babymonster": [
+        {
+          "category": "ticketing",
+          "query": "BABYMONSTER / 베이비몬스터 / BABYMONSTERS BABYMONSTER world tour 2026 tickets BABYMONSTER 演唱会 2026 2027 未来 演唱会 开票时间 票价 场馆 大麦 秀动 票星球 猫眼 摩天轮 Cityline 拓元 Interpark NOL Ticketmaster Live Nation 正式票务",
+          "fiber_id": "fiber-fbymprxaqfwi156rwhs1"
+        },
+        {
+          "category": "official",
+          "query": "BABYMONSTER / 베이비몬스터 / BABYMONSTERS 2026 2027 未来 concert tour official 官方 公告 官网 事务所 Weverse 微博 X 主办方 场馆 fanclub presale 公售",
+          "fiber_id": "fiber-fbympy7aqfwi156rwia1"
+        },
+        {
+          "category": "china_region",
+          "query": "BABYMONSTER / 베이비몬스터 / BABYMONSTERS 2026 2027 未来 中国内地 香港 澳门 台湾 亚洲 世界巡演 韩文 英文 新增站 加场 补票 延期 取消",
+          "fiber_id": "fiber-fbymq5faqfwi156rwiz1"
+        },
+        {
+          "category": "rumors",
+          "query": "BABYMONSTER / 베이비몬스터 / BABYMONSTERS 2026 2027 未来 演唱会 开票 近期 传闻 爆料 场馆档期 票务页面 行程 加场 rumor",
+          "fiber_id": "fiber-fbymqaoaqfwi156rwjwi"
+        }
+      ],
+      "illit": [
+        {
+          "category": "ticketing",
+          "query": "ILLIT / 아일릿 ILLIT concert 2026 tickets ILLIT fancon 2026 2027 未来 演唱会 开票时间 票价 场馆 大麦 秀动 票星球 猫眼 摩天轮 Cityline 拓元 Interpark NOL Ticketmaster Live Nation 正式票务",
+          "fiber_id": "fiber-fbymri7aqfwi156rwpdi"
+        },
+        {
+          "category": "official",
+          "query": "ILLIT / 아일릿 2026 2027 未来 concert tour official 官方 公告 官网 事务所 Weverse 微博 X 主办方 场馆 fanclub presale 公售",
+          "fiber_id": "fiber-fbymrofaqfwi156rwps1"
+        },
+        {
+          "category": "china_region",
+          "query": "ILLIT / 아일릿 2026 2027 未来 中国内地 香港 澳门 台湾 亚洲 世界巡演 韩文 英文 新增站 加场 补票 延期 取消",
+          "fiber_id": "fiber-fbymrtoaqfwi156rwqi1"
+        },
+        {
+          "category": "rumors",
+          "query": "ILLIT / 아일릿 2026 2027 未来 演唱会 开票 近期 传闻 爆料 场馆档期 票务页面 行程 加场 rumor",
+          "fiber_id": "fiber-fbymrzxaqfwi156rwtei"
+        }
+      ],
+      "hearts2hearts": [
+        {
+          "category": "ticketing",
+          "query": "Hearts2Hearts / 하츠투하츠 / H2H Hearts2Hearts concert 2026 Hearts2Hearts fancon tickets 2026 2027 未来 演唱会 开票时间 票价 场馆 大麦 秀动 票星球 猫眼 摩天轮 Cityline 拓元 Interpark NOL Ticketmaster Live Nation 正式票务",
+          "fiber_id": "fiber-fbymtmfaqfwi156rx5u1"
+        },
+        {
+          "category": "official",
+          "query": "Hearts2Hearts / 하츠투하츠 / H2H 2026 2027 未来 concert tour official 官方 公告 官网 事务所 Weverse 微博 X 主办方 场馆 fanclub presale 公售",
+          "fiber_id": "fiber-fbymtroaqfwi156rx6u1"
+        },
+        {
+          "category": "china_region",
+          "query": "Hearts2Hearts / 하츠투하츠 / H2H 2026 2027 未来 中国内地 香港 澳门 台湾 亚洲 世界巡演 韩文 英文 新增站 加场 补票 延期 取消",
+          "fiber_id": "fiber-fbymtxxaqfwi156rx7ki"
+        },
+        {
+          "category": "rumors",
+          "query": "Hearts2Hearts / 하츠투하츠 / H2H 2026 2027 未来 演唱会 开票 近期 传闻 爆料 场馆档期 票务页面 行程 加场 rumor",
+          "fiber_id": "fiber-fbymu57aqfwi156rx7y1"
+        }
+      ],
+      "katseye": [
+        {
+          "category": "ticketing",
+          "query": "KATSEYE / 캣츠아이 KATSEYE tour 2026 tickets KATSEYE 演唱会 2026 2027 未来 演唱会 开票时间 票价 场馆 大麦 秀动 票星球 猫眼 摩天轮 Cityline 拓元 Interpark NOL Ticketmaster Live Nation 正式票务",
+          "fiber_id": "fiber-fbymw5faqfwi156rxa71"
+        },
+        {
+          "category": "official",
+          "query": "KATSEYE / 캣츠아이 2026 2027 未来 concert tour official 官方 公告 官网 事务所 Weverse 微博 X 主办方 场馆 fanclub presale 公售",
+          "fiber_id": "fiber-fbymwaoaqfwi156rxaki"
+        },
+        {
+          "category": "china_region",
+          "query": "KATSEYE / 캣츠아이 2026 2027 未来 中国内地 香港 澳门 台湾 亚洲 世界巡演 韩文 英文 新增站 加场 补票 延期 取消",
+          "fiber_id": "fiber-fbymwfxaqfwi156rxb11"
+        },
+        {
+          "category": "rumors",
+          "query": "KATSEYE / 캣츠아이 2026 2027 未来 演唱会 开票 近期 传闻 爆料 场馆档期 票务页面 行程 加场 rumor",
+          "fiber_id": "fiber-fbymwm7aqfwi156rxb91"
+        }
+      ]
+    },
+    "warnings": [
+      "aespa: event[0] sale_time 无效，已丢弃",
+      "aespa: event[1] sale_time 无效，已丢弃",
+      "aespa: event[2] sale_time 无效，已丢弃",
+      "aespa: event[3] sale_time 无效，已丢弃",
+      "aespa: event[4] sale_time 无效，已丢弃",
+      "aespa: event[5] sale_time 无效，已丢弃",
+      "aespa: event[6] sale_time 无效，已丢弃",
+      "aespa: event[7] sale_time 无效，已丢弃",
+      "aespa: event[8] sale_time 无效，已丢弃",
+      "aespa: event[9] sale_time 无效，已丢弃",
+      "aespa: event[10] sale_time 无效，已丢弃",
+      "aespa: event[11] sale_time 无效，已丢弃",
+      "aespa: event[12] sale_time 无效，已丢弃",
+      "aespa: event[13] sale_time 无效，已丢弃",
+      "aespa: event[14] sale_time 无效，已丢弃",
+      "aespa: event[15] sale_time 无效，已丢弃",
+      "aespa: event[16] sale_time 无效，已丢弃",
+      "aespa: event[17] sale_time 无效，已丢弃",
+      "aespa: event[18] sale_time 无效，已丢弃",
+      "aespa: event[19] sale_time 无效，已丢弃",
+      "aespa: event[20] sale_time 无效，已丢弃",
+      "aespa: event[21] sale_time 无效，已丢弃",
+      "aespa: event[22] sale_time 无效，已丢弃"
+    ],
+    "note": "全部 enabled 艺人已由代码执行四类 Kimi Formula 搜索；来源 URL 由 Kimi 从受保护搜索上下文整理，并通过公开地址可达性校验。"
+  },
+  "events": [
+    {
+      "source": "research",
+      "artist_key": "menni",
+      "artist_name": "门尼",
+      "url": "https://www.sina.cn/news/detail/5328130862219864.html",
+      "tour_name": "门尼「印·IN」2026巡回演唱会",
+      "title": "门尼「印·IN」2026巡回演唱会 · 南京站",
+      "city": "南京",
+      "country": "China",
+      "venue": "南京奥体中心国缘V9体育馆",
+      "show_date": "2026-09-12",
+      "show_time": "19:00",
+      "price": "¥280-916（参考价，以售票页为准）",
+      "ticket_tiers": [
+        "¥280-916 参考票价"
+      ],
+      "sale_status": "sold_out",
+      "sale_time": "2026-08-11 11:58",
+      "confidence": "confirmed",
+      "note": "ticketing 组给出预售时间 8/11 11:58、平台大麦/票星球/南京奥体中心票务；rumors 组 8/11 结果称南京场预售已售罄。票价来自有演出网参考页，需以下单页为准。"
+    },
+    {
+      "source": "research",
+      "artist_key": "menni",
+      "artist_name": "门尼",
+      "url": "https://www.sina.cn/news/detail/5322097837474975.html",
+      "tour_name": "门尼「印·IN」2026巡回演唱会",
+      "title": "门尼「印·IN」2026巡回演唱会 · 广州站（8/22）",
+      "city": "广州",
+      "country": "China",
+      "venue": "",
+      "show_date": "2026-08-22",
+      "show_time": "",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "sold_out",
+      "sale_time": "",
+      "confidence": "confirmed",
+      "note": "china_region 组结果仅确认 8/22&8/23 广州站双场门票预售售罄；当前结果未给出场馆、票价、开票时间。"
+    },
+    {
+      "source": "research",
+      "artist_key": "menni",
+      "artist_name": "门尼",
+      "url": "https://www.sina.cn/news/detail/5322097837474975.html",
+      "tour_name": "门尼「印·IN」2026巡回演唱会",
+      "title": "门尼「印·IN」2026巡回演唱会 · 广州站（8/23）",
+      "city": "广州",
+      "country": "China",
+      "venue": "",
+      "show_date": "2026-08-23",
+      "show_time": "",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "sold_out",
+      "sale_time": "",
+      "confidence": "confirmed",
+      "note": "同上：当前 china_region 结果只确认双场预售售罄，未提供场馆/票价/具体开票时间。"
+    },
+    {
+      "source": "research",
+      "artist_key": "menni",
+      "artist_name": "门尼",
+      "url": "https://m.df962388.com/yanchu/408065.html",
+      "tour_name": "",
+      "title": "2026JUMPPARK腾讯视频音乐大赏",
+      "city": "",
+      "country": "China",
+      "venue": "观山湖公园民族大联欢广场",
+      "show_date": "",
+      "show_time": "",
+      "price": "¥388-858",
+      "ticket_tiers": [
+        "¥388-858"
+      ],
+      "sale_status": "on_sale",
+      "sale_time": "",
+      "confidence": "confirmed",
+      "note": "ticketing 组页面列出活动日期 2026.08.29-08.30、阵容含门尼、票价 388-858；未列出门尼具体出演日、场次时间与开售时间，故不猜。"
+    },
+    {
+      "source": "research",
+      "artist_key": "lesserafim",
+      "artist_name": "LE SSERAFIM",
+      "url": "https://www.ticketmaster.com/le-sserafim-tickets/artist/3068703",
+      "tour_name": "2026 LE SSERAFIM TOUR 'PUREFLOW'",
+      "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 洛杉矶站",
+      "city": "Los Angeles",
+      "country": "United States",
+      "venue": "Crypto.com Arena",
+      "show_date": "2026-09-16",
+      "show_time": "19:30",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "",
+      "confidence": "confirmed",
+      "note": "Ticketmaster 艺人页列为 2026-09-16 Wednesday 07:30 PM；该结果未给出票价或开票时间。"
+    },
+    {
+      "source": "research",
+      "artist_key": "lesserafim",
+      "artist_name": "LE SSERAFIM",
+      "url": "https://www.ticketmaster.com/le-sserafim-tickets/artist/3068703",
+      "tour_name": "2026 LE SSERAFIM TOUR 'PUREFLOW'",
+      "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 塔科马站",
+      "city": "Tacoma",
+      "country": "United States",
+      "venue": "Tacoma Dome",
+      "show_date": "2026-09-20",
+      "show_time": "19:30",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "",
+      "confidence": "confirmed",
+      "note": "Ticketmaster 艺人页列为 2026-09-20 Sunday 07:30 PM；该结果未给出票价或开票时间。"
+    },
+    {
+      "source": "research",
+      "artist_key": "lesserafim",
+      "artist_name": "LE SSERAFIM",
+      "url": "https://www.ticketmaster.com/le-sserafim-tickets/artist/3068703",
+      "tour_name": "2026 LE SSERAFIM TOUR 'PUREFLOW'",
+      "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 圣何塞站",
+      "city": "San Jose",
+      "country": "United States",
+      "venue": "SAP Center at San Jose",
+      "show_date": "2026-09-23",
+      "show_time": "19:30",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "",
+      "confidence": "confirmed",
+      "note": "Ticketmaster 艺人页列为 2026-09-23 Wednesday 07:30 PM；该结果未给出票价或开票时间。"
+    },
+    {
+      "source": "research",
+      "artist_key": "lesserafim",
+      "artist_name": "LE SSERAFIM",
+      "url": "https://www.ticketmaster.com/le-sserafim-tickets/artist/3068703",
+      "tour_name": "2026 LE SSERAFIM TOUR 'PUREFLOW'",
+      "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 菲尼克斯站",
+      "city": "Phoenix",
+      "country": "United States",
+      "venue": "Mortgage Matchup Center",
+      "show_date": "2026-09-25",
+      "show_time": "19:30",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "",
+      "confidence": "confirmed",
+      "note": "Ticketmaster 艺人页列为 2026-09-25 Friday 07:30 PM；该结果未给出票价或开票时间。"
+    },
+    {
+      "source": "research",
+      "artist_key": "lesserafim",
+      "artist_name": "LE SSERAFIM",
+      "url": "https://www.ticketmaster.com/le-sserafim-tickets/artist/3068703",
+      "tour_name": "2026 LE SSERAFIM TOUR 'PUREFLOW'",
+      "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 沃斯堡站",
+      "city": "Fort Worth",
+      "country": "United States",
+      "venue": "Dickies Arena",
+      "show_date": "2026-09-27",
+      "show_time": "19:30",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "",
+      "confidence": "confirmed",
+      "note": "Ticketmaster 艺人页列为 2026-09-27 Sunday 07:30 PM；该结果未给出票价或开票时间。"
+    },
+    {
+      "source": "research",
+      "artist_key": "lesserafim",
+      "artist_name": "LE SSERAFIM",
+      "url": "https://www.ticketmaster.com/le-sserafim-tickets/artist/3068703",
+      "tour_name": "2026 LE SSERAFIM TOUR 'PUREFLOW'",
+      "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 奥兰多站",
+      "city": "Orlando",
+      "country": "United States",
+      "venue": "Kia Center",
+      "show_date": "2026-09-30",
+      "show_time": "19:30",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "",
+      "confidence": "confirmed",
+      "note": "Ticketmaster 艺人页列为 2026-09-30 Wednesday 07:30 PM；该结果未给出票价或开票时间。"
+    },
+    {
+      "source": "research",
+      "artist_key": "lesserafim",
+      "artist_name": "LE SSERAFIM",
+      "url": "https://www.ticketmaster.com/le-sserafim-tickets/artist/3068703",
+      "tour_name": "2026 LE SSERAFIM TOUR 'PUREFLOW'",
+      "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 芝加哥站",
+      "city": "Chicago",
+      "country": "United States",
+      "venue": "United Center",
+      "show_date": "2026-10-02",
+      "show_time": "19:30",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "",
+      "confidence": "confirmed",
+      "note": "Ticketmaster 艺人页列为 2026-10-02 Friday 07:30 PM；该结果未给出票价或开票时间。"
+    },
+    {
+      "source": "research",
+      "artist_key": "lesserafim",
+      "artist_name": "LE SSERAFIM",
+      "url": "https://www.ticketmaster.com/le-sserafim-tickets/artist/3068703",
+      "tour_name": "2026 LE SSERAFIM TOUR 'PUREFLOW'",
+      "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 华盛顿站",
+      "city": "Washington, DC",
+      "country": "United States",
+      "venue": "Capital One Arena",
+      "show_date": "2026-10-05",
+      "show_time": "19:30",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "",
+      "confidence": "confirmed",
+      "note": "Ticketmaster 艺人页列为 2026-10-05 Monday 07:30 PM；该结果未给出票价或开票时间。"
+    },
+    {
+      "source": "research",
+      "artist_key": "lesserafim",
+      "artist_name": "LE SSERAFIM",
+      "url": "https://www.ticketmaster.com/le-sserafim-tickets/artist/3068703",
+      "tour_name": "2026 LE SSERAFIM TOUR 'PUREFLOW'",
+      "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 纽瓦克站",
+      "city": "Newark",
+      "country": "United States",
+      "venue": "Prudential Center",
+      "show_date": "2026-10-08",
+      "show_time": "19:30",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "",
+      "confidence": "confirmed",
+      "note": "Ticketmaster 艺人页列为 2026-10-08 Thursday 07:30 PM；该结果未给出票价或开票时间。"
+    },
+    {
+      "source": "research",
+      "artist_key": "lesserafim",
+      "artist_name": "LE SSERAFIM",
+      "url": "https://www.ticketmaster.com/le-sserafim-tickets/artist/3068703",
+      "tour_name": "2026 LE SSERAFIM TOUR 'PUREFLOW'",
+      "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 伦敦站",
+      "city": "London",
+      "country": "United Kingdom",
+      "venue": "The O2",
+      "show_date": "2026-10-16",
+      "show_time": "18:00",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "",
+      "confidence": "confirmed",
+      "note": "Ticketmaster 艺人页列为 2026-10-16 Friday 06:00 PM；该结果未给出票价或开票时间。"
+    },
+    {
+      "source": "research",
+      "artist_key": "lesserafim",
+      "artist_name": "LE SSERAFIM",
+      "url": "https://www.ticketmaster.com/le-sserafim-tickets/artist/3068703",
+      "tour_name": "2026 LE SSERAFIM TOUR 'PUREFLOW'",
+      "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 阿姆斯特丹站",
+      "city": "Amsterdam",
+      "country": "Netherlands",
+      "venue": "Ziggo Dome",
+      "show_date": "2026-10-18",
+      "show_time": "19:30",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "",
+      "confidence": "confirmed",
+      "note": "Ticketmaster 艺人页列为 2026-10-18 Sunday 07:30 PM；同页另有 VIP/Venue Premium 产品条目，未合并为单独场次。"
+    },
+    {
+      "source": "research",
+      "artist_key": "lesserafim",
+      "artist_name": "LE SSERAFIM",
+      "url": "https://www.ticketmaster.com/le-sserafim-tickets/artist/3068703",
+      "tour_name": "2026 LE SSERAFIM TOUR 'PUREFLOW'",
+      "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 巴黎站",
+      "city": "Paris",
+      "country": "France",
+      "venue": "ACCOR ARENA",
+      "show_date": "2026-10-21",
+      "show_time": "19:30",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "",
+      "confidence": "confirmed",
+      "note": "Ticketmaster 艺人页列为 2026-10-21 Wednesday 07:30 PM；该结果未给出票价或开票时间。"
+    },
+    {
+      "source": "research",
+      "artist_key": "lesserafim",
+      "artist_name": "LE SSERAFIM",
+      "url": "https://www.ticketmaster.com/le-sserafim-tickets/artist/3068703",
+      "tour_name": "2026 LE SSERAFIM TOUR 'PUREFLOW'",
+      "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 哥本哈根站",
+      "city": "Copenhagen",
+      "country": "Denmark",
+      "venue": "Royal Arena",
+      "show_date": "2026-10-23",
+      "show_time": "19:30",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "",
+      "confidence": "confirmed",
+      "note": "Ticketmaster 艺人页列为 2026-10-23 Friday 07:30 PM；同页另有 Vinyl Room Package 条目，未合并为单独场次。"
+    },
+    {
+      "source": "research",
+      "artist_key": "babymonster",
+      "artist_name": "BABYMONSTER",
+      "url": "https://www.livenation.hk/babymonster-tickets-adp1479014",
+      "tour_name": "2026-27 BABYMONSTER WORLD TOUR [춤 (CHOOM)]",
+      "title": "2026-27 BABYMONSTER WORLD TOUR [춤 (CHOOM)] IN MACAO",
+      "city": "澳门",
+      "country": "Macau",
+      "venue": "The Venetian Arena / 澳门威尼斯人综艺馆",
+      "show_date": "2026-09-11",
+      "show_time": "20:00",
+      "price": "MOP/HKD 799-2299",
+      "ticket_tiers": [
+        "799",
+        "999",
+        "1399",
+        "1699",
+        "2299 VIP"
+      ],
+      "sale_status": "on_sale",
+      "sale_time": "",
+      "confidence": "confirmed",
+      "note": "Live Nation HK 列为 9月11日 Friday 8:00 PM；Cotai Ticketing 页面同列 9/11 晚8时、9/12 下午6时及票价 MOP/HKD $799-$2299。未查到可核实的精确开票时间字段。"
+    },
+    {
+      "source": "research",
+      "artist_key": "babymonster",
+      "artist_name": "BABYMONSTER",
+      "url": "https://cn.cotaiticketing.com/shows/babymonster2026.html",
+      "tour_name": "2026-27 BABYMONSTER WORLD TOUR [춤 (CHOOM)]",
+      "title": "2026-27 BABYMONSTER WORLD TOUR[춤(CHOOM)] IN MACAO",
+      "city": "澳门",
+      "country": "Macau",
+      "venue": "威尼斯人综艺馆",
+      "show_date": "2026-09-12",
+      "show_time": "18:00",
+      "price": "澳门币/港币 $799-$2299",
+      "ticket_tiers": [
+        "799",
+        "999",
+        "1399",
+        "1699",
+        "2299 VIP"
+      ],
+      "sale_status": "on_sale",
+      "sale_time": "",
+      "confidence": "confirmed",
+      "note": "金光票务页面列 2026年9月12日(星期六) 下午6时，票价澳门币/港币 $799-$2299；该 URL 本轮出现在 rumors 组结果中，但页面本身为正式票务。"
+    },
+    {
+      "source": "research",
+      "artist_key": "babymonster",
+      "artist_name": "BABYMONSTER",
+      "url": "https://www.livenation.asia/babymonster-tickets-adp1479014",
+      "tour_name": "2026-27 BABYMONSTER WORLD TOUR [춤 (CHOOM)]",
+      "title": "2026-27 BABYMONSTER WORLD TOUR [춤 (CHOOM)] IN MANILA",
+      "city": "Pasay / 马尼拉",
+      "country": "Philippines",
+      "venue": "SM Mall of Asia Arena",
+      "show_date": "2026-09-05",
+      "show_time": "19:00",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "",
+      "sale_time": "",
+      "confidence": "confirmed",
+      "note": "Live Nation Asia 列为 Sep 05 2026 Saturday 7:00 PM；未在结果中看到票价或开票时间。"
+    },
+    {
+      "source": "research",
+      "artist_key": "babymonster",
+      "artist_name": "BABYMONSTER",
+      "url": "https://www.livenation.asia/babymonster-tickets-adp1479014",
+      "tour_name": "2026-27 BABYMONSTER WORLD TOUR [춤 (CHOOM)]",
+      "title": "2026-27 BABYMONSTER WORLD TOUR [춤 (CHOOM)] IN BANGKOK",
+      "city": "曼谷",
+      "country": "Thailand",
+      "venue": "Impact Arena, Muang Thong Thani",
+      "show_date": "2026-11-07",
+      "show_time": "",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "",
+      "sale_time": "",
+      "confidence": "confirmed",
+      "note": "Live Nation Asia 列 Nov 07 2026 Saturday；同页另列 Nov 08。票价、开票时间未见。"
+    },
+    {
+      "source": "research",
+      "artist_key": "babymonster",
+      "artist_name": "BABYMONSTER",
+      "url": "https://www.livenation.asia/babymonster-tickets-adp1479014",
+      "tour_name": "2026-27 BABYMONSTER WORLD TOUR [춤 (CHOOM)]",
+      "title": "2026-27 BABYMONSTER WORLD TOUR [춤 (CHOOM)] IN BANGKOK",
+      "city": "曼谷",
+      "country": "Thailand",
+      "venue": "Impact Arena, Muang Thong Thani",
+      "show_date": "2026-11-08",
+      "show_time": "",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "",
+      "sale_time": "",
+      "confidence": "confirmed",
+      "note": "Live Nation Asia 列 Nov 08 2026 Sunday；票价、开票时间未见。"
+    },
+    {
+      "source": "research",
+      "artist_key": "babymonster",
+      "artist_name": "BABYMONSTER",
+      "url": "https://www.livenation.asia/babymonster-tickets-adp1479014",
+      "tour_name": "2026-27 BABYMONSTER WORLD TOUR [춤 (CHOOM)]",
+      "title": "2026-27 BABYMONSTER WORLD TOUR [춤 (CHOOM)] IN KUALA LUMPUR",
+      "city": "吉隆坡",
+      "country": "Malaysia",
+      "venue": "Unifi Arena",
+      "show_date": "2026-11-14",
+      "show_time": "",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "",
+      "sale_time": "",
+      "confidence": "confirmed",
+      "note": "Live Nation Asia 列 Nov 14 2026 Saturday；票价、开票时间未见。"
+    },
+    {
+      "source": "research",
+      "artist_key": "babymonster",
+      "artist_name": "BABYMONSTER",
+      "url": "https://www.livenation.asia/babymonster-tickets-adp1479014",
+      "tour_name": "2026-27 BABYMONSTER WORLD TOUR [춤 (CHOOM)]",
+      "title": "2026-27 BABYMONSTER WORLD TOUR [춤 (CHOOM)] IN SINGAPORE",
+      "city": "新加坡",
+      "country": "Singapore",
+      "venue": "Singapore Indoor Stadium",
+      "show_date": "2026-11-28",
+      "show_time": "",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "",
+      "sale_time": "",
+      "confidence": "confirmed",
+      "note": "Live Nation Asia 同条列 Nov28-Nov29 并写 Saturday: 6:00 PM；为避免把 Saturday 时间误套到两天，show_time 留空。票价、开票时间未见。"
+    },
+    {
+      "source": "research",
+      "artist_key": "babymonster",
+      "artist_name": "BABYMONSTER",
+      "url": "https://www.livenation.asia/babymonster-tickets-adp1479014",
+      "tour_name": "2026-27 BABYMONSTER WORLD TOUR [춤 (CHOOM)]",
+      "title": "2026-27 BABYMONSTER WORLD TOUR [춤 (CHOOM)] IN SINGAPORE",
+      "city": "新加坡",
+      "country": "Singapore",
+      "venue": "Singapore Indoor Stadium",
+      "show_date": "2026-11-29",
+      "show_time": "",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "",
+      "sale_time": "",
+      "confidence": "confirmed",
+      "note": "Live Nation Asia 同条列 Nov28-Nov29；未给 11/29 单独时间，故留空。票价、开票时间未见。"
+    },
+    {
+      "source": "research",
+      "artist_key": "illit",
+      "artist_name": "ILLIT",
+      "url": "https://www.asiaworld-expo.com/en-us/whats-on/upcoming-events/events/2026-illit-concert-in-hong-kong/",
+      "tour_name": "ILLIT LIVE 'PRESS START♥︎' ASIA TOUR",
+      "title": "ILLIT LIVE 'PRESS START♥︎' in HONG KONG（2026-08-22）",
+      "city": "香港",
+      "country": "Hong Kong",
+      "venue": "亚洲国际博览馆 10 号展馆（AsiaWorld-Expo, Hall 10）",
+      "show_date": "2026-08-22",
+      "show_time": "19:00",
+      "price": "HKD 899-1799（全座位）",
+      "ticket_tiers": [
+        "HKD 1799（含 Sound Check 彩排观摩及香港限定明信片组）",
+        "HKD 1399",
+        "HKD 1099",
+        "HKD 899"
+      ],
+      "sale_status": "on_sale",
+      "sale_time": "2026-06-11 14:00",
+      "confidence": "confirmed",
+      "note": "场馆页面列明本场 19:00 举行，门票经 Cityline 于 2026-06-11 14:00 起售；页面未提供实时余票，on_sale 仅表示已进入公售阶段。"
+    },
+    {
+      "source": "research",
+      "artist_key": "illit",
+      "artist_name": "ILLIT",
+      "url": "https://www.asiaworld-expo.com/en-us/whats-on/upcoming-events/events/2026-illit-concert-in-hong-kong/",
+      "tour_name": "ILLIT LIVE 'PRESS START♥︎' ASIA TOUR",
+      "title": "ILLIT LIVE 'PRESS START♥︎' in HONG KONG（2026-08-23 加场）",
+      "city": "香港",
+      "country": "Hong Kong",
+      "venue": "亚洲国际博览馆 10 号展馆（AsiaWorld-Expo, Hall 10）",
+      "show_date": "2026-08-23",
+      "show_time": "19:00",
+      "price": "HKD 899-1799（全座位）",
+      "ticket_tiers": [
+        "HKD 1799（含 Sound Check 彩排观摩及香港限定明信片组）",
+        "HKD 1399",
+        "HKD 1099",
+        "HKD 899"
+      ],
+      "sale_status": "sold_out",
+      "sale_time": "",
+      "confidence": "confirmed",
+      "note": "亚洲国际博览馆页面确认加场日期、时间及票价；主办方 REG. Entertainment 的 Facebook 公告标题为“加場完售公告”。本轮结果未给出加场的确切开票时间，故不以 6 月 11 日倒推。"
+    },
+    {
+      "source": "research",
+      "artist_key": "hearts2hearts",
+      "artist_name": "Hearts2Hearts",
+      "url": "https://www.facebook.com/khamfans/posts/hearts2hearts-%E7%A2%BA%E5%AE%9A%E7%99%BB%E4%B8%8Amusic-expo-live-2026-in-taipei%E8%88%9E%E5%8F%B0%E6%9C%AC%E6%9C%88%E6%8E%A8%E5%87%BA%E7%AC%AC2%E5%BC%B5%E8%BF%B7%E4%BD%A0%E5%B0%88%E8%BC%AF%E7%9B%AE%E5%89%8D%E5%82%99%E5%8F%97%E7%9F%9A%E7%9B%AE%E7%9A%84-hearts2hear/1075596464804803/",
+      "tour_name": "MUSIC EXPO LIVE 2026 in TAIPEI",
+      "title": "MUSIC EXPO LIVE 2026 in TAIPEI（Hearts2Hearts 出演）",
+      "city": "台北",
+      "country": "中国台湾",
+      "venue": "",
+      "show_date": "",
+      "show_time": "",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "2026-07-28 12:00",
+      "confidence": "confirmed",
+      "note": "来源页面明确写着 Hearts2Hearts 确定登上该舞台，并公布本次演出采用实名制售票、门票于2026-07-28 12:00正式开卖；检索结果未提供演出日期、场馆、票价或票档，故相应字段留空。截至2026-08-13，开票时间已过，但结果中未显示售罄、延期或取消信息。"
+    },
+    {
+      "source": "research",
+      "artist_key": "katseye",
+      "artist_name": "KATSEYE",
+      "url": "https://www.katseye.world/live/",
+      "tour_name": "THE WILDWORLD TOUR",
+      "title": "KATSEYE 洛杉矶周边 Irvine 演出（巡演日程表首项）",
+      "city": "Irvine",
+      "country": "USA",
+      "venue": "Daisy Chain Fields, Great Park",
+      "show_date": "2026-08-29",
+      "show_time": "",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "2026-05-21",
+      "confidence": "confirmed",
+      "note": "官网 Live 页与 Live Nation HK 均列此场为最近一场演出，位于 9/1 都柏林揭幕站之前；页面未明确标注其是否属于 WILDWORLD TOUR 正段，亦可能是音乐节/特别场。"
+    },
+    {
+      "source": "research",
+      "artist_key": "katseye",
+      "artist_name": "KATSEYE",
+      "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+      "tour_name": "THE WILDWORLD TOUR",
+      "title": "KATSEYE〈WILDWORLD〉世界巡演 · 都柏林开幕站",
+      "city": "都柏林",
+      "country": "Ireland",
+      "venue": "3Arena",
+      "show_date": "2026-09-01",
+      "show_time": "18:30",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "2026-05-21",
+      "confidence": "confirmed",
+      "note": "Ticketmaster 标注开场 6:30 PM（当地时间）。公售已于 2026-05-21 开始。"
+    },
+    {
+      "source": "research",
+      "artist_key": "katseye",
+      "artist_name": "KATSEYE",
+      "url": "https://www.katseye.world/live/",
+      "tour_name": "THE WILDWORLD TOUR",
+      "title": "KATSEYE〈WILDWORLD〉世界巡演 · 伦敦站（第一场）",
+      "city": "伦敦",
+      "country": "UK",
+      "venue": "The O2",
+      "show_date": "2026-09-03",
+      "show_time": "",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "2026-05-21",
+      "confidence": "confirmed",
+      "note": ""
+    },
+    {
+      "source": "research",
+      "artist_key": "katseye",
+      "artist_name": "KATSEYE",
+      "url": "https://www.katseye.world/live/",
+      "tour_name": "THE WILDWORLD TOUR",
+      "title": "KATSEYE〈WILDWORLD〉世界巡演 · 伦敦站（第二场/加场）",
+      "city": "伦敦",
+      "country": "UK",
+      "venue": "The O2",
+      "show_date": "2026-09-04",
+      "show_time": "",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "2026-05-21",
+      "confidence": "confirmed",
+      "note": "官网与 Live Nation HK 均列出 9/4 第二场，较最初公告的 9/3 单场为新增加场。"
+    },
+    {
+      "source": "research",
+      "artist_key": "katseye",
+      "artist_name": "KATSEYE",
+      "url": "https://hypebeast.com/zh/2026/5/katseye-wildworld-tour-dates-announcement-info",
+      "tour_name": "THE WILDWORLD TOUR",
+      "title": "KATSEYE〈WILDWORLD〉世界巡演 · 曼彻斯特站",
+      "city": "曼彻斯特",
+      "country": "UK",
+      "venue": "Co-op Live",
+      "show_date": "2026-09-06",
+      "show_time": "",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "2026-05-21",
+      "confidence": "confirmed",
+      "note": ""
+    },
+    {
+      "source": "research",
+      "artist_key": "katseye",
+      "artist_name": "KATSEYE",
+      "url": "https://music.apple.com/us/concerts/ce.38e62e82-80c5-4df7-b8e6-e5b119e17daa?l=zh-Hans-CN",
+      "tour_name": "THE WILDWORLD TOUR",
+      "title": "KATSEYE〈WILDWORLD〉世界巡演 · 巴黎站",
+      "city": "巴黎",
+      "country": "France",
+      "venue": "Accor Arena",
+      "show_date": "2026-09-09",
+      "show_time": "20:30",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "2026-05-21",
+      "confidence": "confirmed",
+      "note": "Apple Music（Bandsintown 数据）标注 20:30。"
+    },
+    {
+      "source": "research",
+      "artist_key": "katseye",
+      "artist_name": "KATSEYE",
+      "url": "https://hypebeast.com/zh/2026/5/katseye-wildworld-tour-dates-announcement-info",
+      "tour_name": "THE WILDWORLD TOUR",
+      "title": "KATSEYE〈WILDWORLD〉世界巡演 · 阿姆斯特丹站",
+      "city": "阿姆斯特丹",
+      "country": "Netherlands",
+      "venue": "Ziggo Dome",
+      "show_date": "2026-09-11",
+      "show_time": "",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "2026-05-21",
+      "confidence": "confirmed",
+      "note": ""
+    },
+    {
+      "source": "research",
+      "artist_key": "katseye",
+      "artist_name": "KATSEYE",
+      "url": "https://hypebeast.com/zh/2026/5/katseye-wildworld-tour-dates-announcement-info",
+      "tour_name": "THE WILDWORLD TOUR",
+      "title": "KATSEYE〈WILDWORLD〉世界巡演 · 科隆站",
+      "city": "科隆",
+      "country": "Germany",
+      "venue": "Lanxess Arena",
+      "show_date": "2026-09-13",
+      "show_time": "",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "2026-05-21",
+      "confidence": "confirmed",
+      "note": ""
+    },
+    {
+      "source": "research",
+      "artist_key": "katseye",
+      "artist_name": "KATSEYE",
+      "url": "https://hypebeast.com/zh/2026/5/katseye-wildworld-tour-dates-announcement-info",
+      "tour_name": "THE WILDWORLD TOUR",
+      "title": "KATSEYE〈WILDWORLD〉世界巡演 · 安特卫普站",
+      "city": "安特卫普",
+      "country": "Belgium",
+      "venue": "AFAS Dome",
+      "show_date": "2026-09-15",
+      "show_time": "",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "2026-05-21",
+      "confidence": "confirmed",
+      "note": ""
+    },
+    {
+      "source": "research",
+      "artist_key": "katseye",
+      "artist_name": "KATSEYE",
+      "url": "https://hypebeast.com/zh/2026/5/katseye-wildworld-tour-dates-announcement-info",
+      "tour_name": "THE WILDWORLD TOUR",
+      "title": "KATSEYE〈WILDWORLD〉世界巡演 · 哥本哈根站",
+      "city": "哥本哈根",
+      "country": "Denmark",
+      "venue": "Royal Arena",
+      "show_date": "2026-09-17",
+      "show_time": "",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "2026-05-21",
+      "confidence": "confirmed",
+      "note": "欧洲段收官站。"
+    },
+    {
+      "source": "research",
+      "artist_key": "katseye",
+      "artist_name": "KATSEYE",
+      "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+      "tour_name": "THE WILDWORLD TOUR",
+      "title": "KATSEYE〈WILDWORLD〉世界巡演 · 北美段开幕（迈阿密）",
+      "city": "迈阿密",
+      "country": "USA",
+      "venue": "Kaseya Center",
+      "show_date": "2026-10-13",
+      "show_time": "20:00",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "2026-05-21",
+      "confidence": "confirmed",
+      "note": ""
+    },
+    {
+      "source": "research",
+      "artist_key": "katseye",
+      "artist_name": "KATSEYE",
+      "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+      "tour_name": "THE WILDWORLD TOUR",
+      "title": "KATSEYE〈WILDWORLD〉世界巡演 · 亚特兰大战",
+      "city": "亚特兰大",
+      "country": "USA",
+      "venue": "State Farm Arena",
+      "show_date": "2026-10-15",
+      "show_time": "20:00",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "2026-05-21",
+      "confidence": "confirmed",
+      "note": ""
+    },
+    {
+      "source": "research",
+      "artist_key": "katseye",
+      "artist_name": "KATSEYE",
+      "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+      "tour_name": "THE WILDWORLD TOUR",
+      "title": "KATSEYE〈WILDWORLD〉世界巡演 · 夏洛特站",
+      "city": "夏洛特",
+      "country": "USA",
+      "venue": "Spectrum Center",
+      "show_date": "2026-10-20",
+      "show_time": "20:00",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "2026-05-21",
+      "confidence": "confirmed",
+      "note": ""
+    },
+    {
+      "source": "research",
+      "artist_key": "katseye",
+      "artist_name": "KATSEYE",
+      "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+      "tour_name": "THE WILDWORLD TOUR",
+      "title": "KATSEYE〈WILDWORLD〉世界巡演 · 华盛顿站",
+      "city": "华盛顿",
+      "country": "USA",
+      "venue": "Capital One Arena",
+      "show_date": "2026-10-22",
+      "show_time": "20:00",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "2026-05-21",
+      "confidence": "confirmed",
+      "note": ""
+    },
+    {
+      "source": "research",
+      "artist_key": "katseye",
+      "artist_name": "KATSEYE",
+      "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+      "tour_name": "THE WILDWORLD TOUR",
+      "title": "KATSEYE〈WILDWORLD〉世界巡演 · 纽约贝尔蒙特公园站（第一场）",
+      "city": "Belmont Park, NY",
+      "country": "USA",
+      "venue": "UBS Arena",
+      "show_date": "2026-10-24",
+      "show_time": "20:00",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "2026-05-21",
+      "confidence": "confirmed",
+      "note": ""
+    },
+    {
+      "source": "research",
+      "artist_key": "katseye",
+      "artist_name": "KATSEYE",
+      "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+      "tour_name": "THE WILDWORLD TOUR",
+      "title": "KATSEYE〈WILDWORLD〉世界巡演 · 纽约贝尔蒙特公园站（第二场/加场）",
+      "city": "Belmont Park, NY",
+      "country": "USA",
+      "venue": "UBS Arena",
+      "show_date": "2026-10-25",
+      "show_time": "20:00",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "2026-05-21",
+      "confidence": "confirmed",
+      "note": "Ticketmaster 列出的 10/25 第二场，较最初公告的 10/24 单场为新增加场。"
+    },
+    {
+      "source": "research",
+      "artist_key": "katseye",
+      "artist_name": "KATSEYE",
+      "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+      "tour_name": "THE WILDWORLD TOUR",
+      "title": "KATSEYE〈WILDWORLD〉世界巡演 · 波士顿站",
+      "city": "波士顿",
+      "country": "USA",
+      "venue": "TD Garden",
+      "show_date": "2026-10-28",
+      "show_time": "20:00",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "2026-05-21",
+      "confidence": "confirmed",
+      "note": ""
+    },
+    {
+      "source": "research",
+      "artist_key": "katseye",
+      "artist_name": "KATSEYE",
+      "url": "https://hypebeast.com/zh/2026/5/katseye-wildworld-tour-dates-announcement-info",
+      "tour_name": "THE WILDWORLD TOUR",
+      "title": "KATSEYE〈WILDWORLD〉世界巡演 · 蒙特利尔站",
+      "city": "蒙特利尔",
+      "country": "Canada",
+      "venue": "Bell Centre",
+      "show_date": "2026-10-30",
+      "show_time": "",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "2026-05-21",
+      "confidence": "confirmed",
+      "note": ""
+    },
+    {
+      "source": "research",
+      "artist_key": "katseye",
+      "artist_name": "KATSEYE",
+      "url": "https://hypebeast.com/zh/2026/5/katseye-wildworld-tour-dates-announcement-info",
+      "tour_name": "THE WILDWORLD TOUR",
+      "title": "KATSEYE〈WILDWORLD〉世界巡演 · 汉密尔顿站",
+      "city": "汉密尔顿",
+      "country": "Canada",
+      "venue": "TD Coliseum",
+      "show_date": "2026-11-01",
+      "show_time": "",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "2026-05-21",
+      "confidence": "confirmed",
+      "note": ""
+    },
+    {
+      "source": "research",
+      "artist_key": "katseye",
+      "artist_name": "KATSEYE",
+      "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+      "tour_name": "THE WILDWORLD TOUR",
+      "title": "KATSEYE〈WILDWORLD〉世界巡演 · 底特律站",
+      "city": "底特律",
+      "country": "USA",
+      "venue": "Little Caesars Arena",
+      "show_date": "2026-11-03",
+      "show_time": "20:00",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "2026-05-21",
+      "confidence": "confirmed",
+      "note": ""
+    },
+    {
+      "source": "research",
+      "artist_key": "katseye",
+      "artist_name": "KATSEYE",
+      "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+      "tour_name": "THE WILDWORLD TOUR",
+      "title": "KATSEYE〈WILDWORLD〉世界巡演 · 芝加哥站",
+      "city": "芝加哥",
+      "country": "USA",
+      "venue": "United Center",
+      "show_date": "2026-11-05",
+      "show_time": "20:00",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "2026-05-21",
+      "confidence": "confirmed",
+      "note": ""
+    },
+    {
+      "source": "research",
+      "artist_key": "katseye",
+      "artist_name": "KATSEYE",
+      "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+      "tour_name": "THE WILDWORLD TOUR",
+      "title": "KATSEYE〈WILDWORLD〉世界巡演 · 明尼阿波利斯站",
+      "city": "明尼阿波利斯",
+      "country": "USA",
+      "venue": "Target Center",
+      "show_date": "2026-11-07",
+      "show_time": "20:00",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "2026-05-21",
+      "confidence": "confirmed",
+      "note": ""
+    },
+    {
+      "source": "research",
+      "artist_key": "katseye",
+      "artist_name": "KATSEYE",
+      "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+      "tour_name": "THE WILDWORLD TOUR",
+      "title": "KATSEYE〈WILDWORLD〉世界巡演 · 奥斯汀站",
+      "city": "奥斯汀",
+      "country": "USA",
+      "venue": "Moody Center ATX",
+      "show_date": "2026-11-10",
+      "show_time": "20:00",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "2026-05-21",
+      "confidence": "confirmed",
+      "note": ""
+    },
+    {
+      "source": "research",
+      "artist_key": "katseye",
+      "artist_name": "KATSEYE",
+      "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+      "tour_name": "THE WILDWORLD TOUR",
+      "title": "KATSEYE〈WILDWORLD〉世界巡演 · 达拉斯站",
+      "city": "达拉斯",
+      "country": "USA",
+      "venue": "American Airlines Center",
+      "show_date": "2026-11-11",
+      "show_time": "20:00",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "2026-05-21",
+      "confidence": "confirmed",
+      "note": ""
+    },
+    {
+      "source": "research",
+      "artist_key": "katseye",
+      "artist_name": "KATSEYE",
+      "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+      "tour_name": "THE WILDWORLD TOUR",
+      "title": "KATSEYE〈WILDWORLD〉世界巡演 · 拉斯维加斯站",
+      "city": "拉斯维加斯",
+      "country": "USA",
+      "venue": "MGM Grand Garden Arena",
+      "show_date": "2026-11-14",
+      "show_time": "20:00",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "2026-05-21",
+      "confidence": "confirmed",
+      "note": ""
+    },
+    {
+      "source": "research",
+      "artist_key": "katseye",
+      "artist_name": "KATSEYE",
+      "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+      "tour_name": "THE WILDWORLD TOUR",
+      "title": "KATSEYE〈WILDWORLD〉世界巡演 · 西雅图站",
+      "city": "西雅图",
+      "country": "USA",
+      "venue": "Climate Pledge Arena",
+      "show_date": "2026-11-17",
+      "show_time": "20:00",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "2026-05-21",
+      "confidence": "confirmed",
+      "note": ""
+    },
+    {
+      "source": "research",
+      "artist_key": "katseye",
+      "artist_name": "KATSEYE",
+      "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+      "tour_name": "THE WILDWORLD TOUR",
+      "title": "KATSEYE〈WILDWORLD〉世界巡演 · 奥克兰站",
+      "city": "奥克兰",
+      "country": "USA",
+      "venue": "Oakland Arena",
+      "show_date": "2026-11-19",
+      "show_time": "20:00",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "2026-05-21",
+      "confidence": "confirmed",
+      "note": ""
+    },
+    {
+      "source": "research",
+      "artist_key": "katseye",
+      "artist_name": "KATSEYE",
+      "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+      "tour_name": "THE WILDWORLD TOUR",
+      "title": "KATSEYE〈WILDWORLD〉世界巡演 · 洛杉矶站（第一场）",
+      "city": "洛杉矶",
+      "country": "USA",
+      "venue": "Crypto.com Arena",
+      "show_date": "2026-11-21",
+      "show_time": "20:00",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "2026-05-21",
+      "confidence": "confirmed",
+      "note": ""
+    },
+    {
+      "source": "research",
+      "artist_key": "katseye",
+      "artist_name": "KATSEYE",
+      "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+      "tour_name": "THE WILDWORLD TOUR",
+      "title": "KATSEYE〈WILDWORLD〉世界巡演 · 洛杉矶站（第二场/加场）",
+      "city": "洛杉矶",
+      "country": "USA",
+      "venue": "Crypto.com Arena",
+      "show_date": "2026-11-22",
+      "show_time": "20:00",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "2026-05-21",
+      "confidence": "confirmed",
+      "note": "Ticketmaster 列出的 11/22 第二场，较最初公告的 11/21 单场为新增加场。"
+    },
+    {
+      "source": "research",
+      "artist_key": "katseye",
+      "artist_name": "KATSEYE",
+      "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+      "tour_name": "THE WILDWORLD TOUR",
+      "title": "KATSEYE〈WILDWORLD〉世界巡演 · 菲尼克斯站",
+      "city": "菲尼克斯",
+      "country": "USA",
+      "venue": "Mortgage Matchup Center",
+      "show_date": "2026-11-24",
+      "show_time": "20:00",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "2026-05-21",
+      "confidence": "confirmed",
+      "note": ""
+    },
+    {
+      "source": "research",
+      "artist_key": "katseye",
+      "artist_name": "KATSEYE",
+      "url": "https://hypebeast.com/zh/2026/5/katseye-wildworld-tour-dates-announcement-info",
+      "tour_name": "THE WILDWORLD TOUR",
+      "title": "KATSEYE〈WILDWORLD〉世界巡演 · 墨西哥城收官站",
+      "city": "墨西哥城",
+      "country": "Mexico",
+      "venue": "Palacio de los Deportes",
+      "show_date": "2026-11-27",
+      "show_time": "",
+      "price": "",
+      "ticket_tiers": [],
+      "sale_status": "on_sale",
+      "sale_time": "2026-05-21",
+      "confidence": "confirmed",
+      "note": "全巡收官站。"
+    }
+  ],
+  "rumors": [
+    {
+      "artist_key": "shayiting",
+      "artist_name": "沙一汀",
+      "headline": "聚合页挂出「沙一汀EL广州演唱会」12月31日 广州体育馆1号馆（未标注年份、无票价无开票信息）",
+      "detail": "东方演出网聚合页（页面更新于 2026-06-26）在「2026沙一汀EL演出时间表」中列出「沙一汀EL广州演唱会」，演出时间写作 12月31日 21:00-12月31日 23:59，地点为广州体育馆1号馆，但未标注年份，亦无票价、开票时间及任何官方/正式票务链接。以今日 2026-08-13 判断，若指 2026-12-31 则为未来场次，但仅凭该聚合页无法确认，需等待大麦/秀动等正式票务或艺人官方微博官宣核实。",
+      "source_name": "东方演出网",
+      "url": "https://m.df962388.com/yanchu/shayitingEL/",
+      "credibility": "low",
+      "posted_at": "2026-06-26"
+    },
+    {
+      "artist_key": "njz",
+      "artist_name": "NJZ",
+      "headline": "截至 2026-08-13 未查到 NJZ/NewJeans 未来巡演或开票的可验证场次",
+      "detail": "本轮 rumors 组仅出现 Ticketmaster 的 NewJeans 艺人页；可见片段为历史 setlist 与 2024 年用户留言，未显示任何 2026-2027 未来场次、场馆、票价、先行或公售时间。ticketing 组检索失败/无可用结果，official 与 china_region 组也未提供未来演出官宣；因此任何声称已有 NJZ/NewJeans 门票或场次的信息都应视为未证实。",
+      "source_name": "Ticketmaster 艺人页片段（rumors 组）",
+      "url": "https://www.ticketmaster.com/newjeans-tickets/artist/3016768?page=3",
+      "credibility": "medium",
+      "posted_at": "2026-08-13"
+    },
+    {
+      "artist_key": "kiiikiii",
+      "artist_name": "KiiiKiii",
+      "headline": "KiiiKiii 被称将出席 2026 Asia Artist Awards 高雄场",
+      "detail": "Instagram  reel 文案称 KiiiKiii 在 2026 Asia Artist Awards 高雄国家体育场 12月5日、6日歌手阵容中；四组结果内未见官方公告或正式票务页面佐证，且可能存在阵容/档期变动，故仅作 rumor。",
+      "source_name": "Instagram",
+      "url": "https://www.instagram.com/reel/DY9tEUOmaD7/",
+      "credibility": "low",
+      "posted_at": "2026-05-30"
+    },
+    {
+      "artist_key": "ive",
+      "artist_name": "IVE",
+      "headline": "IVE〈SHOW WHAT I AM〉台北小巨蛋 2026-09 场次显示完售，但可加场/精确日期仍待核",
+      "detail": "第4组结果中的 Live Nation Taiwan 页面与 Live Nation TW Facebook 均指向 IVE WORLD TOUR <SHOW WHAT I AM> IN TAIPEI：Facebook 片段写 2026/9/11(五)&9/12(六)、4/3 上午11点开票；livenation.com.tw 片段出现“9月11 / 9月13 / Taipei台北小巨蛋 / Friday / 完售”。截至 2026-08-13，9/11 为周五且显示完售，但片段间第二/第三场日期不一致，不能据此确认完整场次表；仅保留为未来仍可能补票/释票/加场公告的线索。",
+      "source_name": "Live Nation Taiwan / Live Nation TW Facebook",
+      "url": "https://www.livenation.com.tw/ive-tickets-adp1446287",
+      "credibility": "medium",
+      "posted_at": "2026-04-02"
+    },
+    {
+      "artist_key": "lesserafim",
+      "artist_name": "LE SSERAFIM",
+      "headline": "PUREFLOW 澳门站线索：11/7-11/8 两场，场馆指向 Galaxy Arena",
+      "detail": "rumors 组中的 Instagram 帖子写明 “2026 LE SSERAFIM TOUR 'PUREFLOW' IN MACAU”，日期为 2026.11.07 7PM 与 2026.11.08 6PM，Venue: GALAXY ARENA；但结果未显示可核验的官方账号或正式票务页，故不标 confirmed。",
+      "source_name": "Instagram 帖子（账号未在结果中显示）",
+      "url": "https://www.instagram.com/p/DYPb4EYnLu7/",
+      "credibility": "medium",
+      "posted_at": "2026-05-12"
+    },
+    {
+      "artist_key": "lesserafim",
+      "artist_name": "LE SSERAFIM",
+      "headline": "亚洲巡演追加澳门站，称会员平台已开启",
+      "detail": "china_region 组中的 Threads 帖子称 “LE SSERAFIM亚洲巡演追加澳门站”，列出 2026年11月7日（星期六）与 2026年11月8日（星期日）加场，地点仅写“澳门”；无正式票务或官方公告链接，需继续盯 Weverse/主办方/银河综艺馆与正式票务。",
+      "source_name": "Threads @buyticketshk",
+      "url": "https://www.threads.com/@buyticketshk/post/DbFZliWAYeS/le-sserafim%E4%BA%9E%E6%B4%B2%E5%B7%A1%E6%BC%94%E8%BF%BD%E5%8A%A0%E6%BE%B3%E9%96%80%E7%AB%99pureflow%E5%B7%A1%E6%BC%94%E6%9C%83%E5%93%A1%E5%B9%B3%E8%87%BA%E7%8F%BE%E5%B7%B2%E9%96%8B%E5%95%9F2026-le-sserafim-tour-pureflow-macau-%E5%85%AC%E6%BC%94-20/",
+      "credibility": "low",
+      "posted_at": "2026-07-21"
+    },
+    {
+      "artist_key": "lesserafim",
+      "artist_name": "LE SSERAFIM",
+      "headline": "日本 2026 演唱会攻略称大阪/神奈川/静冈/宫城/福冈共 11 场，但本轮截取未含逐场日期",
+      "detail": "Trip.com 攻略提到日本五地共 11 场、指定席 16,500 日元、VIP 升票 27,500 日元，并给出 K-Arena Yokohama、ECOPA Arena、Sekisui Heim Super Arena、Marine Messe Fukuoka Hall A 等场馆；但本组截取没有逐场 show_date，且非正式票务页，因此不作为 confirmed event 输出。",
+      "source_name": "Trip.com 攻略",
+      "url": "https://hk.trip.com/blog/le-sserafim-concert-in-japan-hk/",
+      "credibility": "low",
+      "posted_at": "2026-08-02"
+    },
+    {
+      "artist_key": "babymonster",
+      "artist_name": "BABYMONSTER",
+      "headline": "YG 公告称 CHOOM 世巡将覆盖五大洲，欧洲/南美/大洋洲等细节仍未完整公布",
+      "detail": "中国娱乐网转述 YG 3月16日官方 SNS 公告称：巡演以首尔为起点，日本含神户、福冈、横滨、千叶、名古屋、大阪六城；除亚洲与北美外还将首次踏足大洋洲、欧洲及南美洲，但具体细节尚未全部公布。该线索仍可能影响后续新增站与开票节奏。",
+      "source_name": "中国娱乐网 / YG 官方 SNS 转述",
+      "url": "http://news.yule.com.cn/html/202603/359986.html",
+      "credibility": "medium",
+      "posted_at": "2026-03-16"
+    },
+    {
+      "artist_key": "babymonster",
+      "artist_name": "BABYMONSTER",
+      "headline": "Trip.com 汇总页出现横滨 Pia Arena MM、台北小巨蛋、香港亚洲国际博览馆等条目但缺可核实日期/票务",
+      "detail": "Trip.com 的 BABYMONSTER collection 列出澳门、香港、台北、大阪、吉隆坡、曼谷及横滨 Pia Arena MM 等条目，但搜索摘录未提供这些站点的可核实日期、票价或开票时间；因此仅作待核实线索，不确认为可售票场次。",
+      "source_name": "Trip.com events collection",
+      "url": "https://hk.trip.com/events/7790665-babymonster-collection/",
+      "credibility": "low",
+      "posted_at": "2026-07-30"
+    },
+    {
+      "artist_key": "illit",
+      "artist_name": "ILLIT",
+      "headline": "第三方票务页列出 ILLIT 2026 年 12 月 23 日 Funabashi 场次",
+      "detail": "Japan Concert Tickets 页面片段显示 ILLIT 将于 2026-12-23 在日本 Funabashi 的 LaLa arena 演出，并显示 00:00；该时间疑似占位，未采纳为开演时间。页面未提供票价或开票时间，本轮四组结果中也没有官方或正式票务来源交叉确认。",
+      "source_name": "Japan Concert Tickets",
+      "url": "https://www.japanconcerttickets.com/artist/illit/",
+      "credibility": "low",
+      "posted_at": "2024-11-11"
+    },
+    {
+      "artist_key": "katseye",
+      "artist_name": "KATSEYE",
+      "headline": "⚠️ 官方及正式票务渠道至今无任何亚洲/中国场次；二级市场与信息站存在混杂信息",
+      "detail": "截至 2026-08-13，Ticketmaster、Live Nation HK 与官网 katseye.world/live 列出的 WILDWORLD TOUR 仅覆盖 8/29 Irvine、9 月英欧段与 10-11 月北美/墨西哥段，无中国内地及港澳台、也无任何亚洲站。二级市场 Viagogo 中文页除转售 WILDWORLD 门票外，还列出 The Armory（明尼阿波利斯）、MGM Music Hall at Fenway（波士顿）、Hammerstein Ballroom（纽约）等与本次巡演官方场馆不符的旧巡演场地，疑为历史场次残留或误导性库存，购票请只认 Ticketmaster / Live Nation / katseye.world 官方入口。亚洲加场仍属可能变化事项，需继续监控。",
+      "source_name": "Ticketmaster / Live Nation HK / katseye.world 官方信息 vs Viagogo 二级市场比对",
+      "url": "https://www.viagogo.com/cn/Concert-Tickets/Other-Concerts/Katseye-Tickets",
+      "credibility": "high",
+      "posted_at": "2026-08-13"
+    }
+  ],
+  "sources": [
+    {
+      "artist_key": "shayiting",
+      "category": "official",
+      "title": "2026沙一汀EL演出时间表、地点、门票价格 - 东方演出网",
+      "url": "https://m.df962388.com/yanchu/shayitingEL/"
+    },
+    {
+      "artist_key": "menni",
+      "category": "ticketing",
+      "title": "门尼「印·IN」2026巡回演唱会南京站时间、地点 - 东方演出网",
+      "url": "https://m.df962388.com/yanchu/408065.html"
+    },
+    {
+      "artist_key": "menni",
+      "category": "ticketing",
+      "title": "门尼演唱会南京预售 - 新浪新闻",
+      "url": "https://www.sina.cn/news/detail/5328130862219864.html"
+    },
+    {
+      "artist_key": "menni",
+      "category": "china_region",
+      "title": "粉丝预祝门尼演出顺利 - 新浪新闻",
+      "url": "https://www.sina.cn/news/detail/5322097837474975.html"
+    },
+    {
+      "artist_key": "njz",
+      "category": "rumors",
+      "title": "Newjeans Tickets, 2026-2027 Concert Tour Dates",
+      "url": "https://www.ticketmaster.com/newjeans-tickets/artist/3016768?page=3"
+    },
+    {
+      "artist_key": "kiiikiii",
+      "category": "china_region",
+      "title": "KiiiKiii來台參加K-SPARK 用中文跟粉絲問好",
+      "url": "https://www.instagram.com/reel/DY9tEUOmaD7/"
+    },
+    {
+      "artist_key": "ive",
+      "category": "rumors",
+      "title": "IVE Tickets, Tour and Concert Dates – www.livenation.com.tw",
+      "url": "https://www.livenation.com.tw/ive-tickets-adp1446287"
+    },
+    {
+      "artist_key": "aespa",
+      "category": "china_region",
+      "title": "aespa SYNK : COMPLæXITY 2026-27 Live Tour",
+      "url": "https://aespaworldtour.com/"
+    },
+    {
+      "artist_key": "lesserafim",
+      "category": "ticketing",
+      "title": "LE SSERAFIM Tickets, 2026-2027 Concert Tour Dates | Ticketmaster",
+      "url": "https://www.ticketmaster.com/le-sserafim-tickets/artist/3068703"
+    },
+    {
+      "artist_key": "lesserafim",
+      "category": "ticketing",
+      "title": "【LE SSERAFIM日本演唱會2026】大阪/神奈川/靜岡/宮城/福岡共開11場！時間地點、門票票價、入場規則&交通住宿完整攻略！",
+      "url": "https://hk.trip.com/blog/le-sserafim-concert-in-japan-hk/"
+    },
+    {
+      "artist_key": "lesserafim",
+      "category": "china_region",
+      "title": "LE SSERAFIM亞洲巡演追加澳門站PUREFLOW巡演會員平臺現已開啟",
+      "url": "https://www.threads.com/@buyticketshk/post/DbFZliWAYeS/le-sserafim%E4%BA%9E%E6%B4%B2%E5%B7%A1%E6%BC%94%E8%BF%BD%E5%8A%A0%E6%BE%B3%E9%96%80%E7%AB%99pureflow%E5%B7%A1%E6%BC%94%E6%9C%83%E5%93%A1%E5%B9%B3%E8%87%BA%E7%8F%BE%E5%B7%B2%E9%96%8B%E5%95%9F2026-le-sserafim-tour-pureflow-macau-%E5%85%AC%E6%BC%94-20/"
+    },
+    {
+      "artist_key": "lesserafim",
+      "category": "rumors",
+      "title": "Just announced! LE SSERAFIM is bringing their 2026 Tour",
+      "url": "https://www.instagram.com/p/DYPb4EYnLu7/"
+    },
+    {
+      "artist_key": "babymonster",
+      "category": "ticketing",
+      "title": "BABYMONSTER Tickets, Tour and Concert Dates - Livenation.hk",
+      "url": "https://www.livenation.hk/babymonster-tickets-adp1479014"
+    },
+    {
+      "artist_key": "babymonster",
+      "category": "ticketing",
+      "title": "BABYMONSTER Tickets, Tour and Concert Dates - Live Nation Asia",
+      "url": "https://www.livenation.asia/babymonster-tickets-adp1479014"
+    },
+    {
+      "artist_key": "babymonster",
+      "category": "ticketing",
+      "title": "BABYMONSTER演唱會：日期、行程和門票價格（8月更新） | Trip.com",
+      "url": "https://hk.trip.com/events/7790665-babymonster-collection/"
+    },
+    {
+      "artist_key": "babymonster",
+      "category": "china_region",
+      "title": "BABYMONSTER官宣全球巡演计划5月携新专回归后6月首尔启航",
+      "url": "http://news.yule.com.cn/html/202603/359986.html"
+    },
+    {
+      "artist_key": "babymonster",
+      "category": "rumors",
+      "title": "2026-27 BABYMONSTER WORLD TOUR[춤(CHOOM)] IN MACAO",
+      "url": "https://cn.cotaiticketing.com/shows/babymonster2026.html"
+    },
+    {
+      "artist_key": "illit",
+      "category": "ticketing",
+      "title": "ILLIT LIVE 'PRESS START♥︎' in HONG KONG - AsiaWorld-Expo",
+      "url": "https://www.asiaworld-expo.com/en-us/whats-on/upcoming-events/events/2026-illit-concert-in-hong-kong/"
+    },
+    {
+      "artist_key": "illit",
+      "category": "ticketing",
+      "title": "ILLIT in Japan - Tickets & Event Information",
+      "url": "https://www.japanconcerttickets.com/artist/illit/"
+    },
+    {
+      "artist_key": "hearts2hearts",
+      "category": "rumors",
+      "title": "Hearts2Hearts 確定登上《MUSIC EXPO LIVE 2026 in TAIPEI》舞台 ...",
+      "url": "https://www.facebook.com/khamfans/posts/hearts2hearts-%E7%A2%BA%E5%AE%9A%E7%99%BB%E4%B8%8Amusic-expo-live-2026-in-taipei%E8%88%9E%E5%8F%B0%E6%9C%AC%E6%9C%88%E6%8E%A8%E5%87%BA%E7%AC%AC2%E5%BC%B5%E8%BF%B7%E4%BD%A0%E5%B0%88%E8%BC%AF%E7%9B%AE%E5%89%8D%E5%82%99%E5%8F%97%E7%9F%9A%E7%9B%AE%E7%9A%84-hearts2hear/1075596464804803/"
+    },
+    {
+      "artist_key": "katseye",
+      "category": "ticketing",
+      "title": "KATSEYE Tickets, 2026-2027 Concert Tour Dates | Ticketmaster",
+      "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344"
+    },
+    {
+      "artist_key": "katseye",
+      "category": "official",
+      "title": "Live - KATSEYE 官方网站（巡演日程与预售/公售说明）",
+      "url": "https://www.katseye.world/live/"
+    },
+    {
+      "artist_key": "katseye",
+      "category": "china_region",
+      "title": "KATSEYE「WILDWORLD TOUR」世界巡迴演唱會日期與資訊 – Hypebeast 中文",
+      "url": "https://hypebeast.com/zh/2026/5/katseye-wildworld-tour-dates-announcement-info"
+    },
+    {
+      "artist_key": "katseye",
+      "category": "china_region",
+      "title": "KATSEYE 巡演与音乐会日期 – Apple Music（ Bandsintown 数据）",
+      "url": "https://music.apple.com/us/concerts/ce.38e62e82-80c5-4df7-b8e6-e5b119e17daa?l=zh-Hans-CN"
+    },
+    {
+      "artist_key": "katseye",
+      "category": "rumors",
+      "title": "KATSEYE 门票 | 2026 巡演日期和演唱会门票 – Viagogo（二级市场）",
+      "url": "https://www.viagogo.com/cn/Concert-Tickets/Other-Concerts/Katseye-Tickets"
+    }
+  ]
+}

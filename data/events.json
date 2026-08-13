@@ -3,14 +3,14 @@
     "source": "research",
     "artist_key": "babymonster",
     "artist_name": "BABYMONSTER",
-    "title": "BABYMONSTER〈CHOOM〉世界巡演 · 澳门站",
-    "tour_name": "2026-27 BABYMONSTER WORLD TOUR [춤 CHOOM]",
+    "title": "2026-27 BABYMONSTER WORLD TOUR [춤 (CHOOM)] IN MACAO",
+    "tour_name": "2026-27 BABYMONSTER WORLD TOUR [춤 (CHOOM)]",
     "performers": "",
     "city": "澳门",
-    "venue": "澳门威尼斯人金光综艺馆",
+    "venue": "The Venetian Arena / 澳门威尼斯人综艺馆",
     "country": "Macau",
     "show_date": "2026-09-11",
-    "show_time": "",
+    "show_time": "20:00",
     "show_time_raw": "",
     "price": "MOP/HKD 799-2299",
     "ticket_tiers": [
@@ -23,7 +23,7 @@
     "sale_status": "on_sale",
     "sale_time": "2026-06-18 12:00",
     "confidence": "confirmed",
-    "note": "9/11 为加场。公售 6/18 12:00 已开始，大麦网是 9/11 加场的公售渠道之一。取票 8/20 起。离内地最近的一站。",
+    "note": "Live Nation HK 列为 9月11日 Friday 8:00 PM；Cotai Ticketing 页面同列 9/11 晚8时、9/12 下午6时及票价 MOP/HKD $799-$2299。未查到可核实的精确开票时间字段。",
     "sources": [
       {
         "source": "research",
@@ -34,12 +34,23 @@
         "source": "research",
         "url": "https://cn.cotaiticketing.com/shows/babymonster2026.html",
         "source_id": ""
+      },
+      {
+        "source": "research",
+        "url": "https://www.livenation.hk/babymonster-tickets-adp1479014",
+        "source_id": ""
       }
     ],
     "first_seen": "2026-08-07T11:53:06",
     "first_seen_run": "20260807-115252",
-    "last_seen": "2026-08-10T11:20:26",
-    "id": "9e23e91b6efadfdb"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "9e23e91b6efadfdb",
+    "last_seen_run": "20260813-115054",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
   },
   "1c559c2e7566fa3e": {
     "source": "research",
@@ -75,7 +86,10 @@
     "first_seen": "2026-08-07T11:53:06",
     "first_seen_run": "20260807-115252",
     "last_seen": "2026-08-10T11:20:26",
-    "id": "1c559c2e7566fa3e"
+    "id": "1c559c2e7566fa3e",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "unverified",
+    "missed_full_refreshes": 1
   },
   "0540199f40717702": {
     "source": "research",
@@ -106,7 +120,10 @@
     "first_seen": "2026-08-07T11:53:06",
     "first_seen_run": "20260807-115252",
     "last_seen": "2026-08-07T11:53:06",
-    "id": "0540199f40717702"
+    "id": "0540199f40717702",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "unverified",
+    "missed_full_refreshes": 1
   },
   "3eba6c3990b01a09": {
     "source": "research",
@@ -137,17 +154,20 @@
     "first_seen": "2026-08-07T11:53:06",
     "first_seen_run": "20260807-115252",
     "last_seen": "2026-08-07T11:53:06",
-    "id": "3eba6c3990b01a09"
+    "id": "3eba6c3990b01a09",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "unverified",
+    "missed_full_refreshes": 1
   },
   "baaa3c56e5da53fc": {
     "source": "research",
     "artist_key": "babymonster",
     "artist_name": "BABYMONSTER",
-    "title": "BABYMONSTER〈CHOOM〉世界巡演 · 新加坡站",
-    "tour_name": "CHOOM WORLD TOUR",
+    "title": "2026-27 BABYMONSTER WORLD TOUR [춤 (CHOOM)] IN SINGAPORE",
+    "tour_name": "2026-27 BABYMONSTER WORLD TOUR [춤 (CHOOM)]",
     "performers": "",
     "city": "新加坡",
-    "venue": "新加坡室内体育馆",
+    "venue": "Singapore Indoor Stadium",
     "country": "Singapore",
     "show_date": "2026-11-28",
     "show_time": "",
@@ -157,28 +177,39 @@
     "sale_status": "",
     "sale_time": "",
     "confidence": "confirmed",
-    "note": "11/28-11/29 两场。",
+    "note": "Live Nation Asia 同条列 Nov28-Nov29 并写 Saturday: 6:00 PM；为避免把 Saturday 时间误套到两天，show_time 留空。票价、开票时间未见。",
     "sources": [
       {
         "source": "research",
         "url": "https://en.wikipedia.org/wiki/Choom_World_Tour",
         "source_id": ""
+      },
+      {
+        "source": "research",
+        "url": "https://www.livenation.asia/babymonster-tickets-adp1479014",
+        "source_id": ""
       }
     ],
     "first_seen": "2026-08-07T11:53:06",
     "first_seen_run": "20260807-115252",
-    "last_seen": "2026-08-07T11:53:06",
-    "id": "baaa3c56e5da53fc"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "baaa3c56e5da53fc",
+    "last_seen_run": "20260813-115054",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
   },
   "2ef764cab06d7849": {
     "source": "research",
     "artist_key": "babymonster",
     "artist_name": "BABYMONSTER",
-    "title": "BABYMONSTER〈CHOOM〉世界巡演 · 曼谷站",
-    "tour_name": "CHOOM WORLD TOUR",
+    "title": "2026-27 BABYMONSTER WORLD TOUR [춤 (CHOOM)] IN BANGKOK",
+    "tour_name": "2026-27 BABYMONSTER WORLD TOUR [춤 (CHOOM)]",
     "performers": "",
     "city": "曼谷",
-    "venue": "Impact Arena",
+    "venue": "Impact Arena, Muang Thong Thani",
     "country": "Thailand",
     "show_date": "2026-11-07",
     "show_time": "",
@@ -188,18 +219,29 @@
     "sale_status": "",
     "sale_time": "",
     "confidence": "confirmed",
-    "note": "11/7-11/8 两场。",
+    "note": "Live Nation Asia 列 Nov 07 2026 Saturday；同页另列 Nov 08。票价、开票时间未见。",
     "sources": [
       {
         "source": "research",
         "url": "https://en.wikipedia.org/wiki/Choom_World_Tour",
         "source_id": ""
+      },
+      {
+        "source": "research",
+        "url": "https://www.livenation.asia/babymonster-tickets-adp1479014",
+        "source_id": ""
       }
     ],
     "first_seen": "2026-08-07T11:53:06",
     "first_seen_run": "20260807-115252",
-    "last_seen": "2026-08-07T11:53:06",
-    "id": "2ef764cab06d7849"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "2ef764cab06d7849",
+    "last_seen_run": "20260813-115054",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
   },
   "ee3d00a0b11607c4": {
     "source": "research",
@@ -230,14 +272,17 @@
     "first_seen": "2026-08-07T11:53:06",
     "first_seen_run": "20260807-115252",
     "last_seen": "2026-08-07T11:53:06",
-    "id": "ee3d00a0b11607c4"
+    "id": "ee3d00a0b11607c4",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "unverified",
+    "missed_full_refreshes": 1
   },
   "ddfabf9c5a97a640": {
     "source": "research",
     "artist_key": "babymonster",
     "artist_name": "BABYMONSTER",
-    "title": "BABYMONSTER〈CHOOM〉世界巡演 · 吉隆坡站",
-    "tour_name": "CHOOM WORLD TOUR",
+    "title": "2026-27 BABYMONSTER WORLD TOUR [춤 (CHOOM)] IN KUALA LUMPUR",
+    "tour_name": "2026-27 BABYMONSTER WORLD TOUR [춤 (CHOOM)]",
     "performers": "",
     "city": "吉隆坡",
     "venue": "Unifi Arena",
@@ -250,18 +295,29 @@
     "sale_status": "",
     "sale_time": "",
     "confidence": "confirmed",
-    "note": "11/14-11/15 两场。",
+    "note": "Live Nation Asia 列 Nov 14 2026 Saturday；票价、开票时间未见。",
     "sources": [
       {
         "source": "research",
         "url": "https://en.wikipedia.org/wiki/Choom_World_Tour",
         "source_id": ""
+      },
+      {
+        "source": "research",
+        "url": "https://www.livenation.asia/babymonster-tickets-adp1479014",
+        "source_id": ""
       }
     ],
     "first_seen": "2026-08-07T11:53:06",
     "first_seen_run": "20260807-115252",
-    "last_seen": "2026-08-07T11:53:06",
-    "id": "ddfabf9c5a97a640"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "ddfabf9c5a97a640",
+    "last_seen_run": "20260813-115054",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
   },
   "70e4afe8d2d057bd": {
     "source": "research",
@@ -292,7 +348,10 @@
     "first_seen": "2026-08-07T11:53:06",
     "first_seen_run": "20260807-115252",
     "last_seen": "2026-08-07T11:53:06",
-    "id": "70e4afe8d2d057bd"
+    "id": "70e4afe8d2d057bd",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "unverified",
+    "missed_full_refreshes": 1
   },
   "51eb18c5f6d8adab": {
     "source": "research",
@@ -305,25 +364,36 @@
     "venue": "3Arena",
     "country": "Ireland",
     "show_date": "2026-09-01",
-    "show_time": "",
+    "show_time": "18:30",
     "show_time_raw": "",
     "price": "",
     "ticket_tiers": [],
     "sale_status": "on_sale",
     "sale_time": "2026-05-21",
     "confidence": "confirmed",
-    "note": "全巡 31 场，欧洲段 9/1 都柏林开跑。门票 5/21 已公开发售，多站售罄。目前未公布亚洲场。",
+    "note": "Ticketmaster 标注开场 6:30 PM（当地时间）。公售已于 2026-05-21 开始。",
     "sources": [
       {
         "source": "research",
         "url": "https://consequence.net/2026/05/katseye-2026-wildworld-tour-how-to-get-tickets/",
         "source_id": ""
+      },
+      {
+        "source": "research",
+        "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+        "source_id": ""
       }
     ],
     "first_seen": "2026-08-07T11:53:06",
     "first_seen_run": "20260807-115252",
-    "last_seen": "2026-08-07T11:53:06",
-    "id": "51eb18c5f6d8adab"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "51eb18c5f6d8adab",
+    "last_seen_run": "20260813-115054",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
   },
   "59f5581d7eb35450": {
     "source": "research",
@@ -336,7 +406,7 @@
     "venue": "Kaseya Center",
     "country": "USA",
     "show_date": "2026-10-13",
-    "show_time": "",
+    "show_time": "20:00",
     "show_time_raw": "",
     "price": "",
     "ticket_tiers": [],
@@ -349,12 +419,23 @@
         "source": "research",
         "url": "https://www.rollingstone.com/music/music-news/katseye-2026-world-tour-wild-ep-1235561830/",
         "source_id": ""
+      },
+      {
+        "source": "research",
+        "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+        "source_id": ""
       }
     ],
     "first_seen": "2026-08-07T11:53:06",
     "first_seen_run": "20260807-115252",
-    "last_seen": "2026-08-07T11:53:06",
-    "id": "59f5581d7eb35450"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "59f5581d7eb35450",
+    "last_seen_run": "20260813-115054",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
   },
   "8e69662461f89521": {
     "source": "research",
@@ -374,18 +455,29 @@
     "sale_status": "on_sale",
     "sale_time": "2026-05-21",
     "confidence": "confirmed",
-    "note": "",
+    "note": "全巡收官站。",
     "sources": [
       {
         "source": "research",
         "url": "https://en.wikipedia.org/wiki/The_Wildworld_Tour",
         "source_id": ""
+      },
+      {
+        "source": "research",
+        "url": "https://hypebeast.com/zh/2026/5/katseye-wildworld-tour-dates-announcement-info",
+        "source_id": ""
       }
     ],
     "first_seen": "2026-08-07T11:53:06",
     "first_seen_run": "20260807-115252",
-    "last_seen": "2026-08-07T11:53:06",
-    "id": "8e69662461f89521"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "8e69662461f89521",
+    "last_seen_run": "20260813-115054",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
   },
   "2c57040c8e79dfb3": {
     "source": "research",
@@ -421,7 +513,10 @@
     "first_seen": "2026-08-07T11:53:06",
     "first_seen_run": "20260807-115252",
     "last_seen": "2026-08-10T11:20:26",
-    "id": "2c57040c8e79dfb3"
+    "id": "2c57040c8e79dfb3",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "unverified",
+    "missed_full_refreshes": 1
   },
   "a0c7f9015f29bfc0": {
     "source": "research",
@@ -452,7 +547,10 @@
     "first_seen": "2026-08-07T11:53:06",
     "first_seen_run": "20260807-115252",
     "last_seen": "2026-08-10T11:20:26",
-    "id": "a0c7f9015f29bfc0"
+    "id": "a0c7f9015f29bfc0",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "unverified",
+    "missed_full_refreshes": 1
   },
   "2abf0d126aff9197": {
     "source": "research",
@@ -489,7 +587,7 @@
     "source": "research",
     "artist_key": "menni",
     "artist_name": "门尼",
-    "title": "门尼「印·IN」2026巡回演唱会 · 广州站",
+    "title": "门尼「印·IN」2026巡回演唱会 · 广州站（8/22）",
     "tour_name": "门尼「印·IN」2026巡回演唱会",
     "performers": "",
     "city": "广州",
@@ -503,24 +601,35 @@
     "sale_status": "sold_out",
     "sale_time": "",
     "confidence": "confirmed",
-    "note": "8/22-8/23 双场，预售已全部售罄。缺货登记可留意大麦/票星球/壹票达。",
+    "note": "china_region 组结果仅确认 8/22&8/23 广州站双场门票预售售罄；当前结果未给出场馆、票价、开票时间。",
     "sources": [
       {
         "source": "research",
         "url": "https://www.sina.cn/news/detail/5314017573997140.html",
         "source_id": ""
+      },
+      {
+        "source": "research",
+        "url": "https://www.sina.cn/news/detail/5322097837474975.html",
+        "source_id": ""
       }
     ],
     "first_seen": "2026-08-10T11:18:24",
     "first_seen_run": "20260810-111824",
-    "last_seen": "2026-08-10T11:20:26",
-    "id": "2b9b389b7af5bffb"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "2b9b389b7af5bffb",
+    "last_seen_run": "20260813-115054",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
   },
   "42211e4e9c92957d": {
     "source": "research",
     "artist_key": "menni",
     "artist_name": "门尼",
-    "title": "门尼「印·IN」2026巡回演唱会 · 广州站（第二场）",
+    "title": "门尼「印·IN」2026巡回演唱会 · 广州站（8/23）",
     "tour_name": "门尼「印·IN」2026巡回演唱会",
     "performers": "",
     "city": "广州",
@@ -534,33 +643,44 @@
     "sale_status": "sold_out",
     "sale_time": "",
     "confidence": "confirmed",
-    "note": "加场，同样预售售罄。",
+    "note": "同上：当前 china_region 结果只确认双场预售售罄，未提供场馆/票价/具体开票时间。",
     "sources": [
       {
         "source": "research",
         "url": "https://www.sina.cn/news/detail/5314029012386670.html",
         "source_id": ""
+      },
+      {
+        "source": "research",
+        "url": "https://www.sina.cn/news/detail/5322097837474975.html",
+        "source_id": ""
       }
     ],
     "first_seen": "2026-08-10T11:18:24",
     "first_seen_run": "20260810-111824",
-    "last_seen": "2026-08-10T11:20:26",
-    "id": "42211e4e9c92957d"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "42211e4e9c92957d",
+    "last_seen_run": "20260813-115054",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
   },
   "51d90f79e8843354": {
     "source": "research",
     "artist_key": "babymonster",
     "artist_name": "BABYMONSTER",
-    "title": "BABYMONSTER〈CHOOM〉世界巡演 · 澳门站（原定场）",
-    "tour_name": "2026-27 BABYMONSTER WORLD TOUR [춤 CHOOM]",
+    "title": "2026-27 BABYMONSTER WORLD TOUR[춤(CHOOM)] IN MACAO",
+    "tour_name": "2026-27 BABYMONSTER WORLD TOUR [춤 (CHOOM)]",
     "performers": "",
     "city": "澳门",
-    "venue": "澳门威尼斯人金光综艺馆",
+    "venue": "威尼斯人综艺馆",
     "country": "Macau",
     "show_date": "2026-09-12",
-    "show_time": "",
+    "show_time": "18:00",
     "show_time_raw": "",
-    "price": "MOP/HKD 799-2299",
+    "price": "澳门币/港币 $799-$2299",
     "ticket_tiers": [
       "2299 VIP",
       "1699",
@@ -571,7 +691,7 @@
     "sale_status": "on_sale",
     "sale_time": "2026-06-18 12:00",
     "confidence": "confirmed",
-    "note": "原定场次，9/11 为后加。金光票务/Live Nation HK 售票。",
+    "note": "金光票务页面列 2026年9月12日(星期六) 下午6时，票价澳门币/港币 $799-$2299；该 URL 本轮出现在 rumors 组结果中，但页面本身为正式票务。",
     "sources": [
       {
         "source": "research",
@@ -581,8 +701,14 @@
     ],
     "first_seen": "2026-08-10T11:18:24",
     "first_seen_run": "20260810-111824",
-    "last_seen": "2026-08-10T11:20:26",
-    "id": "51d90f79e8843354"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "51d90f79e8843354",
+    "last_seen_run": "20260813-115054",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
   },
   "a710dc7340ac9b1c": {
     "source": "research",
@@ -613,7 +739,10 @@
     "first_seen": "2026-08-10T11:18:24",
     "first_seen_run": "20260810-111824",
     "last_seen": "2026-08-10T11:20:26",
-    "id": "a710dc7340ac9b1c"
+    "id": "a710dc7340ac9b1c",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "unverified",
+    "missed_full_refreshes": 1
   },
   "249d8a301fa18eef": {
     "source": "research",
@@ -644,7 +773,10 @@
     "first_seen": "2026-08-10T11:18:24",
     "first_seen_run": "20260810-111824",
     "last_seen": "2026-08-10T11:20:26",
-    "id": "249d8a301fa18eef"
+    "id": "249d8a301fa18eef",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "unverified",
+    "missed_full_refreshes": 1
   },
   "ded2d9fbe0c2dd05": {
     "source": "research",
@@ -684,68 +816,96 @@
     "source": "research",
     "artist_key": "illit",
     "artist_name": "ILLIT",
-    "title": "ILLIT〈PRESS START♥︎〉亚洲巡演 · 香港站",
+    "title": "ILLIT LIVE 'PRESS START♥︎' in HONG KONG（2026-08-22）",
     "tour_name": "ILLIT LIVE 'PRESS START♥︎' ASIA TOUR",
     "performers": "",
     "city": "香港",
-    "venue": "亚洲国际博览馆 10 号展馆",
+    "venue": "亚洲国际博览馆 10 号展馆（AsiaWorld-Expo, Hall 10）",
     "country": "Hong Kong",
     "show_date": "2026-08-22",
     "show_time": "19:00",
     "show_time_raw": "",
-    "price": "HKD 899-1799",
+    "price": "HKD 899-1799（全座位）",
     "ticket_tiers": [
       "HKD 1799（含彩排观摩+香港限定明信片组）",
       "HKD 1399",
       "HKD 1099",
-      "HKD 899"
+      "HKD 899",
+      "HKD 1799（含 Sound Check 彩排观摩及香港限定明信片组）"
     ],
     "sale_status": "on_sale",
     "sale_time": "2026-06-11 14:00",
     "confidence": "confirmed",
-    "note": "出道两年首次来港，也是本次亚巡最终站。公售 6/11 14:00 起，Cityline 与大麦均有售——大麦可买是内地观众的关键信息。",
+    "note": "场馆页面列明本场 19:00 举行，门票经 Cityline 于 2026-06-11 14:00 起售；页面未提供实时余票，on_sale 仅表示已进入公售阶段。",
     "sources": [
       {
         "source": "research",
         "url": "https://www.am730.com.hk/article/1032518",
         "source_id": ""
-      }
-    ],
-    "first_seen": "2026-08-10T11:18:24",
-    "first_seen_run": "20260810-111824",
-    "last_seen": "2026-08-10T11:20:26",
-    "id": "c849f462e7f290f1"
-  },
-  "7da5114556a76624": {
-    "source": "research",
-    "artist_key": "illit",
-    "artist_name": "ILLIT",
-    "title": "ILLIT〈PRESS START♥︎〉亚洲巡演 · 香港站（加场）",
-    "tour_name": "ILLIT LIVE 'PRESS START♥︎' ASIA TOUR",
-    "performers": "",
-    "city": "香港",
-    "venue": "亚洲国际博览馆 10 号展馆",
-    "country": "Hong Kong",
-    "show_date": "2026-08-23",
-    "show_time": "",
-    "show_time_raw": "",
-    "price": "HKD 899-1799",
-    "ticket_tiers": [],
-    "sale_status": "on_sale",
-    "sale_time": "2026-06-11 14:00",
-    "confidence": "confirmed",
-    "note": "因反应热烈加开的第二场。",
-    "sources": [
+      },
       {
         "source": "research",
-        "url": "https://timable.com/hk/zh/event/6971d34ec7e30d3b810c15e4/ILLIT-PRESS-START-%E4%BA%9E%E6%B4%B2%E5%B7%A1%E8%BF%B4%E6%BC%94%E5%94%B1%E6%9C%83-2026-%E9%A6%99%E6%B8%AF%E7%AB%99",
+        "url": "https://www.asiaworld-expo.com/en-us/whats-on/upcoming-events/events/2026-illit-concert-in-hong-kong/",
         "source_id": ""
       }
     ],
     "first_seen": "2026-08-10T11:18:24",
     "first_seen_run": "20260810-111824",
-    "last_seen": "2026-08-10T11:20:26",
-    "id": "7da5114556a76624"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "c849f462e7f290f1",
+    "last_seen_run": "20260813-115054",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "7da5114556a76624": {
+    "source": "research",
+    "artist_key": "illit",
+    "artist_name": "ILLIT",
+    "title": "ILLIT LIVE 'PRESS START♥︎' in HONG KONG（2026-08-23 加场）",
+    "tour_name": "ILLIT LIVE 'PRESS START♥︎' ASIA TOUR",
+    "performers": "",
+    "city": "香港",
+    "venue": "亚洲国际博览馆 10 号展馆（AsiaWorld-Expo, Hall 10）",
+    "country": "Hong Kong",
+    "show_date": "2026-08-23",
+    "show_time": "19:00",
+    "show_time_raw": "",
+    "price": "HKD 899-1799（全座位）",
+    "ticket_tiers": [
+      "HKD 1799（含 Sound Check 彩排观摩及香港限定明信片组）",
+      "HKD 1399",
+      "HKD 1099",
+      "HKD 899"
+    ],
+    "sale_status": "sold_out",
+    "sale_time": "2026-06-11 14:00",
+    "confidence": "confirmed",
+    "note": "亚洲国际博览馆页面确认加场日期、时间及票价；主办方 REG. Entertainment 的 Facebook 公告标题为“加場完售公告”。本轮结果未给出加场的确切开票时间，故不以 6 月 11 日倒推。",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://timable.com/hk/zh/event/6971d34ec7e30d3b810c15e4/ILLIT-PRESS-START-%E4%BA%9E%E6%B4%B2%E5%B7%A1%E8%BF%B4%E6%BC%94%E5%94%B1%E6%9C%83-2026-%E9%A6%99%E6%B8%AF%E7%AB%99",
+        "source_id": ""
+      },
+      {
+        "source": "research",
+        "url": "https://www.asiaworld-expo.com/en-us/whats-on/upcoming-events/events/2026-illit-concert-in-hong-kong/",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-10T11:18:24",
+    "first_seen_run": "20260810-111824",
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "7da5114556a76624",
+    "last_seen_run": "20260813-115054",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
   },
   "d6f582c7126c53f0": {
     "source": "research",
@@ -776,7 +936,10 @@
     "first_seen": "2026-08-10T11:18:24",
     "first_seen_run": "20260810-111824",
     "last_seen": "2026-08-10T11:20:26",
-    "id": "d6f582c7126c53f0"
+    "id": "d6f582c7126c53f0",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "unverified",
+    "missed_full_refreshes": 1
   },
   "72e9e4851eb0de68": {
     "source": "research",
@@ -807,7 +970,10 @@
     "first_seen": "2026-08-10T11:18:24",
     "first_seen_run": "20260810-111824",
     "last_seen": "2026-08-10T11:20:26",
-    "id": "72e9e4851eb0de68"
+    "id": "72e9e4851eb0de68",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "unverified",
+    "missed_full_refreshes": 1
   },
   "25d5346ff6c087f3": {
     "source": "research",
@@ -838,7 +1004,10 @@
     "first_seen": "2026-08-10T11:18:24",
     "first_seen_run": "20260810-111824",
     "last_seen": "2026-08-10T11:20:26",
-    "id": "25d5346ff6c087f3"
+    "id": "25d5346ff6c087f3",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "unverified",
+    "missed_full_refreshes": 1
   },
   "7698ce603b252353": {
     "source": "showstart",
@@ -870,8 +1039,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-12T19:56:24",
-    "id": "7698ce603b252353"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "7698ce603b252353",
+    "last_seen_run": "20260813-115054"
   },
   "81f631ed1a03ddca": {
     "source": "showstart",
@@ -906,8 +1076,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-12T19:56:24",
-    "id": "81f631ed1a03ddca"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "81f631ed1a03ddca",
+    "last_seen_run": "20260813-115054"
   },
   "a3f7a3a5653098fa": {
     "source": "showstart",
@@ -939,8 +1110,14 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-12T19:56:24",
-    "id": "a3f7a3a5653098fa"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "a3f7a3a5653098fa",
+    "last_seen_run": "20260813-115054",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
   },
   "50a82b896e69a5b8": {
     "source": "showstart",
@@ -955,8 +1132,14 @@
     "show_date": "2026-09-19",
     "show_time": "12:30",
     "show_time_raw": "09月19日 12:30-09月19日 21:40",
-    "price": "价格待定",
-    "ticket_tiers": [],
+    "price": "¥228起",
+    "ticket_tiers": [
+      "¥228 早鸟票",
+      "¥338 预售票",
+      "¥388 全价票",
+      "¥528 VIP全价票",
+      "¥698 全价双人套票"
+    ],
     "sale_status": "on_sale",
     "sale_time": "",
     "confidence": "confirmed",
@@ -970,8 +1153,14 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-12T19:56:24",
-    "id": "50a82b896e69a5b8"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "50a82b896e69a5b8",
+    "last_seen_run": "20260813-115054",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
   },
   "9b6db4a051b3acef": {
     "source": "showstart",
@@ -1005,8 +1194,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-12T19:56:24",
-    "id": "9b6db4a051b3acef"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "9b6db4a051b3acef",
+    "last_seen_run": "20260813-115054"
   },
   "0ce217ff2b6b83ba": {
     "source": "showstart",
@@ -1040,8 +1230,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-12T19:56:24",
-    "id": "0ce217ff2b6b83ba"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "0ce217ff2b6b83ba",
+    "last_seen_run": "20260813-115054"
   },
   "ff1c50001cc62945": {
     "source": "showstart",
@@ -1074,8 +1265,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-12T19:56:24",
-    "id": "ff1c50001cc62945"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "ff1c50001cc62945",
+    "last_seen_run": "20260813-115054"
   },
   "cf0b920196b0e05a": {
     "source": "showstart",
@@ -1111,8 +1303,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-12T19:56:24",
-    "id": "cf0b920196b0e05a"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "cf0b920196b0e05a",
+    "last_seen_run": "20260813-115054"
   },
   "fb16bc964c7e4616": {
     "source": "showstart",
@@ -1144,8 +1337,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-12T19:56:24",
-    "id": "fb16bc964c7e4616"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "fb16bc964c7e4616",
+    "last_seen_run": "20260813-115054"
   },
   "9f7468a22a943415": {
     "source": "showstart",
@@ -1175,8 +1369,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-12T19:56:24",
-    "id": "9f7468a22a943415"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "9f7468a22a943415",
+    "last_seen_run": "20260813-115054"
   },
   "7376a3a0826c1318": {
     "source": "showstart",
@@ -1206,8 +1401,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-12T19:56:24",
-    "id": "7376a3a0826c1318"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "7376a3a0826c1318",
+    "last_seen_run": "20260813-115054"
   },
   "da226157b21d6f09": {
     "source": "showstart",
@@ -1237,8 +1433,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-12T19:56:24",
-    "id": "da226157b21d6f09"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "da226157b21d6f09",
+    "last_seen_run": "20260813-115054"
   },
   "53d75760062dcf97": {
     "source": "showstart",
@@ -1277,8 +1474,14 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-12T19:56:24",
-    "id": "53d75760062dcf97"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "53d75760062dcf97",
+    "last_seen_run": "20260813-115054",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
   },
   "f9504954a23e329d": {
     "source": "showstart",
@@ -1310,8 +1513,14 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-12T19:56:24",
-    "id": "f9504954a23e329d"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "f9504954a23e329d",
+    "last_seen_run": "20260813-115054",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
   },
   "f2b2b11b4a7a1d15": {
     "source": "showstart",
@@ -1344,8 +1553,14 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-12T19:56:24",
-    "id": "f2b2b11b4a7a1d15"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "f2b2b11b4a7a1d15",
+    "last_seen_run": "20260813-115054",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
   },
   "9b4b484fcc3da4a7": {
     "source": "showstart",
@@ -1379,8 +1594,14 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-12T19:56:24",
-    "id": "9b4b484fcc3da4a7"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "9b4b484fcc3da4a7",
+    "last_seen_run": "20260813-115054",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
   },
   "7ac3102273d984f7": {
     "source": "showstart",
@@ -1414,8 +1635,14 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-12T19:56:24",
-    "id": "7ac3102273d984f7"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "7ac3102273d984f7",
+    "last_seen_run": "20260813-115054",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
   },
   "4b189d39b90c02fa": {
     "source": "showstart",
@@ -1430,8 +1657,14 @@
     "show_date": "2026-09-19",
     "show_time": "12:30",
     "show_time_raw": "09月19日 12:30-09月19日 21:40",
-    "price": "价格待定",
-    "ticket_tiers": [],
+    "price": "¥228起",
+    "ticket_tiers": [
+      "¥228 早鸟票",
+      "¥338 预售票",
+      "¥388 全价票",
+      "¥528 VIP全价票",
+      "¥698 全价双人套票"
+    ],
     "sale_status": "on_sale",
     "sale_time": "",
     "confidence": "confirmed",
@@ -1445,8 +1678,14 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-12T19:56:24",
-    "id": "4b189d39b90c02fa"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "4b189d39b90c02fa",
+    "last_seen_run": "20260813-115054",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
   },
   "e18f2a24546d48a8": {
     "source": "showstart",
@@ -1479,8 +1718,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-12T19:56:24",
-    "id": "e18f2a24546d48a8"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "e18f2a24546d48a8",
+    "last_seen_run": "20260813-115054"
   },
   "96e65962801b9194": {
     "source": "showstart",
@@ -1513,8 +1753,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-12T19:56:24",
-    "id": "96e65962801b9194"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "96e65962801b9194",
+    "last_seen_run": "20260813-115054"
   },
   "c5b69c1914eb50e9": {
     "source": "showstart",
@@ -1547,8 +1788,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-12T19:56:24",
-    "id": "c5b69c1914eb50e9"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "c5b69c1914eb50e9",
+    "last_seen_run": "20260813-115054"
   },
   "bad18830270d07ca": {
     "source": "showstart",
@@ -1584,8 +1826,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-12T19:56:24",
-    "id": "bad18830270d07ca"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "bad18830270d07ca",
+    "last_seen_run": "20260813-115054"
   },
   "f8805861e141b68d": {
     "source": "showstart",
@@ -1621,8 +1864,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-12T19:56:24",
-    "id": "f8805861e141b68d"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "f8805861e141b68d",
+    "last_seen_run": "20260813-115054"
   },
   "0b109ca05d943b84": {
     "source": "showstart",
@@ -1658,8 +1902,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-12T19:56:24",
-    "id": "0b109ca05d943b84"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "0b109ca05d943b84",
+    "last_seen_run": "20260813-115054"
   },
   "2004438dcac23fa0": {
     "source": "showstart",
@@ -1694,7 +1939,1751 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-12T19:56:24",
-    "id": "2004438dcac23fa0"
+    "last_seen": "2026-08-13T11:51:26",
+    "id": "2004438dcac23fa0",
+    "last_seen_run": "20260813-115054"
+  },
+  "7ace72d61e510b7c": {
+    "source": "research",
+    "artist_key": "menni",
+    "artist_name": "门尼",
+    "title": "门尼「印·IN」2026巡回演唱会 · 南京站",
+    "tour_name": "门尼「印·IN」2026巡回演唱会",
+    "performers": "",
+    "city": "南京",
+    "venue": "南京奥体中心国缘V9体育馆",
+    "country": "China",
+    "show_date": "2026-09-12",
+    "show_time": "19:00",
+    "show_time_raw": "",
+    "price": "¥280-916（参考价，以售票页为准）",
+    "ticket_tiers": [
+      "¥280-916 参考票价"
+    ],
+    "sale_status": "sold_out",
+    "sale_time": "2026-08-11 11:58",
+    "confidence": "confirmed",
+    "note": "ticketing 组给出预售时间 8/11 11:58、平台大麦/票星球/南京奥体中心票务；rumors 组 8/11 结果称南京场预售已售罄。票价来自有演出网参考页，需以下单页为准。",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.sina.cn/news/detail/5328130862219864.html",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "7ace72d61e510b7c",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "600673d0c7e5b601": {
+    "source": "research",
+    "artist_key": "menni",
+    "artist_name": "门尼",
+    "title": "2026JUMPPARK腾讯视频音乐大赏",
+    "tour_name": "",
+    "performers": "",
+    "city": "",
+    "venue": "观山湖公园民族大联欢广场",
+    "country": "China",
+    "show_date": "",
+    "show_time": "",
+    "show_time_raw": "",
+    "price": "¥388-858",
+    "ticket_tiers": [
+      "¥388-858"
+    ],
+    "sale_status": "on_sale",
+    "sale_time": "",
+    "confidence": "confirmed",
+    "note": "ticketing 组页面列出活动日期 2026.08.29-08.30、阵容含门尼、票价 388-858；未列出门尼具体出演日、场次时间与开售时间，故不猜。",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://m.df962388.com/yanchu/408065.html",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "600673d0c7e5b601",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "d2b8df723f19b62c": {
+    "source": "research",
+    "artist_key": "lesserafim",
+    "artist_name": "LE SSERAFIM",
+    "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 洛杉矶站",
+    "tour_name": "2026 LE SSERAFIM TOUR 'PUREFLOW'",
+    "performers": "",
+    "city": "Los Angeles",
+    "venue": "Crypto.com Arena",
+    "country": "United States",
+    "show_date": "2026-09-16",
+    "show_time": "19:30",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "",
+    "confidence": "confirmed",
+    "note": "Ticketmaster 艺人页列为 2026-09-16 Wednesday 07:30 PM；该结果未给出票价或开票时间。",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.ticketmaster.com/le-sserafim-tickets/artist/3068703",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "d2b8df723f19b62c",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "9c475cab02874f6d": {
+    "source": "research",
+    "artist_key": "lesserafim",
+    "artist_name": "LE SSERAFIM",
+    "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 塔科马站",
+    "tour_name": "2026 LE SSERAFIM TOUR 'PUREFLOW'",
+    "performers": "",
+    "city": "Tacoma",
+    "venue": "Tacoma Dome",
+    "country": "United States",
+    "show_date": "2026-09-20",
+    "show_time": "19:30",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "",
+    "confidence": "confirmed",
+    "note": "Ticketmaster 艺人页列为 2026-09-20 Sunday 07:30 PM；该结果未给出票价或开票时间。",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.ticketmaster.com/le-sserafim-tickets/artist/3068703",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "9c475cab02874f6d",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "9565fa25a685a56b": {
+    "source": "research",
+    "artist_key": "lesserafim",
+    "artist_name": "LE SSERAFIM",
+    "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 圣何塞站",
+    "tour_name": "2026 LE SSERAFIM TOUR 'PUREFLOW'",
+    "performers": "",
+    "city": "San Jose",
+    "venue": "SAP Center at San Jose",
+    "country": "United States",
+    "show_date": "2026-09-23",
+    "show_time": "19:30",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "",
+    "confidence": "confirmed",
+    "note": "Ticketmaster 艺人页列为 2026-09-23 Wednesday 07:30 PM；该结果未给出票价或开票时间。",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.ticketmaster.com/le-sserafim-tickets/artist/3068703",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "9565fa25a685a56b",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "a2694699581ecdb9": {
+    "source": "research",
+    "artist_key": "lesserafim",
+    "artist_name": "LE SSERAFIM",
+    "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 菲尼克斯站",
+    "tour_name": "2026 LE SSERAFIM TOUR 'PUREFLOW'",
+    "performers": "",
+    "city": "Phoenix",
+    "venue": "Mortgage Matchup Center",
+    "country": "United States",
+    "show_date": "2026-09-25",
+    "show_time": "19:30",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "",
+    "confidence": "confirmed",
+    "note": "Ticketmaster 艺人页列为 2026-09-25 Friday 07:30 PM；该结果未给出票价或开票时间。",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.ticketmaster.com/le-sserafim-tickets/artist/3068703",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "a2694699581ecdb9",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "b7c7fb438db26f47": {
+    "source": "research",
+    "artist_key": "lesserafim",
+    "artist_name": "LE SSERAFIM",
+    "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 沃斯堡站",
+    "tour_name": "2026 LE SSERAFIM TOUR 'PUREFLOW'",
+    "performers": "",
+    "city": "Fort Worth",
+    "venue": "Dickies Arena",
+    "country": "United States",
+    "show_date": "2026-09-27",
+    "show_time": "19:30",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "",
+    "confidence": "confirmed",
+    "note": "Ticketmaster 艺人页列为 2026-09-27 Sunday 07:30 PM；该结果未给出票价或开票时间。",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.ticketmaster.com/le-sserafim-tickets/artist/3068703",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "b7c7fb438db26f47",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "3640e2d79202ab41": {
+    "source": "research",
+    "artist_key": "lesserafim",
+    "artist_name": "LE SSERAFIM",
+    "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 奥兰多站",
+    "tour_name": "2026 LE SSERAFIM TOUR 'PUREFLOW'",
+    "performers": "",
+    "city": "Orlando",
+    "venue": "Kia Center",
+    "country": "United States",
+    "show_date": "2026-09-30",
+    "show_time": "19:30",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "",
+    "confidence": "confirmed",
+    "note": "Ticketmaster 艺人页列为 2026-09-30 Wednesday 07:30 PM；该结果未给出票价或开票时间。",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.ticketmaster.com/le-sserafim-tickets/artist/3068703",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "3640e2d79202ab41",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "1d305cb708389816": {
+    "source": "research",
+    "artist_key": "lesserafim",
+    "artist_name": "LE SSERAFIM",
+    "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 芝加哥站",
+    "tour_name": "2026 LE SSERAFIM TOUR 'PUREFLOW'",
+    "performers": "",
+    "city": "Chicago",
+    "venue": "United Center",
+    "country": "United States",
+    "show_date": "2026-10-02",
+    "show_time": "19:30",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "",
+    "confidence": "confirmed",
+    "note": "Ticketmaster 艺人页列为 2026-10-02 Friday 07:30 PM；该结果未给出票价或开票时间。",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.ticketmaster.com/le-sserafim-tickets/artist/3068703",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "1d305cb708389816",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "a6744029ff2097bb": {
+    "source": "research",
+    "artist_key": "lesserafim",
+    "artist_name": "LE SSERAFIM",
+    "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 华盛顿站",
+    "tour_name": "2026 LE SSERAFIM TOUR 'PUREFLOW'",
+    "performers": "",
+    "city": "Washington, DC",
+    "venue": "Capital One Arena",
+    "country": "United States",
+    "show_date": "2026-10-05",
+    "show_time": "19:30",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "",
+    "confidence": "confirmed",
+    "note": "Ticketmaster 艺人页列为 2026-10-05 Monday 07:30 PM；该结果未给出票价或开票时间。",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.ticketmaster.com/le-sserafim-tickets/artist/3068703",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "a6744029ff2097bb",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "403141f121d2c25b": {
+    "source": "research",
+    "artist_key": "lesserafim",
+    "artist_name": "LE SSERAFIM",
+    "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 纽瓦克站",
+    "tour_name": "2026 LE SSERAFIM TOUR 'PUREFLOW'",
+    "performers": "",
+    "city": "Newark",
+    "venue": "Prudential Center",
+    "country": "United States",
+    "show_date": "2026-10-08",
+    "show_time": "19:30",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "",
+    "confidence": "confirmed",
+    "note": "Ticketmaster 艺人页列为 2026-10-08 Thursday 07:30 PM；该结果未给出票价或开票时间。",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.ticketmaster.com/le-sserafim-tickets/artist/3068703",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "403141f121d2c25b",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "d64b435a39025a6c": {
+    "source": "research",
+    "artist_key": "lesserafim",
+    "artist_name": "LE SSERAFIM",
+    "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 伦敦站",
+    "tour_name": "2026 LE SSERAFIM TOUR 'PUREFLOW'",
+    "performers": "",
+    "city": "London",
+    "venue": "The O2",
+    "country": "United Kingdom",
+    "show_date": "2026-10-16",
+    "show_time": "18:00",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "",
+    "confidence": "confirmed",
+    "note": "Ticketmaster 艺人页列为 2026-10-16 Friday 06:00 PM；该结果未给出票价或开票时间。",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.ticketmaster.com/le-sserafim-tickets/artist/3068703",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "d64b435a39025a6c",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "a4a39858543467b1": {
+    "source": "research",
+    "artist_key": "lesserafim",
+    "artist_name": "LE SSERAFIM",
+    "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 阿姆斯特丹站",
+    "tour_name": "2026 LE SSERAFIM TOUR 'PUREFLOW'",
+    "performers": "",
+    "city": "Amsterdam",
+    "venue": "Ziggo Dome",
+    "country": "Netherlands",
+    "show_date": "2026-10-18",
+    "show_time": "19:30",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "",
+    "confidence": "confirmed",
+    "note": "Ticketmaster 艺人页列为 2026-10-18 Sunday 07:30 PM；同页另有 VIP/Venue Premium 产品条目，未合并为单独场次。",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.ticketmaster.com/le-sserafim-tickets/artist/3068703",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "a4a39858543467b1",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "519837954bbfb5b5": {
+    "source": "research",
+    "artist_key": "lesserafim",
+    "artist_name": "LE SSERAFIM",
+    "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 巴黎站",
+    "tour_name": "2026 LE SSERAFIM TOUR 'PUREFLOW'",
+    "performers": "",
+    "city": "Paris",
+    "venue": "ACCOR ARENA",
+    "country": "France",
+    "show_date": "2026-10-21",
+    "show_time": "19:30",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "",
+    "confidence": "confirmed",
+    "note": "Ticketmaster 艺人页列为 2026-10-21 Wednesday 07:30 PM；该结果未给出票价或开票时间。",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.ticketmaster.com/le-sserafim-tickets/artist/3068703",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "519837954bbfb5b5",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "2fd38962744d98cb": {
+    "source": "research",
+    "artist_key": "lesserafim",
+    "artist_name": "LE SSERAFIM",
+    "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 哥本哈根站",
+    "tour_name": "2026 LE SSERAFIM TOUR 'PUREFLOW'",
+    "performers": "",
+    "city": "Copenhagen",
+    "venue": "Royal Arena",
+    "country": "Denmark",
+    "show_date": "2026-10-23",
+    "show_time": "19:30",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "",
+    "confidence": "confirmed",
+    "note": "Ticketmaster 艺人页列为 2026-10-23 Friday 07:30 PM；同页另有 Vinyl Room Package 条目，未合并为单独场次。",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.ticketmaster.com/le-sserafim-tickets/artist/3068703",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "2fd38962744d98cb",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "5d3e0409e069946d": {
+    "source": "research",
+    "artist_key": "babymonster",
+    "artist_name": "BABYMONSTER",
+    "title": "2026-27 BABYMONSTER WORLD TOUR [춤 (CHOOM)] IN MANILA",
+    "tour_name": "2026-27 BABYMONSTER WORLD TOUR [춤 (CHOOM)]",
+    "performers": "",
+    "city": "Pasay / 马尼拉",
+    "venue": "SM Mall of Asia Arena",
+    "country": "Philippines",
+    "show_date": "2026-09-05",
+    "show_time": "19:00",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "",
+    "sale_time": "",
+    "confidence": "confirmed",
+    "note": "Live Nation Asia 列为 Sep 05 2026 Saturday 7:00 PM；未在结果中看到票价或开票时间。",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.livenation.asia/babymonster-tickets-adp1479014",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "5d3e0409e069946d",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "464b3e67773c7bf8": {
+    "source": "research",
+    "artist_key": "babymonster",
+    "artist_name": "BABYMONSTER",
+    "title": "2026-27 BABYMONSTER WORLD TOUR [춤 (CHOOM)] IN BANGKOK",
+    "tour_name": "2026-27 BABYMONSTER WORLD TOUR [춤 (CHOOM)]",
+    "performers": "",
+    "city": "曼谷",
+    "venue": "Impact Arena, Muang Thong Thani",
+    "country": "Thailand",
+    "show_date": "2026-11-08",
+    "show_time": "",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "",
+    "sale_time": "",
+    "confidence": "confirmed",
+    "note": "Live Nation Asia 列 Nov 08 2026 Sunday；票价、开票时间未见。",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.livenation.asia/babymonster-tickets-adp1479014",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "464b3e67773c7bf8",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "e0e0fbc8ec93fdd7": {
+    "source": "research",
+    "artist_key": "babymonster",
+    "artist_name": "BABYMONSTER",
+    "title": "2026-27 BABYMONSTER WORLD TOUR [춤 (CHOOM)] IN SINGAPORE",
+    "tour_name": "2026-27 BABYMONSTER WORLD TOUR [춤 (CHOOM)]",
+    "performers": "",
+    "city": "新加坡",
+    "venue": "Singapore Indoor Stadium",
+    "country": "Singapore",
+    "show_date": "2026-11-29",
+    "show_time": "",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "",
+    "sale_time": "",
+    "confidence": "confirmed",
+    "note": "Live Nation Asia 同条列 Nov28-Nov29；未给 11/29 单独时间，故留空。票价、开票时间未见。",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.livenation.asia/babymonster-tickets-adp1479014",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "e0e0fbc8ec93fdd7",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "e31e5769b3c2d719": {
+    "source": "research",
+    "artist_key": "hearts2hearts",
+    "artist_name": "Hearts2Hearts",
+    "title": "MUSIC EXPO LIVE 2026 in TAIPEI（Hearts2Hearts 出演）",
+    "tour_name": "MUSIC EXPO LIVE 2026 in TAIPEI",
+    "performers": "",
+    "city": "台北",
+    "venue": "",
+    "country": "中国台湾",
+    "show_date": "",
+    "show_time": "",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "2026-07-28 12:00",
+    "confidence": "confirmed",
+    "note": "来源页面明确写着 Hearts2Hearts 确定登上该舞台，并公布本次演出采用实名制售票、门票于2026-07-28 12:00正式开卖；检索结果未提供演出日期、场馆、票价或票档，故相应字段留空。截至2026-08-13，开票时间已过，但结果中未显示售罄、延期或取消信息。",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.facebook.com/khamfans/posts/hearts2hearts-%E7%A2%BA%E5%AE%9A%E7%99%BB%E4%B8%8Amusic-expo-live-2026-in-taipei%E8%88%9E%E5%8F%B0%E6%9C%AC%E6%9C%88%E6%8E%A8%E5%87%BA%E7%AC%AC2%E5%BC%B5%E8%BF%B7%E4%BD%A0%E5%B0%88%E8%BC%AF%E7%9B%AE%E5%89%8D%E5%82%99%E5%8F%97%E7%9F%9A%E7%9B%AE%E7%9A%84-hearts2hear/1075596464804803/",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "e31e5769b3c2d719",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "e124b4bcded26d27": {
+    "source": "research",
+    "artist_key": "katseye",
+    "artist_name": "KATSEYE",
+    "title": "KATSEYE 洛杉矶周边 Irvine 演出（巡演日程表首项）",
+    "tour_name": "THE WILDWORLD TOUR",
+    "performers": "",
+    "city": "Irvine",
+    "venue": "Daisy Chain Fields, Great Park",
+    "country": "USA",
+    "show_date": "2026-08-29",
+    "show_time": "",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "2026-05-21",
+    "confidence": "confirmed",
+    "note": "官网 Live 页与 Live Nation HK 均列此场为最近一场演出，位于 9/1 都柏林揭幕站之前；页面未明确标注其是否属于 WILDWORLD TOUR 正段，亦可能是音乐节/特别场。",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.katseye.world/live/",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "e124b4bcded26d27",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "68dfb6c456fd84fb": {
+    "source": "research",
+    "artist_key": "katseye",
+    "artist_name": "KATSEYE",
+    "title": "KATSEYE〈WILDWORLD〉世界巡演 · 伦敦站（第一场）",
+    "tour_name": "THE WILDWORLD TOUR",
+    "performers": "",
+    "city": "伦敦",
+    "venue": "The O2",
+    "country": "UK",
+    "show_date": "2026-09-03",
+    "show_time": "",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "2026-05-21",
+    "confidence": "confirmed",
+    "note": "",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.katseye.world/live/",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "68dfb6c456fd84fb",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "0cdfccfef863125b": {
+    "source": "research",
+    "artist_key": "katseye",
+    "artist_name": "KATSEYE",
+    "title": "KATSEYE〈WILDWORLD〉世界巡演 · 伦敦站（第二场/加场）",
+    "tour_name": "THE WILDWORLD TOUR",
+    "performers": "",
+    "city": "伦敦",
+    "venue": "The O2",
+    "country": "UK",
+    "show_date": "2026-09-04",
+    "show_time": "",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "2026-05-21",
+    "confidence": "confirmed",
+    "note": "官网与 Live Nation HK 均列出 9/4 第二场，较最初公告的 9/3 单场为新增加场。",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.katseye.world/live/",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "0cdfccfef863125b",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "31a9fdaaad49f1a5": {
+    "source": "research",
+    "artist_key": "katseye",
+    "artist_name": "KATSEYE",
+    "title": "KATSEYE〈WILDWORLD〉世界巡演 · 曼彻斯特站",
+    "tour_name": "THE WILDWORLD TOUR",
+    "performers": "",
+    "city": "曼彻斯特",
+    "venue": "Co-op Live",
+    "country": "UK",
+    "show_date": "2026-09-06",
+    "show_time": "",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "2026-05-21",
+    "confidence": "confirmed",
+    "note": "",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://hypebeast.com/zh/2026/5/katseye-wildworld-tour-dates-announcement-info",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "31a9fdaaad49f1a5",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "8ebadd7cb118f2b8": {
+    "source": "research",
+    "artist_key": "katseye",
+    "artist_name": "KATSEYE",
+    "title": "KATSEYE〈WILDWORLD〉世界巡演 · 巴黎站",
+    "tour_name": "THE WILDWORLD TOUR",
+    "performers": "",
+    "city": "巴黎",
+    "venue": "Accor Arena",
+    "country": "France",
+    "show_date": "2026-09-09",
+    "show_time": "20:30",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "2026-05-21",
+    "confidence": "confirmed",
+    "note": "Apple Music（Bandsintown 数据）标注 20:30。",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://music.apple.com/us/concerts/ce.38e62e82-80c5-4df7-b8e6-e5b119e17daa?l=zh-Hans-CN",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "8ebadd7cb118f2b8",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "0b251a18ced7ea70": {
+    "source": "research",
+    "artist_key": "katseye",
+    "artist_name": "KATSEYE",
+    "title": "KATSEYE〈WILDWORLD〉世界巡演 · 阿姆斯特丹站",
+    "tour_name": "THE WILDWORLD TOUR",
+    "performers": "",
+    "city": "阿姆斯特丹",
+    "venue": "Ziggo Dome",
+    "country": "Netherlands",
+    "show_date": "2026-09-11",
+    "show_time": "",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "2026-05-21",
+    "confidence": "confirmed",
+    "note": "",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://hypebeast.com/zh/2026/5/katseye-wildworld-tour-dates-announcement-info",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "0b251a18ced7ea70",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "b86cd6afed7253a1": {
+    "source": "research",
+    "artist_key": "katseye",
+    "artist_name": "KATSEYE",
+    "title": "KATSEYE〈WILDWORLD〉世界巡演 · 科隆站",
+    "tour_name": "THE WILDWORLD TOUR",
+    "performers": "",
+    "city": "科隆",
+    "venue": "Lanxess Arena",
+    "country": "Germany",
+    "show_date": "2026-09-13",
+    "show_time": "",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "2026-05-21",
+    "confidence": "confirmed",
+    "note": "",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://hypebeast.com/zh/2026/5/katseye-wildworld-tour-dates-announcement-info",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "b86cd6afed7253a1",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "0d6bd78b76fa0dab": {
+    "source": "research",
+    "artist_key": "katseye",
+    "artist_name": "KATSEYE",
+    "title": "KATSEYE〈WILDWORLD〉世界巡演 · 安特卫普站",
+    "tour_name": "THE WILDWORLD TOUR",
+    "performers": "",
+    "city": "安特卫普",
+    "venue": "AFAS Dome",
+    "country": "Belgium",
+    "show_date": "2026-09-15",
+    "show_time": "",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "2026-05-21",
+    "confidence": "confirmed",
+    "note": "",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://hypebeast.com/zh/2026/5/katseye-wildworld-tour-dates-announcement-info",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "0d6bd78b76fa0dab",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "bde3e273926c6de1": {
+    "source": "research",
+    "artist_key": "katseye",
+    "artist_name": "KATSEYE",
+    "title": "KATSEYE〈WILDWORLD〉世界巡演 · 哥本哈根站",
+    "tour_name": "THE WILDWORLD TOUR",
+    "performers": "",
+    "city": "哥本哈根",
+    "venue": "Royal Arena",
+    "country": "Denmark",
+    "show_date": "2026-09-17",
+    "show_time": "",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "2026-05-21",
+    "confidence": "confirmed",
+    "note": "欧洲段收官站。",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://hypebeast.com/zh/2026/5/katseye-wildworld-tour-dates-announcement-info",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "bde3e273926c6de1",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "298b286d5d17bf33": {
+    "source": "research",
+    "artist_key": "katseye",
+    "artist_name": "KATSEYE",
+    "title": "KATSEYE〈WILDWORLD〉世界巡演 · 亚特兰大战",
+    "tour_name": "THE WILDWORLD TOUR",
+    "performers": "",
+    "city": "亚特兰大",
+    "venue": "State Farm Arena",
+    "country": "USA",
+    "show_date": "2026-10-15",
+    "show_time": "20:00",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "2026-05-21",
+    "confidence": "confirmed",
+    "note": "",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "298b286d5d17bf33",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "bb8795cdef5b2a20": {
+    "source": "research",
+    "artist_key": "katseye",
+    "artist_name": "KATSEYE",
+    "title": "KATSEYE〈WILDWORLD〉世界巡演 · 夏洛特站",
+    "tour_name": "THE WILDWORLD TOUR",
+    "performers": "",
+    "city": "夏洛特",
+    "venue": "Spectrum Center",
+    "country": "USA",
+    "show_date": "2026-10-20",
+    "show_time": "20:00",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "2026-05-21",
+    "confidence": "confirmed",
+    "note": "",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "bb8795cdef5b2a20",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "d09eadc9e41967bc": {
+    "source": "research",
+    "artist_key": "katseye",
+    "artist_name": "KATSEYE",
+    "title": "KATSEYE〈WILDWORLD〉世界巡演 · 华盛顿站",
+    "tour_name": "THE WILDWORLD TOUR",
+    "performers": "",
+    "city": "华盛顿",
+    "venue": "Capital One Arena",
+    "country": "USA",
+    "show_date": "2026-10-22",
+    "show_time": "20:00",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "2026-05-21",
+    "confidence": "confirmed",
+    "note": "",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "d09eadc9e41967bc",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "84772acfef3b39ec": {
+    "source": "research",
+    "artist_key": "katseye",
+    "artist_name": "KATSEYE",
+    "title": "KATSEYE〈WILDWORLD〉世界巡演 · 纽约贝尔蒙特公园站（第一场）",
+    "tour_name": "THE WILDWORLD TOUR",
+    "performers": "",
+    "city": "Belmont Park, NY",
+    "venue": "UBS Arena",
+    "country": "USA",
+    "show_date": "2026-10-24",
+    "show_time": "20:00",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "2026-05-21",
+    "confidence": "confirmed",
+    "note": "",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "84772acfef3b39ec",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "d7f66668e6a7203d": {
+    "source": "research",
+    "artist_key": "katseye",
+    "artist_name": "KATSEYE",
+    "title": "KATSEYE〈WILDWORLD〉世界巡演 · 纽约贝尔蒙特公园站（第二场/加场）",
+    "tour_name": "THE WILDWORLD TOUR",
+    "performers": "",
+    "city": "Belmont Park, NY",
+    "venue": "UBS Arena",
+    "country": "USA",
+    "show_date": "2026-10-25",
+    "show_time": "20:00",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "2026-05-21",
+    "confidence": "confirmed",
+    "note": "Ticketmaster 列出的 10/25 第二场，较最初公告的 10/24 单场为新增加场。",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "d7f66668e6a7203d",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "c9fe928b089607c9": {
+    "source": "research",
+    "artist_key": "katseye",
+    "artist_name": "KATSEYE",
+    "title": "KATSEYE〈WILDWORLD〉世界巡演 · 波士顿站",
+    "tour_name": "THE WILDWORLD TOUR",
+    "performers": "",
+    "city": "波士顿",
+    "venue": "TD Garden",
+    "country": "USA",
+    "show_date": "2026-10-28",
+    "show_time": "20:00",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "2026-05-21",
+    "confidence": "confirmed",
+    "note": "",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "c9fe928b089607c9",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "b7cdc379aeeb0abd": {
+    "source": "research",
+    "artist_key": "katseye",
+    "artist_name": "KATSEYE",
+    "title": "KATSEYE〈WILDWORLD〉世界巡演 · 蒙特利尔站",
+    "tour_name": "THE WILDWORLD TOUR",
+    "performers": "",
+    "city": "蒙特利尔",
+    "venue": "Bell Centre",
+    "country": "Canada",
+    "show_date": "2026-10-30",
+    "show_time": "",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "2026-05-21",
+    "confidence": "confirmed",
+    "note": "",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://hypebeast.com/zh/2026/5/katseye-wildworld-tour-dates-announcement-info",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "b7cdc379aeeb0abd",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "76bc878cf89ac71e": {
+    "source": "research",
+    "artist_key": "katseye",
+    "artist_name": "KATSEYE",
+    "title": "KATSEYE〈WILDWORLD〉世界巡演 · 汉密尔顿站",
+    "tour_name": "THE WILDWORLD TOUR",
+    "performers": "",
+    "city": "汉密尔顿",
+    "venue": "TD Coliseum",
+    "country": "Canada",
+    "show_date": "2026-11-01",
+    "show_time": "",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "2026-05-21",
+    "confidence": "confirmed",
+    "note": "",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://hypebeast.com/zh/2026/5/katseye-wildworld-tour-dates-announcement-info",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "76bc878cf89ac71e",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "cef1cd2236b15542": {
+    "source": "research",
+    "artist_key": "katseye",
+    "artist_name": "KATSEYE",
+    "title": "KATSEYE〈WILDWORLD〉世界巡演 · 底特律站",
+    "tour_name": "THE WILDWORLD TOUR",
+    "performers": "",
+    "city": "底特律",
+    "venue": "Little Caesars Arena",
+    "country": "USA",
+    "show_date": "2026-11-03",
+    "show_time": "20:00",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "2026-05-21",
+    "confidence": "confirmed",
+    "note": "",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "cef1cd2236b15542",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "7ce1c207cc25865c": {
+    "source": "research",
+    "artist_key": "katseye",
+    "artist_name": "KATSEYE",
+    "title": "KATSEYE〈WILDWORLD〉世界巡演 · 芝加哥站",
+    "tour_name": "THE WILDWORLD TOUR",
+    "performers": "",
+    "city": "芝加哥",
+    "venue": "United Center",
+    "country": "USA",
+    "show_date": "2026-11-05",
+    "show_time": "20:00",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "2026-05-21",
+    "confidence": "confirmed",
+    "note": "",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "7ce1c207cc25865c",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "622631cf3110f1b5": {
+    "source": "research",
+    "artist_key": "katseye",
+    "artist_name": "KATSEYE",
+    "title": "KATSEYE〈WILDWORLD〉世界巡演 · 明尼阿波利斯站",
+    "tour_name": "THE WILDWORLD TOUR",
+    "performers": "",
+    "city": "明尼阿波利斯",
+    "venue": "Target Center",
+    "country": "USA",
+    "show_date": "2026-11-07",
+    "show_time": "20:00",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "2026-05-21",
+    "confidence": "confirmed",
+    "note": "",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "622631cf3110f1b5",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "22a1594c01c422aa": {
+    "source": "research",
+    "artist_key": "katseye",
+    "artist_name": "KATSEYE",
+    "title": "KATSEYE〈WILDWORLD〉世界巡演 · 奥斯汀站",
+    "tour_name": "THE WILDWORLD TOUR",
+    "performers": "",
+    "city": "奥斯汀",
+    "venue": "Moody Center ATX",
+    "country": "USA",
+    "show_date": "2026-11-10",
+    "show_time": "20:00",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "2026-05-21",
+    "confidence": "confirmed",
+    "note": "",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "22a1594c01c422aa",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "df9fb637941408f6": {
+    "source": "research",
+    "artist_key": "katseye",
+    "artist_name": "KATSEYE",
+    "title": "KATSEYE〈WILDWORLD〉世界巡演 · 达拉斯站",
+    "tour_name": "THE WILDWORLD TOUR",
+    "performers": "",
+    "city": "达拉斯",
+    "venue": "American Airlines Center",
+    "country": "USA",
+    "show_date": "2026-11-11",
+    "show_time": "20:00",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "2026-05-21",
+    "confidence": "confirmed",
+    "note": "",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "df9fb637941408f6",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "3f20ce6ef01601fe": {
+    "source": "research",
+    "artist_key": "katseye",
+    "artist_name": "KATSEYE",
+    "title": "KATSEYE〈WILDWORLD〉世界巡演 · 拉斯维加斯站",
+    "tour_name": "THE WILDWORLD TOUR",
+    "performers": "",
+    "city": "拉斯维加斯",
+    "venue": "MGM Grand Garden Arena",
+    "country": "USA",
+    "show_date": "2026-11-14",
+    "show_time": "20:00",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "2026-05-21",
+    "confidence": "confirmed",
+    "note": "",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "3f20ce6ef01601fe",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "5462dfbf2b0b0c82": {
+    "source": "research",
+    "artist_key": "katseye",
+    "artist_name": "KATSEYE",
+    "title": "KATSEYE〈WILDWORLD〉世界巡演 · 西雅图站",
+    "tour_name": "THE WILDWORLD TOUR",
+    "performers": "",
+    "city": "西雅图",
+    "venue": "Climate Pledge Arena",
+    "country": "USA",
+    "show_date": "2026-11-17",
+    "show_time": "20:00",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "2026-05-21",
+    "confidence": "confirmed",
+    "note": "",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "5462dfbf2b0b0c82",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "d01d1d602b23c4e1": {
+    "source": "research",
+    "artist_key": "katseye",
+    "artist_name": "KATSEYE",
+    "title": "KATSEYE〈WILDWORLD〉世界巡演 · 奥克兰站",
+    "tour_name": "THE WILDWORLD TOUR",
+    "performers": "",
+    "city": "奥克兰",
+    "venue": "Oakland Arena",
+    "country": "USA",
+    "show_date": "2026-11-19",
+    "show_time": "20:00",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "2026-05-21",
+    "confidence": "confirmed",
+    "note": "",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "d01d1d602b23c4e1",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "551460924b59b66f": {
+    "source": "research",
+    "artist_key": "katseye",
+    "artist_name": "KATSEYE",
+    "title": "KATSEYE〈WILDWORLD〉世界巡演 · 洛杉矶站（第一场）",
+    "tour_name": "THE WILDWORLD TOUR",
+    "performers": "",
+    "city": "洛杉矶",
+    "venue": "Crypto.com Arena",
+    "country": "USA",
+    "show_date": "2026-11-21",
+    "show_time": "20:00",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "2026-05-21",
+    "confidence": "confirmed",
+    "note": "",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "551460924b59b66f",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "51dece6fb9b5df0d": {
+    "source": "research",
+    "artist_key": "katseye",
+    "artist_name": "KATSEYE",
+    "title": "KATSEYE〈WILDWORLD〉世界巡演 · 洛杉矶站（第二场/加场）",
+    "tour_name": "THE WILDWORLD TOUR",
+    "performers": "",
+    "city": "洛杉矶",
+    "venue": "Crypto.com Arena",
+    "country": "USA",
+    "show_date": "2026-11-22",
+    "show_time": "20:00",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "2026-05-21",
+    "confidence": "confirmed",
+    "note": "Ticketmaster 列出的 11/22 第二场，较最初公告的 11/21 单场为新增加场。",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "51dece6fb9b5df0d",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "bf1d77412ade8bfc": {
+    "source": "research",
+    "artist_key": "katseye",
+    "artist_name": "KATSEYE",
+    "title": "KATSEYE〈WILDWORLD〉世界巡演 · 菲尼克斯站",
+    "tour_name": "THE WILDWORLD TOUR",
+    "performers": "",
+    "city": "菲尼克斯",
+    "venue": "Mortgage Matchup Center",
+    "country": "USA",
+    "show_date": "2026-11-24",
+    "show_time": "20:00",
+    "show_time_raw": "",
+    "price": "",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "2026-05-21",
+    "confidence": "confirmed",
+    "note": "",
+    "sources": [
+      {
+        "source": "research",
+        "url": "https://www.ticketmaster.com/katseye-tickets/artist/3259344",
+        "source_id": ""
+      }
+    ],
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "id": "bf1d77412ade8bfc",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
   }
 }

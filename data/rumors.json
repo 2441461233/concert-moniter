@@ -11,7 +11,10 @@
     "posted_at": "2026-08-10",
     "first_seen": "2026-08-07T11:53:06",
     "first_seen_run": "20260807-115252",
-    "last_seen": "2026-08-10T11:20:26"
+    "last_seen": "2026-08-10T11:20:26",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "unverified",
+    "missed_full_refreshes": 1
   },
   "448bf859600f27a7": {
     "id": "448bf859600f27a7",
@@ -25,7 +28,10 @@
     "posted_at": "2026-07",
     "first_seen": "2026-08-07T11:53:06",
     "first_seen_run": "20260807-115252",
-    "last_seen": "2026-08-07T11:53:06"
+    "last_seen": "2026-08-07T11:53:06",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "unverified",
+    "missed_full_refreshes": 1
   },
   "063cd675f94d4dfc": {
     "id": "063cd675f94d4dfc",
@@ -39,7 +45,10 @@
     "posted_at": "2026-08",
     "first_seen": "2026-08-07T11:53:06",
     "first_seen_run": "20260807-115252",
-    "last_seen": "2026-08-07T11:53:06"
+    "last_seen": "2026-08-07T11:53:06",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "unverified",
+    "missed_full_refreshes": 1
   },
   "cf0fac72df8aeead": {
     "id": "cf0fac72df8aeead",
@@ -53,7 +62,10 @@
     "posted_at": "2026-04-28",
     "first_seen": "2026-08-07T11:53:06",
     "first_seen_run": "20260807-115252",
-    "last_seen": "2026-08-07T11:53:06"
+    "last_seen": "2026-08-07T11:53:06",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "unverified",
+    "missed_full_refreshes": 1
   },
   "35e9f1b6b824e92a": {
     "id": "35e9f1b6b824e92a",
@@ -67,7 +79,10 @@
     "posted_at": "2026-08",
     "first_seen": "2026-08-07T11:53:06",
     "first_seen_run": "20260807-115252",
-    "last_seen": "2026-08-07T11:53:06"
+    "last_seen": "2026-08-07T11:53:06",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "unverified",
+    "missed_full_refreshes": 1
   },
   "965c66f0f01a40d7": {
     "id": "965c66f0f01a40d7",
@@ -81,7 +96,10 @@
     "posted_at": "2026-08-07",
     "first_seen": "2026-08-07T11:53:06",
     "first_seen_run": "20260807-115252",
-    "last_seen": "2026-08-07T11:53:06"
+    "last_seen": "2026-08-07T11:53:06",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "unverified",
+    "missed_full_refreshes": 1
   },
   "99e5e5fbd2697b8a": {
     "id": "99e5e5fbd2697b8a",
@@ -95,7 +113,10 @@
     "posted_at": "2026-08-10",
     "first_seen": "2026-08-10T11:18:24",
     "first_seen_run": "20260810-111824",
-    "last_seen": "2026-08-10T11:20:26"
+    "last_seen": "2026-08-10T11:20:26",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "unverified",
+    "missed_full_refreshes": 1
   },
   "1f68d94d1be3cba3": {
     "id": "1f68d94d1be3cba3",
@@ -109,7 +130,10 @@
     "posted_at": "2026-07-22",
     "first_seen": "2026-08-10T11:18:24",
     "first_seen_run": "20260810-111824",
-    "last_seen": "2026-08-10T11:20:26"
+    "last_seen": "2026-08-10T11:20:26",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "unverified",
+    "missed_full_refreshes": 1
   },
   "6a9928514ba2a7d8": {
     "id": "6a9928514ba2a7d8",
@@ -123,7 +147,10 @@
     "posted_at": "2026-08-10",
     "first_seen": "2026-08-10T11:18:24",
     "first_seen_run": "20260810-111824",
-    "last_seen": "2026-08-10T11:20:26"
+    "last_seen": "2026-08-10T11:20:26",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "unverified",
+    "missed_full_refreshes": 1
   },
   "bcddb7487c17ec2b": {
     "id": "bcddb7487c17ec2b",
@@ -137,7 +164,10 @@
     "posted_at": "2026-08-10",
     "first_seen": "2026-08-10T11:18:24",
     "first_seen_run": "20260810-111824",
-    "last_seen": "2026-08-10T11:20:26"
+    "last_seen": "2026-08-10T11:20:26",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "unverified",
+    "missed_full_refreshes": 1
   },
   "9792636dcc36d8e8": {
     "id": "9792636dcc36d8e8",
@@ -151,7 +181,10 @@
     "posted_at": "2026-08-10",
     "first_seen": "2026-08-10T11:18:24",
     "first_seen_run": "20260810-111824",
-    "last_seen": "2026-08-10T11:20:26"
+    "last_seen": "2026-08-10T11:20:26",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "unverified",
+    "missed_full_refreshes": 1
   },
   "c784ae2369cdae8b": {
     "id": "c784ae2369cdae8b",
@@ -165,7 +198,10 @@
     "posted_at": "2026-08-10",
     "first_seen": "2026-08-10T11:18:24",
     "first_seen_run": "20260810-111824",
-    "last_seen": "2026-08-10T11:20:26"
+    "last_seen": "2026-08-10T11:20:26",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "unverified",
+    "missed_full_refreshes": 1
   },
   "11391b4bdea3809a": {
     "id": "11391b4bdea3809a",
@@ -179,7 +215,10 @@
     "posted_at": "2026-08-10",
     "first_seen": "2026-08-10T11:18:24",
     "first_seen_run": "20260810-111824",
-    "last_seen": "2026-08-10T11:20:26"
+    "last_seen": "2026-08-10T11:20:26",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "unverified",
+    "missed_full_refreshes": 1
   },
   "09632f2c2acbaac5": {
     "id": "09632f2c2acbaac5",
@@ -193,7 +232,10 @@
     "posted_at": "2026-08-10",
     "first_seen": "2026-08-10T11:18:24",
     "first_seen_run": "20260810-111824",
-    "last_seen": "2026-08-10T11:20:26"
+    "last_seen": "2026-08-10T11:20:26",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "unverified",
+    "missed_full_refreshes": 1
   },
   "d5b0d910ce4d3940": {
     "id": "d5b0d910ce4d3940",
@@ -207,6 +249,229 @@
     "posted_at": "2026-08-10",
     "first_seen": "2026-08-10T11:18:24",
     "first_seen_run": "20260810-111824",
-    "last_seen": "2026-08-10T11:20:26"
+    "last_seen": "2026-08-10T11:20:26",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "unverified",
+    "missed_full_refreshes": 1
+  },
+  "9dc8c2af10017719": {
+    "id": "9dc8c2af10017719",
+    "artist_key": "shayiting",
+    "artist_name": "沙一汀",
+    "headline": "聚合页挂出「沙一汀EL广州演唱会」12月31日 广州体育馆1号馆（未标注年份、无票价无开票信息）",
+    "detail": "东方演出网聚合页（页面更新于 2026-06-26）在「2026沙一汀EL演出时间表」中列出「沙一汀EL广州演唱会」，演出时间写作 12月31日 21:00-12月31日 23:59，地点为广州体育馆1号馆，但未标注年份，亦无票价、开票时间及任何官方/正式票务链接。以今日 2026-08-13 判断，若指 2026-12-31 则为未来场次，但仅凭该聚合页无法确认，需等待大麦/秀动等正式票务或艺人官方微博官宣核实。",
+    "source_name": "东方演出网",
+    "url": "https://m.df962388.com/yanchu/shayitingEL/",
+    "credibility": "low",
+    "posted_at": "2026-06-26",
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "431f82cb3b03ddfa": {
+    "id": "431f82cb3b03ddfa",
+    "artist_key": "njz",
+    "artist_name": "NJZ",
+    "headline": "截至 2026-08-13 未查到 NJZ/NewJeans 未来巡演或开票的可验证场次",
+    "detail": "本轮 rumors 组仅出现 Ticketmaster 的 NewJeans 艺人页；可见片段为历史 setlist 与 2024 年用户留言，未显示任何 2026-2027 未来场次、场馆、票价、先行或公售时间。ticketing 组检索失败/无可用结果，official 与 china_region 组也未提供未来演出官宣；因此任何声称已有 NJZ/NewJeans 门票或场次的信息都应视为未证实。",
+    "source_name": "Ticketmaster 艺人页片段（rumors 组）",
+    "url": "https://www.ticketmaster.com/newjeans-tickets/artist/3016768?page=3",
+    "credibility": "medium",
+    "posted_at": "2026-08-13",
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "3ff22d278e674d59": {
+    "id": "3ff22d278e674d59",
+    "artist_key": "kiiikiii",
+    "artist_name": "KiiiKiii",
+    "headline": "KiiiKiii 被称将出席 2026 Asia Artist Awards 高雄场",
+    "detail": "Instagram  reel 文案称 KiiiKiii 在 2026 Asia Artist Awards 高雄国家体育场 12月5日、6日歌手阵容中；四组结果内未见官方公告或正式票务页面佐证，且可能存在阵容/档期变动，故仅作 rumor。",
+    "source_name": "Instagram",
+    "url": "https://www.instagram.com/reel/DY9tEUOmaD7/",
+    "credibility": "low",
+    "posted_at": "2026-05-30",
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "b77a15ed981300e8": {
+    "id": "b77a15ed981300e8",
+    "artist_key": "ive",
+    "artist_name": "IVE",
+    "headline": "IVE〈SHOW WHAT I AM〉台北小巨蛋 2026-09 场次显示完售，但可加场/精确日期仍待核",
+    "detail": "第4组结果中的 Live Nation Taiwan 页面与 Live Nation TW Facebook 均指向 IVE WORLD TOUR <SHOW WHAT I AM> IN TAIPEI：Facebook 片段写 2026/9/11(五)&9/12(六)、4/3 上午11点开票；livenation.com.tw 片段出现“9月11 / 9月13 / Taipei台北小巨蛋 / Friday / 完售”。截至 2026-08-13，9/11 为周五且显示完售，但片段间第二/第三场日期不一致，不能据此确认完整场次表；仅保留为未来仍可能补票/释票/加场公告的线索。",
+    "source_name": "Live Nation Taiwan / Live Nation TW Facebook",
+    "url": "https://www.livenation.com.tw/ive-tickets-adp1446287",
+    "credibility": "medium",
+    "posted_at": "2026-04-02",
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "d42fb06c826c62db": {
+    "id": "d42fb06c826c62db",
+    "artist_key": "lesserafim",
+    "artist_name": "LE SSERAFIM",
+    "headline": "PUREFLOW 澳门站线索：11/7-11/8 两场，场馆指向 Galaxy Arena",
+    "detail": "rumors 组中的 Instagram 帖子写明 “2026 LE SSERAFIM TOUR 'PUREFLOW' IN MACAU”，日期为 2026.11.07 7PM 与 2026.11.08 6PM，Venue: GALAXY ARENA；但结果未显示可核验的官方账号或正式票务页，故不标 confirmed。",
+    "source_name": "Instagram 帖子（账号未在结果中显示）",
+    "url": "https://www.instagram.com/p/DYPb4EYnLu7/",
+    "credibility": "medium",
+    "posted_at": "2026-05-12",
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "7cc9227ef9c3e749": {
+    "id": "7cc9227ef9c3e749",
+    "artist_key": "lesserafim",
+    "artist_name": "LE SSERAFIM",
+    "headline": "亚洲巡演追加澳门站，称会员平台已开启",
+    "detail": "china_region 组中的 Threads 帖子称 “LE SSERAFIM亚洲巡演追加澳门站”，列出 2026年11月7日（星期六）与 2026年11月8日（星期日）加场，地点仅写“澳门”；无正式票务或官方公告链接，需继续盯 Weverse/主办方/银河综艺馆与正式票务。",
+    "source_name": "Threads @buyticketshk",
+    "url": "https://www.threads.com/@buyticketshk/post/DbFZliWAYeS/le-sserafim%E4%BA%9E%E6%B4%B2%E5%B7%A1%E6%BC%94%E8%BF%BD%E5%8A%A0%E6%BE%B3%E9%96%80%E7%AB%99pureflow%E5%B7%A1%E6%BC%94%E6%9C%83%E5%93%A1%E5%B9%B3%E8%87%BA%E7%8F%BE%E5%B7%B2%E9%96%8B%E5%95%9F2026-le-sserafim-tour-pureflow-macau-%E5%85%AC%E6%BC%94-20/",
+    "credibility": "low",
+    "posted_at": "2026-07-21",
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "818a6ee57aca2c10": {
+    "id": "818a6ee57aca2c10",
+    "artist_key": "lesserafim",
+    "artist_name": "LE SSERAFIM",
+    "headline": "日本 2026 演唱会攻略称大阪/神奈川/静冈/宫城/福冈共 11 场，但本轮截取未含逐场日期",
+    "detail": "Trip.com 攻略提到日本五地共 11 场、指定席 16,500 日元、VIP 升票 27,500 日元，并给出 K-Arena Yokohama、ECOPA Arena、Sekisui Heim Super Arena、Marine Messe Fukuoka Hall A 等场馆；但本组截取没有逐场 show_date，且非正式票务页，因此不作为 confirmed event 输出。",
+    "source_name": "Trip.com 攻略",
+    "url": "https://hk.trip.com/blog/le-sserafim-concert-in-japan-hk/",
+    "credibility": "low",
+    "posted_at": "2026-08-02",
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "0032afd3135610b0": {
+    "id": "0032afd3135610b0",
+    "artist_key": "babymonster",
+    "artist_name": "BABYMONSTER",
+    "headline": "YG 公告称 CHOOM 世巡将覆盖五大洲，欧洲/南美/大洋洲等细节仍未完整公布",
+    "detail": "中国娱乐网转述 YG 3月16日官方 SNS 公告称：巡演以首尔为起点，日本含神户、福冈、横滨、千叶、名古屋、大阪六城；除亚洲与北美外还将首次踏足大洋洲、欧洲及南美洲，但具体细节尚未全部公布。该线索仍可能影响后续新增站与开票节奏。",
+    "source_name": "中国娱乐网 / YG 官方 SNS 转述",
+    "url": "http://news.yule.com.cn/html/202603/359986.html",
+    "credibility": "medium",
+    "posted_at": "2026-03-16",
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "d0432ed3eaff06b3": {
+    "id": "d0432ed3eaff06b3",
+    "artist_key": "babymonster",
+    "artist_name": "BABYMONSTER",
+    "headline": "Trip.com 汇总页出现横滨 Pia Arena MM、台北小巨蛋、香港亚洲国际博览馆等条目但缺可核实日期/票务",
+    "detail": "Trip.com 的 BABYMONSTER collection 列出澳门、香港、台北、大阪、吉隆坡、曼谷及横滨 Pia Arena MM 等条目，但搜索摘录未提供这些站点的可核实日期、票价或开票时间；因此仅作待核实线索，不确认为可售票场次。",
+    "source_name": "Trip.com events collection",
+    "url": "https://hk.trip.com/events/7790665-babymonster-collection/",
+    "credibility": "low",
+    "posted_at": "2026-07-30",
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "c6cdb2064e5cf9ec": {
+    "id": "c6cdb2064e5cf9ec",
+    "artist_key": "illit",
+    "artist_name": "ILLIT",
+    "headline": "第三方票务页列出 ILLIT 2026 年 12 月 23 日 Funabashi 场次",
+    "detail": "Japan Concert Tickets 页面片段显示 ILLIT 将于 2026-12-23 在日本 Funabashi 的 LaLa arena 演出，并显示 00:00；该时间疑似占位，未采纳为开演时间。页面未提供票价或开票时间，本轮四组结果中也没有官方或正式票务来源交叉确认。",
+    "source_name": "Japan Concert Tickets",
+    "url": "https://www.japanconcerttickets.com/artist/illit/",
+    "credibility": "low",
+    "posted_at": "2024-11-11",
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "a07988b04782beca": {
+    "id": "a07988b04782beca",
+    "artist_key": "katseye",
+    "artist_name": "KATSEYE",
+    "headline": "⚠️ 官方及正式票务渠道至今无任何亚洲/中国场次；二级市场与信息站存在混杂信息",
+    "detail": "截至 2026-08-13，Ticketmaster、Live Nation HK 与官网 katseye.world/live 列出的 WILDWORLD TOUR 仅覆盖 8/29 Irvine、9 月英欧段与 10-11 月北美/墨西哥段，无中国内地及港澳台、也无任何亚洲站。二级市场 Viagogo 中文页除转售 WILDWORLD 门票外，还列出 The Armory（明尼阿波利斯）、MGM Music Hall at Fenway（波士顿）、Hammerstein Ballroom（纽约）等与本次巡演官方场馆不符的旧巡演场地，疑为历史场次残留或误导性库存，购票请只认 Ticketmaster / Live Nation / katseye.world 官方入口。亚洲加场仍属可能变化事项，需继续监控。",
+    "source_name": "Ticketmaster / Live Nation HK / katseye.world 官方信息 vs Viagogo 二级市场比对",
+    "url": "https://www.viagogo.com/cn/Concert-Tickets/Other-Concerts/Katseye-Tickets",
+    "credibility": "high",
+    "posted_at": "2026-08-13",
+    "first_seen": "2026-08-13T11:51:26",
+    "first_seen_run": "20260813-115054",
+    "last_seen": "2026-08-13T11:51:26",
+    "last_seen_run": "20260813-115054",
+    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "verification_status": "verified",
+    "missed_full_refreshes": 0,
+    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+    "last_verified_at": "2026-08-13T11:51:26"
   }
 }
