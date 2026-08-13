@@ -361,6 +361,7 @@ const authForm = $("authform");
 const authSecret = $("authsecret");
 const REFRESH_JOB_KEY = "cm-full-refresh-job";
 const REFRESH_SECRET_KEY = "cm-full-refresh-secret";
+const REFRESH_OWNER_KEY = "cm-full-refresh-owner-id";
 const REFRESH_POLL_MS = 5000;
 /* Kimi 低等级账户可能只有 RPM 3：执行最长 90 分钟，完成后另给发布 15 分钟。 */
 const REFRESH_EXECUTION_MAX_MS = 90*60*1000;
@@ -477,6 +478,21 @@ function saveRefreshJob(job){
 function clearRefreshJob(){
   try{ localStorage.removeItem(REFRESH_JOB_KEY); }catch(_){}
 }
+function loadRefreshOwnerId(){
+  try{
+    const jobId = String(localStorage.getItem(REFRESH_OWNER_KEY)||"");
+    return /^[a-f0-9]{24}$/.test(jobId) ? jobId : "";
+  }catch(_){ return ""; }
+}
+function saveRefreshOwnerId(jobId){
+  jobId = String(jobId||"");
+  if(!/^[a-f0-9]{24}$/.test(jobId)) return;
+  try{ localStorage.setItem(REFRESH_OWNER_KEY, jobId); }catch(_){}
+}
+function ownsPublishedRefresh(){
+  const publishedId = String(D.full_refresh_id||"");
+  return Boolean(publishedId) && loadRefreshOwnerId()===publishedId;
+}
 function stageText(payload){
   if(payload.message) return String(payload.message);
   const stage = String(payload.stage||"").toLowerCase();
@@ -501,6 +517,7 @@ async function waitForPublished(job, renewWindow=false){
         const exactJobPublished = latest.full_refresh_id===job.job_id && latest.full_refresh_at &&
           latest.full_refresh_at!==(job.base_full_refresh_at == null ? BASE_FULL_REFRESH_AT : job.base_full_refresh_at);
         if(exactJobPublished){
+          if(job.is_owner===true) saveRefreshOwnerId(job.job_id);
           clearRefreshJob();
           setRefreshPanel("done", "完整刷新已完成", "正在载入最新数据…");
           await sleep(1800);
@@ -617,6 +634,7 @@ refreshBtn.addEventListener("click", async ()=>{
     const jobId = payload.job_id;
     if(!jobId) throw new Error("刷新服务未返回任务编号");
     const job = {job_id:String(jobId), status_url:statusUrlFor(payload.status_url, jobId),
+      is_owner:payload.already_running===false,
       base_full_refresh_at:BASE_FULL_REFRESH_AT,
       phase:"executing", execution_deadline:Date.now()+REFRESH_EXECUTION_MAX_MS};
     saveRefreshJob(job);
@@ -700,8 +718,8 @@ const atag = (key,name) => `<span class="atag" role="button" tabindex="0" data-a
   $("gen").textContent = "页面数据生成于 " + fmt(D.generated_at) + " · 巡查任务 " + (D.last_run_id||"--");
 })();
 
-/* notes / degrade banner */
-if((D.notes||[]).length){
+/* 本轮降级详情只属于真正创建并完成该次刷新任务的浏览器。 */
+if((D.notes||[]).length && ownsPublishedRefresh()){
   $("bannerbox").innerHTML = `<div class="banner"><b>本轮降级提示</b>${D.notes.map(x=>`<div>· ${esc(x)}</div>`).join("")}</div>`;
 }
 
@@ -725,15 +743,15 @@ const news = CHANGES.filter(c=>c.type==="new"), rms = CHANGES.filter(c=>c.type==
        <div class="big">+${news.length}</div><div class="sub">舆情 ${rms.length} 条 · 更新 ${upds.length} 条</div></a>`;
 })();
 
-/* filter rail */
-function allItems(){ return [...(D.on_sale||[]), ...(D.upcoming||[]), ...(D.rumors||[])]; }
+/* filter rail：脚标只表示仍活跃的演唱会场次，不混入舆情。 */
+function activeConcertItems(){ return [...(D.on_sale||[]), ...(D.upcoming||[])]; }
 function syncPressed(){
   document.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",
     String((c.dataset.r && c.dataset.r===filter.region && filter.artist==="all") ||
            (c.dataset.a && c.dataset.a===filter.artist))));
 }
 (function(){
-  const cntA = k => allItems().filter(e=>e.artist_key===k).length;
+  const cntA = k => activeConcertItems().filter(e=>e.artist_key===k).length;
   let html = `<button class="chip" data-r="all">全部</button>
     <button class="chip" data-r="cn">国内</button>
     <button class="chip" data-r="kpop">K-Pop</button><span class="sep"></span>`;
