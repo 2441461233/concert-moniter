@@ -29,8 +29,6 @@ jobs:
       LLM_ENRICH_MAX_CONTEXT_BYTES: ${{ vars.LLM_ENRICH_MAX_CONTEXT_BYTES || '128000' }}
       LLM_ENRICH_ATTEMPTS: ${{ vars.LLM_ENRICH_ATTEMPTS || '1' }}
       KIMI_RESEARCH_MODEL: ${{ vars.KIMI_RESEARCH_MODEL || 'kimi-k3' }}
-      REFRESH_TELEMETRY_OUTPUT: ${{ runner.temp }}/full-refresh-telemetry.json
-      REFRESH_ENRICH_CANDIDATE_OUTPUT: ${{ runner.temp }}/full-refresh-candidate.json
       PYTHONUNBUFFERED: "1"
 
     steps:
@@ -63,6 +61,8 @@ jobs:
       - name: Run deterministic refresh with optional LLM enrichment
         env:
           MOONSHOT_API_KEY: ${{ secrets.MOONSHOT_API_KEY }}
+          REFRESH_TELEMETRY_OUTPUT: ${{ runner.temp }}/full-refresh-telemetry.json
+          REFRESH_ENRICH_CANDIDATE_OUTPUT: ${{ runner.temp }}/full-refresh-candidate.json
         run: python3 scripts/full_refresh.py
 
       - name: Upload sanitized usage telemetry
