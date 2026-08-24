@@ -112,13 +112,19 @@
       "ingested_files": [
         "2026-08-13-110443-full-refresh.json"
       ]
+    },
+    {
+      "run_id": "20260824-174032",
+      "at": "2026-08-24T17:41:11",
+      "events_seen": 25,
+      "changes": 2,
+      "ingested_files": []
     }
   ],
-  "last_run": "2026-08-13T11:51:26",
-  "last_run_id": "20260813-115054",
+  "last_run": "2026-08-24T17:41:11",
+  "last_run_id": "20260824-174032",
   "notes": [
-    "完整调研丢弃了 23 条无法验证或格式无效的候选信息",
-    "本轮未再次搜到 27 条旧记录，已标记“本轮未复核”但未盲删"
+    "确定性刷新已完成；可选模型增强为 disabled_stale，旧 research 数据保留并标记 stale：enrichment_disabled"
   ],
   "source_status": {
     "showstart": {
@@ -126,31 +132,49 @@
       "fail": 0
     },
     "research": {
-      "ok": 12,
+      "ok": 0,
       "fail": 0,
-      "total": 12
+      "total": 12,
+      "status": "disabled_stale",
+      "stale": true,
+      "provider": "none",
+      "model": "",
+      "last_success_at": "2026-08-13T11:51:26",
+      "reason": "enrichment_disabled"
     }
   },
   "last_research_at": "2026-08-13T11:51:26",
-  "last_data_run": "20260813-115054",
-  "full_refresh_at": "2026-08-13T11:51:26",
-  "full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
-  "full_refresh_status": "completed_with_warnings",
+  "last_data_run": "20260824-174032",
+  "full_refresh_at": "2026-08-24T17:41:11",
+  "full_refresh_id": "6a45ad6fa6ca96116bbc2af8",
+  "full_refresh_status": "deterministic_completed_enrichment_stale",
   "full_refresh": {
-    "id": "0c726311ceb7b4f2ddd5eeb1",
-    "at": "2026-08-13T11:51:26",
-    "model": "kimi-k3",
-    "artists": 12,
-    "events_found": 59,
-    "rumors_found": 11,
-    "sources_consulted": 25,
-    "warnings": 23,
-    "unverified_records": 27,
-    "reconciliation": {
-      "events_verified": 67,
-      "events_unverified": 12,
-      "rumors_verified": 11,
-      "rumors_unverified": 15
+    "architecture": "deterministic_with_optional_enrichment",
+    "id": "6a45ad6fa6ca96116bbc2af8",
+    "at": "2026-08-24T17:41:11",
+    "status": "deterministic_completed_enrichment_stale",
+    "deterministic": {
+      "status": "completed",
+      "showstart": {
+        "ok": 3,
+        "fail": 0
+      }
+    },
+    "enrichment": {
+      "provider": "none",
+      "status": "disabled_stale",
+      "stale": true,
+      "model": "",
+      "artists": 12,
+      "events_found": 0,
+      "rumors_found": 0,
+      "sources_consulted": 0,
+      "warnings": 0,
+      "last_success_at": "2026-08-13T11:51:26",
+      "reason": "enrichment_disabled",
+      "budget_reservation": null,
+      "write_policy": "no_enrichment_write",
+      "promotion_status": "not_requested"
     }
   }
 }

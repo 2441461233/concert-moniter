@@ -1021,10 +1021,11 @@
     "country": "",
     "show_date": "2026-07-18",
     "show_time": "21:00",
-    "show_time_raw": "08月22日 21:00-08月22日 22:00",
+    "show_time_raw": "07月18日 21:00-07月18日 22:00",
     "price": "¥339",
     "ticket_tiers": [
-      "¥339 8.22全价票"
+      "¥339 8.22全价票",
+      "¥339 7.18全价票"
     ],
     "sale_status": "ended",
     "sale_time": "",
@@ -1039,9 +1040,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-13T11:51:26",
+    "last_seen": "2026-08-24T17:41:11",
     "id": "7698ce603b252353",
-    "last_seen_run": "20260813-115054"
+    "last_seen_run": "20260824-174032"
   },
   "81f631ed1a03ddca": {
     "source": "showstart",
@@ -1055,7 +1056,7 @@
     "country": "",
     "show_date": "2026-08-01",
     "show_time": "19:00",
-    "show_time_raw": "08月22日 19:00-08月22日 22:00",
+    "show_time_raw": "08月01日 19:00-08月01日 22:00",
     "price": "¥150起",
     "ticket_tiers": [
       "¥150 下午场票",
@@ -1076,9 +1077,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-13T11:51:26",
+    "last_seen": "2026-08-24T17:41:11",
     "id": "81f631ed1a03ddca",
-    "last_seen_run": "20260813-115054"
+    "last_seen_run": "20260824-174032"
   },
   "a3f7a3a5653098fa": {
     "source": "showstart",
@@ -1097,7 +1098,7 @@
     "ticket_tiers": [
       "¥260 上海欢乐谷全日票"
     ],
-    "sale_status": "on_sale",
+    "sale_status": "ended",
     "sale_time": "",
     "confidence": "confirmed",
     "note": "",
@@ -1110,9 +1111,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-13T11:51:26",
+    "last_seen": "2026-08-24T17:41:11",
     "id": "a3f7a3a5653098fa",
-    "last_seen_run": "20260813-115054",
+    "last_seen_run": "20260824-174032",
     "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
     "verification_status": "verified",
     "missed_full_refreshes": 0,
@@ -1153,9 +1154,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-13T11:51:26",
+    "last_seen": "2026-08-24T17:41:11",
     "id": "50a82b896e69a5b8",
-    "last_seen_run": "20260813-115054",
+    "last_seen_run": "20260824-174032",
     "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
     "verification_status": "verified",
     "missed_full_refreshes": 0,
@@ -1194,9 +1195,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-13T11:51:26",
+    "last_seen": "2026-08-24T17:41:11",
     "id": "9b6db4a051b3acef",
-    "last_seen_run": "20260813-115054"
+    "last_seen_run": "20260824-174032"
   },
   "0ce217ff2b6b83ba": {
     "source": "showstart",
@@ -1230,9 +1231,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-13T11:51:26",
+    "last_seen": "2026-08-24T17:41:11",
     "id": "0ce217ff2b6b83ba",
-    "last_seen_run": "20260813-115054"
+    "last_seen_run": "20260824-174032"
   },
   "ff1c50001cc62945": {
     "source": "showstart",
@@ -1265,9 +1266,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-13T11:51:26",
+    "last_seen": "2026-08-24T17:41:11",
     "id": "ff1c50001cc62945",
-    "last_seen_run": "20260813-115054"
+    "last_seen_run": "20260824-174032"
   },
   "cf0b920196b0e05a": {
     "source": "showstart",
@@ -1303,9 +1304,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-13T11:51:26",
+    "last_seen": "2026-08-24T17:41:11",
     "id": "cf0b920196b0e05a",
-    "last_seen_run": "20260813-115054"
+    "last_seen_run": "20260824-174032"
   },
   "fb16bc964c7e4616": {
     "source": "showstart",
@@ -1337,9 +1338,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-13T11:51:26",
+    "last_seen": "2026-08-24T17:41:11",
     "id": "fb16bc964c7e4616",
-    "last_seen_run": "20260813-115054"
+    "last_seen_run": "20260824-174032"
   },
   "9f7468a22a943415": {
     "source": "showstart",
@@ -1369,9 +1370,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-13T11:51:26",
+    "last_seen": "2026-08-24T17:41:11",
     "id": "9f7468a22a943415",
-    "last_seen_run": "20260813-115054"
+    "last_seen_run": "20260824-174032"
   },
   "7376a3a0826c1318": {
     "source": "showstart",
@@ -1401,9 +1402,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-13T11:51:26",
+    "last_seen": "2026-08-24T17:41:11",
     "id": "7376a3a0826c1318",
-    "last_seen_run": "20260813-115054"
+    "last_seen_run": "20260824-174032"
   },
   "da226157b21d6f09": {
     "source": "showstart",
@@ -1443,7 +1444,7 @@
     "artist_name": "门尼",
     "title": "2026JUMPPARK腾讯视频音乐大赏",
     "tour_name": "",
-    "performers": "满江/那英/余佳运/小鬼（王琳凯 ）/黄子弘凡/亚森/孔雪儿/单依纯/早安/傲日其愣/蔡淇/杨润泽/BZ1/张子墨/门尼/ADD男团/Enli恩利/任豪/赵骏/宋子乐/费宇涛/林沐然/邓凯（邓尚）/徐阳扬/旦增曲培（Tenzin Choepel）",
+    "performers": "满江/康姆士/王以太/那英/艾热/孙浩/余佳运/小鬼（王琳凯 ）/黄子弘凡/亚森/孔雪儿/单依纯/早安/蒋先贵/傲日其愣/周柯宇/蔡淇/杨润泽/BZ1/张子墨/门尼/石亦飞/ADD男团/Enli恩利/任豪/赵骏/王谦/宋子乐/费宇涛/林沐然/邓凯（邓尚）/徐阳扬/旦增曲培（Tenzin Choepel）",
     "city": "贵阳",
     "venue": "贵阳市观山湖公园民族大联欢广场",
     "country": "",
@@ -1474,9 +1475,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-13T11:51:26",
+    "last_seen": "2026-08-24T17:41:11",
     "id": "53d75760062dcf97",
-    "last_seen_run": "20260813-115054",
+    "last_seen_run": "20260824-174032",
     "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
     "verification_status": "verified",
     "missed_full_refreshes": 0,
@@ -1500,7 +1501,7 @@
     "ticket_tiers": [
       "¥260 上海欢乐谷全日票"
     ],
-    "sale_status": "on_sale",
+    "sale_status": "ended",
     "sale_time": "",
     "confidence": "confirmed",
     "note": "",
@@ -1513,9 +1514,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-13T11:51:26",
+    "last_seen": "2026-08-24T17:41:11",
     "id": "f9504954a23e329d",
-    "last_seen_run": "20260813-115054",
+    "last_seen_run": "20260824-174032",
     "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
     "verification_status": "verified",
     "missed_full_refreshes": 0,
@@ -1540,7 +1541,7 @@
       "¥248 普通票",
       "¥368 VIP票"
     ],
-    "sale_status": "on_sale",
+    "sale_status": "ended",
     "sale_time": "",
     "confidence": "confirmed",
     "note": "",
@@ -1553,9 +1554,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-13T11:51:26",
+    "last_seen": "2026-08-24T17:41:11",
     "id": "f2b2b11b4a7a1d15",
-    "last_seen_run": "20260813-115054",
+    "last_seen_run": "20260824-174032",
     "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
     "verification_status": "verified",
     "missed_full_refreshes": 0,
@@ -1581,7 +1582,7 @@
       "¥188 全价票",
       "¥308 VIP票"
     ],
-    "sale_status": "on_sale",
+    "sale_status": "ended",
     "sale_time": "",
     "confidence": "confirmed",
     "note": "",
@@ -1594,9 +1595,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-13T11:51:26",
+    "last_seen": "2026-08-24T17:41:11",
     "id": "9b4b484fcc3da4a7",
-    "last_seen_run": "20260813-115054",
+    "last_seen_run": "20260824-174032",
     "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
     "verification_status": "verified",
     "missed_full_refreshes": 0,
@@ -1609,18 +1610,20 @@
     "artist_name": "加木",
     "title": "口味王·杭州湾银河左岸音乐节",
     "tour_name": "",
-    "performers": "二手玫瑰乐队/痛仰/岛屿心情/盘尼西林/麻园诗人/Supper Moment/陈绮贞/C-BLOCK/棱镜/TizzyT/梁博/Capper（张砚拙）/李大奔/回春丹乐队/安溥ANPU/CashTrippy /Top Barry/加木/Hogee",
-    "city": "杭州",
-    "venue": "口味王杭州湾银河左岸音乐节（入口处）",
+    "performers": "二手玫瑰乐队/闪星TWINKLESTAR/痛仰/盘尼西林/麻园诗人/Supper Moment/陈绮贞/C-BLOCK/许钧/棱镜/TizzyT/弹壳Danko/ODD陈思键/GALI/梁博/Capper（张砚拙）/李大奔/回春丹乐队/安溥ANPU/CashTrippy /Top Barry/泰格西/加木",
+    "city": "嘉兴",
+    "venue": "杭州湾银河左岸音乐节",
     "country": "",
     "show_date": "2026-09-05",
-    "show_time": "13:00",
-    "show_time_raw": "09月05日 13:00-09月05日 21:00",
+    "show_time": "12:00",
+    "show_time_raw": "09月05日 12:00-09月05日 21:00",
     "price": "¥299起",
     "ticket_tiers": [
       "¥299 9.5早鸟单日票",
       "¥399 9.5预售单日票",
-      "¥498 9.5预售单日票"
+      "¥498 9.5预售单日票",
+      "¥499 9.5正价单日票",
+      "¥598 9.5正价单日票"
     ],
     "sale_status": "on_sale",
     "sale_time": "",
@@ -1635,9 +1638,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-13T11:51:26",
+    "last_seen": "2026-08-24T17:41:11",
     "id": "7ac3102273d984f7",
-    "last_seen_run": "20260813-115054",
+    "last_seen_run": "20260824-174032",
     "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
     "verification_status": "verified",
     "missed_full_refreshes": 0,
@@ -1678,9 +1681,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-13T11:51:26",
+    "last_seen": "2026-08-24T17:41:11",
     "id": "4b189d39b90c02fa",
-    "last_seen_run": "20260813-115054",
+    "last_seen_run": "20260824-174032",
     "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
     "verification_status": "verified",
     "missed_full_refreshes": 0,
@@ -1718,9 +1721,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-13T11:51:26",
+    "last_seen": "2026-08-24T17:41:11",
     "id": "e18f2a24546d48a8",
-    "last_seen_run": "20260813-115054"
+    "last_seen_run": "20260824-174032"
   },
   "96e65962801b9194": {
     "source": "showstart",
@@ -1753,9 +1756,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-13T11:51:26",
+    "last_seen": "2026-08-24T17:41:11",
     "id": "96e65962801b9194",
-    "last_seen_run": "20260813-115054"
+    "last_seen_run": "20260824-174032"
   },
   "c5b69c1914eb50e9": {
     "source": "showstart",
@@ -1788,9 +1791,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-13T11:51:26",
+    "last_seen": "2026-08-24T17:41:11",
     "id": "c5b69c1914eb50e9",
-    "last_seen_run": "20260813-115054"
+    "last_seen_run": "20260824-174032"
   },
   "bad18830270d07ca": {
     "source": "showstart",
@@ -1826,9 +1829,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-13T11:51:26",
+    "last_seen": "2026-08-24T17:41:11",
     "id": "bad18830270d07ca",
-    "last_seen_run": "20260813-115054"
+    "last_seen_run": "20260824-174032"
   },
   "f8805861e141b68d": {
     "source": "showstart",
@@ -1864,9 +1867,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-13T11:51:26",
+    "last_seen": "2026-08-24T17:41:11",
     "id": "f8805861e141b68d",
-    "last_seen_run": "20260813-115054"
+    "last_seen_run": "20260824-174032"
   },
   "0b109ca05d943b84": {
     "source": "showstart",
@@ -1902,9 +1905,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-13T11:51:26",
+    "last_seen": "2026-08-24T17:41:11",
     "id": "0b109ca05d943b84",
-    "last_seen_run": "20260813-115054"
+    "last_seen_run": "20260824-174032"
   },
   "2004438dcac23fa0": {
     "source": "showstart",
@@ -3685,5 +3688,78 @@
     "missed_full_refreshes": 0,
     "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
     "last_verified_at": "2026-08-13T11:51:26"
+  },
+  "7617ea99d2a9f10a": {
+    "source": "showstart",
+    "artist_key": "shayiting",
+    "artist_name": "沙一汀",
+    "title": "2026成都葫芦果音乐节",
+    "tour_name": "",
+    "performers": "万能青年旅店/痛仰/声音玩具/盘尼西林/陶喆/夏日入侵企画/棱镜/GALI/h3R3刘清云/苏妙玲/杨乃文/Rapeter吴嘉轩/刘思鉴/沙一汀EL/Matt吕彦良/揽佬SKAI ISYOURGOD/国产阿发/范晓萱&100%",
+    "city": "成都",
+    "venue": "国际非物质文化遗产博览园",
+    "country": "",
+    "show_date": "2026-09-26",
+    "doors_time": "",
+    "show_time": "13:30",
+    "show_end_time": "",
+    "curfew_time": "",
+    "show_time_raw": "09月26日 13:30-09月26日 21:30",
+    "price": "¥368起",
+    "ticket_tiers": [],
+    "sale_status": "on_sale",
+    "sale_time": "",
+    "confidence": "confirmed",
+    "note": "",
+    "sources": [
+      {
+        "source": "showstart",
+        "url": "https://www.showstart.com/event/305966",
+        "source_id": "305966"
+      }
+    ],
+    "first_seen": "2026-08-24T17:41:11",
+    "first_seen_run": "20260824-174032",
+    "last_seen": "2026-08-24T17:41:11",
+    "last_seen_run": "20260824-174032",
+    "id": "7617ea99d2a9f10a"
+  },
+  "05537ca348ab0b08": {
+    "source": "showstart",
+    "artist_key": "jiamu",
+    "artist_name": "加木",
+    "title": "掂过碌蔗-yamy2026巡演广州站",
+    "tour_name": "",
+    "performers": "Yamy郭颖/加木",
+    "city": "广州",
+    "venue": "MAO Livehouse广州（太古仓店）",
+    "country": "",
+    "show_date": "2026-09-13",
+    "doors_time": "",
+    "show_time": "20:00",
+    "show_end_time": "",
+    "curfew_time": "",
+    "show_time_raw": "09月13日 20:00-09月13日 22:30",
+    "price": "¥199起",
+    "ticket_tiers": [
+      "¥199 普通票",
+      "¥299 VIP票"
+    ],
+    "sale_status": "on_sale",
+    "sale_time": "",
+    "confidence": "confirmed",
+    "note": "",
+    "sources": [
+      {
+        "source": "showstart",
+        "url": "https://www.showstart.com/event/307936",
+        "source_id": "307936"
+      }
+    ],
+    "first_seen": "2026-08-24T17:41:11",
+    "first_seen_run": "20260824-174032",
+    "last_seen": "2026-08-24T17:41:11",
+    "last_seen_run": "20260824-174032",
+    "id": "05537ca348ab0b08"
   }
 }

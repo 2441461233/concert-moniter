@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-08-13T11:51:26",
- "last_run": "2026-08-13T11:51:26",
- "last_run_id": "20260813-115054",
+ "generated_at": "2026-08-24T17:41:11",
+ "last_run": "2026-08-24T17:41:11",
+ "last_run_id": "20260824-174032",
  "last_research_at": "2026-08-13T11:51:26",
- "full_refresh_at": "2026-08-13T11:51:26",
- "full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
- "full_refresh_status": "completed_with_warnings",
+ "full_refresh_at": "2026-08-24T17:41:11",
+ "full_refresh_id": "6a45ad6fa6ca96116bbc2af8",
+ "full_refresh_status": "deterministic_completed_enrichment_stale",
  "artists": [
   {
    "key": "shayiting",
@@ -70,360 +70,6 @@
  ],
  "on_sale": [
   {
-   "source": "showstart",
-   "artist_key": "jiamu",
-   "artist_name": "加木",
-   "title": "上海欢乐谷EV音乐乐园——加木",
-   "tour_name": "",
-   "performers": "加木",
-   "city": "上海",
-   "venue": "上海欢乐谷",
-   "country": "",
-   "show_date": "2026-08-15",
-   "show_time": "20:00",
-   "show_time_raw": "08月15日 20:00-08月15日 21:00",
-   "price": "¥260",
-   "ticket_tiers": [
-    "¥260 上海欢乐谷全日票"
-   ],
-   "sale_status": "on_sale",
-   "sale_time": "",
-   "confidence": "confirmed",
-   "note": "",
-   "sources": [
-    {
-     "source": "showstart",
-     "url": "https://www.showstart.com/event/305855",
-     "source_id": "305855"
-    }
-   ],
-   "first_seen": "2026-08-10T11:23:44",
-   "first_seen_run": "20260810-112305",
-   "last_seen": "2026-08-13T11:51:26",
-   "id": "f9504954a23e329d",
-   "last_seen_run": "20260813-115054",
-   "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
-   "verification_status": "verified",
-   "missed_full_refreshes": 0,
-   "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
-   "last_verified_at": "2026-08-13T11:51:26",
-   "status": "on_sale",
-   "is_new": false
-  },
-  {
-   "source": "showstart",
-   "artist_key": "shayiting",
-   "artist_name": "沙一汀",
-   "title": "上海欢乐谷EV音乐乐园——沙一汀",
-   "tour_name": "",
-   "performers": "沙一汀EL",
-   "city": "上海",
-   "venue": "上海欢乐谷",
-   "country": "",
-   "show_date": "2026-08-16",
-   "show_time": "20:00",
-   "show_time_raw": "08月16日 20:00-08月16日 20:30",
-   "price": "¥260",
-   "ticket_tiers": [
-    "¥260 上海欢乐谷全日票"
-   ],
-   "sale_status": "on_sale",
-   "sale_time": "",
-   "confidence": "confirmed",
-   "note": "",
-   "sources": [
-    {
-     "source": "showstart",
-     "url": "https://www.showstart.com/event/306497",
-     "source_id": "306497"
-    }
-   ],
-   "first_seen": "2026-08-10T11:23:44",
-   "first_seen_run": "20260810-112305",
-   "last_seen": "2026-08-13T11:51:26",
-   "id": "a3f7a3a5653098fa",
-   "last_seen_run": "20260813-115054",
-   "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
-   "verification_status": "verified",
-   "missed_full_refreshes": 0,
-   "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
-   "last_verified_at": "2026-08-13T11:51:26",
-   "status": "on_sale",
-   "is_new": false
-  },
-  {
-   "source": "showstart",
-   "artist_key": "jiamu",
-   "artist_name": "加木",
-   "title": "2026布瑞吉77%巡演-上海站",
-   "tour_name": "",
-   "performers": "Bridge（布瑞吉）/加木",
-   "city": "上海",
-   "venue": "上海 PHASE蜚声LIVEHOUSE",
-   "country": "",
-   "show_date": "2026-08-16",
-   "show_time": "20:00",
-   "show_time_raw": "08月16日 20:00-08月16日 22:00",
-   "price": "¥248起",
-   "ticket_tiers": [
-    "¥248 普通票",
-    "¥368 VIP票"
-   ],
-   "sale_status": "on_sale",
-   "sale_time": "",
-   "confidence": "confirmed",
-   "note": "",
-   "sources": [
-    {
-     "source": "showstart",
-     "url": "https://www.showstart.com/event/300367",
-     "source_id": "300367"
-    }
-   ],
-   "first_seen": "2026-08-10T11:23:44",
-   "first_seen_run": "20260810-112305",
-   "last_seen": "2026-08-13T11:51:26",
-   "id": "f2b2b11b4a7a1d15",
-   "last_seen_run": "20260813-115054",
-   "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
-   "verification_status": "verified",
-   "missed_full_refreshes": 0,
-   "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
-   "last_verified_at": "2026-08-13T11:51:26",
-   "status": "on_sale",
-   "is_new": false
-  },
-  {
-   "source": "showstart",
-   "artist_key": "jiamu",
-   "artist_name": "加木",
-   "title": "三火Flame【蓝眼泪】个人巡演南京站七夕专场",
-   "tour_name": "",
-   "performers": "LilAsian/三火flame/加木",
-   "city": "南京",
-   "venue": "稻香·彩虹剧院",
-   "country": "",
-   "show_date": "2026-08-19",
-   "show_time": "20:00",
-   "show_time_raw": "08月19日 20:00-08月19日 22:00",
-   "price": "¥168起",
-   "ticket_tiers": [
-    "¥168 预售票",
-    "¥188 全价票",
-    "¥308 VIP票"
-   ],
-   "sale_status": "on_sale",
-   "sale_time": "",
-   "confidence": "confirmed",
-   "note": "",
-   "sources": [
-    {
-     "source": "showstart",
-     "url": "https://www.showstart.com/event/305683",
-     "source_id": "305683"
-    }
-   ],
-   "first_seen": "2026-08-10T11:23:44",
-   "first_seen_run": "20260810-112305",
-   "last_seen": "2026-08-13T11:51:26",
-   "id": "9b4b484fcc3da4a7",
-   "last_seen_run": "20260813-115054",
-   "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
-   "verification_status": "verified",
-   "missed_full_refreshes": 0,
-   "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
-   "last_verified_at": "2026-08-13T11:51:26",
-   "status": "on_sale",
-   "is_new": false
-  },
-  {
-   "source": "research",
-   "artist_key": "menni",
-   "artist_name": "门尼",
-   "title": "门尼「印·IN」2026巡回演唱会 · 广州站（8/22）",
-   "tour_name": "门尼「印·IN」2026巡回演唱会",
-   "performers": "",
-   "city": "广州",
-   "venue": "广州亚运城综合体育馆体操馆",
-   "country": "China",
-   "show_date": "2026-08-22",
-   "show_time": "",
-   "show_time_raw": "",
-   "price": "",
-   "ticket_tiers": [],
-   "sale_status": "sold_out",
-   "sale_time": "",
-   "confidence": "confirmed",
-   "note": "china_region 组结果仅确认 8/22&8/23 广州站双场门票预售售罄；当前结果未给出场馆、票价、开票时间。",
-   "sources": [
-    {
-     "source": "research",
-     "url": "https://www.sina.cn/news/detail/5314017573997140.html",
-     "source_id": ""
-    },
-    {
-     "source": "research",
-     "url": "https://www.sina.cn/news/detail/5322097837474975.html",
-     "source_id": ""
-    }
-   ],
-   "first_seen": "2026-08-10T11:18:24",
-   "first_seen_run": "20260810-111824",
-   "last_seen": "2026-08-13T11:51:26",
-   "id": "2b9b389b7af5bffb",
-   "last_seen_run": "20260813-115054",
-   "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
-   "verification_status": "verified",
-   "missed_full_refreshes": 0,
-   "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
-   "last_verified_at": "2026-08-13T11:51:26",
-   "status": "on_sale",
-   "is_new": false
-  },
-  {
-   "source": "research",
-   "artist_key": "illit",
-   "artist_name": "ILLIT",
-   "title": "ILLIT LIVE 'PRESS START♥︎' in HONG KONG（2026-08-22）",
-   "tour_name": "ILLIT LIVE 'PRESS START♥︎' ASIA TOUR",
-   "performers": "",
-   "city": "香港",
-   "venue": "亚洲国际博览馆 10 号展馆（AsiaWorld-Expo, Hall 10）",
-   "country": "Hong Kong",
-   "show_date": "2026-08-22",
-   "show_time": "19:00",
-   "show_time_raw": "",
-   "price": "HKD 899-1799（全座位）",
-   "ticket_tiers": [
-    "HKD 1799（含彩排观摩+香港限定明信片组）",
-    "HKD 1399",
-    "HKD 1099",
-    "HKD 899",
-    "HKD 1799（含 Sound Check 彩排观摩及香港限定明信片组）"
-   ],
-   "sale_status": "on_sale",
-   "sale_time": "2026-06-11 14:00",
-   "confidence": "confirmed",
-   "note": "场馆页面列明本场 19:00 举行，门票经 Cityline 于 2026-06-11 14:00 起售；页面未提供实时余票，on_sale 仅表示已进入公售阶段。",
-   "sources": [
-    {
-     "source": "research",
-     "url": "https://www.am730.com.hk/article/1032518",
-     "source_id": ""
-    },
-    {
-     "source": "research",
-     "url": "https://www.asiaworld-expo.com/en-us/whats-on/upcoming-events/events/2026-illit-concert-in-hong-kong/",
-     "source_id": ""
-    }
-   ],
-   "first_seen": "2026-08-10T11:18:24",
-   "first_seen_run": "20260810-111824",
-   "last_seen": "2026-08-13T11:51:26",
-   "id": "c849f462e7f290f1",
-   "last_seen_run": "20260813-115054",
-   "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
-   "verification_status": "verified",
-   "missed_full_refreshes": 0,
-   "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
-   "last_verified_at": "2026-08-13T11:51:26",
-   "status": "on_sale",
-   "is_new": false
-  },
-  {
-   "source": "research",
-   "artist_key": "menni",
-   "artist_name": "门尼",
-   "title": "门尼「印·IN」2026巡回演唱会 · 广州站（8/23）",
-   "tour_name": "门尼「印·IN」2026巡回演唱会",
-   "performers": "",
-   "city": "广州",
-   "venue": "广州亚运城综合体育馆体操馆",
-   "country": "China",
-   "show_date": "2026-08-23",
-   "show_time": "",
-   "show_time_raw": "",
-   "price": "",
-   "ticket_tiers": [],
-   "sale_status": "sold_out",
-   "sale_time": "",
-   "confidence": "confirmed",
-   "note": "同上：当前 china_region 结果只确认双场预售售罄，未提供场馆/票价/具体开票时间。",
-   "sources": [
-    {
-     "source": "research",
-     "url": "https://www.sina.cn/news/detail/5314029012386670.html",
-     "source_id": ""
-    },
-    {
-     "source": "research",
-     "url": "https://www.sina.cn/news/detail/5322097837474975.html",
-     "source_id": ""
-    }
-   ],
-   "first_seen": "2026-08-10T11:18:24",
-   "first_seen_run": "20260810-111824",
-   "last_seen": "2026-08-13T11:51:26",
-   "id": "42211e4e9c92957d",
-   "last_seen_run": "20260813-115054",
-   "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
-   "verification_status": "verified",
-   "missed_full_refreshes": 0,
-   "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
-   "last_verified_at": "2026-08-13T11:51:26",
-   "status": "on_sale",
-   "is_new": false
-  },
-  {
-   "source": "research",
-   "artist_key": "illit",
-   "artist_name": "ILLIT",
-   "title": "ILLIT LIVE 'PRESS START♥︎' in HONG KONG（2026-08-23 加场）",
-   "tour_name": "ILLIT LIVE 'PRESS START♥︎' ASIA TOUR",
-   "performers": "",
-   "city": "香港",
-   "venue": "亚洲国际博览馆 10 号展馆（AsiaWorld-Expo, Hall 10）",
-   "country": "Hong Kong",
-   "show_date": "2026-08-23",
-   "show_time": "19:00",
-   "show_time_raw": "",
-   "price": "HKD 899-1799（全座位）",
-   "ticket_tiers": [
-    "HKD 1799（含 Sound Check 彩排观摩及香港限定明信片组）",
-    "HKD 1399",
-    "HKD 1099",
-    "HKD 899"
-   ],
-   "sale_status": "sold_out",
-   "sale_time": "2026-06-11 14:00",
-   "confidence": "confirmed",
-   "note": "亚洲国际博览馆页面确认加场日期、时间及票价；主办方 REG. Entertainment 的 Facebook 公告标题为“加場完售公告”。本轮结果未给出加场的确切开票时间，故不以 6 月 11 日倒推。",
-   "sources": [
-    {
-     "source": "research",
-     "url": "https://timable.com/hk/zh/event/6971d34ec7e30d3b810c15e4/ILLIT-PRESS-START-%E4%BA%9E%E6%B4%B2%E5%B7%A1%E8%BF%B4%E6%BC%94%E5%94%B1%E6%9C%83-2026-%E9%A6%99%E6%B8%AF%E7%AB%99",
-     "source_id": ""
-    },
-    {
-     "source": "research",
-     "url": "https://www.asiaworld-expo.com/en-us/whats-on/upcoming-events/events/2026-illit-concert-in-hong-kong/",
-     "source_id": ""
-    }
-   ],
-   "first_seen": "2026-08-10T11:18:24",
-   "first_seen_run": "20260810-111824",
-   "last_seen": "2026-08-13T11:51:26",
-   "id": "7da5114556a76624",
-   "last_seen_run": "20260813-115054",
-   "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
-   "verification_status": "verified",
-   "missed_full_refreshes": 0,
-   "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
-   "last_verified_at": "2026-08-13T11:51:26",
-   "status": "on_sale",
-   "is_new": false
-  },
-  {
    "source": "research",
    "artist_key": "katseye",
    "artist_name": "KATSEYE",
@@ -460,7 +106,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "showstart",
@@ -468,7 +114,7 @@
    "artist_name": "门尼",
    "title": "2026JUMPPARK腾讯视频音乐大赏",
    "tour_name": "",
-   "performers": "满江/那英/余佳运/小鬼（王琳凯 ）/黄子弘凡/亚森/孔雪儿/单依纯/早安/傲日其愣/蔡淇/杨润泽/BZ1/张子墨/门尼/ADD男团/Enli恩利/任豪/赵骏/宋子乐/费宇涛/林沐然/邓凯（邓尚）/徐阳扬/旦增曲培（Tenzin Choepel）",
+   "performers": "满江/康姆士/王以太/那英/艾热/孙浩/余佳运/小鬼（王琳凯 ）/黄子弘凡/亚森/孔雪儿/单依纯/早安/蒋先贵/傲日其愣/周柯宇/蔡淇/杨润泽/BZ1/张子墨/门尼/石亦飞/ADD男团/Enli恩利/任豪/赵骏/王谦/宋子乐/费宇涛/林沐然/邓凯（邓尚）/徐阳扬/旦增曲培（Tenzin Choepel）",
    "city": "贵阳",
    "venue": "贵阳市观山湖公园民族大联欢广场",
    "country": "",
@@ -499,9 +145,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-08-13T11:51:26",
+   "last_seen": "2026-08-24T17:41:11",
    "id": "53d75760062dcf97",
-   "last_seen_run": "20260813-115054",
+   "last_seen_run": "20260824-174032",
    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "verification_status": "verified",
    "missed_full_refreshes": 0,
@@ -591,7 +237,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -630,7 +276,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -674,18 +320,20 @@
    "artist_name": "加木",
    "title": "口味王·杭州湾银河左岸音乐节",
    "tour_name": "",
-   "performers": "二手玫瑰乐队/痛仰/岛屿心情/盘尼西林/麻园诗人/Supper Moment/陈绮贞/C-BLOCK/棱镜/TizzyT/梁博/Capper（张砚拙）/李大奔/回春丹乐队/安溥ANPU/CashTrippy /Top Barry/加木/Hogee",
-   "city": "杭州",
-   "venue": "口味王杭州湾银河左岸音乐节（入口处）",
+   "performers": "二手玫瑰乐队/闪星TWINKLESTAR/痛仰/盘尼西林/麻园诗人/Supper Moment/陈绮贞/C-BLOCK/许钧/棱镜/TizzyT/弹壳Danko/ODD陈思键/GALI/梁博/Capper（张砚拙）/李大奔/回春丹乐队/安溥ANPU/CashTrippy /Top Barry/泰格西/加木",
+   "city": "嘉兴",
+   "venue": "杭州湾银河左岸音乐节",
    "country": "",
    "show_date": "2026-09-05",
-   "show_time": "13:00",
-   "show_time_raw": "09月05日 13:00-09月05日 21:00",
+   "show_time": "12:00",
+   "show_time_raw": "09月05日 12:00-09月05日 21:00",
    "price": "¥299起",
    "ticket_tiers": [
     "¥299 9.5早鸟单日票",
     "¥399 9.5预售单日票",
-    "¥498 9.5预售单日票"
+    "¥498 9.5预售单日票",
+    "¥499 9.5正价单日票",
+    "¥598 9.5正价单日票"
    ],
    "sale_status": "on_sale",
    "sale_time": "",
@@ -700,9 +348,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-08-13T11:51:26",
+   "last_seen": "2026-08-24T17:41:11",
    "id": "7ac3102273d984f7",
-   "last_seen_run": "20260813-115054",
+   "last_seen_run": "20260824-174032",
    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "verification_status": "verified",
    "missed_full_refreshes": 0,
@@ -784,7 +432,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -859,7 +507,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -898,7 +546,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -1039,7 +687,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -1077,6 +725,46 @@
    "missed_full_refreshes": 0,
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
+   "status": "on_sale",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "jiamu",
+   "artist_name": "加木",
+   "title": "掂过碌蔗-yamy2026巡演广州站",
+   "tour_name": "",
+   "performers": "Yamy郭颖/加木",
+   "city": "广州",
+   "venue": "MAO Livehouse广州（太古仓店）",
+   "country": "",
+   "show_date": "2026-09-13",
+   "doors_time": "",
+   "show_time": "20:00",
+   "show_end_time": "",
+   "curfew_time": "",
+   "show_time_raw": "09月13日 20:00-09月13日 22:30",
+   "price": "¥199起",
+   "ticket_tiers": [
+    "¥199 普通票",
+    "¥299 VIP票"
+   ],
+   "sale_status": "on_sale",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/307936",
+     "source_id": "307936"
+    }
+   ],
+   "first_seen": "2026-08-24T17:41:11",
+   "first_seen_run": "20260824-174032",
+   "last_seen": "2026-08-24T17:41:11",
+   "last_seen_run": "20260824-174032",
+   "id": "05537ca348ab0b08",
    "status": "on_sale",
    "is_new": true
   },
@@ -1117,7 +805,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -1156,7 +844,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -1195,7 +883,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "showstart",
@@ -1231,9 +919,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-08-13T11:51:26",
+   "last_seen": "2026-08-24T17:41:11",
    "id": "50a82b896e69a5b8",
-   "last_seen_run": "20260813-115054",
+   "last_seen_run": "20260824-174032",
    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "verification_status": "verified",
    "missed_full_refreshes": 0,
@@ -1276,9 +964,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-08-13T11:51:26",
+   "last_seen": "2026-08-24T17:41:11",
    "id": "4b189d39b90c02fa",
-   "last_seen_run": "20260813-115054",
+   "last_seen_run": "20260824-174032",
    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "verification_status": "verified",
    "missed_full_refreshes": 0,
@@ -1324,7 +1012,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -1363,7 +1051,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -1401,6 +1089,43 @@
    "missed_full_refreshes": 0,
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
+   "status": "on_sale",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "shayiting",
+   "artist_name": "沙一汀",
+   "title": "2026成都葫芦果音乐节",
+   "tour_name": "",
+   "performers": "万能青年旅店/痛仰/声音玩具/盘尼西林/陶喆/夏日入侵企画/棱镜/GALI/h3R3刘清云/苏妙玲/杨乃文/Rapeter吴嘉轩/刘思鉴/沙一汀EL/Matt吕彦良/揽佬SKAI ISYOURGOD/国产阿发/范晓萱&100%",
+   "city": "成都",
+   "venue": "国际非物质文化遗产博览园",
+   "country": "",
+   "show_date": "2026-09-26",
+   "doors_time": "",
+   "show_time": "13:30",
+   "show_end_time": "",
+   "curfew_time": "",
+   "show_time_raw": "09月26日 13:30-09月26日 21:30",
+   "price": "¥368起",
+   "ticket_tiers": [],
+   "sale_status": "on_sale",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/305966",
+     "source_id": "305966"
+    }
+   ],
+   "first_seen": "2026-08-24T17:41:11",
+   "first_seen_run": "20260824-174032",
+   "last_seen": "2026-08-24T17:41:11",
+   "last_seen_run": "20260824-174032",
+   "id": "7617ea99d2a9f10a",
    "status": "on_sale",
    "is_new": true
   },
@@ -1441,7 +1166,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -1480,7 +1205,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -1519,7 +1244,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -1558,7 +1283,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -1597,7 +1322,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -1680,7 +1405,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -1719,7 +1444,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -1758,7 +1483,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -1797,7 +1522,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -1836,7 +1561,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -1875,7 +1600,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -1914,7 +1639,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -1953,7 +1678,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -1992,7 +1717,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -2031,7 +1756,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -2070,7 +1795,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -2109,7 +1834,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -2148,7 +1873,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -2187,7 +1912,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -2226,7 +1951,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -2265,7 +1990,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -2304,7 +2029,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -2343,7 +2068,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -2382,7 +2107,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -2421,7 +2146,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -2460,7 +2185,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -2499,7 +2224,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -2538,7 +2263,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -2623,7 +2348,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -2662,7 +2387,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   }
  ],
  "upcoming": [
@@ -2811,7 +2536,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "upcoming",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -2966,7 +2691,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "upcoming",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -3134,7 +2859,7 @@
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
    "status": "upcoming",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -3253,6 +2978,360 @@
  "ended": [
   {
    "source": "research",
+   "artist_key": "illit",
+   "artist_name": "ILLIT",
+   "title": "ILLIT LIVE 'PRESS START♥︎' in HONG KONG（2026-08-23 加场）",
+   "tour_name": "ILLIT LIVE 'PRESS START♥︎' ASIA TOUR",
+   "performers": "",
+   "city": "香港",
+   "venue": "亚洲国际博览馆 10 号展馆（AsiaWorld-Expo, Hall 10）",
+   "country": "Hong Kong",
+   "show_date": "2026-08-23",
+   "show_time": "19:00",
+   "show_time_raw": "",
+   "price": "HKD 899-1799（全座位）",
+   "ticket_tiers": [
+    "HKD 1799（含 Sound Check 彩排观摩及香港限定明信片组）",
+    "HKD 1399",
+    "HKD 1099",
+    "HKD 899"
+   ],
+   "sale_status": "sold_out",
+   "sale_time": "2026-06-11 14:00",
+   "confidence": "confirmed",
+   "note": "亚洲国际博览馆页面确认加场日期、时间及票价；主办方 REG. Entertainment 的 Facebook 公告标题为“加場完售公告”。本轮结果未给出加场的确切开票时间，故不以 6 月 11 日倒推。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://timable.com/hk/zh/event/6971d34ec7e30d3b810c15e4/ILLIT-PRESS-START-%E4%BA%9E%E6%B4%B2%E5%B7%A1%E8%BF%B4%E6%BC%94%E5%94%B1%E6%9C%83-2026-%E9%A6%99%E6%B8%AF%E7%AB%99",
+     "source_id": ""
+    },
+    {
+     "source": "research",
+     "url": "https://www.asiaworld-expo.com/en-us/whats-on/upcoming-events/events/2026-illit-concert-in-hong-kong/",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-10T11:18:24",
+   "first_seen_run": "20260810-111824",
+   "last_seen": "2026-08-13T11:51:26",
+   "id": "7da5114556a76624",
+   "last_seen_run": "20260813-115054",
+   "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+   "verification_status": "verified",
+   "missed_full_refreshes": 0,
+   "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+   "last_verified_at": "2026-08-13T11:51:26",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "menni",
+   "artist_name": "门尼",
+   "title": "门尼「印·IN」2026巡回演唱会 · 广州站（8/23）",
+   "tour_name": "门尼「印·IN」2026巡回演唱会",
+   "performers": "",
+   "city": "广州",
+   "venue": "广州亚运城综合体育馆体操馆",
+   "country": "China",
+   "show_date": "2026-08-23",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "sold_out",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "同上：当前 china_region 结果只确认双场预售售罄，未提供场馆/票价/具体开票时间。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://www.sina.cn/news/detail/5314029012386670.html",
+     "source_id": ""
+    },
+    {
+     "source": "research",
+     "url": "https://www.sina.cn/news/detail/5322097837474975.html",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-10T11:18:24",
+   "first_seen_run": "20260810-111824",
+   "last_seen": "2026-08-13T11:51:26",
+   "id": "42211e4e9c92957d",
+   "last_seen_run": "20260813-115054",
+   "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+   "verification_status": "verified",
+   "missed_full_refreshes": 0,
+   "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+   "last_verified_at": "2026-08-13T11:51:26",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "illit",
+   "artist_name": "ILLIT",
+   "title": "ILLIT LIVE 'PRESS START♥︎' in HONG KONG（2026-08-22）",
+   "tour_name": "ILLIT LIVE 'PRESS START♥︎' ASIA TOUR",
+   "performers": "",
+   "city": "香港",
+   "venue": "亚洲国际博览馆 10 号展馆（AsiaWorld-Expo, Hall 10）",
+   "country": "Hong Kong",
+   "show_date": "2026-08-22",
+   "show_time": "19:00",
+   "show_time_raw": "",
+   "price": "HKD 899-1799（全座位）",
+   "ticket_tiers": [
+    "HKD 1799（含彩排观摩+香港限定明信片组）",
+    "HKD 1399",
+    "HKD 1099",
+    "HKD 899",
+    "HKD 1799（含 Sound Check 彩排观摩及香港限定明信片组）"
+   ],
+   "sale_status": "on_sale",
+   "sale_time": "2026-06-11 14:00",
+   "confidence": "confirmed",
+   "note": "场馆页面列明本场 19:00 举行，门票经 Cityline 于 2026-06-11 14:00 起售；页面未提供实时余票，on_sale 仅表示已进入公售阶段。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://www.am730.com.hk/article/1032518",
+     "source_id": ""
+    },
+    {
+     "source": "research",
+     "url": "https://www.asiaworld-expo.com/en-us/whats-on/upcoming-events/events/2026-illit-concert-in-hong-kong/",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-10T11:18:24",
+   "first_seen_run": "20260810-111824",
+   "last_seen": "2026-08-13T11:51:26",
+   "id": "c849f462e7f290f1",
+   "last_seen_run": "20260813-115054",
+   "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+   "verification_status": "verified",
+   "missed_full_refreshes": 0,
+   "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+   "last_verified_at": "2026-08-13T11:51:26",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "research",
+   "artist_key": "menni",
+   "artist_name": "门尼",
+   "title": "门尼「印·IN」2026巡回演唱会 · 广州站（8/22）",
+   "tour_name": "门尼「印·IN」2026巡回演唱会",
+   "performers": "",
+   "city": "广州",
+   "venue": "广州亚运城综合体育馆体操馆",
+   "country": "China",
+   "show_date": "2026-08-22",
+   "show_time": "",
+   "show_time_raw": "",
+   "price": "",
+   "ticket_tiers": [],
+   "sale_status": "sold_out",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "china_region 组结果仅确认 8/22&8/23 广州站双场门票预售售罄；当前结果未给出场馆、票价、开票时间。",
+   "sources": [
+    {
+     "source": "research",
+     "url": "https://www.sina.cn/news/detail/5314017573997140.html",
+     "source_id": ""
+    },
+    {
+     "source": "research",
+     "url": "https://www.sina.cn/news/detail/5322097837474975.html",
+     "source_id": ""
+    }
+   ],
+   "first_seen": "2026-08-10T11:18:24",
+   "first_seen_run": "20260810-111824",
+   "last_seen": "2026-08-13T11:51:26",
+   "id": "2b9b389b7af5bffb",
+   "last_seen_run": "20260813-115054",
+   "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+   "verification_status": "verified",
+   "missed_full_refreshes": 0,
+   "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+   "last_verified_at": "2026-08-13T11:51:26",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "jiamu",
+   "artist_name": "加木",
+   "title": "三火Flame【蓝眼泪】个人巡演南京站七夕专场",
+   "tour_name": "",
+   "performers": "LilAsian/三火flame/加木",
+   "city": "南京",
+   "venue": "稻香·彩虹剧院",
+   "country": "",
+   "show_date": "2026-08-19",
+   "show_time": "20:00",
+   "show_time_raw": "08月19日 20:00-08月19日 22:00",
+   "price": "¥168起",
+   "ticket_tiers": [
+    "¥168 预售票",
+    "¥188 全价票",
+    "¥308 VIP票"
+   ],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/305683",
+     "source_id": "305683"
+    }
+   ],
+   "first_seen": "2026-08-10T11:23:44",
+   "first_seen_run": "20260810-112305",
+   "last_seen": "2026-08-24T17:41:11",
+   "id": "9b4b484fcc3da4a7",
+   "last_seen_run": "20260824-174032",
+   "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+   "verification_status": "verified",
+   "missed_full_refreshes": 0,
+   "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+   "last_verified_at": "2026-08-13T11:51:26",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "shayiting",
+   "artist_name": "沙一汀",
+   "title": "上海欢乐谷EV音乐乐园——沙一汀",
+   "tour_name": "",
+   "performers": "沙一汀EL",
+   "city": "上海",
+   "venue": "上海欢乐谷",
+   "country": "",
+   "show_date": "2026-08-16",
+   "show_time": "20:00",
+   "show_time_raw": "08月16日 20:00-08月16日 20:30",
+   "price": "¥260",
+   "ticket_tiers": [
+    "¥260 上海欢乐谷全日票"
+   ],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/306497",
+     "source_id": "306497"
+    }
+   ],
+   "first_seen": "2026-08-10T11:23:44",
+   "first_seen_run": "20260810-112305",
+   "last_seen": "2026-08-24T17:41:11",
+   "id": "a3f7a3a5653098fa",
+   "last_seen_run": "20260824-174032",
+   "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+   "verification_status": "verified",
+   "missed_full_refreshes": 0,
+   "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+   "last_verified_at": "2026-08-13T11:51:26",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "jiamu",
+   "artist_name": "加木",
+   "title": "2026布瑞吉77%巡演-上海站",
+   "tour_name": "",
+   "performers": "Bridge（布瑞吉）/加木",
+   "city": "上海",
+   "venue": "上海 PHASE蜚声LIVEHOUSE",
+   "country": "",
+   "show_date": "2026-08-16",
+   "show_time": "20:00",
+   "show_time_raw": "08月16日 20:00-08月16日 22:00",
+   "price": "¥248起",
+   "ticket_tiers": [
+    "¥248 普通票",
+    "¥368 VIP票"
+   ],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/300367",
+     "source_id": "300367"
+    }
+   ],
+   "first_seen": "2026-08-10T11:23:44",
+   "first_seen_run": "20260810-112305",
+   "last_seen": "2026-08-24T17:41:11",
+   "id": "f2b2b11b4a7a1d15",
+   "last_seen_run": "20260824-174032",
+   "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+   "verification_status": "verified",
+   "missed_full_refreshes": 0,
+   "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+   "last_verified_at": "2026-08-13T11:51:26",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "showstart",
+   "artist_key": "jiamu",
+   "artist_name": "加木",
+   "title": "上海欢乐谷EV音乐乐园——加木",
+   "tour_name": "",
+   "performers": "加木",
+   "city": "上海",
+   "venue": "上海欢乐谷",
+   "country": "",
+   "show_date": "2026-08-15",
+   "show_time": "20:00",
+   "show_time_raw": "08月15日 20:00-08月15日 21:00",
+   "price": "¥260",
+   "ticket_tiers": [
+    "¥260 上海欢乐谷全日票"
+   ],
+   "sale_status": "ended",
+   "sale_time": "",
+   "confidence": "confirmed",
+   "note": "",
+   "sources": [
+    {
+     "source": "showstart",
+     "url": "https://www.showstart.com/event/305855",
+     "source_id": "305855"
+    }
+   ],
+   "first_seen": "2026-08-10T11:23:44",
+   "first_seen_run": "20260810-112305",
+   "last_seen": "2026-08-24T17:41:11",
+   "id": "f9504954a23e329d",
+   "last_seen_run": "20260824-174032",
+   "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+   "verification_status": "verified",
+   "missed_full_refreshes": 0,
+   "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
+   "last_verified_at": "2026-08-13T11:51:26",
+   "status": "ended",
+   "is_new": false
+  },
+  {
+   "source": "research",
    "artist_key": "aespa",
    "artist_name": "aespa",
    "title": "aespa〈SYNK : COMPLæXITY〉世巡 · 台北站",
@@ -3319,9 +3398,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-08-13T11:51:26",
+   "last_seen": "2026-08-24T17:41:11",
    "id": "9b6db4a051b3acef",
-   "last_seen_run": "20260813-115054",
+   "last_seen_run": "20260824-174032",
    "status": "ended",
    "is_new": false
   },
@@ -3356,9 +3435,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-08-13T11:51:26",
+   "last_seen": "2026-08-24T17:41:11",
    "id": "e18f2a24546d48a8",
-   "last_seen_run": "20260813-115054",
+   "last_seen_run": "20260824-174032",
    "status": "ended",
    "is_new": false
   },
@@ -3374,7 +3453,7 @@
    "country": "",
    "show_date": "2026-08-01",
    "show_time": "19:00",
-   "show_time_raw": "08月22日 19:00-08月22日 22:00",
+   "show_time_raw": "08月01日 19:00-08月01日 22:00",
    "price": "¥150起",
    "ticket_tiers": [
     "¥150 下午场票",
@@ -3395,9 +3474,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-08-13T11:51:26",
+   "last_seen": "2026-08-24T17:41:11",
    "id": "81f631ed1a03ddca",
-   "last_seen_run": "20260813-115054",
+   "last_seen_run": "20260824-174032",
    "status": "ended",
    "is_new": false
   },
@@ -3432,9 +3511,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-08-13T11:51:26",
+   "last_seen": "2026-08-24T17:41:11",
    "id": "96e65962801b9194",
-   "last_seen_run": "20260813-115054",
+   "last_seen_run": "20260824-174032",
    "status": "ended",
    "is_new": false
   },
@@ -3450,10 +3529,11 @@
    "country": "",
    "show_date": "2026-07-18",
    "show_time": "21:00",
-   "show_time_raw": "08月22日 21:00-08月22日 22:00",
+   "show_time_raw": "07月18日 21:00-07月18日 22:00",
    "price": "¥339",
    "ticket_tiers": [
-    "¥339 8.22全价票"
+    "¥339 8.22全价票",
+    "¥339 7.18全价票"
    ],
    "sale_status": "ended",
    "sale_time": "",
@@ -3468,9 +3548,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-08-13T11:51:26",
+   "last_seen": "2026-08-24T17:41:11",
    "id": "7698ce603b252353",
-   "last_seen_run": "20260813-115054",
+   "last_seen_run": "20260824-174032",
    "status": "ended",
    "is_new": false
   },
@@ -3506,9 +3586,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-08-13T11:51:26",
+   "last_seen": "2026-08-24T17:41:11",
    "id": "0ce217ff2b6b83ba",
-   "last_seen_run": "20260813-115054",
+   "last_seen_run": "20260824-174032",
    "status": "ended",
    "is_new": false
   },
@@ -3543,9 +3623,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-08-13T11:51:26",
+   "last_seen": "2026-08-24T17:41:11",
    "id": "c5b69c1914eb50e9",
-   "last_seen_run": "20260813-115054",
+   "last_seen_run": "20260824-174032",
    "status": "ended",
    "is_new": false
   },
@@ -3580,9 +3660,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-08-13T11:51:26",
+   "last_seen": "2026-08-24T17:41:11",
    "id": "ff1c50001cc62945",
-   "last_seen_run": "20260813-115054",
+   "last_seen_run": "20260824-174032",
    "status": "ended",
    "is_new": false
   },
@@ -3620,9 +3700,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-08-13T11:51:26",
+   "last_seen": "2026-08-24T17:41:11",
    "id": "bad18830270d07ca",
-   "last_seen_run": "20260813-115054",
+   "last_seen_run": "20260824-174032",
    "status": "ended",
    "is_new": false
   },
@@ -3660,9 +3740,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-08-13T11:51:26",
+   "last_seen": "2026-08-24T17:41:11",
    "id": "cf0b920196b0e05a",
-   "last_seen_run": "20260813-115054",
+   "last_seen_run": "20260824-174032",
    "status": "ended",
    "is_new": false
   },
@@ -3700,9 +3780,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-08-13T11:51:26",
+   "last_seen": "2026-08-24T17:41:11",
    "id": "f8805861e141b68d",
-   "last_seen_run": "20260813-115054",
+   "last_seen_run": "20260824-174032",
    "status": "ended",
    "is_new": false
   },
@@ -3740,9 +3820,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-08-13T11:51:26",
+   "last_seen": "2026-08-24T17:41:11",
    "id": "0b109ca05d943b84",
-   "last_seen_run": "20260813-115054",
+   "last_seen_run": "20260824-174032",
    "status": "ended",
    "is_new": false
   },
@@ -3848,9 +3928,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-08-13T11:51:26",
+   "last_seen": "2026-08-24T17:41:11",
    "id": "fb16bc964c7e4616",
-   "last_seen_run": "20260813-115054",
+   "last_seen_run": "20260824-174032",
    "status": "ended",
    "is_new": false
   },
@@ -3882,9 +3962,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-08-13T11:51:26",
+   "last_seen": "2026-08-24T17:41:11",
    "id": "9f7468a22a943415",
-   "last_seen_run": "20260813-115054",
+   "last_seen_run": "20260824-174032",
    "status": "ended",
    "is_new": false
   },
@@ -3916,9 +3996,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-08-13T11:51:26",
+   "last_seen": "2026-08-24T17:41:11",
    "id": "7376a3a0826c1318",
-   "last_seen_run": "20260813-115054",
+   "last_seen_run": "20260824-174032",
    "status": "ended",
    "is_new": false
   },
@@ -3977,7 +4057,7 @@
    "missed_full_refreshes": 0,
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
-   "is_new": true
+   "is_new": false
   },
   {
    "id": "431f82cb3b03ddfa",
@@ -3998,7 +4078,7 @@
    "missed_full_refreshes": 0,
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
-   "is_new": true
+   "is_new": false
   },
   {
    "id": "3ff22d278e674d59",
@@ -4019,7 +4099,7 @@
    "missed_full_refreshes": 0,
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
-   "is_new": true
+   "is_new": false
   },
   {
    "id": "b77a15ed981300e8",
@@ -4040,7 +4120,7 @@
    "missed_full_refreshes": 0,
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
-   "is_new": true
+   "is_new": false
   },
   {
    "id": "d42fb06c826c62db",
@@ -4061,7 +4141,7 @@
    "missed_full_refreshes": 0,
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
-   "is_new": true
+   "is_new": false
   },
   {
    "id": "7cc9227ef9c3e749",
@@ -4082,7 +4162,7 @@
    "missed_full_refreshes": 0,
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
-   "is_new": true
+   "is_new": false
   },
   {
    "id": "818a6ee57aca2c10",
@@ -4103,7 +4183,7 @@
    "missed_full_refreshes": 0,
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
-   "is_new": true
+   "is_new": false
   },
   {
    "id": "0032afd3135610b0",
@@ -4124,7 +4204,7 @@
    "missed_full_refreshes": 0,
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
-   "is_new": true
+   "is_new": false
   },
   {
    "id": "d0432ed3eaff06b3",
@@ -4145,7 +4225,7 @@
    "missed_full_refreshes": 0,
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
-   "is_new": true
+   "is_new": false
   },
   {
    "id": "c6cdb2064e5cf9ec",
@@ -4166,7 +4246,7 @@
    "missed_full_refreshes": 0,
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
-   "is_new": true
+   "is_new": false
   },
   {
    "id": "a07988b04782beca",
@@ -4187,7 +4267,7 @@
    "missed_full_refreshes": 0,
    "last_verified_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "last_verified_at": "2026-08-13T11:51:26",
-   "is_new": true
+   "is_new": false
   },
   {
    "id": "99e5e5fbd2697b8a",
@@ -4462,289 +4542,22 @@
  ],
  "changes": [
   {
-   "run": "20260813-115054",
+   "run": "20260824-174032",
    "type": "new",
-   "artist": "门尼",
-   "title": "门尼「印·IN」2026巡回演唱会 · 南京站",
-   "info": "2026-09-12 南京 sold_out"
+   "artist": "沙一汀",
+   "title": "2026成都葫芦果音乐节",
+   "info": "2026-09-26 成都 on_sale"
   },
   {
-   "run": "20260813-115054",
+   "run": "20260824-174032",
    "type": "new",
-   "artist": "门尼",
-   "title": "2026JUMPPARK腾讯视频音乐大赏",
-   "info": "  on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "LE SSERAFIM",
-   "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 洛杉矶站",
-   "info": "2026-09-16 Los Angeles on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "LE SSERAFIM",
-   "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 塔科马站",
-   "info": "2026-09-20 Tacoma on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "LE SSERAFIM",
-   "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 圣何塞站",
-   "info": "2026-09-23 San Jose on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "LE SSERAFIM",
-   "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 菲尼克斯站",
-   "info": "2026-09-25 Phoenix on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "LE SSERAFIM",
-   "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 沃斯堡站",
-   "info": "2026-09-27 Fort Worth on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "LE SSERAFIM",
-   "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 奥兰多站",
-   "info": "2026-09-30 Orlando on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "LE SSERAFIM",
-   "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 芝加哥站",
-   "info": "2026-10-02 Chicago on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "LE SSERAFIM",
-   "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 华盛顿站",
-   "info": "2026-10-05 Washington, DC on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "LE SSERAFIM",
-   "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 纽瓦克站",
-   "info": "2026-10-08 Newark on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "LE SSERAFIM",
-   "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 伦敦站",
-   "info": "2026-10-16 London on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "LE SSERAFIM",
-   "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 阿姆斯特丹站",
-   "info": "2026-10-18 Amsterdam on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "LE SSERAFIM",
-   "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 巴黎站",
-   "info": "2026-10-21 Paris on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "LE SSERAFIM",
-   "title": "LE SSERAFIM〈PUREFLOW〉世巡 · 哥本哈根站",
-   "info": "2026-10-23 Copenhagen on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "BABYMONSTER",
-   "title": "2026-27 BABYMONSTER WORLD TOUR [춤 (CHOOM)] IN MANILA",
-   "info": "2026-09-05 Pasay / 马尼拉 "
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "BABYMONSTER",
-   "title": "2026-27 BABYMONSTER WORLD TOUR [춤 (CHOOM)] IN BANGKOK",
-   "info": "2026-11-08 曼谷 "
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "BABYMONSTER",
-   "title": "2026-27 BABYMONSTER WORLD TOUR [춤 (CHOOM)] IN SINGAPORE",
-   "info": "2026-11-29 新加坡 "
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "Hearts2Hearts",
-   "title": "MUSIC EXPO LIVE 2026 in TAIPEI（Hearts2Hearts 出演）",
-   "info": " 台北 on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "KATSEYE",
-   "title": "KATSEYE 洛杉矶周边 Irvine 演出（巡演日程表首项）",
-   "info": "2026-08-29 Irvine on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "KATSEYE",
-   "title": "KATSEYE〈WILDWORLD〉世界巡演 · 伦敦站（第一场）",
-   "info": "2026-09-03 伦敦 on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "KATSEYE",
-   "title": "KATSEYE〈WILDWORLD〉世界巡演 · 伦敦站（第二场/加场）",
-   "info": "2026-09-04 伦敦 on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "KATSEYE",
-   "title": "KATSEYE〈WILDWORLD〉世界巡演 · 曼彻斯特站",
-   "info": "2026-09-06 曼彻斯特 on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "KATSEYE",
-   "title": "KATSEYE〈WILDWORLD〉世界巡演 · 巴黎站",
-   "info": "2026-09-09 巴黎 on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "KATSEYE",
-   "title": "KATSEYE〈WILDWORLD〉世界巡演 · 阿姆斯特丹站",
-   "info": "2026-09-11 阿姆斯特丹 on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "KATSEYE",
-   "title": "KATSEYE〈WILDWORLD〉世界巡演 · 科隆站",
-   "info": "2026-09-13 科隆 on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "KATSEYE",
-   "title": "KATSEYE〈WILDWORLD〉世界巡演 · 安特卫普站",
-   "info": "2026-09-15 安特卫普 on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "KATSEYE",
-   "title": "KATSEYE〈WILDWORLD〉世界巡演 · 哥本哈根站",
-   "info": "2026-09-17 哥本哈根 on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "KATSEYE",
-   "title": "KATSEYE〈WILDWORLD〉世界巡演 · 亚特兰大战",
-   "info": "2026-10-15 亚特兰大 on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "KATSEYE",
-   "title": "KATSEYE〈WILDWORLD〉世界巡演 · 夏洛特站",
-   "info": "2026-10-20 夏洛特 on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "KATSEYE",
-   "title": "KATSEYE〈WILDWORLD〉世界巡演 · 华盛顿站",
-   "info": "2026-10-22 华盛顿 on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "KATSEYE",
-   "title": "KATSEYE〈WILDWORLD〉世界巡演 · 纽约贝尔蒙特公园站（第一场）",
-   "info": "2026-10-24 Belmont Park, NY on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "KATSEYE",
-   "title": "KATSEYE〈WILDWORLD〉世界巡演 · 纽约贝尔蒙特公园站（第二场/加场）",
-   "info": "2026-10-25 Belmont Park, NY on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "KATSEYE",
-   "title": "KATSEYE〈WILDWORLD〉世界巡演 · 波士顿站",
-   "info": "2026-10-28 波士顿 on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "KATSEYE",
-   "title": "KATSEYE〈WILDWORLD〉世界巡演 · 蒙特利尔站",
-   "info": "2026-10-30 蒙特利尔 on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "KATSEYE",
-   "title": "KATSEYE〈WILDWORLD〉世界巡演 · 汉密尔顿站",
-   "info": "2026-11-01 汉密尔顿 on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "KATSEYE",
-   "title": "KATSEYE〈WILDWORLD〉世界巡演 · 底特律站",
-   "info": "2026-11-03 底特律 on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "KATSEYE",
-   "title": "KATSEYE〈WILDWORLD〉世界巡演 · 芝加哥站",
-   "info": "2026-11-05 芝加哥 on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "KATSEYE",
-   "title": "KATSEYE〈WILDWORLD〉世界巡演 · 明尼阿波利斯站",
-   "info": "2026-11-07 明尼阿波利斯 on_sale"
-  },
-  {
-   "run": "20260813-115054",
-   "type": "new",
-   "artist": "KATSEYE",
-   "title": "KATSEYE〈WILDWORLD〉世界巡演 · 奥斯汀站",
-   "info": "2026-11-10 奥斯汀 on_sale"
+   "artist": "加木",
+   "title": "掂过碌蔗-yamy2026巡演广州站",
+   "info": "2026-09-13 广州 on_sale"
   }
  ],
  "notes": [
-  "完整调研丢弃了 23 条无法验证或格式无效的候选信息",
-  "本轮未再次搜到 27 条旧记录，已标记“本轮未复核”但未盲删"
+  "确定性刷新已完成；可选模型增强为 disabled_stale，旧 research 数据保留并标记 stale：enrichment_disabled"
  ],
  "source_status": {
   "showstart": {
@@ -4752,16 +4565,22 @@
    "fail": 0
   },
   "research": {
-   "ok": 12,
+   "ok": 0,
    "fail": 0,
-   "total": 12
+   "total": 12,
+   "status": "disabled_stale",
+   "stale": true,
+   "provider": "none",
+   "model": "",
+   "last_success_at": "2026-08-13T11:51:26",
+   "reason": "enrichment_disabled"
   }
  },
  "counts": {
-  "on_sale": 64,
+  "on_sale": 58,
   "upcoming": 15,
   "rumors": 26,
-  "ended": 19,
+  "ended": 27,
   "rumors_aged_out": 0
  }
 }
