@@ -7,6 +7,7 @@
 """
 import re
 import time
+from datetime import datetime
 from . import http, store
 
 BASE = "https://www.showstart.com"
@@ -18,6 +19,12 @@ EVENT_URL = BASE + "/event/%s"
 # 艺人页：<div class="table-cell"><a href="/event/303752" data-v-xxx> ... </a>
 _ITEM_RE = re.compile(
     r'<a\s+href="/event/(\d+)"[^>]*>(.*?)</a>', re.S)
+
+_VISIBLE_CHALLENGE_TEXT = (
+    "请输入验证码", "访问过于频繁", "系统检测到异常访问",
+    "just a moment...", "checking your browser", "verify you are human",
+)
+_VALID_TIME_RE = re.compile(r"^(?:[01]\d|2[0-3]):[0-5]\d$")
 
 
 def _strip(html):
@@ -80,6 +87,62 @@ def _parse_items(html):
     return out
 
 
+def _valid_show_date(value):
+    try:
+        datetime.strptime(value, "%Y-%m-%d")
+        return True
+    except (TypeError, ValueError):
+        return False
+
+
+def _valid_show_time(value):
+    return value == "" or bool(_VALID_TIME_RE.fullmatch(str(value or "")))
+
+
+def _page_health_error(html):
+    """Distinguish a valid zero-result SSR page from a 200 error/challenge page."""
+    if not isinstance(html, str) or len(html.strip()) < 80:
+        return "HTTP 200 但页面为空或被截断"
+    lowered = html.lower()
+    title_match = re.search(r"<title[^>]*>(.*?)</title>", html, re.I | re.S)
+    title = _strip(title_match.group(1)).lower() if title_match else ""
+    challenge_container = bool(re.search(
+        r'''(?ix)
+        (?:id|class)=["'][^"']*
+        (?:cf-chl|challenge-platform|captcha-container|verify-human)[^"']*["']''',
+        html,
+    ))
+    challenge_title = any(
+        marker in title for marker in (
+            "安全验证", "访问验证", "验证码", "just a moment",
+        )
+    )
+    if (
+        challenge_container
+        or challenge_title
+        or any(marker in lowered for marker in _VISIBLE_CHALLENGE_TEXT)
+    ):
+        return "HTTP 200 但返回验证码/挑战页"
+    has_brand = "showstart" in lowered or "秀动" in html
+    has_ssr_shell = (
+        "<html" in lowered
+        and (
+            "id=\"app\"" in lowered or "id=\"__nuxt\"" in lowered
+            or "__nuxt__" in lowered or "data-v-" in lowered
+        )
+    )
+    if not has_brand or not has_ssr_shell:
+        return "HTTP 200 但缺少秀动 SSR 页面标识"
+    parsed_items = _parse_items(html)
+    if re.search(r'href=["\']/event/\d+', html, re.I) and not parsed_items:
+        return "页面含 event 链接但解析器未识别任何演出卡片"
+    if any(not _valid_show_date(item.get("show_date")) for item in parsed_items):
+        return "演出卡片日期缺失或格式已漂移"
+    if any(not _valid_show_time(item.get("show_time")) for item in parsed_items):
+        return "演出卡片时间超出 00:00–23:59 或格式已漂移"
+    return ""
+
+
 def _matches(item, aliases):
     """严格判定：别名必须出现在艺人栏或标题里。秀动搜索模糊，这一步是必须的。"""
     hay = (item.get("performers", "") + " " + item.get("title", "")).lower()
@@ -102,6 +165,9 @@ def fetch_detail(event_id, cache_ttl=3600):
     html, err = http.get(EVENT_URL % event_id, cache_ttl=cache_ttl)
     if err:
         return {}, err
+    health_error = _page_health_error(html)
+    if health_error:
+        return {}, health_error
     text = _strip(re.sub(r"<script.*?</script>", " ", html, flags=re.S))
     out = {}
 
@@ -144,8 +210,12 @@ def collect(artist, fetch_details=True, cache_ttl=1800, sleep=0.4):
         if err:
             notes.append("秀动艺人页 %s 拉取失败: %s" % (aid, err))
         else:
-            for it in _parse_items(html):
-                raw[it["event_id"]] = it
+            health_error = _page_health_error(html)
+            if health_error:
+                notes.append("秀动艺人页 %s 异常: %s" % (aid, health_error))
+            else:
+                for it in _parse_items(html):
+                    raw[it["event_id"]] = it
 
     # 2) 关键词搜索（全国，cityCode 留空）—— 覆盖艺人页漏掉的拼盘/音乐节
     for term in {artist["name"]} | set(aliases):
@@ -154,9 +224,13 @@ def collect(artist, fetch_details=True, cache_ttl=1800, sleep=0.4):
         if err:
             notes.append("秀动搜索「%s」失败: %s" % (term, err))
             continue
-        for it in _parse_items(html):
-            if _matches(it, aliases):
-                raw.setdefault(it["event_id"], it)
+        health_error = _page_health_error(html)
+        if health_error:
+            notes.append("秀动搜索「%s」异常: %s" % (term, health_error))
+        else:
+            for it in _parse_items(html):
+                if _matches(it, aliases):
+                    raw.setdefault(it["event_id"], it)
         time.sleep(sleep)
 
     today = store.today()

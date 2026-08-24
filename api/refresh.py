@@ -1,8 +1,9 @@
-"""触发并查询 GitHub Actions 的完整演唱会数据刷新任务。
+"""触发并查询 GitHub Actions 的确定性数据快照刷新任务。
 
-Vercel 只负责很薄的一层调度；耗时的秀动采集、全部艺人联网调研、数据合并和
-Git 提交都在 GitHub Actions 中执行。这样浏览器关闭后任务仍会继续，刷新结果也
-会成为所有访客共享的下一份生产快照。
+Vercel 只负责很薄的一层调度；确定性采集、数据合并和 Git 提交都在
+GitHub Actions 中执行。显式启用的付费模型只产出仓库外 candidate artifact，
+不会合并或更新线上 research；workflow
+成功仍表示确定性快照已进入发布，并会成为所有访客共享的下一份生产快照。
 """
 
 import json
@@ -35,7 +36,7 @@ def _github_request(method, path, payload=None):
     token = (os.environ.get(GITHUB_TOKEN_ENV) or "").strip()
     if not token:
         raise RefreshConfigurationError(
-            "完整刷新尚未配置：缺少 Vercel 环境变量 %s" % GITHUB_TOKEN_ENV
+            "快照刷新尚未配置：缺少 Vercel 环境变量 %s" % GITHUB_TOKEN_ENV
         )
     body = None
     headers = {
@@ -147,15 +148,24 @@ def run_status(job_id, runs=None):
             "job_id": job_id,
             "status": "queued",
             "stage": "queued",
-            "message": "完整刷新任务正在进入队列",
+            "message": "确定性快照刷新任务正在进入队列",
         }
 
     status = _public_status(run)
     messages = {
-        "queued": ("queued", "完整刷新任务正在排队"),
-        "in_progress": ("researching", "正在重新采集全部艺人与信息源"),
-        "completed": ("publishing", "数据已更新，正在等待生产站点发布"),
-        "failed": ("failed", "完整刷新失败，当前线上数据未受影响"),
+        "queued": ("queued", "确定性快照刷新任务正在排队"),
+        "in_progress": (
+            "refreshing",
+            "刷新流程正在运行：确定性采集必跑，模型只可生成隔离候选",
+        ),
+        "completed": (
+            "publishing",
+            "确定性快照已提交，正在等待生产站点发布；模型候选不会写入线上数据",
+        ),
+        "failed": (
+            "failed",
+            "刷新流程未发布新确定性快照，当前线上快照未受影响",
+        ),
     }
     stage, message = messages[status]
     result = {
@@ -188,13 +198,13 @@ def request_is_same_origin(headers, require_origin=False):
 
 
 def request_can_trigger(headers):
-    """完整刷新会消耗付费 API，只允许同源且持有刷新口令的请求。"""
+    """手动刷新会启动受保护的发布 workflow，仅允许同源且持有口令的请求。"""
     if not request_is_same_origin(headers, require_origin=True):
         return False
     expected = (os.environ.get(REFRESH_SECRET_ENV) or "").strip()
     if not expected:
         raise RefreshConfigurationError(
-            "完整刷新尚未配置：缺少 Vercel 环境变量 %s" % REFRESH_SECRET_ENV
+            "快照刷新尚未配置：缺少 Vercel 环境变量 %s" % REFRESH_SECRET_ENV
         )
     authorization = (headers.get("Authorization") or "").strip()
     supplied = authorization[7:].strip() if authorization.startswith("Bearer ") else ""
@@ -213,7 +223,7 @@ def status_token_for(job_id):
     secret = (os.environ.get(REFRESH_SECRET_ENV) or "").strip()
     if not secret:
         raise RefreshConfigurationError(
-            "完整刷新尚未配置：缺少 Vercel 环境变量 %s" % REFRESH_SECRET_ENV
+            "快照刷新尚未配置：缺少 Vercel 环境变量 %s" % REFRESH_SECRET_ENV
         )
     return hmac.new(
         secret.encode("utf-8"),
@@ -252,7 +262,7 @@ class handler(BaseHTTPRequestHandler):
         except Exception as exc:
             self._send_json(502, {
                 "ok": False,
-                "error": "无法启动完整刷新，请稍后重试",
+                "error": "无法启动快照刷新，请稍后重试",
             })
             return
         job_id = result.get("job_id")
@@ -290,7 +300,7 @@ class handler(BaseHTTPRequestHandler):
         except Exception as exc:
             self._send_json(502, {
                 "ok": False,
-                "error": "无法查询完整刷新状态",
+                "error": "无法查询快照刷新状态",
             })
             return
         result["ok"] = True

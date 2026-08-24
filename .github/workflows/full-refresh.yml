@@ -18,12 +18,19 @@ permissions:
 
 jobs:
   refresh:
-    name: Research, merge and publish
+    name: Deterministic refresh, optional enrich and publish
     runs-on: ubuntu-latest
     timeout-minutes: 90
     env:
       FULL_REFRESH_ID: ${{ inputs.request_id }}
+      LLM_ENRICH_PROVIDER: ${{ vars.LLM_ENRICH_PROVIDER || 'none' }}
+      LLM_ENRICH_MAX_COST_CNY: ${{ vars.LLM_ENRICH_MAX_COST_CNY || '5' }}
+      LLM_ENRICH_MAX_COST_PER_ARTIST_CNY: ${{ vars.LLM_ENRICH_MAX_COST_PER_ARTIST_CNY || '5' }}
+      LLM_ENRICH_MAX_CONTEXT_BYTES: ${{ vars.LLM_ENRICH_MAX_CONTEXT_BYTES || '128000' }}
+      LLM_ENRICH_ATTEMPTS: ${{ vars.LLM_ENRICH_ATTEMPTS || '1' }}
       KIMI_RESEARCH_MODEL: ${{ vars.KIMI_RESEARCH_MODEL || 'kimi-k3' }}
+      REFRESH_TELEMETRY_OUTPUT: ${{ runner.temp }}/full-refresh-telemetry.json
+      REFRESH_ENRICH_CANDIDATE_OUTPUT: ${{ runner.temp }}/full-refresh-candidate.json
       PYTHONUNBUFFERED: "1"
 
     steps:
@@ -49,16 +56,39 @@ jobs:
       - name: Run offline tests
         run: python3 -m unittest discover -s tests -v
 
-      - name: Run complete refresh
+      # The script contains the optional-enrichment fallback. Do not add
+      # continue-on-error here: deterministic collection/build failures must
+      # stop the commit, while a missing/exhausted LLM key returns success only
+      # after telemetry records the stale/failed enrichment state.
+      - name: Run deterministic refresh with optional LLM enrichment
         env:
           MOONSHOT_API_KEY: ${{ secrets.MOONSHOT_API_KEY }}
         run: python3 scripts/full_refresh.py
+
+      - name: Upload sanitized usage telemetry
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: full-refresh-telemetry-${{ inputs.request_id }}
+          path: ${{ runner.temp }}/full-refresh-telemetry.json
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Upload isolated enrichment candidate
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: full-refresh-candidate-${{ inputs.request_id }}
+          path: ${{ runner.temp }}/full-refresh-candidate.json
+          if-no-files-found: ignore
+          retention-days: 30
 
       - name: Commit refreshed snapshot
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add config data research/archive site/data.js site/data.json
+          # Candidate artifacts are never staged; only deterministic outputs may ship.
+          git add config data site/data.js site/data.json
           if git diff --cached --quiet; then
             echo "No snapshot files changed."
             exit 0

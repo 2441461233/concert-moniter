@@ -50,14 +50,19 @@ class RefreshDispatchTests(unittest.TestCase):
         self.assertEqual("queued", queued["status"])
 
         working = refresh.run_status(JOB_ID, [run()])
-        self.assertEqual("researching", working["stage"])
+        self.assertEqual("refreshing", working["stage"])
+        self.assertIn("确定性采集必跑", working["message"])
+        self.assertIn("模型只可生成隔离候选", working["message"])
 
         complete = refresh.run_status(JOB_ID, [run("completed", "success")])
         self.assertEqual("completed", complete["status"])
         self.assertEqual("publishing", complete["stage"])
+        self.assertIn("确定性快照已提交", complete["message"])
+        self.assertIn("不会写入线上数据", complete["message"])
 
         failed = refresh.run_status(JOB_ID, [run("completed", "failure")])
         self.assertEqual("failed", failed["status"])
+        self.assertIn("未发布新确定性快照", failed["message"])
         self.assertIn("failure", failed["error"])
 
     def test_post_requires_same_origin(self):

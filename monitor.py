@@ -175,6 +175,19 @@ def cmd_check(args):
 def _ingest_one(path, run_id):
     with open(path, encoding="utf-8") as f:
         payload = json.load(f)
+    meta = payload.get("_meta") or {}
+    if (
+        meta.get("production_write") is False
+        or meta.get("promotion_status") == "candidate_only_pending_manual_validation"
+        or meta.get("quality_gate") == "blocked_all_evaluated_models_rejected"
+        or meta.get("by") in {
+            "kimi-k3-formula-web-search",
+            "moonshot-formula-web-search-candidate",
+        }
+    ):
+        raise ValueError(
+            "candidate-only 产物未通过质量门禁，普通 ingest 拒绝并入生产"
+        )
     events = payload.get("events", [])
     rumors = payload.get("rumors", [])
     changes = store.merge_events(events, run_id)

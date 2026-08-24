@@ -63,7 +63,7 @@ header .meta{font-family:var(--mono);font-size:10.5px;color:var(--faint);letter-
 .refreshbtn.is-loading svg{animation:refresh-spin .85s linear infinite}
 @keyframes refresh-spin{to{transform:rotate(360deg)}}
 
-/* 完整刷新是后台任务：只在执行/失败时展开轻量状态条，不挤占日常阅读重心 */
+/* 快照刷新是后台任务：只在执行/失败时展开轻量状态条，不挤占日常阅读重心 */
 .refreshpanel{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:11px;
   background:var(--card);padding:8px 11px;margin:0 0 13px;color:var(--dim);font-size:12px}
 .refreshpanel[hidden]{display:none}
@@ -253,7 +253,7 @@ footer{margin-top:44px;font-family:var(--mono);font-size:10.5px;color:var(--fain
       <div class="refresh-meta" id="refreshmeta"></div>
     </div>
     <div class="hdr-actions">
-    <button class="iconbtn refreshbtn" id="refreshbtn" type="button" aria-label="完整刷新全部艺人和信息源" title="完整刷新全部艺人和信息源" aria-describedby="refreshpanel">
+    <button class="iconbtn refreshbtn" id="refreshbtn" type="button" aria-label="刷新确定性数据快照" title="刷新确定性数据快照" aria-describedby="refreshpanel">
       <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
         <path d="M13.2 5.8A5.5 5.5 0 1 0 13 10.7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
         <path d="M10.6 5.8h2.8V3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -280,13 +280,13 @@ footer{margin-top:44px;font-family:var(--mono);font-size:10.5px;color:var(--fain
 
   <dialog class="authdialog" id="authdialog" aria-labelledby="authtitle" aria-describedby="authdesc">
     <form class="authform" id="authform" method="dialog">
-      <h2 id="authtitle">确认完整刷新</h2>
-      <p id="authdesc">将调用付费调研 API，重新获取全部艺人和已配置信息源。</p>
+      <h2 id="authtitle">确认刷新数据快照</h2>
+      <p id="authdesc">确定性采集每次都会运行并发布快照；付费模型若显式启用，也只生成仓库外候选文件，不会更改线上数据。</p>
       <label for="authsecret">管理员刷新口令</label>
       <input id="authsecret" name="refresh-secret" type="password" autocomplete="off" required>
       <div class="auth-actions">
         <button id="authcancel" type="button">取消</button>
-        <button class="auth-submit" type="submit">开始完整刷新</button>
+        <button class="auth-submit" type="submit">开始刷新</button>
       </div>
     </form>
   </dialog>
@@ -333,7 +333,7 @@ const WDZH = ["周日","周一","周二","周三","周四","周五","周六"];
 const esc = s => String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const $ = id => document.getElementById(id);
 
-/* data.js 加载失败时仍保留服务端完整刷新入口，用安全空数据继续初始化。 */
+/* data.js 加载失败时仍保留服务端快照刷新入口，用安全空数据继续初始化。 */
 const DATA_UNAVAILABLE = !window.__CM_DATA__;
 const D = window.__CM_DATA__ || {
   artists:[], on_sale:[], upcoming:[], ended:[], rumors:[], changes:[], notes:[], counts:{}
@@ -341,7 +341,7 @@ const D = window.__CM_DATA__ || {
 const CHANGES = D.changes || [];
 if(DATA_UNAVAILABLE){
   $("bannerbox").innerHTML = `<div class="banner err"><b>DATA ERROR</b>
-    当前数据文件缺失或损坏。可点击右上角刷新按钮，重新获取并发布全部数据；恢复前列表暂不可用。</div>`;
+    当前数据文件缺失或损坏。可点击右上角刷新按钮，运行确定性采集并发布新快照；恢复前列表暂不可用。</div>`;
 }
 
 /* 主题切换 */
@@ -351,7 +351,7 @@ $("themebtn").addEventListener("click", ()=>{
   try{ localStorage.setItem("cm-theme", next); }catch(_){}
 });
 
-/* 完整刷新由后台任务执行：POST 只创建/复用任务，页面每 5 秒查询进度。
+/* 快照刷新由后台任务执行：POST 只创建/复用任务，页面每 5 秒查询进度。
    后台执行与生产发布是两个独立阶段；只有新快照精确上线后才清除任务。 */
 const refreshBtn = $("refreshbtn");
 const refreshPanel = $("refreshpanel");
@@ -363,7 +363,7 @@ const REFRESH_JOB_KEY = "cm-full-refresh-job";
 const REFRESH_SECRET_KEY = "cm-full-refresh-secret";
 const REFRESH_OWNER_KEY = "cm-full-refresh-owner-id";
 const REFRESH_POLL_MS = 5000;
-/* Kimi 低等级账户可能只有 RPM 3：执行最长 90 分钟，完成后另给发布 15 分钟。 */
+/* 后台 workflow 执行最长 90 分钟，完成后另给生产站点发布 15 分钟。 */
 const REFRESH_EXECUTION_MAX_MS = 90*60*1000;
 const REFRESH_PUBLISH_MAX_MS = 15*60*1000;
 const BASE_FULL_REFRESH_AT = D.full_refresh_at || "";
@@ -383,7 +383,7 @@ function setRefreshPanel(kind, title, detail){
 function setRefreshBusy(busy){
   refreshBtn.disabled = busy;
   refreshBtn.classList.toggle("is-loading", busy);
-  const label = busy ? "完整刷新正在进行" : "完整刷新全部艺人和信息源";
+  const label = busy ? "确定性快照刷新正在进行" : "刷新确定性数据快照";
   refreshBtn.setAttribute("aria-label", label);
   refreshBtn.title = label;
   if(busy) refreshBtn.setAttribute("aria-busy", "true");
@@ -402,8 +402,8 @@ function markRefreshPaused(job, title, detail){
   refreshActionMode = "resume";
   refreshContinue.textContent = "继续追踪";
   refreshContinue.hidden = false;
-  refreshBtn.setAttribute("aria-label", "继续追踪已提交的完整刷新");
-  refreshBtn.title = "继续追踪已提交的完整刷新";
+  refreshBtn.setAttribute("aria-label", "继续追踪已提交的快照刷新");
+  refreshBtn.title = "继续追踪已提交的快照刷新";
 }
 function jobHasStatusToken(job){
   try{
@@ -419,8 +419,8 @@ function markLegacyRefresh(job){
   refreshActionMode = "reauth";
   refreshContinue.textContent = "重新认证";
   refreshContinue.hidden = false;
-  refreshBtn.setAttribute("aria-label", "重新认证完整刷新");
-  refreshBtn.title = "重新认证完整刷新";
+  refreshBtn.setAttribute("aria-label", "重新认证快照刷新");
+  refreshBtn.title = "重新认证快照刷新";
 }
 function finishAuth(value){
   if(!authResolve) return;
@@ -493,14 +493,25 @@ function ownsPublishedRefresh(){
   const publishedId = String(D.full_refresh_id||"");
   return Boolean(publishedId) && loadRefreshOwnerId()===publishedId;
 }
+function modelEnhancementText(status){
+  const labels = {
+    deterministic_completed_enrichment_completed:"旧版模型状态（当前主链不再产生）",
+    deterministic_completed_enrichment_stale:"线上调研沿用旧结果",
+    deterministic_completed_enrichment_failed:"模型候选本轮失败，线上调研未变",
+    deterministic_completed_enrichment_skipped:"未生成模型候选"
+  };
+  return labels[String(status||"")] || "模型只生成隔离候选，不写线上数据";
+}
 function stageText(payload){
   if(payload.message) return String(payload.message);
   const stage = String(payload.stage||"").toLowerCase();
   const labels = {
-    research:"正在检索全部关注艺人", collect:"正在重新抓取各信息源",
+    refreshing:"刷新流程正在运行：确定性采集必跑，模型只可生成隔离候选",
+    research:"正在生成仓库外模型候选", researching:"正在生成仓库外模型候选",
+    collect:"正在运行确定性采集", collecting:"正在运行确定性采集",
     merge:"正在合并去重与校验", build:"正在生成最新数据", deploy:"正在发布最新页面"
   };
-  return labels[stage] || "后台正在重新获取全部数据";
+  return labels[stage] || "后台快照刷新流程正在运行";
 }
 async function waitForPublished(job, renewWindow=false){
   if(renewWindow || !Number(job.publish_deadline)){
@@ -508,7 +519,8 @@ async function waitForPublished(job, renewWindow=false){
   }
   job.phase = "publishing";
   saveRefreshJob(job);
-  setRefreshPanel("busy", "全部信息已重新获取", "正在发布最新页面…");
+  setRefreshPanel("busy", "确定性快照已提交",
+    "正在等待确定性页面发布；模型候选不会写入线上数据。");
   while(Date.now()<Number(job.publish_deadline)){
     try{
       const res = await fetch(`/data.json?t=${Date.now()}`, {cache:"no-store", headers:{Accept:"application/json"}});
@@ -519,7 +531,8 @@ async function waitForPublished(job, renewWindow=false){
         if(exactJobPublished){
           if(job.is_owner===true) saveRefreshOwnerId(job.job_id);
           clearRefreshJob();
-          setRefreshPanel("done", "完整刷新已完成", "正在载入最新数据…");
+          setRefreshPanel("done", "确定性快照已发布",
+            modelEnhancementText(latest.full_refresh_status)+"，正在载入最新数据…");
           await sleep(1800);
           location.reload();
           return;
@@ -560,27 +573,27 @@ async function trackRefreshJob(job, renewWindow=false){
           await waitForPublished(job);
           return;
         }
-        if(status==="queued") setRefreshPanel("busy", "完整刷新已提交", "正在等待后台执行…");
-        else setRefreshPanel("busy", "正在完整刷新", stageText(payload));
+        if(status==="queued") setRefreshPanel("busy", "快照刷新已提交", "正在等待后台执行…");
+        else setRefreshPanel("busy", "正在刷新数据快照", stageText(payload));
       }catch(err){
         if(err && err.refreshFatal) throw err;
         consecutiveErrors++;
         if(consecutiveErrors>=3){
-          markRefreshPaused(job, "完整刷新仍在后台运行",
+          markRefreshPaused(job, "快照刷新仍在后台运行",
             "暂时无法读取进度，任务已保留；网络恢复后可继续追踪。");
           return;
         }
-        setRefreshPanel("busy", "完整刷新仍在进行", "暂时无法读取进度，正在自动重试…");
+        setRefreshPanel("busy", "快照刷新仍在进行", "暂时无法读取进度，正在自动重试…");
       }
       await sleep(REFRESH_POLL_MS);
     }
-    markRefreshPaused(job, "完整刷新跟踪已暂停",
+    markRefreshPaused(job, "快照刷新跟踪已暂停",
       "90 分钟内尚未完成，后台任务不会因此中断；可稍后继续追踪。");
   }catch(err){
     /* GitHub 明确报告 failed 才允许清除；暂时性错误都保留任务。 */
     if(err && err.refreshFatal) clearRefreshJob();
     const msg = (err && err.name==="AbortError") ? "连接刷新服务超时" : (err.message||"刷新失败");
-    setRefreshPanel("error", "完整刷新未完成", msg+"。当前页面数据未受影响。");
+    setRefreshPanel("error", "未发布新确定性快照", msg+"。当前线上快照未受影响。");
     setRefreshBusy(false);
   }finally{
     refreshTracking = false;
@@ -620,7 +633,8 @@ refreshBtn.addEventListener("click", async ()=>{
       try{ sessionStorage.setItem(REFRESH_SECRET_KEY, refreshSecret); }catch(_){}
     }
     setRefreshBusy(true);
-    setRefreshPanel("busy", "正在启动完整刷新", "将重新获取全部艺人和所有已配置信息源…");
+    setRefreshPanel("busy", "正在启动快照刷新",
+      "确定性采集将始终运行；模型只可生成仓库外候选…");
     let payload;
     try{
       payload = await fetchJson("/api/refresh", {method:"POST",
@@ -639,14 +653,14 @@ refreshBtn.addEventListener("click", async ()=>{
       phase:"executing", execution_deadline:Date.now()+REFRESH_EXECUTION_MAX_MS};
     saveRefreshJob(job);
     if(payload.already_running){
-      setRefreshPanel("busy", "完整刷新已在进行", "已接入现有任务，不会重复刷新…");
+      setRefreshPanel("busy", "快照刷新已在进行", "已接入现有任务，不会重复刷新…");
     }
     setRefreshBusy(false);
     trackRefreshJob(job);
   }catch(err){
     setRefreshBusy(false);
     const msg = (err && err.name==="AbortError") ? "连接刷新服务超时" : (err.message||"无法启动刷新");
-    setRefreshPanel("error", "无法启动完整刷新", msg+"。当前页面数据未受影响。");
+    setRefreshPanel("error", "无法启动快照刷新", msg+"。当前线上快照未受影响。");
   }
 });
 
@@ -658,11 +672,20 @@ if(savedRefresh){
     const deadline = savedRefresh.phase==="publishing"
       ? Number(savedRefresh.publish_deadline) : Number(savedRefresh.execution_deadline || savedRefresh.deadline);
     if(deadline>Date.now()) setTimeout(()=>trackRefreshJob(savedRefresh), 0);
-    else markRefreshPaused(savedRefresh, "有一次完整刷新待追踪",
+    else markRefreshPaused(savedRefresh, "有一次快照刷新待追踪",
       "任务依然已保留，继续追踪不会重复创建刷新。");
   }
 }
 const firstUrl = e => ((e.sources||[]).find(s=>s.url)||{}).url;
+function needsCurrentReview(item){
+  const deterministicNow = String(D.last_run_id||"") &&
+    String(item.last_seen_run||"")===String(D.last_run_id||"") &&
+    (item.source==="showstart" || (item.sources||[]).some(s=>s.source==="showstart"));
+  if(deterministicNow) return false;
+  return item.verification_status!=="verified" ||
+    !String(D.full_refresh_id||"") ||
+    String(item.last_verified_full_refresh_id||"")!==String(D.full_refresh_id||"");
+}
 const pdate = d => { if(!d) return null; const [Y,M,Dd]=d.split("-").map(Number); const dt=new Date(Y,M-1,Dd);
   if(isNaN(dt)) return null;
   return {md:M+"/"+String(Dd).padStart(2,"0"), w:WDZH[dt.getDay()], m: Y+"."+String(M).padStart(2,"0")}; };
@@ -705,16 +728,16 @@ const atag = (key,name) => `<span class="atag" role="button" tabindex="0" data-a
   };
   const paintFreshness = ()=>{
     const rel = ago(shownAt);
-    $("fullupdated").textContent = (fullAt ? "全源采集完成于 " : "数据基线更新于 ") + fmt(shownAt) + (rel ? " · "+rel : "");
+    $("fullupdated").textContent = (fullAt ? "确定性快照生成于 " : "数据基线更新于 ") + fmt(shownAt) + (rel ? " · "+rel : "");
   };
   paintFreshness();
   setInterval(paintFreshness, 60000);
   $("refreshmeta").textContent = DATA_UNAVAILABLE
-    ? "数据基线不可用 · 手动刷新可重新获取全部来源"
-    : `手动刷新会重新获取 ${(D.artists||[]).length} 位艺人的全部来源`;
+    ? "数据基线不可用 · 可手动运行确定性采集"
+    : `当前配置 ${(D.artists||[]).length} 位艺人 · ${modelEnhancementText(D.full_refresh_status)}`;
   $("fullupdated").parentElement.title = fullAt
-    ? `最近一次全源采集完成：${fmt(fullAt)}`
-    : "尚无完整刷新记录，当前显示已部署的数据基线";
+    ? `最近一次确定性快照：${fmt(fullAt)}；${modelEnhancementText(D.full_refresh_status)}`
+    : "尚无手动快照刷新记录，当前显示已部署的数据基线";
   $("gen").textContent = "页面数据生成于 " + fmt(D.generated_at) + " · 巡查任务 " + (D.last_run_id||"--");
 })();
 
@@ -832,7 +855,7 @@ function render(){
     h += `<div class="gig"${anchor} title="${esc(tip)}">
       <div class="gd"><div class="m">${p.md}</div><div class="w">${p.w}</div></div>
       ${atag(e.artist_key, e.artist_name)}
-      <div class="gt"><div class="t">${esc(e.title)}${e.is_new?'<span class="nw">NEW</span>':""}${e.verification_status==="unverified"?'<span class="uv">本轮未复核</span>':""}</div>
+      <div class="gt"><div class="t">${esc(e.title)}${e.is_new?'<span class="nw">NEW</span>':""}${needsCurrentReview(e)?'<span class="uv">本轮未复核</span>':""}</div>
         <div class="m2">${esc([e.city,e.venue,e.show_time,e.price,e.note].filter(Boolean).join(" · "))}</div></div>
       <div class="gs ${so?"so":(on?"on":"up")}"><i></i>${so?"售罄":(on?"在售":(e.sale_time?"SALE "+e.sale_time.slice(5).replace("-","/"):"待开票"))}</div>
       ${on&&!so&&url?`<div class="ga"><a href="${esc(url)}" target="_blank" rel="noopener">购票 ↗</a></div>`:""}
@@ -842,7 +865,7 @@ function render(){
     h += `<div class="gig-month">日期待定</div>` + undatedL.map(e=>
       `<div class="gig"><div class="gd"><div class="m" style="color:var(--faint)">—</div><div class="w">待定</div></div>
         ${atag(e.artist_key, e.artist_name)}
-        <div class="gt"><div class="t">${esc(e.title)}${e.is_new?'<span class="nw">NEW</span>':""}${e.verification_status==="unverified"?'<span class="uv">本轮未复核</span>':""}</div><div class="m2">城市与开票时间待公布</div></div>
+        <div class="gt"><div class="t">${esc(e.title)}${e.is_new?'<span class="nw">NEW</span>':""}${needsCurrentReview(e)?'<span class="uv">本轮未复核</span>':""}</div><div class="m2">城市与开票时间待公布</div></div>
         <div class="gs up"><i></i>待官宣</div></div>`).join("");
   }
   $("gigs").innerHTML = h || `<div class="emptyline">当前筛选下没有场次 · 点击「全部」重置</div>`;
@@ -854,7 +877,7 @@ function render(){
     return `<div class="rl"><div class="h">${esc(x.headline)}</div>
       ${x.detail?`<div style="color:var(--dim);font-size:12px;margin-top:3px">${esc(x.detail)}</div>`:""}
       <div class="sm"><span class="who" style="background:${ACOLOR[x.artist_key]||"#7d7263"}">${esc(x.artist_name)}</span>
-      <span class="cred ${cred[0]}">● ${cred[1]}</span>${x.verification_status==="unverified"?'<span class="uv">本轮未复核</span>':""}
+      <span class="cred ${cred[0]}">● ${cred[1]}</span>${needsCurrentReview(x)?'<span class="uv">本轮未复核</span>':""}
       ${x.posted_at?`<span class="lb">${esc(x.posted_at)}</span>`:""}
       ${x.url?`<a class="src" href="${esc(x.url)}" target="_blank" rel="noopener">原文 ↗</a>`:""}</div></div>`;
   }).join("") || `<div class="rl" style="color:var(--faint)">当前筛选下没有舆情</div>`;
@@ -874,7 +897,7 @@ function render(){
   $("pastcnt").textContent = pa.length ? pa.length+" 场" : "";
   $("past").innerHTML = pa.map(e=>
     `<div class="pastrow"><span class="pd">${esc(e.show_date||"—")}</span>
-     <span class="pt">${esc(e.artist_name)} · ${esc(e.title)}${e.verification_status==="unverified"?'<span class="uv">本轮未复核</span>':""}</span>
+     <span class="pt">${esc(e.artist_name)} · ${esc(e.title)}${needsCurrentReview(e)?'<span class="uv">本轮未复核</span>':""}</span>
      <span>${esc(e.city||"")}</span></div>`).join("") || `<div class="pastrow">（无）</div>`;
   $("pastbox").hidden = !(D.ended||[]).length;
 }

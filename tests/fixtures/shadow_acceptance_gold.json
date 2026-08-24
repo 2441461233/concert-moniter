@@ -1,0 +1,378 @@
+{
+  "_meta": {
+    "fixture_id": "shadow-acceptance-gold-2026-08-20",
+    "as_of": "2026-08-20T23:59:59+08:00",
+    "timezone": "Asia/Shanghai",
+    "artists_total": 4,
+    "expected_future_records_total": 64,
+    "purpose": "在不写入生产数据的前提下，对同一份冻结 evidence 比较旧方案与新的多阶段裁决方案。",
+    "comparison_rule": "候选方案必须使用同一批、同一时刻冻结的页面证据。2026-08-13 的 Kimi 归档只用作历史背景，不作为无时间偏差的模型对打结果。",
+    "shadow_output_constraint": "影子产物必须写入 /tmp 或其他隔离路径，不得放入 research/inbox。"
+  },
+  "artists": {
+    "aespa": {
+      "artist_name": "aespa",
+      "expected_future_records": 23,
+      "expected_classification": {
+        "tour": 23,
+        "festival": 0
+      },
+      "expected_events": [
+        {"date": "2026-09-04", "city": "São Paulo", "venue": "Mercado Livre Arena Pacaembu"},
+        {"date": "2026-09-06", "city": "Santiago", "venue": "Movistar Arena"},
+        {"date": "2026-09-09", "city": "Lima", "city_aliases": ["San Miguel"], "venue": "Costa 21"},
+        {"date": "2026-09-11", "city": "Mexico City", "venue": "Palacio de los Deportes"},
+        {"date": "2026-09-15", "city": "Hamilton", "venue": "TD Coliseum"},
+        {"date": "2026-09-18", "city": "Belmont Park", "city_aliases": ["Elmont"], "venue": "UBS Arena"},
+        {"date": "2026-09-22", "city": "Washington, DC", "venue": "Capital One Arena"},
+        {"date": "2026-09-24", "city": "Atlanta", "venue": "State Farm Arena"},
+        {"date": "2026-09-26", "city": "Miami", "venue": "Kaseya Center"},
+        {"date": "2026-09-29", "city": "Dallas", "venue": "American Airlines Center"},
+        {"date": "2026-10-03", "city": "Los Angeles", "venue": "Intuit Dome"},
+        {"date": "2026-10-06", "city": "Oakland", "venue": "Oakland Arena"},
+        {"date": "2026-10-09", "city": "Seattle", "venue": "Climate Pledge Arena"},
+        {"date": "2026-10-11", "city": "Vancouver", "venue": "Rogers Arena"},
+        {"date": "2027-01-14", "city": "Manchester", "venue": "AO Arena"},
+        {"date": "2027-01-16", "city": "London", "venue": "The O2"},
+        {"date": "2027-01-19", "city": "Amsterdam", "venue": "Ziggo Dome"},
+        {"date": "2027-01-22", "city": "Stockholm", "venue": "Avicii Arena"},
+        {"date": "2027-01-24", "city": "Copenhagen", "venue": "Royal Arena"},
+        {"date": "2027-01-26", "city": "Berlin", "venue": "Uber Arena"},
+        {"date": "2027-01-29", "city": "Milan", "venue": "Unipol Dome"},
+        {"date": "2027-01-31", "city": "Barcelona", "venue": "Palau Sant Jordi"},
+        {"date": "2027-02-02", "city": "Paris", "venue": "Accor Arena"}
+      ],
+      "verified_key_facts": [
+        {
+          "fact_id": "aespa-future-count",
+          "claim": "官方公告共26场；截至2026-08-20，首尔 8/7-8 与台北 8/11 已结束，剩余23场未来演出。",
+          "source_urls": [
+            "https://weverse.io/aespa/notice/35057",
+            "https://aespaworldtour.com/"
+          ]
+        },
+        {
+          "fact_id": "aespa-north-america-ticket-times",
+          "claim": "北美10场的官方公告均标注当地20:00开演；MY会员预售为2026-05-06 11:00-14:00当地时间，公售为当日15:00起。",
+          "source_urls": [
+            "https://weverse.io/aespa/notice/35315"
+          ]
+        },
+        {
+          "fact_id": "aespa-format-normalization",
+          "claim": "时间字段必须归一化后入库；不能因 sale_time 文本不符合格式就丢弃整条演出。",
+          "source_urls": [
+            "https://weverse.io/aespa/notice/35315"
+          ]
+        }
+      ]
+    },
+    "katseye": {
+      "artist_name": "KATSEYE",
+      "expected_future_records": 32,
+      "expected_classification": {
+        "tour": 31,
+        "festival": 1
+      },
+      "expected_events": [
+        {"date": "2026-08-29", "city": "Irvine", "venue": "Great Park", "event_type": "festival", "tour_name": ""},
+        {"date": "2026-09-01", "city": "Dublin", "venue": "3Arena", "event_type": "tour"},
+        {"date": "2026-09-03", "city": "London", "venue": "The O2", "event_type": "tour"},
+        {"date": "2026-09-04", "city": "London", "venue": "The O2", "event_type": "tour"},
+        {"date": "2026-09-06", "city": "Manchester", "venue": "Co-op Live", "event_type": "tour"},
+        {"date": "2026-09-09", "city": "Paris", "venue": "Accor Arena", "event_type": "tour"},
+        {"date": "2026-09-11", "city": "Amsterdam", "venue": "Ziggo Dome", "event_type": "tour"},
+        {"date": "2026-09-13", "city": "Cologne", "venue": "Lanxess Arena", "event_type": "tour"},
+        {"date": "2026-09-15", "city": "Antwerp", "venue": "AFAS Dome", "event_type": "tour"},
+        {"date": "2026-09-17", "city": "Copenhagen", "venue": "Royal Arena", "event_type": "tour"},
+        {"date": "2026-10-13", "city": "Miami", "venue": "Kaseya Center", "event_type": "tour"},
+        {"date": "2026-10-15", "city": "Atlanta", "venue": "State Farm Arena", "event_type": "tour"},
+        {"date": "2026-10-20", "city": "Charlotte", "venue": "Spectrum Center", "event_type": "tour"},
+        {"date": "2026-10-22", "city": "Washington, DC", "venue": "Capital One Arena", "event_type": "tour"},
+        {"date": "2026-10-24", "city": "Belmont Park", "venue": "UBS Arena", "event_type": "tour"},
+        {"date": "2026-10-25", "city": "Belmont Park", "venue": "UBS Arena", "event_type": "tour"},
+        {"date": "2026-10-28", "city": "Boston", "venue": "TD Garden", "event_type": "tour"},
+        {"date": "2026-10-30", "city": "Montreal", "venue": "Bell Centre", "event_type": "tour"},
+        {"date": "2026-11-01", "city": "Hamilton", "venue": "TD Coliseum", "event_type": "tour"},
+        {"date": "2026-11-03", "city": "Detroit", "venue": "Little Caesars Arena", "event_type": "tour"},
+        {"date": "2026-11-05", "city": "Chicago", "venue": "United Center", "event_type": "tour"},
+        {"date": "2026-11-07", "city": "Minneapolis", "venue": "Target Center", "event_type": "tour"},
+        {"date": "2026-11-10", "city": "Austin", "venue": "Moody Center", "event_type": "tour"},
+        {"date": "2026-11-11", "city": "Dallas", "venue": "American Airlines Center", "event_type": "tour"},
+        {"date": "2026-11-14", "city": "Las Vegas", "venue": "MGM Grand Garden Arena", "event_type": "tour"},
+        {"date": "2026-11-17", "city": "Seattle", "venue": "Climate Pledge Arena", "event_type": "tour"},
+        {"date": "2026-11-19", "city": "Oakland", "venue": "Oakland Arena", "event_type": "tour"},
+        {"date": "2026-11-21", "city": "Los Angeles", "venue": "Crypto.com Arena", "event_type": "tour"},
+        {"date": "2026-11-22", "city": "Los Angeles", "venue": "Crypto.com Arena", "event_type": "tour"},
+        {"date": "2026-11-24", "city": "Phoenix", "venue": "Mortgage Matchup Center", "event_type": "tour"},
+        {"date": "2026-11-27", "city": "Mexico City", "venue": "Palacio de los Deportes", "event_type": "tour"},
+        {"date": "2026-11-28", "city": "Mexico City", "venue": "Palacio de los Deportes", "event_type": "tour"}
+      ],
+      "verified_key_facts": [
+        {
+          "fact_id": "katseye-tour-count",
+          "claim": "WILDWORLD TOUR初始27场，后增伦敦9/4、Belmont Park 10/25、洛杉矶11/22、墨西哥城11/28，合计31场巡演。",
+          "source_urls": [
+            "https://news.livenationentertainment.com/news/katseye-announces-2026-headline-arena-tour-of-uk-eu-and-north-america",
+            "https://www.ticketmaster.com.mx/katseye-boletos/artist/3259344",
+            "https://www.koreajoongangdaily.com/entertainment/katseye-adds-4-new-dates-to-sold-out-the-wildworld-tour/12591808"
+          ]
+        },
+        {
+          "fact_id": "katseye-mexico-added-show",
+          "claim": "2026-11-28 20:00，Mexico City，Palacio de los Deportes，为 WILDWORLD TOUR 第二场墨西哥城演出。",
+          "source_urls": [
+            "https://www.ticketmaster.com.mx/event/140064AB8F152FA7"
+          ]
+        },
+        {
+          "fact_id": "katseye-irvine-festival",
+          "claim": "2026-08-29 Irvine 为 Daisy Chain Fields 音乐节，不属于 WILDWORLD TOUR；预售为2026-06-24 10:00 PT。",
+          "source_urls": [
+            "https://weverse.io/katseye/notice/36941",
+            "https://www.daisychainfields.com/"
+          ]
+        },
+        {
+          "fact_id": "katseye-tour-ticket-sale",
+          "claim": "WILDWORLD TOUR会员预售为2026-05-20 11:00-14:00当地时间，公售为2026-05-21 15:00当地时间；该日期不得套用到 Irvine 音乐节。",
+          "source_urls": [
+            "https://weverse.io/katseye/notice/35798"
+          ]
+        }
+      ]
+    },
+    "babymonster": {
+      "artist_name": "BABYMONSTER",
+      "expected_future_records": 8,
+      "expected_classification": {
+        "tour": 8,
+        "festival": 0
+      },
+      "expected_events": [
+        {"date": "2026-09-05", "city": "Pasay", "city_aliases": ["Manila", "Pasay / 马尼拉"], "venue": "SM Mall of Asia Arena"},
+        {"date": "2026-09-11", "city": "Macao", "city_aliases": ["澳门"], "venue": "The Venetian Arena", "show_time": "20:00"},
+        {"date": "2026-09-12", "city": "Macao", "city_aliases": ["澳门"], "venue": "The Venetian Arena", "show_time": "18:00"},
+        {"date": "2026-11-07", "city": "Bangkok", "venue": "Impact Arena, Muang Thong Thani"},
+        {"date": "2026-11-08", "city": "Bangkok", "venue": "Impact Arena, Muang Thong Thani"},
+        {"date": "2026-11-14", "city": "Kuala Lumpur", "venue": "Unifi Arena"},
+        {"date": "2026-11-28", "city": "Singapore", "venue": "Singapore Indoor Stadium"},
+        {"date": "2026-11-29", "city": "Singapore", "venue": "Singapore Indoor Stadium"}
+      ],
+      "verified_key_facts": [
+        {
+          "fact_id": "babymonster-asia-count",
+          "claim": "Live Nation Asia当前列出8场未来场次：Manila 1、Macao 2、Bangkok 2、Kuala Lumpur 1、Singapore 2。",
+          "source_urls": [
+            "https://www.livenation.asia/babymonster-tickets-adp1479014"
+          ]
+        },
+        {
+          "fact_id": "babymonster-macao-details",
+          "claim": "澳门9/11 20:00、9/12 18:00，票价MOP/HKD 799、999、1399、1699、2299 VIP；9/12原场公售为6/18 12:00，9/11加场公售为6/25 12:00。",
+          "source_urls": [
+            "https://www.livenation.hk/babymonster-tickets-adp1479014",
+            "https://www.livenation.hk/en/event/2026-27-babymonster-world-tour-%25ec%25b6%25a4-choom-in-macao-macao-tickets-edp1682445"
+          ]
+        },
+        {
+          "fact_id": "babymonster-kuala-lumpur-status-conflict",
+          "claim": "Live Nation Asia艺人列表当前显示Kuala Lumpur 11/14为Sold Out，但活动直页仍残留旧的On sale soon文字和7/3 11:00公售时间。",
+          "accepted_statuses": ["sold_out", "needs_review"],
+          "requires_conflict_note": true,
+          "source_urls": [
+            "https://www.livenation.asia/babymonster-tickets-adp1479014",
+            "https://www.livenation.my/event/2026-27-babymonster-world-tour-%25ec%25b6%25a4-choom-in-kuala-lumpur-kuala-lumpur-tickets-edp1682916"
+          ]
+        },
+        {
+          "fact_id": "babymonster-manila-dedup",
+          "claim": "2026-09-05 Pasay/Manila的SM Mall of Asia Arena只能保留1条，城市别名不得生成重复演出。",
+          "source_urls": [
+            "https://www.livenation.ph/event/2026-27-babymonster-world-tour-%25ec%25b6%25a4-choom-in-manila-pasay-tickets-edp1673040"
+          ]
+        }
+      ]
+    },
+    "shayiting": {
+      "artist_name": "沙一汀",
+      "expected_future_records": 1,
+      "expected_classification": {
+        "tour": 0,
+        "festival": 1
+      },
+      "expected_events": [
+        {
+          "date": "2026-09-19",
+          "city": "济南",
+          "venue": "济南国际园博园",
+          "title": "2026禧都音乐节HolidayParty济南站",
+          "event_type": "festival",
+          "show_time": "12:30",
+          "show_end_time": "21:40",
+          "sale_status": "on_sale",
+          "sale_time": "2026-08-18 11:18",
+          "price_min_cny": 228,
+          "ticket_prices_cny": [228, 338, 388, 498, 528, 698]
+        }
+      ],
+      "verified_key_facts": [
+        {
+          "fact_id": "shayiting-jinan-showstart",
+          "claim": "秀动event 306643的SSR正文包含9/19 12:30-21:40、济南国际园博园、阵容含沙一汀EL；window.__NUXT__数据包含2026-08-18 11:18开售和228元起票价。",
+          "source_urls": [
+            "https://www.showstart.com/event/306643"
+          ]
+        },
+        {
+          "fact_id": "shayiting-guangzhou-historical-exclusion",
+          "claim": "广州体育馆1号馆12/31的沙一汀「听汀」广州场是2025-12-31历史场次，不得作为2026未来传闻。",
+          "source_urls": [
+            "https://www.showstart.com/event/284739"
+          ]
+        }
+      ]
+    }
+  },
+  "legacy_kimi_metrics": {
+    "historical_context_only": true,
+    "archive_as_of": "2026-08-13",
+    "archive_path": "research/archive/20260813-115054-2026-08-13-110443-full-refresh.json",
+    "full_archive": {
+      "events_accepted": 59,
+      "rumors": 11,
+      "sources_consulted": 25,
+      "schema_warnings_and_discarded_candidates": 23
+    },
+    "selected_four_artists": {
+      "current_gold_future_records": 64,
+      "legacy_accepted_records": 39,
+      "historical_recall_against_current_gold": 0.609375,
+      "schema_discarded_records": 23,
+      "accepted_records_with_primary_event_source": 30,
+      "primary_source_ratio_within_accepted": 0.7692307692,
+      "primary_supported_recall_against_current_gold": 0.46875,
+      "missing_show_time": 16,
+      "missing_price": 37,
+      "missing_sale_time": 8,
+      "by_artist": {
+        "aespa": {
+          "accepted_events": 0,
+          "discarded_events": 23,
+          "sources": 1,
+          "known_defect": "23条未来场次因sale_time格式无效全部丢弃。"
+        },
+        "katseye": {
+          "accepted_events": 31,
+          "rumors": 1,
+          "sources": 5,
+          "accepted_with_primary_event_source": 22,
+          "accepted_with_secondary_only_source": 9,
+          "known_defects": [
+            "漏掉2026-11-28墨西哥城加场。",
+            "把2026-08-29 Irvine音乐节标成WILDWORLD TOUR。",
+            "把WILDWORLD TOUR的2026-05-21公售日期错套到Irvine音乐节；正确预售为2026-06-24 10:00 PT。"
+          ]
+        },
+        "babymonster": {
+          "accepted_events": 8,
+          "rumors": 2,
+          "sources": 5,
+          "missing_show_time": 5,
+          "missing_price": 6,
+          "missing_sale_time": 8,
+          "known_defects": [
+            "澳门两场均未写入官方已公布的公售时间。",
+            "吉隆坡状态留空，未暴露官方页面间的状态冲突。"
+          ]
+        },
+        "shayiting": {
+          "accepted_events": 0,
+          "rumors": 1,
+          "sources": 1,
+          "known_defects": [
+            "漏掉秀动可直接核验的济南9/19音乐节。",
+            "把2025-12-31广州历史场次作为可能的2026未来传闻。"
+          ]
+        }
+      }
+    }
+  },
+  "acceptance_thresholds": {
+    "minimum_total_score": 90,
+    "maximum_refresh_cost_cny": 5.0,
+    "minimum_event_recall": 0.95,
+    "minimum_primary_evidence_ratio_for_confirmed": 1.0,
+    "maximum_false_confirmed": 0,
+    "maximum_schema_drops": 0,
+    "maximum_duplicates": 0,
+    "score_weights": {
+      "fact_accuracy": 40,
+      "event_recall": 25,
+      "evidence_quality": 20,
+      "daily_report_quality": 15
+    }
+  },
+  "daily_report_expectations": {
+    "required_sections": [
+      "值得立即关注",
+      "状态变化或来源冲突",
+      "数据补录或纠错"
+    ],
+    "required_assertions": [
+      "沙一汀9/19济南场已开售，且附秀动直达页。",
+      "BABYMONSTER吉隆坡场的状态冲突被显式告知。",
+      "aespa 23场恢复必须标成覆盖修复，而不是今日官宣。",
+      "KATSEYE 11/28墨西哥场必须标成补录，Irvine必须单独归类为音乐节。"
+    ],
+    "group_dense_tours": true,
+    "require_direct_source_links": true,
+    "distinguish_data_repair_from_new_announcement": true
+  },
+  "hard_failures": [
+    {
+      "id": "unsupported_confirmed",
+      "condition": "任何confirmed事件没有可直接支持关键字段的一级或正式票务证据。"
+    },
+    {
+      "id": "false_confirmed",
+      "condition": "出现任何一条错误的confirmed演出。"
+    },
+    {
+      "id": "schema_record_loss",
+      "condition": "因模型字段格式问题丢弃整条可核验演出，而非将单个未知字段清空或规范化。"
+    },
+    {
+      "id": "historical_as_future",
+      "condition": "将已结束场次标记为未来演出或未来传闻。"
+    },
+    {
+      "id": "duplicate_event",
+      "condition": "同艺人、同日、同馆因城市别名或来源差异生成重复记录。"
+    },
+    {
+      "id": "silent_source_conflict",
+      "condition": "一级来源间存在状态或字段冲突，但日报或结构化数据无说明地强行定论。"
+    },
+    {
+      "id": "event_type_misclassification",
+      "condition": "把音乐节、颁奖礼或拼盘演出错挂为艺人个人巡演。"
+    },
+    {
+      "id": "unsupported_exact_field",
+      "condition": "精确日期、时间、票价、开售或售罄状态没有对应页面证据。"
+    },
+    {
+      "id": "data_repair_reported_as_new",
+      "condition": "将早已官宣、仅本轮补齐的旧行程说成今日新官宣或新增。"
+    },
+    {
+      "id": "shadow_production_write",
+      "condition": "影子验收产物进入research/inbox或触发生产数据ingest。"
+    },
+    {
+      "id": "refresh_budget_exceeded",
+      "condition": "单次完整刷新成本超过5元人民币。"
+    }
+  ]
+}

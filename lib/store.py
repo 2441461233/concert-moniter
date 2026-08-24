@@ -28,6 +28,10 @@ SOLD_OUT_STATES = {"sold_out", "售罄"}
 APP_TIMEZONE = timezone(timedelta(hours=8), name="Asia/Shanghai")
 
 
+class StoreDataError(RuntimeError):
+    """已存在的生产 JSON 无法完整读取；必须停止而不能当空库覆盖。"""
+
+
 def local_now():
     """返回平台统一使用的上海时间，避免本机与 Vercel 时区不同。"""
     return datetime.now(APP_TIMEZONE)
@@ -46,9 +50,12 @@ def _load(path, default):
         return default
     try:
         with open(path, encoding="utf-8") as f:
-            return json.load(f)
-    except (ValueError, OSError):
-        return default
+            value = json.load(f)
+    except (ValueError, OSError) as exc:
+        raise StoreDataError("无法安全读取生产 JSON: %s" % path) from exc
+    if not isinstance(value, type(default)):
+        raise StoreDataError("生产 JSON 根类型错误: %s" % path)
+    return value
 
 
 def _save(path, obj):
@@ -96,28 +103,49 @@ def derive_status(ev):
 # 调研补录的字段优先级低于采集器，但空值不覆盖非空值
 _MERGE_KEEP_RICHER = [
     "title", "performers", "city", "venue", "show_date", "show_time",
-    "show_time_raw", "price", "sale_time", "note", "tour_name",
+    "doors_time", "show_end_time", "curfew_time", "show_time_raw",
+    "price", "sale_time", "note", "tour_name",
 ]
 
 
 def _merge_one(old, new):
-    """new 覆盖 old，但只在 new 该字段非空时覆盖。"""
+    """确定性来源可更新旧记录；research 遇到确定性值时只补空。"""
     out = dict(old)
+    old_source = (old.get("source") or "").strip()
+    new_source = (new.get("source") or "").strip()
+    old_has_deterministic_source = (
+        old_source not in ("", "unknown", "research")
+        or any(
+            (item.get("source") or "").strip()
+            not in ("", "unknown", "research")
+            for item in (old.get("sources") or [])
+            if isinstance(item, dict)
+        )
+    )
+    research_fill_only = new_source == "research" and old_has_deterministic_source
     for k in _MERGE_KEEP_RICHER:
         v = new.get(k)
-        if v:
+        if v and (not research_fill_only or not old.get(k)):
             out[k] = v
     for k in ("ticket_tiers", "sources"):
         merged = list(old.get(k) or [])
-        for item in (new.get(k) or []):
+        additions = new.get(k) or []
+        if k == "ticket_tiers" and research_fill_only and merged:
+            additions = []
+        for item in additions:
             if item not in merged:
                 merged.append(item)
         out[k] = merged
     # 状态取"更确定"的那个：采集器 confirmed 优于调研 rumor
-    if new.get("confidence") == "confirmed" or not old.get("confidence"):
+    if (
+        (not research_fill_only or not old.get("confidence"))
+        and (new.get("confidence") == "confirmed" or not old.get("confidence"))
+    ):
         out["confidence"] = new.get("confidence", old.get("confidence", "confirmed"))
-    if new.get("sale_status"):
+    if new.get("sale_status") and (not research_fill_only or not old.get("sale_status")):
         out["sale_status"] = new["sale_status"]
+    if new_source and (new_source != "research" or not old_source):
+        out["source"] = new_source
     out["artist_key"] = new.get("artist_key") or old.get("artist_key")
     out["artist_name"] = new.get("artist_name") or old.get("artist_name")
     return out
@@ -125,6 +153,16 @@ def _merge_one(old, new):
 
 def normalize_event(ev):
     src = ev.get("source", "unknown")
+    raw_source_id = str(ev.get("source_id", ""))
+    event_source_id = "" if src == "research" else raw_source_id
+    citation_id = raw_source_id if src == "research" else ""
+    source_record = {
+        "source": src,
+        "url": ev.get("url", ""),
+        "source_id": event_source_id,
+    }
+    if citation_id:
+        source_record["citation_id"] = citation_id
     out = {
         "source": src,
         "artist_key": ev.get("artist_key", ""),
@@ -136,7 +174,10 @@ def normalize_event(ev):
         "venue": (ev.get("venue") or "").strip(),
         "country": (ev.get("country") or "").strip(),
         "show_date": (ev.get("show_date") or "").strip(),
+        "doors_time": (ev.get("doors_time") or "").strip(),
         "show_time": (ev.get("show_time") or "").strip(),
+        "show_end_time": (ev.get("show_end_time") or "").strip(),
+        "curfew_time": (ev.get("curfew_time") or "").strip(),
         "show_time_raw": (ev.get("show_time_raw") or "").strip(),
         "price": (ev.get("price") or "").strip(),
         "ticket_tiers": ev.get("ticket_tiers") or [],
@@ -144,11 +185,7 @@ def normalize_event(ev):
         "sale_time": (ev.get("sale_time") or "").strip(),
         "confidence": ev.get("confidence") or "confirmed",
         "note": (ev.get("note") or "").strip(),
-        "sources": [{
-            "source": src,
-            "url": ev.get("url", ""),
-            "source_id": str(ev.get("source_id", "")),
-        }],
+        "sources": [source_record],
     }
     return out
 
@@ -183,6 +220,22 @@ def merge_events(incoming, run_id):
         if src_key and src_key in by_source_id:
             fp = by_source_id[src_key]
         elif src_key:
+            # 同艺人同日同城可能有两场。如果采集器给了两个不同的
+            # event-scoped ID，它们不能因为弱指纹相同而坍缩。跨来源仍可
+            # 依靠指纹合并；research citation_id 不会进入这条路径。
+            existing = store.get(fp) or {}
+            conflicting_ids = {
+                str(item.get("source_id"))
+                for item in (existing.get("sources") or [])
+                if item.get("source") == src.get("source")
+                and item.get("source_id")
+                and str(item.get("source_id")) != str(src.get("source_id"))
+            }
+            if conflicting_ids:
+                identity = "%s|%s|%s|%s" % (
+                    fp, src.get("source"), src.get("source_id"), ev["artist_key"],
+                )
+                fp = hashlib.sha1(identity.encode()).hexdigest()[:16]
             by_source_id[src_key] = fp
         if fp in store:
             before = store[fp]
