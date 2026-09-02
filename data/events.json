@@ -1040,9 +1040,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-24T17:41:11",
+    "last_seen": "2026-09-02T17:06:45",
     "id": "7698ce603b252353",
-    "last_seen_run": "20260824-174032"
+    "last_seen_run": "20260902-170611"
   },
   "81f631ed1a03ddca": {
     "source": "showstart",
@@ -1077,9 +1077,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-24T17:41:11",
+    "last_seen": "2026-09-02T17:06:45",
     "id": "81f631ed1a03ddca",
-    "last_seen_run": "20260824-174032"
+    "last_seen_run": "20260902-170611"
   },
   "a3f7a3a5653098fa": {
     "source": "showstart",
@@ -1111,9 +1111,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-24T17:41:11",
+    "last_seen": "2026-09-02T17:06:45",
     "id": "a3f7a3a5653098fa",
-    "last_seen_run": "20260824-174032",
+    "last_seen_run": "20260902-170611",
     "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
     "verification_status": "verified",
     "missed_full_refreshes": 0,
@@ -1154,9 +1154,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-24T17:41:11",
+    "last_seen": "2026-09-02T17:06:45",
     "id": "50a82b896e69a5b8",
-    "last_seen_run": "20260824-174032",
+    "last_seen_run": "20260902-170611",
     "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
     "verification_status": "verified",
     "missed_full_refreshes": 0,
@@ -1195,9 +1195,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-24T17:41:11",
+    "last_seen": "2026-09-02T17:06:45",
     "id": "9b6db4a051b3acef",
-    "last_seen_run": "20260824-174032"
+    "last_seen_run": "20260902-170611"
   },
   "0ce217ff2b6b83ba": {
     "source": "showstart",
@@ -1231,9 +1231,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-24T17:41:11",
+    "last_seen": "2026-09-02T17:06:45",
     "id": "0ce217ff2b6b83ba",
-    "last_seen_run": "20260824-174032"
+    "last_seen_run": "20260902-170611"
   },
   "ff1c50001cc62945": {
     "source": "showstart",
@@ -1266,9 +1266,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-24T17:41:11",
+    "last_seen": "2026-09-02T17:06:45",
     "id": "ff1c50001cc62945",
-    "last_seen_run": "20260824-174032"
+    "last_seen_run": "20260902-170611"
   },
   "cf0b920196b0e05a": {
     "source": "showstart",
@@ -1304,9 +1304,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-24T17:41:11",
+    "last_seen": "2026-09-02T17:06:45",
     "id": "cf0b920196b0e05a",
-    "last_seen_run": "20260824-174032"
+    "last_seen_run": "20260902-170611"
   },
   "fb16bc964c7e4616": {
     "source": "showstart",
@@ -1338,9 +1338,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-24T17:41:11",
+    "last_seen": "2026-09-02T17:06:45",
     "id": "fb16bc964c7e4616",
-    "last_seen_run": "20260824-174032"
+    "last_seen_run": "20260902-170611"
   },
   "9f7468a22a943415": {
     "source": "showstart",
@@ -1370,9 +1370,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-24T17:41:11",
+    "last_seen": "2026-09-02T17:06:45",
     "id": "9f7468a22a943415",
-    "last_seen_run": "20260824-174032"
+    "last_seen_run": "20260902-170611"
   },
   "7376a3a0826c1318": {
     "source": "showstart",
@@ -1514,9 +1514,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-24T17:41:11",
+    "last_seen": "2026-09-02T17:06:45",
     "id": "f9504954a23e329d",
-    "last_seen_run": "20260824-174032",
+    "last_seen_run": "20260902-170611",
     "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
     "verification_status": "verified",
     "missed_full_refreshes": 0,
@@ -1554,9 +1554,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-24T17:41:11",
+    "last_seen": "2026-09-02T17:06:45",
     "id": "f2b2b11b4a7a1d15",
-    "last_seen_run": "20260824-174032",
+    "last_seen_run": "20260902-170611",
     "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
     "verification_status": "verified",
     "missed_full_refreshes": 0,
@@ -1595,9 +1595,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-24T17:41:11",
+    "last_seen": "2026-09-02T17:06:45",
     "id": "9b4b484fcc3da4a7",
-    "last_seen_run": "20260824-174032",
+    "last_seen_run": "20260902-170611",
     "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
     "verification_status": "verified",
     "missed_full_refreshes": 0,
@@ -1638,9 +1638,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-24T17:41:11",
+    "last_seen": "2026-09-02T17:06:45",
     "id": "7ac3102273d984f7",
-    "last_seen_run": "20260824-174032",
+    "last_seen_run": "20260902-170611",
     "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
     "verification_status": "verified",
     "missed_full_refreshes": 0,
@@ -1681,9 +1681,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-24T17:41:11",
+    "last_seen": "2026-09-02T17:06:45",
     "id": "4b189d39b90c02fa",
-    "last_seen_run": "20260824-174032",
+    "last_seen_run": "20260902-170611",
     "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
     "verification_status": "verified",
     "missed_full_refreshes": 0,
@@ -1721,9 +1721,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-24T17:41:11",
+    "last_seen": "2026-09-02T17:06:45",
     "id": "e18f2a24546d48a8",
-    "last_seen_run": "20260824-174032"
+    "last_seen_run": "20260902-170611"
   },
   "96e65962801b9194": {
     "source": "showstart",
@@ -1756,9 +1756,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-24T17:41:11",
+    "last_seen": "2026-09-02T17:06:45",
     "id": "96e65962801b9194",
-    "last_seen_run": "20260824-174032"
+    "last_seen_run": "20260902-170611"
   },
   "c5b69c1914eb50e9": {
     "source": "showstart",
@@ -1791,9 +1791,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-24T17:41:11",
+    "last_seen": "2026-09-02T17:06:45",
     "id": "c5b69c1914eb50e9",
-    "last_seen_run": "20260824-174032"
+    "last_seen_run": "20260902-170611"
   },
   "bad18830270d07ca": {
     "source": "showstart",
@@ -1829,9 +1829,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-24T17:41:11",
+    "last_seen": "2026-09-02T17:06:45",
     "id": "bad18830270d07ca",
-    "last_seen_run": "20260824-174032"
+    "last_seen_run": "20260902-170611"
   },
   "f8805861e141b68d": {
     "source": "showstart",
@@ -1867,9 +1867,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-08-24T17:41:11",
+    "last_seen": "2026-09-02T17:06:45",
     "id": "f8805861e141b68d",
-    "last_seen_run": "20260824-174032"
+    "last_seen_run": "20260902-170611"
   },
   "0b109ca05d943b84": {
     "source": "showstart",
@@ -3720,8 +3720,8 @@
     ],
     "first_seen": "2026-08-24T17:41:11",
     "first_seen_run": "20260824-174032",
-    "last_seen": "2026-08-24T17:41:11",
-    "last_seen_run": "20260824-174032",
+    "last_seen": "2026-09-02T17:06:45",
+    "last_seen_run": "20260902-170611",
     "id": "7617ea99d2a9f10a"
   },
   "05537ca348ab0b08": {
@@ -3758,8 +3758,90 @@
     ],
     "first_seen": "2026-08-24T17:41:11",
     "first_seen_run": "20260824-174032",
-    "last_seen": "2026-08-24T17:41:11",
-    "last_seen_run": "20260824-174032",
+    "last_seen": "2026-09-02T17:06:45",
+    "last_seen_run": "20260902-170611",
     "id": "05537ca348ab0b08"
+  },
+  "d2ff3e171c58858f": {
+    "source": "showstart",
+    "artist_key": "shayiting",
+    "artist_name": "沙一汀",
+    "title": "喜力®星银®·第十三届太湖湾音乐节",
+    "tour_name": "",
+    "performers": "二手玫瑰乐队/万能青年旅店/痛仰/麻园诗人/新裤子/陶喆/陈绮贞/陈粒/老狼/黄旭/TizzyT/弹壳Danko/GALI/Capper（张砚拙）/李大奔/姜云升/回春丹乐队/戴佩妮/安溥ANPU/Rapeter吴嘉轩/陈婧霏/告五人 Accusefive/颜人中/沙一汀EL/Top Barry/范丞丞/DOUDOU（杜冰儿、杜飞儿）/加木/小阿七/李佩玲/Hogee/戴萌/王翊恩 （en）/田孟泽Menzo Tyan/赖伟明",
+    "city": "常州",
+    "venue": "环球动漫嬉戏谷",
+    "country": "",
+    "show_date": "2026-10-01",
+    "doors_time": "",
+    "show_time": "12:00",
+    "show_end_time": "",
+    "curfew_time": "",
+    "show_time_raw": "10月01日 12:00-10月01日 21:00",
+    "price": "¥399起",
+    "ticket_tiers": [
+      "¥399 10.1早鸟单日票",
+      "¥499 10.1预售单日票",
+      "¥666 10.1正价单日票",
+      "¥698 10.1预售单日票",
+      "¥888 10.1正价单日票"
+    ],
+    "sale_status": "on_sale",
+    "sale_time": "",
+    "confidence": "confirmed",
+    "note": "",
+    "sources": [
+      {
+        "source": "showstart",
+        "url": "https://www.showstart.com/event/308312",
+        "source_id": "308312"
+      }
+    ],
+    "first_seen": "2026-09-02T17:06:45",
+    "first_seen_run": "20260902-170611",
+    "last_seen": "2026-09-02T17:06:45",
+    "last_seen_run": "20260902-170611",
+    "id": "d2ff3e171c58858f"
+  },
+  "cf21d941935e35b0": {
+    "source": "showstart",
+    "artist_key": "jiamu",
+    "artist_name": "加木",
+    "title": "喜力®星银®·第十三届太湖湾音乐节",
+    "tour_name": "",
+    "performers": "二手玫瑰乐队/万能青年旅店/痛仰/麻园诗人/新裤子/陶喆/陈绮贞/陈粒/老狼/黄旭/TizzyT/弹壳Danko/GALI/Capper（张砚拙）/李大奔/姜云升/回春丹乐队/戴佩妮/安溥ANPU/Rapeter吴嘉轩/陈婧霏/告五人 Accusefive/颜人中/沙一汀EL/Top Barry/范丞丞/DOUDOU（杜冰儿、杜飞儿）/加木/小阿七/李佩玲/Hogee/戴萌/王翊恩 （en）/田孟泽Menzo Tyan/赖伟明",
+    "city": "常州",
+    "venue": "环球动漫嬉戏谷",
+    "country": "",
+    "show_date": "2026-10-01",
+    "doors_time": "",
+    "show_time": "12:00",
+    "show_end_time": "",
+    "curfew_time": "",
+    "show_time_raw": "10月01日 12:00-10月01日 21:00",
+    "price": "¥399起",
+    "ticket_tiers": [
+      "¥399 10.1早鸟单日票",
+      "¥499 10.1预售单日票",
+      "¥666 10.1正价单日票",
+      "¥698 10.1预售单日票",
+      "¥888 10.1正价单日票"
+    ],
+    "sale_status": "on_sale",
+    "sale_time": "",
+    "confidence": "confirmed",
+    "note": "",
+    "sources": [
+      {
+        "source": "showstart",
+        "url": "https://www.showstart.com/event/308312",
+        "source_id": "308312"
+      }
+    ],
+    "first_seen": "2026-09-02T17:06:45",
+    "first_seen_run": "20260902-170611",
+    "last_seen": "2026-09-02T17:06:45",
+    "last_seen_run": "20260902-170611",
+    "id": "cf21d941935e35b0"
   }
 }
