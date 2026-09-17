@@ -1040,9 +1040,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-09-09T01:09:56",
+    "last_seen": "2026-09-17T16:51:18",
     "id": "7698ce603b252353",
-    "last_seen_run": "20260909-010923"
+    "last_seen_run": "20260917-165044"
   },
   "81f631ed1a03ddca": {
     "source": "showstart",
@@ -1077,9 +1077,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-09-09T01:09:56",
+    "last_seen": "2026-09-17T16:51:18",
     "id": "81f631ed1a03ddca",
-    "last_seen_run": "20260909-010923"
+    "last_seen_run": "20260917-165044"
   },
   "a3f7a3a5653098fa": {
     "source": "showstart",
@@ -1111,9 +1111,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-09-09T01:09:56",
+    "last_seen": "2026-09-17T16:51:18",
     "id": "a3f7a3a5653098fa",
-    "last_seen_run": "20260909-010923",
+    "last_seen_run": "20260917-165044",
     "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
     "verification_status": "verified",
     "missed_full_refreshes": 0,
@@ -1154,9 +1154,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-09-09T01:09:56",
+    "last_seen": "2026-09-17T16:51:18",
     "id": "50a82b896e69a5b8",
-    "last_seen_run": "20260909-010923",
+    "last_seen_run": "20260917-165044",
     "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
     "verification_status": "verified",
     "missed_full_refreshes": 0,
@@ -1195,9 +1195,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-09-09T01:09:56",
+    "last_seen": "2026-09-17T16:51:18",
     "id": "9b6db4a051b3acef",
-    "last_seen_run": "20260909-010923"
+    "last_seen_run": "20260917-165044"
   },
   "0ce217ff2b6b83ba": {
     "source": "showstart",
@@ -1231,9 +1231,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-09-09T01:09:56",
+    "last_seen": "2026-09-17T16:51:18",
     "id": "0ce217ff2b6b83ba",
-    "last_seen_run": "20260909-010923"
+    "last_seen_run": "20260917-165044"
   },
   "ff1c50001cc62945": {
     "source": "showstart",
@@ -1266,9 +1266,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-09-09T01:09:56",
+    "last_seen": "2026-09-17T16:51:18",
     "id": "ff1c50001cc62945",
-    "last_seen_run": "20260909-010923"
+    "last_seen_run": "20260917-165044"
   },
   "cf0b920196b0e05a": {
     "source": "showstart",
@@ -1304,9 +1304,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-09-09T01:09:56",
+    "last_seen": "2026-09-17T16:51:18",
     "id": "cf0b920196b0e05a",
-    "last_seen_run": "20260909-010923"
+    "last_seen_run": "20260917-165044"
   },
   "fb16bc964c7e4616": {
     "source": "showstart",
@@ -1338,9 +1338,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-09-09T01:09:56",
+    "last_seen": "2026-09-17T16:51:18",
     "id": "fb16bc964c7e4616",
-    "last_seen_run": "20260909-010923"
+    "last_seen_run": "20260917-165044"
   },
   "9f7468a22a943415": {
     "source": "showstart",
@@ -1370,9 +1370,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-09-09T01:09:56",
+    "last_seen": "2026-09-17T16:51:18",
     "id": "9f7468a22a943415",
-    "last_seen_run": "20260909-010923"
+    "last_seen_run": "20260917-165044"
   },
   "7376a3a0826c1318": {
     "source": "showstart",
@@ -1514,9 +1514,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-09-09T01:09:56",
+    "last_seen": "2026-09-17T16:51:18",
     "id": "f9504954a23e329d",
-    "last_seen_run": "20260909-010923",
+    "last_seen_run": "20260917-165044",
     "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
     "verification_status": "verified",
     "missed_full_refreshes": 0,
@@ -1554,9 +1554,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-09-09T01:09:56",
+    "last_seen": "2026-09-17T16:51:18",
     "id": "f2b2b11b4a7a1d15",
-    "last_seen_run": "20260909-010923",
+    "last_seen_run": "20260917-165044",
     "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
     "verification_status": "verified",
     "missed_full_refreshes": 0,
@@ -1595,9 +1595,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-09-09T01:09:56",
+    "last_seen": "2026-09-17T16:51:18",
     "id": "9b4b484fcc3da4a7",
-    "last_seen_run": "20260909-010923",
+    "last_seen_run": "20260917-165044",
     "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
     "verification_status": "verified",
     "missed_full_refreshes": 0,
@@ -1638,9 +1638,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-09-09T01:09:56",
+    "last_seen": "2026-09-17T16:51:18",
     "id": "7ac3102273d984f7",
-    "last_seen_run": "20260909-010923",
+    "last_seen_run": "20260917-165044",
     "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
     "verification_status": "verified",
     "missed_full_refreshes": 0,
@@ -1681,9 +1681,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-09-09T01:09:56",
+    "last_seen": "2026-09-17T16:51:18",
     "id": "4b189d39b90c02fa",
-    "last_seen_run": "20260909-010923",
+    "last_seen_run": "20260917-165044",
     "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
     "verification_status": "verified",
     "missed_full_refreshes": 0,
@@ -1721,9 +1721,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-09-09T01:09:56",
+    "last_seen": "2026-09-17T16:51:18",
     "id": "e18f2a24546d48a8",
-    "last_seen_run": "20260909-010923"
+    "last_seen_run": "20260917-165044"
   },
   "96e65962801b9194": {
     "source": "showstart",
@@ -1756,9 +1756,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-09-09T01:09:56",
+    "last_seen": "2026-09-17T16:51:18",
     "id": "96e65962801b9194",
-    "last_seen_run": "20260909-010923"
+    "last_seen_run": "20260917-165044"
   },
   "c5b69c1914eb50e9": {
     "source": "showstart",
@@ -1791,9 +1791,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-09-09T01:09:56",
+    "last_seen": "2026-09-17T16:51:18",
     "id": "c5b69c1914eb50e9",
-    "last_seen_run": "20260909-010923"
+    "last_seen_run": "20260917-165044"
   },
   "bad18830270d07ca": {
     "source": "showstart",
@@ -1829,9 +1829,9 @@
     ],
     "first_seen": "2026-08-10T11:23:44",
     "first_seen_run": "20260810-112305",
-    "last_seen": "2026-09-09T01:09:56",
+    "last_seen": "2026-09-17T16:51:18",
     "id": "bad18830270d07ca",
-    "last_seen_run": "20260909-010923"
+    "last_seen_run": "20260917-165044"
   },
   "f8805861e141b68d": {
     "source": "showstart",
@@ -3745,7 +3745,7 @@
       "¥199 普通票",
       "¥299 VIP票"
     ],
-    "sale_status": "on_sale",
+    "sale_status": "ended",
     "sale_time": "",
     "confidence": "confirmed",
     "note": "",
@@ -3758,8 +3758,8 @@
     ],
     "first_seen": "2026-08-24T17:41:11",
     "first_seen_run": "20260824-174032",
-    "last_seen": "2026-09-09T01:09:56",
-    "last_seen_run": "20260909-010923",
+    "last_seen": "2026-09-17T16:51:18",
+    "last_seen_run": "20260917-165044",
     "id": "05537ca348ab0b08"
   },
   "d2ff3e171c58858f": {
@@ -3768,7 +3768,7 @@
     "artist_name": "沙一汀",
     "title": "喜力®星银®·第十三届太湖湾音乐节",
     "tour_name": "",
-    "performers": "二手玫瑰乐队/万能青年旅店/痛仰/麻园诗人/新裤子/陶喆/陈绮贞/陈粒/老狼/黄旭/TizzyT/弹壳Danko/GALI/Capper（张砚拙）/李大奔/姜云升/回春丹乐队/戴佩妮/安溥ANPU/Rapeter吴嘉轩/陈婧霏/告五人 Accusefive/颜人中/沙一汀EL/Top Barry/范丞丞/DOUDOU（杜冰儿、杜飞儿）/加木/小阿七/李佩玲/Hogee/戴萌/王翊恩 （en）/田孟泽Menzo Tyan/赖伟明",
+    "performers": "二手玫瑰乐队/万能青年旅店/痛仰/麻园诗人/新裤子/陶喆/陈绮贞/陈粒/老狼/黄旭/陈楚生/TizzyT/弹壳Danko/GALI/Capper（张砚拙）/李大奔/姜云升/回春丹乐队/戴佩妮/安溥ANPU/Rapeter吴嘉轩/陈婧霏/告五人 Accusefive/ONER/OneSD王一珩/颜人中/沙一汀EL/Top Barry/谢可寅/PostRadio后电台/范丞丞/DOUDOU（杜冰儿、杜飞儿）/加木/小阿七/李佩玲/Hogee/univu5/戴萌/HIGH5（马思涵/麟壹铭/杨淘/冯陈思楠/刘欣）/王翊恩 （en）/李耕耘/何浩楠/赵小童/田孟泽Menzo Tyan/赖伟明/BC221/ ADD男团",
     "city": "常州",
     "venue": "环球动漫嬉戏谷",
     "country": "",
@@ -3799,8 +3799,8 @@
     ],
     "first_seen": "2026-09-02T17:06:45",
     "first_seen_run": "20260902-170611",
-    "last_seen": "2026-09-09T01:09:56",
-    "last_seen_run": "20260909-010923",
+    "last_seen": "2026-09-17T16:51:18",
+    "last_seen_run": "20260917-165044",
     "id": "d2ff3e171c58858f"
   },
   "cf21d941935e35b0": {
@@ -3809,7 +3809,7 @@
     "artist_name": "加木",
     "title": "喜力®星银®·第十三届太湖湾音乐节",
     "tour_name": "",
-    "performers": "二手玫瑰乐队/万能青年旅店/痛仰/麻园诗人/新裤子/陶喆/陈绮贞/陈粒/老狼/黄旭/TizzyT/弹壳Danko/GALI/Capper（张砚拙）/李大奔/姜云升/回春丹乐队/戴佩妮/安溥ANPU/Rapeter吴嘉轩/陈婧霏/告五人 Accusefive/颜人中/沙一汀EL/Top Barry/范丞丞/DOUDOU（杜冰儿、杜飞儿）/加木/小阿七/李佩玲/Hogee/戴萌/王翊恩 （en）/田孟泽Menzo Tyan/赖伟明",
+    "performers": "二手玫瑰乐队/万能青年旅店/痛仰/麻园诗人/新裤子/陶喆/陈绮贞/陈粒/老狼/黄旭/陈楚生/TizzyT/弹壳Danko/GALI/Capper（张砚拙）/李大奔/姜云升/回春丹乐队/戴佩妮/安溥ANPU/Rapeter吴嘉轩/陈婧霏/告五人 Accusefive/ONER/OneSD王一珩/颜人中/沙一汀EL/Top Barry/谢可寅/PostRadio后电台/范丞丞/DOUDOU（杜冰儿、杜飞儿）/加木/小阿七/李佩玲/Hogee/univu5/戴萌/HIGH5（马思涵/麟壹铭/杨淘/冯陈思楠/刘欣）/王翊恩 （en）/李耕耘/何浩楠/赵小童/田孟泽Menzo Tyan/赖伟明/BC221/ ADD男团",
     "city": "常州",
     "venue": "环球动漫嬉戏谷",
     "country": "",
@@ -3840,8 +3840,8 @@
     ],
     "first_seen": "2026-09-02T17:06:45",
     "first_seen_run": "20260902-170611",
-    "last_seen": "2026-09-09T01:09:56",
-    "last_seen_run": "20260909-010923",
+    "last_seen": "2026-09-17T16:51:18",
+    "last_seen_run": "20260917-165044",
     "id": "cf21d941935e35b0"
   },
   "a0f2a0f4572cc1df": {
@@ -3925,5 +3925,125 @@
     "last_seen": "2026-09-09T01:09:56",
     "last_seen_run": "20260909-010923",
     "id": "ce96cd95f49a7ba6"
+  },
+  "f8847bd732df1b1e": {
+    "source": "showstart",
+    "artist_key": "shayiting",
+    "artist_name": "沙一汀",
+    "title": "2026AYO!音乐节 湖州站",
+    "tour_name": "",
+    "performers": "TizzyT/GALI/李大奔/万妮达/Rich Brian/小鬼（王琳凯 ）/Rapeter吴嘉轩/张方钊/翁杰_Winjay/沙一汀EL/艾志恒Asen/Top Barry/加木/Dommiu李由音",
+    "city": "湖州",
+    "venue": "湖州市吴兴区吴乐湾",
+    "country": "",
+    "show_date": "2026-10-04",
+    "doors_time": "",
+    "show_time": "12:00",
+    "show_end_time": "",
+    "curfew_time": "",
+    "show_time_raw": "10月04日 12:00-10月04日 22:00",
+    "price": "¥338起",
+    "ticket_tiers": [
+      "¥338 学生票",
+      "¥398 普通预售票",
+      "¥468 普通正价票",
+      "¥528 VIP预售票",
+      "¥588 VIP正价票"
+    ],
+    "sale_status": "on_sale",
+    "sale_time": "",
+    "confidence": "confirmed",
+    "note": "",
+    "sources": [
+      {
+        "source": "showstart",
+        "url": "https://www.showstart.com/event/310200",
+        "source_id": "310200"
+      }
+    ],
+    "first_seen": "2026-09-17T16:51:18",
+    "first_seen_run": "20260917-165044",
+    "last_seen": "2026-09-17T16:51:18",
+    "last_seen_run": "20260917-165044",
+    "id": "f8847bd732df1b1e"
+  },
+  "499c579e258c2dba": {
+    "source": "showstart",
+    "artist_key": "menni",
+    "artist_name": "门尼",
+    "title": "第四届大秦青年音乐节",
+    "tour_name": "",
+    "performers": "二手玫瑰乐队/萨满乐队The Samans/岛屿心情/丢火车乐队/南无乐队/王建房/马帮乐队/雅过敏乐队/贰佰/石岩/性格缺失/蛙池WaChi/苏阳/赞诗乐队/DOUDOU（杜冰儿、杜飞儿）/八斗才GODFATHER/门尼/宇宙繁星",
+    "city": "咸阳",
+    "venue": "聚梦悠咕数字文汇中心东侧绿地",
+    "country": "",
+    "show_date": "2026-09-25",
+    "doors_time": "",
+    "show_time": "11:00",
+    "show_end_time": "",
+    "curfew_time": "",
+    "show_time_raw": "09月25日 11:00-09月25日 23:00",
+    "price": "¥98起",
+    "ticket_tiers": [
+      "¥268 双日秦人票",
+      "¥396 双日全价票"
+    ],
+    "sale_status": "on_sale",
+    "sale_time": "",
+    "confidence": "confirmed",
+    "note": "",
+    "sources": [
+      {
+        "source": "showstart",
+        "url": "https://www.showstart.com/event/309901",
+        "source_id": "309901"
+      }
+    ],
+    "first_seen": "2026-09-17T16:51:18",
+    "first_seen_run": "20260917-165044",
+    "last_seen": "2026-09-17T16:51:18",
+    "last_seen_run": "20260917-165044",
+    "id": "499c579e258c2dba"
+  },
+  "9f8119d18c5acc16": {
+    "source": "showstart",
+    "artist_key": "jiamu",
+    "artist_name": "加木",
+    "title": "2026AYO!音乐节 湖州站",
+    "tour_name": "",
+    "performers": "TizzyT/GALI/李大奔/万妮达/Rich Brian/小鬼（王琳凯 ）/Rapeter吴嘉轩/张方钊/翁杰_Winjay/沙一汀EL/艾志恒Asen/Top Barry/加木/Dommiu李由音",
+    "city": "湖州",
+    "venue": "湖州市吴兴区吴乐湾",
+    "country": "",
+    "show_date": "2026-10-04",
+    "doors_time": "",
+    "show_time": "12:00",
+    "show_end_time": "",
+    "curfew_time": "",
+    "show_time_raw": "10月04日 12:00-10月04日 22:00",
+    "price": "¥338起",
+    "ticket_tiers": [
+      "¥338 学生票",
+      "¥398 普通预售票",
+      "¥468 普通正价票",
+      "¥528 VIP预售票",
+      "¥588 VIP正价票"
+    ],
+    "sale_status": "on_sale",
+    "sale_time": "",
+    "confidence": "confirmed",
+    "note": "",
+    "sources": [
+      {
+        "source": "showstart",
+        "url": "https://www.showstart.com/event/310200",
+        "source_id": "310200"
+      }
+    ],
+    "first_seen": "2026-09-17T16:51:18",
+    "first_seen_run": "20260917-165044",
+    "last_seen": "2026-09-17T16:51:18",
+    "last_seen_run": "20260917-165044",
+    "id": "9f8119d18c5acc16"
   }
 }
