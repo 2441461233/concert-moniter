@@ -157,14 +157,25 @@
       "region": "kpop",
       "aliases": [
         "ILLIT",
-        "아일릿"
+        "아일릿",
+        "アイリット"
       ],
       "showstart_artist_id": "",
       "search_terms": [
         "ILLIT concert 2026 tickets",
         "ILLIT fancon"
       ],
-      "enabled": true
+      "enabled": true,
+      "official_sources": [
+        {
+          "parser": "illit_nol_encore",
+          "url": "https://nol.yanolja.com/ticket/products/26012865"
+        },
+        {
+          "parser": "illit_japan_encore",
+          "url": "https://illit-official.jp/news/35e24927f649"
+        }
+      ]
     },
     {
       "key": "hearts2hearts",

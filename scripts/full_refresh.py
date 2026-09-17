@@ -1489,7 +1489,7 @@ def mark_candidate_only(payload: dict[str, Any]) -> dict[str, Any]:
 
 
 def validate_showstart_coverage(meta: dict[str, Any]) -> None:
-    """完整刷新不允许把任何秀动降级当成成功发布。"""
+    """完整刷新不允许把任何已配置的确定性来源降级当成成功发布。"""
     showstart_status = (meta.get("source_status") or {}).get("showstart") or {}
     config = monitor.load_config()
     showstart_expected = sum(
@@ -1504,6 +1504,11 @@ def validate_showstart_coverage(meta: dict[str, Any]) -> None:
                 showstart_ok, showstart_expected, showstart_failed,
             )
         )
+    official_expected = sum(len(a.get("official_sources", []))
+                            for a in monitor.enabled_artists(config))
+    official_status = (meta.get("source_status") or {}).get("official") or {}
+    if int(official_status.get("fail") or 0) or int(official_status.get("ok") or 0) != official_expected:
+        raise ResearchError("官方来源采集未完整，不发布本轮数据")
 
 
 def validate_production_store_inputs() -> None:

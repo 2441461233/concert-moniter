@@ -326,6 +326,7 @@ footer{margin-top:44px;font-family:var(--mono);font-size:10.5px;color:var(--fain
 </div>
 
 <script src="data.js"></script>
+<script src="event-state.js"></script>
 <script>
 (function(){
 "use strict";
@@ -335,9 +336,10 @@ const $ = id => document.getElementById(id);
 
 /* data.js 加载失败时仍保留服务端快照刷新入口，用安全空数据继续初始化。 */
 const DATA_UNAVAILABLE = !window.__CM_DATA__;
-const D = window.__CM_DATA__ || {
+const SNAPSHOT = window.__CM_DATA__ || {
   artists:[], on_sale:[], upcoming:[], ended:[], rumors:[], changes:[], notes:[], counts:{}
 };
+let D = CMState.projectSnapshot(SNAPSHOT);
 const CHANGES = D.changes || [];
 if(DATA_UNAVAILABLE){
   $("bannerbox").innerHTML = `<div class="banner err"><b>DATA ERROR</b>
@@ -676,11 +678,11 @@ if(savedRefresh){
       "任务依然已保留，继续追踪不会重复创建刷新。");
   }
 }
-const firstUrl = e => ((e.sources||[]).find(s=>s.url)||{}).url;
+const firstUrl = e => e.ticket_url || ((e.sources||[]).find(s=>s.url)||{}).url;
 function needsCurrentReview(item){
   const deterministicNow = String(D.last_run_id||"") &&
     String(item.last_seen_run||"")===String(D.last_run_id||"") &&
-    (item.source==="showstart" || (item.sources||[]).some(s=>s.source==="showstart"));
+    (["showstart", "official"].includes(item.source) || (item.sources||[]).some(s=>["showstart", "official"].includes(s.source)));
   if(deterministicNow) return false;
   return item.verification_status!=="verified" ||
     !String(D.full_refresh_id||"") ||
@@ -689,6 +691,13 @@ function needsCurrentReview(item){
 const pdate = d => { if(!d) return null; const [Y,M,Dd]=d.split("-").map(Number); const dt=new Date(Y,M-1,Dd);
   if(isNaN(dt)) return null;
   return {md:M+"/"+String(Dd).padStart(2,"0"), w:WDZH[dt.getDay()], m: Y+"."+String(M).padStart(2,"0")}; };
+function saleLabel(e){
+  if(e.sale_end_time && CMState.saleInstant(e.sale_end_time)<=Date.now()) return "待后续开票";
+  const instant = CMState.saleInstant(e.sale_time);
+  if(!Number.isFinite(instant) || instant<=Date.now()) return "待开票";
+  const local = new Date(instant+8*3600000).toISOString();
+  return "开票 "+local.slice(5,16).replace("-","/").replace("T"," ")+" 北京";
+}
 
 /* filter state（持久化，容错） */
 let filter = {region:"all", artist:"all"};
@@ -734,7 +743,7 @@ const atag = (key,name) => `<span class="atag" role="button" tabindex="0" data-a
   setInterval(paintFreshness, 60000);
   $("refreshmeta").textContent = DATA_UNAVAILABLE
     ? "数据基线不可用 · 可手动运行确定性采集"
-    : `当前配置 ${(D.artists||[]).length} 位艺人 · ${modelEnhancementText(D.full_refresh_status)}`;
+    : `当前配置 ${(D.artists||[]).length} 位艺人 · 自动采集：秀动${(D.official_source_artists||[]).length?" + "+D.official_source_artists.join("、")+" 官方来源":""} · 其他调研沿用旧结果`;
   $("fullupdated").parentElement.title = fullAt
     ? `最近一次确定性快照：${fmt(fullAt)}；${modelEnhancementText(D.full_refresh_status)}`
     : "尚无手动快照刷新记录，当前显示已部署的数据基线";
@@ -746,25 +755,26 @@ if((D.notes||[]).length && ownsPublishedRefresh()){
   $("bannerbox").innerHTML = `<div class="banner"><b>本轮降级提示</b>${D.notes.map(x=>`<div>· ${esc(x)}</div>`).join("")}</div>`;
 }
 
-const cnt = D.counts||{};
 const news = CHANGES.filter(c=>c.type==="new"), rms = CHANGES.filter(c=>c.type==="rumor"),
       upds = CHANGES.filter(c=>c.type!=="new" && c.type!=="rumor");
 
 /* overview tiles */
-(function(){
+function renderOverview(){
+  const cnt = D.counts||{};
   const on = D.on_sale||[], up = D.upcoming||[];
-  const nextOn = on[0], nextUp = up.find(e=>e.sale_time) || up.find(e=>e.show_date);
+  const nextOn = on[0], nextUp = up.filter(e=>CMState.saleInstant(e.sale_time)>Date.now())
+    .sort((a,b)=>CMState.saleInstant(a.sale_time)-CMState.saleInstant(b.sale_time))[0];
   const sub = e => e ? `${e.show_date?e.show_date.slice(5).replace("-","/"):"待定"} ${e.artist_name}` : "—";
   $("ov").innerHTML =
     `<a class="tile t-sale" href="#gigs"><div class="lb">ON SALE · 正在售卖</div>
        <div class="big">${cnt.on_sale||0}</div><div class="sub">最近 ${esc(sub(nextOn))}</div></a>
      <a class="tile t-up" href="#gigs"><div class="lb">UPCOMING · 待开票</div>
-       <div class="big">${cnt.upcoming||0}</div><div class="sub">${nextUp&&nextUp.sale_time?"开票 "+esc(nextUp.sale_time.slice(5,10).replace("-","/"))+" "+esc(nextUp.artist_name):"开票时间均待公布"}</div></a>
+       <div class="big">${cnt.upcoming||0}</div><div class="sub">${nextUp?esc(saleLabel(nextUp))+" "+esc(nextUp.artist_name):"等待后续开票公告"}</div></a>
      <a class="tile t-ru" href="#mod-rumor"><div class="lb">RUMOR · 舆情线索</div>
        <div class="big">${cnt.rumors||0}</div><div class="sub">${esc((D.rumors&&D.rumors[0])?D.rumors[0].artist_name+" 等":"—")}</div></a>
      <a class="tile t-chg" href="#mod-chg"><div class="lb">CHANGES · 本轮变化</div>
        <div class="big">+${news.length}</div><div class="sub">舆情 ${rms.length} 条 · 更新 ${upds.length} 条</div></a>`;
-})();
+}
 
 /* filter rail：脚标只表示仍活跃的演唱会场次，不混入舆情。 */
 function activeConcertItems(){ return [...(D.on_sale||[]), ...(D.upcoming||[])]; }
@@ -773,7 +783,10 @@ function syncPressed(){
     String((c.dataset.r && c.dataset.r===filter.region && filter.artist==="all") ||
            (c.dataset.a && c.dataset.a===filter.artist))));
 }
-(function(){
+function renderRail(){
+  const railScroll = $("rail").scrollLeft;
+  const focused = document.activeElement;
+  const artist = focused?.dataset?.a, region = focused?.dataset?.r;
   const cntA = k => activeConcertItems().filter(e=>e.artist_key===k).length;
   let html = `<button class="chip" data-r="all">全部</button>
     <button class="chip" data-r="cn">国内</button>
@@ -781,14 +794,19 @@ function syncPressed(){
   html += (D.artists||[]).map(a=>
     `<button class="chip" data-a="${esc(a.key)}"><span class="ad" style="background:${ACOLOR[a.key]}"></span>${esc(a.name)} <span class="c">${cntA(a.key)}</span></button>`).join("");
   $("rail").innerHTML = html;
-  $("rail").addEventListener("click", ev=>{
+  $("rail").scrollLeft = railScroll;
+  syncPressed();
+  if(artist || region){
+    const chip = [...document.querySelectorAll(".chip")].find(c=>artist ? c.dataset.a===artist : c.dataset.r===region);
+    chip?.focus({preventScroll:true});
+  }
+}
+$("rail").addEventListener("click", ev=>{
     const b = ev.target.closest(".chip"); if(!b) return;
     if(b.dataset.r) filter = {region:b.dataset.r, artist:"all"};
     else filter = {region:"all", artist: filter.artist===b.dataset.a ? "all" : b.dataset.a};
     saveFilter(); syncPressed(); render();
   });
-  syncPressed();
-})();
 /* artist tag click → filter by that artist */
 document.addEventListener("click", ev=>{
   const t = ev.target.closest(".atag"); if(!t) return;
@@ -814,6 +832,9 @@ function keep(item){
 
 /* main render */
 function render(){
+  D = CMState.projectSnapshot(SNAPSHOT);
+  renderOverview();
+  renderRail();
   const evts = [...(D.on_sale||[]).map(e=>({...e,_st:"on_sale"})), ...(D.upcoming||[]).map(e=>({...e,_st:"upcoming"}))]
     .filter(keep);
   const datedL = evts.filter(e=>e.show_date).sort((a,b)=>a.show_date<b.show_date?-1:1);
@@ -822,15 +843,15 @@ function render(){
   /* day rail */
   const byDate = {};
   datedL.forEach(e=>{ (byDate[e.show_date]=byDate[e.show_date]||[]).push(e); });
-  const today = new Date(); today.setHours(0,0,0,0);
+  const today = new Date(CMState.shanghaiDay()+"T00:00:00Z");
   let r = "";
   for(let i=0;i<45;i++){
     const d = new Date(today.getTime()+i*86400000);
-    const key = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+    const key = `${d.getUTCFullYear()}-${String(d.getUTCMonth()+1).padStart(2,"0")}-${String(d.getUTCDate()).padStart(2,"0")}`;
     const evs = byDate[key]||[];
     const dots = [...new Set(evs.map(e=>e._st))].map(s=>`<i class="${s==="on_sale"?"g":"y"}"></i>`).join("");
     r += `<button class="day ${i===0?"today":""} ${evs.length?"has":""}" ${evs.length?`onclick="document.getElementById('g${key}')?.scrollIntoView({behavior:'smooth',block:'center'})"`:""}>
-      <div class="dw">${i===0?"今天":WDZH[d.getDay()]}</div><div class="dd">${d.getMonth()+1}/${d.getDate()}</div>
+      <div class="dw">${i===0?"今天":WDZH[d.getUTCDay()]}</div><div class="dd">${d.getUTCMonth()+1}/${d.getUTCDate()}</div>
       <div class="dots">${dots}</div></button>`;
   }
   $("dayrail").innerHTML = r;
@@ -857,7 +878,7 @@ function render(){
       ${atag(e.artist_key, e.artist_name)}
       <div class="gt"><div class="t">${esc(e.title)}${e.is_new?'<span class="nw">NEW</span>':""}${needsCurrentReview(e)?'<span class="uv">本轮未复核</span>':""}</div>
         <div class="m2">${esc([e.city,e.venue,e.show_time,e.price,e.note].filter(Boolean).join(" · "))}</div></div>
-      <div class="gs ${so?"so":(on?"on":"up")}"><i></i>${so?"售罄":(on?"在售":(e.sale_time?"SALE "+e.sale_time.slice(5).replace("-","/"):"待开票"))}</div>
+      <div class="gs ${so?"so":(on?"on":"up")}"><i></i>${so?"售罄":(on?"在售":esc(saleLabel(e)))}</div>
       ${on&&!so&&url?`<div class="ga"><a href="${esc(url)}" target="_blank" rel="noopener">购票 ↗</a></div>`:""}
     </div>`;
   }
@@ -902,6 +923,19 @@ function render(){
   $("pastbox").hidden = !(D.ended||[]).length;
 }
 render();
+// Reclassify on date/sale boundaries, including tabs resumed after sleeping.
+let clockKey = CMState.shanghaiDay()+"|"+Math.floor(Date.now()/60000);
+function refreshClock(){
+  const next = CMState.shanghaiDay()+"|"+Math.floor(Date.now()/60000);
+  if(next===clockKey) return;
+  clockKey = next;
+  const dayScroll = $("dayrail").scrollLeft;
+  render();
+  $("dayrail").scrollLeft = dayScroll;
+}
+setInterval(refreshClock, 15000);
+window.addEventListener("focus", refreshClock);
+document.addEventListener("visibilitychange", ()=>{ if(!document.hidden) refreshClock(); });
 })();
 </script>
 </body>

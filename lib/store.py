@@ -89,22 +89,39 @@ def derive_status(ev):
     raw = (ev.get("sale_status") or "").strip()
     if raw in ENDED_STATES:
         return "ended"
+    if raw == "scheduled":
+        start = parse_sale_time(ev.get("sale_time"))
+        end = parse_sale_time(ev.get("sale_end_time"))
+        now = local_now()
+        return "on_sale" if start and start <= now and (not end or now < end) else "upcoming"
     if raw in ON_SALE_STATES:
         return "on_sale"
     if raw in ("upcoming", "announced", "paused", "postponed", "已延期", "待开票", "即将开售"):
         return "upcoming"
     sale_time = ev.get("sale_time", "")
     if sale_time:
-        return "on_sale" if sale_time[:10] <= today() else "upcoming"
+        start = parse_sale_time(sale_time)
+        return "on_sale" if start and start <= local_now() else "upcoming"
     # 状态不明：有日期就当已官宣待定，没日期也一样
     return "upcoming"
+
+
+def parse_sale_time(value):
+    """Legacy timestamps are Shanghai time; explicit KST/JST offsets win."""
+    if not value:
+        return None
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except (ValueError, TypeError):
+        return None
+    return parsed if parsed.tzinfo else parsed.replace(tzinfo=APP_TIMEZONE)
 
 
 # 调研补录的字段优先级低于采集器，但空值不覆盖非空值
 _MERGE_KEEP_RICHER = [
     "title", "performers", "city", "venue", "show_date", "show_time",
     "doors_time", "show_end_time", "curfew_time", "show_time_raw",
-    "price", "sale_time", "note", "tour_name",
+    "price", "sale_time", "sale_end_time", "ticket_url", "note", "tour_name",
 ]
 
 
@@ -127,6 +144,10 @@ def _merge_one(old, new):
         v = new.get(k)
         if v and (not research_fill_only or not old.get(k)):
             out[k] = v
+    # An official update can replace a closed lottery with an open-ended sale.
+    # The previous deadline must not survive just because the new one is empty.
+    if new_source == "official":
+        out["sale_end_time"] = new.get("sale_end_time", "")
     for k in ("ticket_tiers", "sources"):
         merged = list(old.get(k) or [])
         additions = new.get(k) or []
@@ -183,6 +204,8 @@ def normalize_event(ev):
         "ticket_tiers": ev.get("ticket_tiers") or [],
         "sale_status": (ev.get("sale_status") or "").strip(),
         "sale_time": (ev.get("sale_time") or "").strip(),
+        "sale_end_time": (ev.get("sale_end_time") or "").strip(),
+        "ticket_url": (ev.get("ticket_url") or "").strip(),
         "confidence": ev.get("confidence") or "confirmed",
         "note": (ev.get("note") or "").strip(),
         "sources": [source_record],

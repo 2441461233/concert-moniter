@@ -20,7 +20,7 @@ from datetime import timedelta
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from lib import showstart, store  # noqa: E402
+from lib import official, showstart, store  # noqa: E402
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 CONFIG_PATH = os.path.join(ROOT, "config", "artists.json")
@@ -64,8 +64,7 @@ def cmd_check(args):
     collect_artists = []
     for a in artists:
         if a.get("region") == "kpop" and not a.get("showstart_artist_id"):
-            # 秀动基本没有 KPop 团体，跳过省时间；仍由调研环节覆盖
-            print("  · %-14s 跳过秀动（海外艺人，走调研补全）" % a["name"])
+            print("  · %-14s 跳过秀动（无秀动 ID；仅配置的官方来源会自动更新）" % a["name"])
             continue
         collect_artists.append(a)
 
@@ -122,11 +121,27 @@ def cmd_check(args):
         source_status["showstart"]["fail" if notes else "ok"] += 1
         print("  · %-14s 秀动 %d 场" % (a["name"], len(events)))
 
-    # 完整刷新要求原子性：任一应采的秀动艺人降级时，在这里
+    official_sources = [(a, s) for a in artists for s in a.get("official_sources", [])]
+    if official_sources:
+        source_status["official"] = {"ok": 0, "fail": 0, "total": len(official_sources)}
+    for artist, source in official_sources:
+        try:
+            events = official.collect(artist, source, cache_ttl=0 if getattr(args, "force", False) else 1800)
+            all_events.extend(events)
+            source_status["official"]["ok"] += 1
+            print("  · %-14s 官方 %d 场（%s）" % (artist["name"], len(events), source["parser"]))
+        except Exception as exc:
+            source_status["official"]["fail"] += 1
+            all_notes.append("%s 官方来源失败：%s" % (artist["name"], exc))
+            print("  · %-14s 官方来源失败：%s" % (artist["name"], exc))
+
+    # 完整刷新要求原子性：任一应采来源降级时，在这里
     # 就中止，不发现/写回艺人 ID，不移动 inbox，也不合并任何数据。
     # 日常单项 check 保持原有的降级沿用行为。
     if getattr(args, "strict_sources", False) and source_status["showstart"]["fail"]:
         raise RuntimeError("秀动采集未完整，本轮未写入任何数据")
+    if getattr(args, "strict_sources", False) and source_status.get("official", {}).get("fail"):
+        raise RuntimeError("官方采集未完整，本轮未写入任何数据")
 
     if config_dirty:
         save_config(cfg)
@@ -322,13 +337,13 @@ def build_site():
         "last_run": meta.get("last_run"),
         "last_run_id": last_run,
         "last_research_at": meta.get("last_research_at"),
-        # 只有「全部 enabled 艺人 + 全信息源」流程完成后才更新；
-        # 单独采集秀动或普通 ingest 都不会改动这个时间。
+        # 只有完整确定性刷新成功才更新；不代表所有艺人/信息源均已复核。
         "full_refresh_at": meta.get("full_refresh_at"),
         "full_refresh_id": meta.get("full_refresh_id"),
         "full_refresh_status": meta.get("full_refresh_status"),
         "artists": [{"key": a["key"], "name": a["name"], "region": a.get("region", "cn")}
                     for a in cfg["artists"] if a.get("enabled", True)],
+        "official_source_artists": [a["name"] for a in enabled_artists(cfg) if a.get("official_sources")],
         "on_sale": on_sale,
         "upcoming": upcoming,
         "ended": ended[:40],

@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-09-17T16:51:18",
- "last_run": "2026-09-17T16:51:18",
- "last_run_id": "20260917-165044",
+ "generated_at": "2026-09-17T17:04:02",
+ "last_run": "2026-09-17T17:04:02",
+ "last_run_id": "20260917-170344",
  "last_research_at": "2026-08-13T11:51:26",
- "full_refresh_at": "2026-09-17T16:51:18",
- "full_refresh_id": "f97952bd96a75729aa205992",
+ "full_refresh_at": "2026-09-17T17:04:02",
+ "full_refresh_id": "local-20260917-170344",
  "full_refresh_status": "deterministic_completed_enrichment_stale",
  "artists": [
   {
@@ -67,6 +67,9 @@
    "name": "KATSEYE",
    "region": "kpop"
   }
+ ],
+ "official_source_artists": [
+  "ILLIT"
  ],
  "on_sale": [
   {
@@ -142,9 +145,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-09-17T16:51:18",
+   "last_seen": "2026-09-17T17:04:02",
    "id": "50a82b896e69a5b8",
-   "last_seen_run": "20260917-165044",
+   "last_seen_run": "20260917-170344",
    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "verification_status": "verified",
    "missed_full_refreshes": 0,
@@ -187,9 +190,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-09-17T16:51:18",
+   "last_seen": "2026-09-17T17:04:02",
    "id": "4b189d39b90c02fa",
-   "last_seen_run": "20260917-165044",
+   "last_seen_run": "20260917-170344",
    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "verification_status": "verified",
    "missed_full_refreshes": 0,
@@ -310,11 +313,11 @@
    ],
    "first_seen": "2026-09-17T16:51:18",
    "first_seen_run": "20260917-165044",
-   "last_seen": "2026-09-17T16:51:18",
-   "last_seen_run": "20260917-165044",
+   "last_seen": "2026-09-17T17:04:02",
+   "last_seen_run": "20260917-170344",
    "id": "499c579e258c2dba",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -593,8 +596,8 @@
    ],
    "first_seen": "2026-09-02T17:06:45",
    "first_seen_run": "20260902-170611",
-   "last_seen": "2026-09-17T16:51:18",
-   "last_seen_run": "20260917-165044",
+   "last_seen": "2026-09-17T17:04:02",
+   "last_seen_run": "20260917-170344",
    "id": "d2ff3e171c58858f",
    "status": "on_sale",
    "is_new": false
@@ -636,8 +639,8 @@
    ],
    "first_seen": "2026-09-02T17:06:45",
    "first_seen_run": "20260902-170611",
-   "last_seen": "2026-09-17T16:51:18",
-   "last_seen_run": "20260917-165044",
+   "last_seen": "2026-09-17T17:04:02",
+   "last_seen_run": "20260917-170344",
    "id": "cf21d941935e35b0",
    "status": "on_sale",
    "is_new": false
@@ -718,11 +721,11 @@
    ],
    "first_seen": "2026-09-17T16:51:18",
    "first_seen_run": "20260917-165044",
-   "last_seen": "2026-09-17T16:51:18",
-   "last_seen_run": "20260917-165044",
+   "last_seen": "2026-09-17T17:04:02",
+   "last_seen_run": "20260917-170344",
    "id": "f8847bd732df1b1e",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "showstart",
@@ -761,11 +764,11 @@
    ],
    "first_seen": "2026-09-17T16:51:18",
    "first_seen_run": "20260917-165044",
-   "last_seen": "2026-09-17T16:51:18",
-   "last_seen_run": "20260917-165044",
+   "last_seen": "2026-09-17T17:04:02",
+   "last_seen_run": "20260917-170344",
    "id": "9f8119d18c5acc16",
    "status": "on_sale",
-   "is_new": true
+   "is_new": false
   },
   {
    "source": "research",
@@ -1985,6 +1988,248 @@
    "is_new": false
   },
   {
+   "source": "official",
+   "artist_key": "illit",
+   "artist_name": "ILLIT",
+   "title": "ILLIT LIVE 'PRESS START♥︎' ENCORE in JAPAN · 东京湾（千叶）",
+   "tour_name": "ILLIT LIVE 'PRESS START♥︎' ENCORE",
+   "performers": "",
+   "city": "千叶（东京湾）",
+   "venue": "LaLa arena TOKYO-BAY",
+   "country": "日本",
+   "show_date": "2026-12-23",
+   "doors_time": "17:00",
+   "show_time": "18:30",
+   "show_end_time": "",
+   "curfew_time": "",
+   "show_time_raw": "",
+   "price": "JPY 15,000（含税）",
+   "ticket_tiers": [],
+   "sale_status": "scheduled",
+   "sale_time": "2026-09-07T17:00+09:00",
+   "sale_end_time": "2026-09-15T23:59+09:00",
+   "ticket_url": "https://l-tike.com/illit/",
+   "confidence": "confirmed",
+   "note": "罗森抽选 09/07 17:00 至 09/15 23:59（日本时间），非先到先得；本轮截止后等待后续票务公告。开门与开演均为日本时间。",
+   "sources": [
+    {
+     "source": "official",
+     "url": "https://illit-official.jp/news/35e24927f649",
+     "source_id": "illit_japan_encore:2026-12-23"
+    }
+   ],
+   "first_seen": "2026-09-17T17:04:02",
+   "first_seen_run": "20260917-170344",
+   "last_seen": "2026-09-17T17:04:02",
+   "last_seen_run": "20260917-170344",
+   "id": "28eed14ad1d662dc",
+   "status": "upcoming",
+   "is_new": true
+  },
+  {
+   "source": "official",
+   "artist_key": "illit",
+   "artist_name": "ILLIT",
+   "title": "ILLIT LIVE 'PRESS START♥︎' ENCORE in JAPAN · 东京湾（千叶）",
+   "tour_name": "ILLIT LIVE 'PRESS START♥︎' ENCORE",
+   "performers": "",
+   "city": "千叶（东京湾）",
+   "venue": "LaLa arena TOKYO-BAY",
+   "country": "日本",
+   "show_date": "2026-12-24",
+   "doors_time": "17:00",
+   "show_time": "18:30",
+   "show_end_time": "",
+   "curfew_time": "",
+   "show_time_raw": "",
+   "price": "JPY 15,000（含税）",
+   "ticket_tiers": [],
+   "sale_status": "scheduled",
+   "sale_time": "2026-09-07T17:00+09:00",
+   "sale_end_time": "2026-09-15T23:59+09:00",
+   "ticket_url": "https://l-tike.com/illit/",
+   "confidence": "confirmed",
+   "note": "罗森抽选 09/07 17:00 至 09/15 23:59（日本时间），非先到先得；本轮截止后等待后续票务公告。开门与开演均为日本时间。",
+   "sources": [
+    {
+     "source": "official",
+     "url": "https://illit-official.jp/news/35e24927f649",
+     "source_id": "illit_japan_encore:2026-12-24"
+    }
+   ],
+   "first_seen": "2026-09-17T17:04:02",
+   "first_seen_run": "20260917-170344",
+   "last_seen": "2026-09-17T17:04:02",
+   "last_seen_run": "20260917-170344",
+   "id": "f875c7390c34fe40",
+   "status": "upcoming",
+   "is_new": true
+  },
+  {
+   "source": "official",
+   "artist_key": "illit",
+   "artist_name": "ILLIT",
+   "title": "ILLIT LIVE 'PRESS START♥︎' ENCORE in JAPAN · 东京湾（千叶）",
+   "tour_name": "ILLIT LIVE 'PRESS START♥︎' ENCORE",
+   "performers": "",
+   "city": "千叶（东京湾）",
+   "venue": "LaLa arena TOKYO-BAY",
+   "country": "日本",
+   "show_date": "2026-12-26",
+   "doors_time": "15:30",
+   "show_time": "17:00",
+   "show_end_time": "",
+   "curfew_time": "",
+   "show_time_raw": "",
+   "price": "JPY 15,000（含税）",
+   "ticket_tiers": [],
+   "sale_status": "scheduled",
+   "sale_time": "2026-09-07T17:00+09:00",
+   "sale_end_time": "2026-09-15T23:59+09:00",
+   "ticket_url": "https://l-tike.com/illit/",
+   "confidence": "confirmed",
+   "note": "罗森抽选 09/07 17:00 至 09/15 23:59（日本时间），非先到先得；本轮截止后等待后续票务公告。开门与开演均为日本时间。",
+   "sources": [
+    {
+     "source": "official",
+     "url": "https://illit-official.jp/news/35e24927f649",
+     "source_id": "illit_japan_encore:2026-12-26"
+    }
+   ],
+   "first_seen": "2026-09-17T17:04:02",
+   "first_seen_run": "20260917-170344",
+   "last_seen": "2026-09-17T17:04:02",
+   "last_seen_run": "20260917-170344",
+   "id": "d54fd76a28abd74f",
+   "status": "upcoming",
+   "is_new": true
+  },
+  {
+   "source": "official",
+   "artist_key": "illit",
+   "artist_name": "ILLIT",
+   "title": "ILLIT LIVE 'PRESS START♥︎' ENCORE in JAPAN · 东京湾（千叶）",
+   "tour_name": "ILLIT LIVE 'PRESS START♥︎' ENCORE",
+   "performers": "",
+   "city": "千叶（东京湾）",
+   "venue": "LaLa arena TOKYO-BAY",
+   "country": "日本",
+   "show_date": "2026-12-27",
+   "doors_time": "15:30",
+   "show_time": "17:00",
+   "show_end_time": "",
+   "curfew_time": "",
+   "show_time_raw": "",
+   "price": "JPY 15,000（含税）",
+   "ticket_tiers": [],
+   "sale_status": "scheduled",
+   "sale_time": "2026-09-07T17:00+09:00",
+   "sale_end_time": "2026-09-15T23:59+09:00",
+   "ticket_url": "https://l-tike.com/illit/",
+   "confidence": "confirmed",
+   "note": "罗森抽选 09/07 17:00 至 09/15 23:59（日本时间），非先到先得；本轮截止后等待后续票务公告。开门与开演均为日本时间。",
+   "sources": [
+    {
+     "source": "official",
+     "url": "https://illit-official.jp/news/35e24927f649",
+     "source_id": "illit_japan_encore:2026-12-27"
+    }
+   ],
+   "first_seen": "2026-09-17T17:04:02",
+   "first_seen_run": "20260917-170344",
+   "last_seen": "2026-09-17T17:04:02",
+   "last_seen_run": "20260917-170344",
+   "id": "210f7a5cb896819d",
+   "status": "upcoming",
+   "is_new": true
+  },
+  {
+   "source": "official",
+   "artist_key": "illit",
+   "artist_name": "ILLIT",
+   "title": "ILLIT LIVE 'PRESS START♥︎' ENCORE in KOREA · 仁川（首尔地区）",
+   "tour_name": "ILLIT LIVE 'PRESS START♥︎' ENCORE",
+   "performers": "",
+   "city": "仁川（首尔地区）",
+   "venue": "INSPIRE Arena",
+   "country": "韩国",
+   "show_date": "2026-10-17",
+   "doors_time": "",
+   "show_time": "18:00",
+   "show_end_time": "",
+   "curfew_time": "",
+   "show_time_raw": "",
+   "price": "KRW 220,000 / 253,000 / 165,000",
+   "ticket_tiers": [
+    "SOUND CHECK KRW 220,000",
+    "M&G KRW 253,000",
+    "일반석 KRW 165,000"
+   ],
+   "sale_status": "scheduled",
+   "sale_time": "2026-09-17T20:00+09:00",
+   "sale_end_time": "",
+   "ticket_url": "https://world.nol.com/en/ticket/places/26001084/products/26012865",
+   "confidence": "confirmed",
+   "note": "全球公售 2026-09-17 20:00（韩国时间，北京时间提前 1 小时）；开演为韩国时间，余票以票务页面为准。",
+   "sources": [
+    {
+     "source": "official",
+     "url": "https://nol.yanolja.com/ticket/products/26012865",
+     "source_id": "illit_nol_encore:2026-10-17"
+    }
+   ],
+   "first_seen": "2026-09-17T17:04:02",
+   "first_seen_run": "20260917-170344",
+   "last_seen": "2026-09-17T17:04:02",
+   "last_seen_run": "20260917-170344",
+   "id": "431c2bf92bffe25c",
+   "status": "upcoming",
+   "is_new": true
+  },
+  {
+   "source": "official",
+   "artist_key": "illit",
+   "artist_name": "ILLIT",
+   "title": "ILLIT LIVE 'PRESS START♥︎' ENCORE in KOREA · 仁川（首尔地区）",
+   "tour_name": "ILLIT LIVE 'PRESS START♥︎' ENCORE",
+   "performers": "",
+   "city": "仁川（首尔地区）",
+   "venue": "INSPIRE Arena",
+   "country": "韩国",
+   "show_date": "2026-10-18",
+   "doors_time": "",
+   "show_time": "17:00",
+   "show_end_time": "",
+   "curfew_time": "",
+   "show_time_raw": "",
+   "price": "KRW 220,000 / 253,000 / 165,000",
+   "ticket_tiers": [
+    "SOUND CHECK KRW 220,000",
+    "M&G KRW 253,000",
+    "일반석 KRW 165,000"
+   ],
+   "sale_status": "scheduled",
+   "sale_time": "2026-09-17T20:00+09:00",
+   "sale_end_time": "",
+   "ticket_url": "https://world.nol.com/en/ticket/places/26001084/products/26012865",
+   "confidence": "confirmed",
+   "note": "全球公售 2026-09-17 20:00（韩国时间，北京时间提前 1 小时）；开演为韩国时间，余票以票务页面为准。",
+   "sources": [
+    {
+     "source": "official",
+     "url": "https://nol.yanolja.com/ticket/products/26012865",
+     "source_id": "illit_nol_encore:2026-10-18"
+    }
+   ],
+   "first_seen": "2026-09-17T17:04:02",
+   "first_seen_run": "20260917-170344",
+   "last_seen": "2026-09-17T17:04:02",
+   "last_seen_run": "20260917-170344",
+   "id": "5175f9bc17f81b5e",
+   "status": "upcoming",
+   "is_new": true
+  },
+  {
    "source": "research",
    "artist_key": "babymonster",
    "artist_name": "BABYMONSTER",
@@ -2534,8 +2779,8 @@
    ],
    "first_seen": "2026-08-24T17:41:11",
    "first_seen_run": "20260824-174032",
-   "last_seen": "2026-09-17T16:51:18",
-   "last_seen_run": "20260917-165044",
+   "last_seen": "2026-09-17T17:04:02",
+   "last_seen_run": "20260917-170344",
    "id": "05537ca348ab0b08",
    "status": "ended",
    "is_new": false
@@ -2982,9 +3227,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-09-17T16:51:18",
+   "last_seen": "2026-09-17T17:04:02",
    "id": "7ac3102273d984f7",
-   "last_seen_run": "20260917-165044",
+   "last_seen_run": "20260917-170344",
    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "verification_status": "verified",
    "missed_full_refreshes": 0,
@@ -3493,9 +3738,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-09-17T16:51:18",
+   "last_seen": "2026-09-17T17:04:02",
    "id": "9b4b484fcc3da4a7",
-   "last_seen_run": "20260917-165044",
+   "last_seen_run": "20260917-170344",
    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "verification_status": "verified",
    "missed_full_refreshes": 0,
@@ -3534,9 +3779,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-09-17T16:51:18",
+   "last_seen": "2026-09-17T17:04:02",
    "id": "a3f7a3a5653098fa",
-   "last_seen_run": "20260917-165044",
+   "last_seen_run": "20260917-170344",
    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "verification_status": "verified",
    "missed_full_refreshes": 0,
@@ -3576,9 +3821,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-09-17T16:51:18",
+   "last_seen": "2026-09-17T17:04:02",
    "id": "f2b2b11b4a7a1d15",
-   "last_seen_run": "20260917-165044",
+   "last_seen_run": "20260917-170344",
    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "verification_status": "verified",
    "missed_full_refreshes": 0,
@@ -3617,9 +3862,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-09-17T16:51:18",
+   "last_seen": "2026-09-17T17:04:02",
    "id": "f9504954a23e329d",
-   "last_seen_run": "20260917-165044",
+   "last_seen_run": "20260917-170344",
    "last_checked_full_refresh_id": "0c726311ceb7b4f2ddd5eeb1",
    "verification_status": "verified",
    "missed_full_refreshes": 0,
@@ -3696,9 +3941,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-09-17T16:51:18",
+   "last_seen": "2026-09-17T17:04:02",
    "id": "9b6db4a051b3acef",
-   "last_seen_run": "20260917-165044",
+   "last_seen_run": "20260917-170344",
    "status": "ended",
    "is_new": false
   },
@@ -3733,9 +3978,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-09-17T16:51:18",
+   "last_seen": "2026-09-17T17:04:02",
    "id": "e18f2a24546d48a8",
-   "last_seen_run": "20260917-165044",
+   "last_seen_run": "20260917-170344",
    "status": "ended",
    "is_new": false
   },
@@ -3772,9 +4017,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-09-17T16:51:18",
+   "last_seen": "2026-09-17T17:04:02",
    "id": "81f631ed1a03ddca",
-   "last_seen_run": "20260917-165044",
+   "last_seen_run": "20260917-170344",
    "status": "ended",
    "is_new": false
   },
@@ -3809,9 +4054,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-09-17T16:51:18",
+   "last_seen": "2026-09-17T17:04:02",
    "id": "96e65962801b9194",
-   "last_seen_run": "20260917-165044",
+   "last_seen_run": "20260917-170344",
    "status": "ended",
    "is_new": false
   },
@@ -3846,9 +4091,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-09-17T16:51:18",
+   "last_seen": "2026-09-17T17:04:02",
    "id": "7698ce603b252353",
-   "last_seen_run": "20260917-165044",
+   "last_seen_run": "20260917-170344",
    "status": "ended",
    "is_new": false
   },
@@ -3884,9 +4129,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-09-17T16:51:18",
+   "last_seen": "2026-09-17T17:04:02",
    "id": "0ce217ff2b6b83ba",
-   "last_seen_run": "20260917-165044",
+   "last_seen_run": "20260917-170344",
    "status": "ended",
    "is_new": false
   },
@@ -3921,9 +4166,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-09-17T16:51:18",
+   "last_seen": "2026-09-17T17:04:02",
    "id": "c5b69c1914eb50e9",
-   "last_seen_run": "20260917-165044",
+   "last_seen_run": "20260917-170344",
    "status": "ended",
    "is_new": false
   },
@@ -3958,9 +4203,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-09-17T16:51:18",
+   "last_seen": "2026-09-17T17:04:02",
    "id": "ff1c50001cc62945",
-   "last_seen_run": "20260917-165044",
+   "last_seen_run": "20260917-170344",
    "status": "ended",
    "is_new": false
   },
@@ -3998,9 +4243,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-09-17T16:51:18",
+   "last_seen": "2026-09-17T17:04:02",
    "id": "bad18830270d07ca",
-   "last_seen_run": "20260917-165044",
+   "last_seen_run": "20260917-170344",
    "status": "ended",
    "is_new": false
   },
@@ -4038,9 +4283,9 @@
    ],
    "first_seen": "2026-08-10T11:23:44",
    "first_seen_run": "20260810-112305",
-   "last_seen": "2026-09-17T16:51:18",
+   "last_seen": "2026-09-17T17:04:02",
    "id": "cf0b920196b0e05a",
-   "last_seen_run": "20260917-165044",
+   "last_seen_run": "20260917-170344",
    "status": "ended",
    "is_new": false
   }
@@ -4550,25 +4795,46 @@
  ],
  "changes": [
   {
-   "run": "20260917-165044",
+   "run": "20260917-170344",
    "type": "new",
-   "artist": "沙一汀",
-   "title": "2026AYO!音乐节 湖州站",
-   "info": "2026-10-04 湖州 on_sale"
+   "artist": "ILLIT",
+   "title": "ILLIT LIVE 'PRESS START♥︎' ENCORE in KOREA · 仁川（首尔地区）",
+   "info": "2026-10-17 仁川（首尔地区） scheduled"
   },
   {
-   "run": "20260917-165044",
+   "run": "20260917-170344",
    "type": "new",
-   "artist": "门尼",
-   "title": "第四届大秦青年音乐节",
-   "info": "2026-09-25 咸阳 on_sale"
+   "artist": "ILLIT",
+   "title": "ILLIT LIVE 'PRESS START♥︎' ENCORE in KOREA · 仁川（首尔地区）",
+   "info": "2026-10-18 仁川（首尔地区） scheduled"
   },
   {
-   "run": "20260917-165044",
+   "run": "20260917-170344",
    "type": "new",
-   "artist": "加木",
-   "title": "2026AYO!音乐节 湖州站",
-   "info": "2026-10-04 湖州 on_sale"
+   "artist": "ILLIT",
+   "title": "ILLIT LIVE 'PRESS START♥︎' ENCORE in JAPAN · 东京湾（千叶）",
+   "info": "2026-12-23 千叶（东京湾） scheduled"
+  },
+  {
+   "run": "20260917-170344",
+   "type": "new",
+   "artist": "ILLIT",
+   "title": "ILLIT LIVE 'PRESS START♥︎' ENCORE in JAPAN · 东京湾（千叶）",
+   "info": "2026-12-24 千叶（东京湾） scheduled"
+  },
+  {
+   "run": "20260917-170344",
+   "type": "new",
+   "artist": "ILLIT",
+   "title": "ILLIT LIVE 'PRESS START♥︎' ENCORE in JAPAN · 东京湾（千叶）",
+   "info": "2026-12-26 千叶（东京湾） scheduled"
+  },
+  {
+   "run": "20260917-170344",
+   "type": "new",
+   "artist": "ILLIT",
+   "title": "ILLIT LIVE 'PRESS START♥︎' ENCORE in JAPAN · 东京湾（千叶）",
+   "info": "2026-12-27 千叶（东京湾） scheduled"
   }
  ],
  "notes": [
@@ -4578,6 +4844,11 @@
   "showstart": {
    "ok": 3,
    "fail": 0
+  },
+  "official": {
+   "ok": 2,
+   "fail": 0,
+   "total": 2
   },
   "research": {
    "ok": 0,
@@ -4593,7 +4864,7 @@
  },
  "counts": {
   "on_sale": 46,
-  "upcoming": 13,
+  "upcoming": 19,
   "rumors": 26,
   "ended": 48,
   "rumors_aged_out": 0

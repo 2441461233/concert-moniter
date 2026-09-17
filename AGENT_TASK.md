@@ -8,10 +8,11 @@
 
 1. 网页按钮调度 GitHub Actions；Vercel API 不运行采集或模型请求。
 2. `scripts/full_refresh.py` 先运行 ShowStart 确定性采集，使用
-   `monitor.py check --force --no-inbox --strict-sources`。
+   `monitor.py check --force --no-inbox --strict-sources`。2026-09-17 起同一步还采集
+   `official_sources` 显式配置的官方页面；不走 LLM candidate promotion。
 3. 已存在的 `events.json`、`rumors.json`、`meta.json` 必须存在、可读且
    根类型正确；不得把损坏/缺失生产库当成空库重建。
-4. ShowStart 任一应采艺人失败、HTTP 200 挑战/空页/DOM 漂移、merge、build 或
+4. ShowStart 任一应采艺人或任一配置官方来源失败、HTTP 200 挑战/空页/DOM 漂移、merge、build 或
    metadata 失败，整轮返回非 0，不写新 `full_refresh_id`，workflow 不提交。
 5. `LLM_ENRICH_PROVIDER` 默认 `none`；没 Key、没余额或可选参数误配不得
    阻断免费确定性快照。
